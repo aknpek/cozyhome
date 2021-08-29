@@ -1,0 +1,14 @@
+{
+    "pictures": [
+        {
+            "id": 0,
+            "url": "./src/data/Home.gif",
+            "description": "nft-real-estate"
+        },
+        {
+            "id": 1,
+            "url": "",
+            "description": "nft-real"
+        }
+    ]
+}

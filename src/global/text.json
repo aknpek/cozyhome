@@ -1,0 +1,119 @@
+{
+  "landing": {
+    "header": {
+      "menu": { "home": "home", "about": "about", "roadmap": "roadmap", "team": "team" },
+      "logo": {"description":"", "url": ""},
+      "title": "CozyHome"
+    },
+    "containers": [
+      {
+        "component-place": "container-first",
+        "component-type": "promotion",
+        "title": "CozyHome",
+        "subtitle": "",
+        "slogan": "This CozyHome is one of the 7,777 residences On the land of legends of Ethereum blockchain. On 1th of Sep 04:00PM EST, 5555 CozyHome will be available to mint for 0.03ETH",
+        "pictures": [
+          {
+            "id": 0,
+            "picture_url": "./data/Home.gif",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": "Home's GIF"
+          }
+        ]
+      },
+      {
+        "component-place": "container-second",
+        "component-type": "collection",
+        "title": "THE COLLECTION",
+        "subtitle": "",
+        "slogan": "Home Is Home",
+        "pictures": [
+          {
+            "id": 0,
+            "picture_url": "",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          },
+          {
+            "id": 1,
+            "picture_url": "",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "component-place": "container-third",
+        "component-type": "banner",
+        "title": "",
+        "subtitle": "",
+        "slogan": "Home Is Home",
+        "pictures": [
+          {
+            "id": 0,
+            "picture_url": "",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "component-place": "container-fourth",
+        "component-type": "roadmap",
+        "title": "The Roadmap",
+        "subtitle": "",
+        "slogan": "EVERY HOME OWNER GETS ACCESS TO PRIVATE LAND OF ETHERIUM with HOMIE",
+        "pictures": [
+          {
+            "id": 0,
+            "picture_url": "",
+            "title": "%0: BUILD HOME. WELCOME TO LAND OF LEGENDS.",
+            "subtitle": "The private properties are open!",
+            "hyperlink": "",
+            "description": "The Private DISCORD CHANNEL will be opened to HOME OWNERS."
+          },
+          {
+            "id": 1,
+            "picture_url": "",
+            "title": "%20: The Community Wallet is opened.",
+            "subtitle": "We opened a first store in Land of Legends, goods are free to Home Owners!",
+            "hyperlink": "",
+            "description": "Order your free t-shirt with our logo and slogan 'Home Is Home'"
+          },
+          {
+            "id": 2,
+            "picture_url": "",
+            "title": "%40: ROARwards Program Lunch with Type-II!",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": "Every month, CozyHomies will receive their share of 8% of royalties in a unique ROARwards Program that rewards community engagement."
+          },
+          {
+            "id": 3,
+            "picture_url": "",
+            "title": "%60: Special home follow up will be released as Type-II",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": "Type-II 2222 owner will be add-up to community (Type-II owners gets 4%)"
+          },
+          {
+            "id": 4,
+            "picture_url": "",
+            "title": "%80: New NFT Type-III",
+            "subtitle": "Luxry home follow up will be released as Type-III",
+            "hyperlink": "",
+            "description": "Type-III 1111 owner will be add-up to community (Type-II owners gets 2%)"
+          }
+        ]
+      }
+    ]
+  }
+}
