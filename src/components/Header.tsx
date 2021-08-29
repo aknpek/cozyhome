@@ -24,9 +24,8 @@ const HeaderCo = styled.div<IHead>`
     z-index: 3;
     position: fixed;
     top: 2%;
-    background-color: #c7c7c724;
+    /* background-color: #c7c7c724; */
     border-radius: 1rem;
-
   }
 
   span {
@@ -38,7 +37,7 @@ const HeaderCo = styled.div<IHead>`
     /* background-color: yellow; */
 
     h1 {
-      display: flex;
+      /* display: flex;
       height: 4rem;
       width: 6rem;
       margin: 1rem;
@@ -47,16 +46,54 @@ const HeaderCo = styled.div<IHead>`
       text-align: center;
       justify-content: center;
       align-items: center;
-      letter-spacing: 1.6;
-
+      letter-spacing: 1.6; */
       /* background-color: red; */
     }
 
-    h1:hover {
+    /* h1:hover {
       position: relative;
       color: #3ca3cc;
       font-size: 1.2rem;
       cursor: pointer;
+    } */
+
+    h1::before {
+      transform: scaleX(0);
+      transform-origin: bottom right;
+    }
+
+    h1:hover::before {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    h1::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      inset: 0 0 0 0;
+      background: hsl(100 100% 80%);
+      z-index: -1;
+      transition: transform 0.3s ease;
+    }
+
+    h1 {
+      display: flex;
+      position: relative;
+      font-size: 1rem;
+      height: 4rem;
+      width: 8rem;
+      margin: 1rem;
+      color: #757474;
+      transition: color 0.2s ease-in-out;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 1.5;
     }
   }
 
@@ -94,7 +131,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
           <h1 onClick={() => scrollToSection("Home")}>{props.menu["home"]}</h1>
           <h1 onClick={() => scrollToSection("Landing-Home")}>
             {props.menu["about"]}
-            {props.showThirdContainer && <div className={"Deneme"}></div>}
+            {/* {props.showThirdContainer && <div className={"Deneme"}></div>} */}
           </h1>
           <h1 onClick={() => scrollToSection("Fourth-Component")}>
             {props.menu["roadmap"]}
