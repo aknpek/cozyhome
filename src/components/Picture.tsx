@@ -25,10 +25,10 @@ const PicStyled = styled.div<IPicture>`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     margin: auto;
-    max-height: 450px;
-    max-width: 450px;
-    min-width: 400px;
-    min-height: 400px;
+    max-height: 35rem;
+    max-width: 35rem;
+    min-width: 30rem;
+    min-height: 30rem;
 
     .cerceve {
       width: 100%;
@@ -42,8 +42,9 @@ const PicStyled = styled.div<IPicture>`
 
     }
     .gif {
-      width: 100%;
-      height: 100%;
+      width: 98%;
+      height: 98%;
+      margin: 1%auto;
       grid-column-start: 1;
       grid-column-end: 2;
       grid-row-start: 1;
