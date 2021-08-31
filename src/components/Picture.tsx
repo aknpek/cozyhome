@@ -29,6 +29,8 @@ const PicStyled = styled.div<IPicture>`
     max-width: 35rem;
     min-width: 35rem;
     min-height: 35rem;
+    will-change: transform;
+    transition: transform 450ms;
 
     .cerceve {
       width: 100%;
@@ -39,6 +41,7 @@ const PicStyled = styled.div<IPicture>`
       grid-row-end: 2;
       z-index: 2;
       object-fit: contain;
+      border-radius: 0.4rem;
     }
     .gif {
       width: 98%;
@@ -51,6 +54,14 @@ const PicStyled = styled.div<IPicture>`
       z-index: 1;
       object-fit: contain;
     }
+  }
+
+  div:hover {
+    transition: transform 250ms;
+    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px, rgba(26, 82, 119, 0.12) 0px -12px 30px, rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 0.4rem;
+    transform: translateY(-20px);
+    transform: rotate(-10deg);
   }
 `;
 

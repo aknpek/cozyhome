@@ -187,6 +187,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
       "cell-4";
 
     .header {
+      background-color: red; 
     }
     .cells {
     }

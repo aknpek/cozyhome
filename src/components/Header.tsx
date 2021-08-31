@@ -25,8 +25,8 @@ const HeaderCo = styled.div<IHead>`
     z-index: 3;
     position: fixed;
     top: 2%;
-    /* background-color: #c7c7c724; */
-    border-radius: 1rem;
+    background-color: #c7c7c724;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 
   span {
@@ -36,7 +36,6 @@ const HeaderCo = styled.div<IHead>`
     font-size: 0.7vw;
     font-weight: 400;
     color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
-    /* background-color: yellow; */
 
     h1 {
       /* display: flex;
@@ -52,17 +51,13 @@ const HeaderCo = styled.div<IHead>`
       /* background-color: red; */
     }
 
-    /* h1:hover {
-      position: relative;
-      color: #3ca3cc;
-      font-size: 1.2rem;
-      cursor: pointer;
-    } */
-
     h1:hover { 
       color: white;
       font-weight: 200;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      cursor: pointer;
     }
+
     h1::before {
       transform: scaleX(0);
       transform-origin: bottom right;
@@ -94,7 +89,10 @@ const HeaderCo = styled.div<IHead>`
       height: 4rem;
       width: 8rem;
       margin: 1rem;
-      color: #757474;
+      /* color: #464643; */
+
+      color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
+
       transition: color 0.2s ease-in-out;
       text-align: center;
       justify-content: center;
@@ -104,16 +102,17 @@ const HeaderCo = styled.div<IHead>`
   }
 
   img {
-    width: 6rem;
-    height: 6rem;
-    background-color: #dadada;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
     margin-top: auto;
     margin-bottom: auto;
-    /* margin-right: calc(20rem + 20px); */
+    margin-right: calc(10rem + 20px);
   }
 `;
 
 const scrollToSection = (className: string) => {
+  console.log(className)
   scroller.scrollTo(className, {
     duration: 800,
     delay: 0,

@@ -9,6 +9,9 @@ const TextBlock = styled.div<ITextDisplay>`
   height: 100%;
   .sloganDiv {
     height: 12rem;
+    will-change: transform;
+    transition: transform 450ms;
+
   }
   .messageDiv {
     height: 12rem;
@@ -115,6 +118,12 @@ const TextBlock = styled.div<ITextDisplay>`
       line-height: 3.5;
       color: #5d5d5d;
     }
+  }
+
+  .sloganDiv:hover {
+    transition: transform 250ms;
+    transform: translateX(+20px);
+    transform: rotate(+2deg);
   }
 `;
 
