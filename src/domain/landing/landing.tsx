@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import Picture from "../../components/Picture";
-import Header from "../../components/Header";
-import Progress from "../../components/ProgressBar";
 import GeneralWrapper, {
-  FirstWrapper,
+  FifthContainer,
   FirstContainer,
+  FirstWrapper,
+  FourthContainer,
   SecondContainer,
   ThirdContainer,
-  FourthContainer,
-  FifthContainer,
 } from "./Elements";
+import { IContainer, IContent, IHeader } from "../../types";
+import React, { useEffect, useState } from "react";
 
-import { IContent, IContainer, IHeader } from "../../types";
+import Header from "../../components/Header";
+import Picture from "../../components/Picture";
+import Progress from "../../components/ProgressBar";
 import TextDisplay from "../../components/TextDisplay";
 
 const data: IContent = require("../../global/text.json");

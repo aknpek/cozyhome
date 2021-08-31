@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import homes from "../data/Home.gif";
 import cerce from "../data/Border.svg";
+import homes from "../data/Home.gif";
+import styled from "styled-components";
 
 interface IPictureJson {
   id: number;
@@ -27,8 +27,8 @@ const PicStyled = styled.div<IPicture>`
     margin: auto;
     max-height: 35rem;
     max-width: 35rem;
-    min-width: 30rem;
-    min-height: 30rem;
+    min-width: 35rem;
+    min-height: 35rem;
 
     .cerceve {
       width: 100%;
@@ -39,7 +39,6 @@ const PicStyled = styled.div<IPicture>`
       grid-row-end: 2;
       z-index: 2;
       object-fit: contain;
-
     }
     .gif {
       width: 98%;
@@ -59,6 +58,7 @@ const Picture: React.FC = () => {
   return (
     <PicStyled className={"picture"}>
       <div>
+        {/* <SvgComponent/> */}
         <img src={cerce} className={"cerceve"} alt={"cerceve"} />
         <img
           src={homes}

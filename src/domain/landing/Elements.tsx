@@ -1,13 +1,14 @@
-import styled from "styled-components";
-import { useEffect } from "react";
 import {
-  IGeneralWrapper,
-  IFirstWrapper,
+  IFifthContainer,
   IFirstContainer,
+  IFirstWrapper,
+  IGeneralWrapper,
   ISecondContainer,
   IThirdContainer,
-  IFifthContainer,
 } from "../../types";
+
+import styled from "styled-components";
+import { useEffect } from "react";
 
 const GeneralWrapper = styled.div<IGeneralWrapper>`
   width: 100%;

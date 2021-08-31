@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+
 import { IHeader } from "../types";
 import { scroller } from "react-scroll";
+import styled from "styled-components";
 
 interface IHead {
   showThirdContainer: Boolean;
@@ -31,9 +32,10 @@ const HeaderCo = styled.div<IHead>`
   span {
     display: flex;
     font-family: "Heiti SC";
+    font-family: "Josefin Sans", cursive;
     font-size: 0.7vw;
     font-weight: 400;
-    color: ${(props) => (props.showThirdContainer ? "white" : "#cad3cf")};
+    color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
     /* background-color: yellow; */
 
     h1 {
@@ -57,6 +59,10 @@ const HeaderCo = styled.div<IHead>`
       cursor: pointer;
     } */
 
+    h1:hover { 
+      color: white;
+      font-weight: 200;
+    }
     h1::before {
       transform: scaleX(0);
       transform-origin: bottom right;
@@ -76,7 +82,7 @@ const HeaderCo = styled.div<IHead>`
       bottom: 0;
       left: 0;
       inset: 0 0 0 0;
-      background: hsl(100 100% 80%);
+      background: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);;
       z-index: -1;
       transition: transform 0.3s ease;
     }
