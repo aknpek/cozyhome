@@ -1,4 +1,5 @@
 import React from "react";
+import SvgComponent from "./Cerce";
 import cerce from "../data/Border.svg";
 import homes from "../data/Home.gif";
 import styled from "styled-components";
@@ -58,7 +59,10 @@ const PicStyled = styled.div<IPicture>`
 
   div:hover {
     transition: transform 250ms;
-    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px, rgba(26, 82, 119, 0.12) 0px -12px 30px, rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px,
+      rgba(26, 82, 119, 0.12) 0px -12px 30px,
+      rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 0.4rem;
     transform: translateY(-20px);
     transform: rotate(-10deg);
@@ -69,8 +73,9 @@ const Picture: React.FC = () => {
   return (
     <PicStyled className={"picture"}>
       <div>
-        {/* <SvgComponent/> */}
-        <img src={cerce} className={"cerceve"} alt={"cerceve"} />
+        <div className={"cerceve"}>
+          <SvgComponent />
+        </div>
         <img
           src={homes}
           className={"gif"}

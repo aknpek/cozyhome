@@ -3,7 +3,7 @@
 .MainApp {
   position: absolute;
   display: flex;
-  background-color: transparent;
+  background-color: black;
   height: 100%auto;
   width: calc(100% + 9px);
   margin: -10px;

@@ -51,7 +51,7 @@ const HeaderCo = styled.div<IHead>`
       /* background-color: red; */
     }
 
-    h1:hover { 
+    h1:hover {
       color: white;
       font-weight: 200;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -77,7 +77,7 @@ const HeaderCo = styled.div<IHead>`
       bottom: 0;
       left: 0;
       inset: 0 0 0 0;
-      background: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);;
+      background: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
       z-index: -1;
       transition: transform 0.3s ease;
     }
@@ -89,8 +89,6 @@ const HeaderCo = styled.div<IHead>`
       height: 4rem;
       width: 8rem;
       margin: 1rem;
-      /* color: #464643; */
-
       color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
 
       transition: color 0.2s ease-in-out;
@@ -112,7 +110,7 @@ const HeaderCo = styled.div<IHead>`
 `;
 
 const scrollToSection = (className: string) => {
-  console.log(className)
+  console.log(className);
   scroller.scrollTo(className, {
     duration: 800,
     delay: 0,
