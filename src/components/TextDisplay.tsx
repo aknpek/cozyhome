@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 interface ITextDisplay {}
 
-const TextBlock = styled.div<ITextDisplay>`
+const TextBlock = styled.div<ITextDisplay>`   
   margin: auto;
   height: 100%;
   .sloganDiv {
@@ -16,19 +16,10 @@ const TextBlock = styled.div<ITextDisplay>`
   .messageDiv {
     height: 12rem;
   }
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.05fr 0.5fr 0.5fr 0.05fr;
-  grid-template-areas:
-    "slogan"
-    "message"; */
 
   @media screen and (max-width: 2000px) {
     .slogan {
       height: 100%;
-      /* grid-area: slogan;
-      grid-row-start: 2;
-      grid-row-end: 3; */
       height: 12rem;
       letter-spacing: -0.1rem;
       font-family: "Josefin Sans", cursive;
@@ -39,9 +30,6 @@ const TextBlock = styled.div<ITextDisplay>`
     }
     .message {
       height: 100%;
-      /* grid-area: message;
-      grid-row-start: 3;
-      grid-row-end: 4; */
       height: 5rem;
       width: 95%;
       margin: auto;
@@ -54,18 +42,20 @@ const TextBlock = styled.div<ITextDisplay>`
     }
   }
 
-  @media screen and (max-width: 1500px) {
+  @media screen and (max-width: 1700px) {
     .slogan {
+      height: 100%;
       letter-spacing: 0.6rem;
       font-family: "Heiti SC";
       font-family: "Josefin Sans", cursive;
-      font-size: 8.5rem;
+      font-size: 9rem;
       background: -webkit-linear-gradient(#890daf, #3ca3cc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .message {
-      width: 95%;
+      height: 100%;
+      width: 90%;
       margin: auto;
       font-family: "Heiti SC";
       font-family: "Josefin Sans", cursive;
@@ -76,18 +66,20 @@ const TextBlock = styled.div<ITextDisplay>`
     }
   }
 
-  @media screen and (max-width: 1350px) {
+  @media screen and (max-width: 1500px) {
     .slogan {
+      height: 100%;
       letter-spacing: 0.6rem;
       font-family: "Heiti SC";
       font-family: "Josefin Sans", cursive;
-      font-size: 8rem;
+      font-size: 7.5rem;
       background: -webkit-linear-gradient(#890daf, #3ca3cc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .message {
-      width: 95%;
+      height: 100%;
+      width: 90%;
       margin: auto;
       font-family: "Heiti SC";
       font-family: "Josefin Sans", cursive;
@@ -100,6 +92,34 @@ const TextBlock = styled.div<ITextDisplay>`
 
   @media screen and (max-width: 1200px) {
     .slogan {
+      height: 100%;
+      height: 12rem;
+      letter-spacing: 0.6rem;
+      font-family: "Heiti SC";
+      font-family: "Josefin Sans", cursive;
+      font-size: 7rem;
+      background: -webkit-linear-gradient(#890daf, #3ca3cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .message {
+      height: 100%;
+      height: 5rem;
+      width: 90%;
+      margin: auto;
+      font-family: "Heiti SC";
+      font-family: "Josefin Sans", cursive;
+      font-size: 1.2rem;
+      font-weight: 200;
+      line-height: 2.5;
+      color: #5d5d5d;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .slogan {
+      height: 100%;
+      height: 9rem;
       letter-spacing: 0.6rem;
       font-family: "Heiti SC";
       font-family: "Josefin Sans", cursive;
@@ -109,16 +129,19 @@ const TextBlock = styled.div<ITextDisplay>`
       -webkit-text-fill-color: transparent;
     }
     .message {
-      width: 95%;
+      height: 100%;
+      height: 5rem;
+      width: 90%;
       margin: auto;
       font-family: "Heiti SC";
       font-family: "Josefin Sans", cursive;
-      font-size: 1.2rem;
+      font-size: 1.0rem;
       font-weight: 200;
-      line-height: 3.5;
+      line-height: 2.5;
       color: #5d5d5d;
     }
   }
+
 
   .sloganDiv:hover {
     transition: transform 250ms;

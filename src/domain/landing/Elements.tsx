@@ -53,12 +53,89 @@ export const SecondContainer = styled.div<ISecondContainer>`
     }
   }
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1700px) {
     position: relative;
     display: grid;
     width: 100%;
     height: calc(67.5rem + 20px);
     grid-template-columns: 0.4fr 1.2fr 0.2fr 1.2fr 0.4fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-areas: "picture text-display";
+
+    .picture {
+      grid-area: picture;
+      grid-row-start: 1;
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .textdisplay {
+      grid-area: text-display;
+      grid-row-start: 1;
+      grid-row-start: 2;
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+  }
+
+  @media screen and (max-width: 1500px) {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: calc(60.5rem + 20px);
+    grid-template-columns: 0.4fr 1.2fr 0.3fr 1.2fr 0.4fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-areas: "picture text-display";
+
+    .picture {
+      grid-area: picture;
+      grid-row-start: 1;
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .textdisplay {
+      grid-area: text-display;
+      grid-row-start: 1;
+      grid-row-start: 2;
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: calc(60.5rem + 20px);
+    grid-template-columns: 0.4fr 1.2fr 0.5fr 1.2fr 0.4fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-areas: "picture text-display";
+
+    .picture {
+      grid-area: picture;
+      grid-row-start: 1;
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .textdisplay {
+      grid-area: text-display;
+      grid-row-start: 1;
+      grid-row-start: 2;
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: calc(55.5rem + 20px);
+    grid-template-columns: 0.4fr 1.2fr 0.5fr 1.2fr 0.4fr;
     grid-template-rows: 0.5fr 1fr 0.5fr;
     grid-template-areas: "picture text-display";
 
