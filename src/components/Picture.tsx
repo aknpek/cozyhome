@@ -1,6 +1,5 @@
 import React from "react";
 import SvgComponent from "./Cerce";
-import cerce from "../data/Border.svg";
 import homes from "../data/Home.gif";
 import styled from "styled-components";
 
