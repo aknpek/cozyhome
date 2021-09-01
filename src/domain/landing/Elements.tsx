@@ -157,24 +157,39 @@ export const SecondContainer = styled.div<ISecondContainer>`
   }
 `;
 
+
 const ThirdComponent = styled.div<IThirdContainer>`
   display: grid;
   background-color: #fad961;
   background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
   animation: 1s ease-out 0s 1 slideInFromLeft;
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    h1{
+      position: absolute;
+      margin-top: 8%;
+      font-size: 10rem;
+      color: white;
+      font-family: "Josefin Sans", cursive;
+
+    }
+  }
+  .cells {
+  }
 
   @media screen and (max-width: 2000px) {
     height: calc(67.5rem + 20px);
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1.5fr;
+    grid-template-rows: 1fr 1.7fr;
     grid-template-areas:
       "header"
       "cell-2 cell-3 cell-4";
-
-    .header {
-    }
-    .cells {
-    }
 
     .cell-1 {
       grid-area: header;
@@ -220,11 +235,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
       "cell-2 cell-3"
       "cell-4";
 
-    .header {
-    }
-    .cells {
-    }
-
     .cell-1 {
       grid-area: header;
       grid-row: 1/1;
@@ -263,12 +273,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
       "cell-3"
       "cell-4";
 
-    .header {
-      background-color: red; 
-    }
-    .cells {
-    }
-
     .cell-1 {
       grid-area: header;
       grid-row: 1/1;
@@ -302,9 +306,21 @@ const ThirdComponent = styled.div<IThirdContainer>`
     }
   }
 
-  div:hover {
-    background-color: black;
+  div {
+    will-change: transform;
+  transition: transform 450ms;
+  /* transition: transform 1s ease-in-out; */
+
   }
+  div:hover {
+    transition: transform linear 250ms;
+    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px, rgba(26, 82, 119, 0.12) 0px -12px 30px, rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 1rem;
+    transform: translateY(-20px);
+
+
+  }
+  
 `;
 
 interface PropsThird {
@@ -318,7 +334,9 @@ export const ThirdContainer: React.FC<PropsThird> = ({
 
   return (
     <ThirdComponent className="Landing-Home">
-      <header className={"cell cell-1 header"}> Your Collection</header>
+      <header className={"cell cell-1 header"}>
+        <h1>Your Collection</h1>{" "}
+      </header>
       <div className={"cell cell-2 cells"}>
         <div></div>
       </div>
@@ -331,7 +349,6 @@ export const ThirdContainer: React.FC<PropsThird> = ({
     </ThirdComponent>
   );
 };
-
 const FourthComponent = styled.div<IThirdContainer>`
   margin-top: 0%;
   height: calc(67rem + 20px);
