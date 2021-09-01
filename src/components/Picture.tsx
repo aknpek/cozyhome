@@ -43,10 +43,10 @@ const PicStyled = styled.div<IPicture>`
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
-      max-height: 30rem;
-      max-width: 30rem;
-      min-width: 30rem;
-      min-height: 30rem;
+      max-height: 31rem;
+      max-width: 31rem;
+      min-width: 31rem;
+      min-height: 31rem;
     }
   }
   @media screen and (max-width: 1500px) {

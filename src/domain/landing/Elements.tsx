@@ -31,7 +31,7 @@ export const SecondContainer = styled.div<ISecondContainer>`
     position: relative;
     display: grid;
     width: 100%;
-    height: calc(67.5rem + 20px);
+    height: calc(55.5rem + 20px);
     grid-template-columns: 0.4fr 1.2fr 0.2fr 1.2fr 0.4fr;
     grid-template-rows: 0.5fr 1fr 0.5fr;
     grid-template-areas: "picture text-display";
@@ -57,7 +57,7 @@ export const SecondContainer = styled.div<ISecondContainer>`
     position: relative;
     display: grid;
     width: 100%;
-    height: calc(67.5rem + 20px);
+    height: calc(55.5rem + 20px);
     grid-template-columns: 0.4fr 1.2fr 0.2fr 1.2fr 0.4fr;
     grid-template-rows: 0.5fr 1fr 0.5fr;
     grid-template-areas: "picture text-display";
@@ -83,7 +83,7 @@ export const SecondContainer = styled.div<ISecondContainer>`
     position: relative;
     display: grid;
     width: 100%;
-    height: calc(60.5rem + 20px);
+    height: calc(55.5rem + 20px);
     grid-template-columns: 0.4fr 1.2fr 0.3fr 1.2fr 0.4fr;
     grid-template-rows: 0.5fr 1fr 0.5fr;
     grid-template-areas: "picture text-display";
@@ -109,7 +109,7 @@ export const SecondContainer = styled.div<ISecondContainer>`
     position: relative;
     display: grid;
     width: 100%;
-    height: calc(60.5rem + 20px);
+    height: calc(55.5rem + 20px);
     grid-template-columns: 0.4fr 1.2fr 0.5fr 1.2fr 0.4fr;
     grid-template-rows: 0.5fr 1fr 0.5fr;
     grid-template-areas: "picture text-display";

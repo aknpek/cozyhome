@@ -4,20 +4,21 @@ import styled from "styled-components";
 
 interface ITextDisplay {}
 
-const TextBlock = styled.div<ITextDisplay>`   
+const TextBlock = styled.div<ITextDisplay>`
   margin: auto;
   height: 100%;
   .sloganDiv {
-    height: 12rem;
     will-change: transform;
     transition: transform 450ms;
-
   }
   .messageDiv {
     height: 12rem;
   }
 
   @media screen and (max-width: 2000px) {
+    .sloganDiv {
+      height: 12rem;
+    }
     .slogan {
       height: 100%;
       height: 12rem;
@@ -43,6 +44,9 @@ const TextBlock = styled.div<ITextDisplay>`
   }
 
   @media screen and (max-width: 1700px) {
+    .sloganDiv {
+      height: 10rem;
+    }
     .slogan {
       height: 100%;
       letter-spacing: 0.6rem;
@@ -67,6 +71,9 @@ const TextBlock = styled.div<ITextDisplay>`
   }
 
   @media screen and (max-width: 1500px) {
+    .sloganDiv {
+      height: 9rem;
+    }
     .slogan {
       height: 100%;
       letter-spacing: 0.6rem;
@@ -91,6 +98,9 @@ const TextBlock = styled.div<ITextDisplay>`
   }
 
   @media screen and (max-width: 1200px) {
+    .sloganDiv {
+      height: 8rem;
+    }
     .slogan {
       height: 100%;
       height: 12rem;
@@ -103,8 +113,6 @@ const TextBlock = styled.div<ITextDisplay>`
       -webkit-text-fill-color: transparent;
     }
     .message {
-      height: 100%;
-      height: 5rem;
       width: 90%;
       margin: auto;
       font-family: "Heiti SC";
@@ -117,31 +125,29 @@ const TextBlock = styled.div<ITextDisplay>`
   }
 
   @media screen and (max-width: 1000px) {
-    .slogan {
-      height: 100%;
+    .sloganDiv {
       height: 9rem;
-      letter-spacing: 0.6rem;
+    }
+    .slogan {
+      letter-spacing: 0.2rem;
       font-family: "Heiti SC";
       font-family: "Josefin Sans", cursive;
-      font-size: 6rem;
+      font-size: 5rem;
       background: -webkit-linear-gradient(#890daf, #3ca3cc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .message {
-      height: 100%;
-      height: 5rem;
       width: 90%;
       margin: auto;
       font-family: "Heiti SC";
       font-family: "Josefin Sans", cursive;
-      font-size: 1.0rem;
+      font-size: 0.9rem;
       font-weight: 200;
       line-height: 2.5;
       color: #5d5d5d;
     }
   }
-
 
   .sloganDiv:hover {
     transition: transform 250ms;
