@@ -52,7 +52,6 @@ export const SecondContainer = styled.div<ISecondContainer>`
       grid-column-end: 5;
     }
   }
-
   @media screen and (max-width: 1700px) {
     position: relative;
     display: grid;
@@ -78,7 +77,6 @@ export const SecondContainer = styled.div<ISecondContainer>`
       grid-column-end: 5;
     }
   }
-
   @media screen and (max-width: 1500px) {
     position: relative;
     display: grid;
@@ -104,7 +102,6 @@ export const SecondContainer = styled.div<ISecondContainer>`
       grid-column-end: 5;
     }
   }
-  
   @media screen and (max-width: 1200px) {
     position: relative;
     display: grid;
@@ -155,6 +152,32 @@ export const SecondContainer = styled.div<ISecondContainer>`
       grid-column-end: 5;
     }
   }
+  @media screen and (max-width: 500px) {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: calc(55.5rem + 20px);
+    grid-template-columns: 0.4fr 1.2fr 0.4fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas: "picture text-display";
+
+    .picture {
+      grid-area: picture;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .textdisplay {
+      grid-area: text-display;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
+
 `;
 
 
@@ -264,7 +287,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
   }
 
   @media screen and (max-width: 900px) {
-    height: calc(95.5rem + 20px);
+    height: calc(105.5rem + 20px);
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -277,6 +300,14 @@ const ThirdComponent = styled.div<IThirdContainer>`
       grid-area: header;
       grid-row: 1/1;
       grid-column: 1/1;
+      h1{
+      position: absolute;
+      margin-top: 20%;
+      font-size: 6rem;
+      color: white;
+      font-family: "Josefin Sans", cursive;
+
+    }
     }
     .cell-2 {
       grid-area: cell-2;
