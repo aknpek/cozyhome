@@ -11,6 +11,8 @@ export interface IFourthContainer {}
 
 export interface IFifthContainer {}
 
+export interface ISixthContainer {}
+
 export interface IGeneralWrapper {}
 
 export interface IPictures {

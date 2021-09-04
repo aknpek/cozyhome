@@ -1,5 +1,5 @@
 import React from "react";
-import SvgComponent from "./Cerce";
+import SvgComponent from "../svgs/Cerce";
 import homes from "../data/Home.gif";
 import styled from "styled-components";
 
@@ -15,7 +15,7 @@ interface PictureData {
 
 interface IPicture {}
 
-const data: PictureData = require("../global/statics.json");
+const data: PictureData = require("../data/statics.json");
 
 const PicStyled = styled.div<IPicture>`
   margin: auto;

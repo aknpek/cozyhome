@@ -4,6 +4,7 @@ import {
   IFirstWrapper,
   IGeneralWrapper,
   ISecondContainer,
+  ISixthContainer,
   IThirdContainer,
 } from "../../types";
 
@@ -177,78 +178,109 @@ export const SecondContainer = styled.div<ISecondContainer>`
       grid-column-end: 3;
     }
   }
-
 `;
-
 
 const ThirdComponent = styled.div<IThirdContainer>`
   display: grid;
   background-color: #fad961;
   background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
   animation: 1s ease-out 0s 1 slideInFromLeft;
-  
+
   .header {
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
     text-align: center;
-    
-    h1{
+
+    h1 {
       position: absolute;
       margin-top: 8%;
       font-size: 10rem;
       color: white;
       font-family: "Josefin Sans", cursive;
-
     }
   }
   .cells {
+    border-radius: 200rem;
+  }
+  div {
+    max-width: 35rem;
+    max-height: 28rem;
+    min-width: 325px;
+    min-height: 325px;
+    background-color: white;
+    margin: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    will-change: transform;
+    transition: transform 450ms;
+  }
+  div:hover {
+    transition: transform linear 250ms;
+    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px,
+      rgba(26, 82, 119, 0.12) 0px -12px 30px,
+      rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transform: translateY(-20px);
   }
 
   @media screen and (max-width: 2000px) {
-    height: calc(67.5rem + 20px);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1.7fr;
+    height: calc(80.5rem + 20px);
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr 1.7fr 1.7fr;
     grid-template-areas:
       "header"
-      "cell-2 cell-3 cell-4";
+      "cell-2 cell-3 cell-4"
+      "cell-5 cell-6 cell-7";
 
     .cell-1 {
       grid-area: header;
       grid-row: 1/1;
-      grid-column: 1/4;
+      grid-column: 1/6;
     }
     .cell-2 {
       grid-area: cell-2;
-      grid-column-start: 1;
+      grid-column-start: 2;
+      grid-column-end: 3;
       grid-row-start: 2;
-      grid-column-end: 2;
+      grid-row-end: 3;
     }
     .cell-3 {
       grid-area: cell-3;
-      grid-column-start: 2;
+      grid-column-start: 3;
+      grid-column-end: 4;
       grid-row-start: 2;
-      grid-column-end: 3;
+      grid-row-end: 3;
     }
     .cell-4 {
       grid-area: cell-4;
-      grid-column-start: 3;
+      grid-column-start: 4;
+      grid-column-end: 5;
       grid-row-start: 2;
-      grid-column-end: 4;
+      grid-row-end: 3;
     }
-    div {
-      max-width: 35rem;
-      max-height: 28rem;
-      min-width: 400px;
-      min-height: 400px;
-      background-color: white;
-      border-radius: 2rem;
-      margin: auto;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .cell-5 {
+      grid-area: cell-5;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    .cell-6 {
+      grid-area: cell-6;
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 3;
+    }
+    .cell-7 {
+      grid-area: cell-7;
+      grid-column-start: 4;
+      grid-column-end: 5;
+      grid-row-start: 3;
+      grid-row-end: 4;
     }
   }
-
   @media screen and (max-width: 1400px) {
     height: calc(88.5rem + 20px);
     grid-template-columns: 1fr 1fr;
@@ -285,7 +317,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
       grid-row-end: 4;
     }
   }
-
   @media screen and (max-width: 900px) {
     height: calc(105.5rem + 20px);
     grid-template-columns: 1fr;
@@ -300,14 +331,13 @@ const ThirdComponent = styled.div<IThirdContainer>`
       grid-area: header;
       grid-row: 1/1;
       grid-column: 1/1;
-      h1{
-      position: absolute;
-      margin-top: 20%;
-      font-size: 6rem;
-      color: white;
-      font-family: "Josefin Sans", cursive;
-
-    }
+      h1 {
+        position: absolute;
+        margin-top: 20%;
+        font-size: 6rem;
+        color: white;
+        font-family: "Josefin Sans", cursive;
+      }
     }
     .cell-2 {
       grid-area: cell-2;
@@ -324,23 +354,11 @@ const ThirdComponent = styled.div<IThirdContainer>`
       grid-column-start: 1;
       grid-row-start: 4;
     }
-
-    div {
-      max-width: 40rem;
-      max-height: 40rem;
-      min-width: 25rem;
-      min-height: 25rem;
-      background-color: white;
-      border-radius: 2rem;
-      margin: auto;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    }
   }
 
-  div {
+  /* div {
     will-change: transform;
-  transition: transform 450ms;
-  /* transition: transform 1s ease-in-out; */
+    transition: transform 450ms;
 
   }
   div:hover {
@@ -349,9 +367,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
     border-radius: 1rem;
     transform: translateY(-20px);
 
-
-  }
-  
+  } */
 `;
 
 interface PropsThird {
@@ -368,15 +384,12 @@ export const ThirdContainer: React.FC<PropsThird> = ({
       <header className={"cell cell-1 header"}>
         <h1>Your Collection</h1>{" "}
       </header>
-      <div className={"cell cell-2 cells"}>
-        <div></div>
-      </div>
-      <div className={"cell cell-3 cells"}>
-        <div></div>
-      </div>
-      <div className={"cell cell-4 cells"}>
-        <div></div>
-      </div>
+      <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-5 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-6 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-7 cells"}>{/* <div></div> */}</div>
     </ThirdComponent>
   );
 };
@@ -420,6 +433,125 @@ export const FifthContainer: React.FC<PropsFifth> = ({
   showFifthContainer,
 }) => {
   return <FifthComponent className="Fifth-Component"></FifthComponent>;
+};
+
+const SixthComponent = styled.div<ISixthContainer>`
+display: grid;
+  background-color: #fad961;
+  background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      position: absolute;
+      margin-top: 2%;
+      font-size: 10rem;
+      color: white;
+      font-family: "Josefin Sans", cursive;
+    }
+    h2 {
+      position: absolute;
+      margin-top: 15%;
+      font-size: 6rem;
+      color: white;
+      font-family: "Josefin Sans", cursive;
+    }
+  }
+  .cells {
+    border-radius: 200rem;
+  }
+  div {
+    max-width: 35rem;
+    max-height: 28rem;
+    min-width: 325px;
+    min-height: 325px;
+    background-color: white;
+    margin: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    will-change: transform;
+    transition: transform 450ms;
+  }
+  div:hover {
+    transition: transform linear 250ms;
+    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px,
+      rgba(26, 82, 119, 0.12) 0px -12px 30px,
+      rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transform: translateY(-20px);
+  }
+
+  @media screen and (max-width: 2000px) {
+    height: calc(65.5rem + 20px);
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr 1.7fr 1fr;
+    grid-template-areas:
+      "header"
+      "cell-2 cell-3 cell-4"
+      "cell-5 cell-6 cell-7";
+
+    .cell-1 {
+      grid-area: header;
+      grid-row: 1/1;
+      grid-column: 1/6;
+    }
+    .cell-2 {
+      grid-area: cell-2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .cell-3 {
+      grid-area: cell-3;
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .cell-4 {
+      grid-area: cell-4;
+      grid-column-start: 4;
+      grid-column-end: 5;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+
+  background-color: #292929;
+  margin-top: 0%;
+  height: calc(67rem + 20px);
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+  div:hover {
+    display: none;
+  }
+`;
+
+interface PropsSixth {
+  showSixthContainer: Boolean;
+}
+
+export const SixthContainer: React.FC<PropsSixth> = ({
+  showSixthContainer,
+}) => {
+  
+  return (
+    <SixthComponent className="Sixth-Component">
+      <header className={"cell cell-1 header"}>
+        <h1>Your Collection</h1>
+        <h2>Your Message here</h2>
+      </header>
+      <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
+    </SixthComponent>
+  );
 };
 
 export default GeneralWrapper;

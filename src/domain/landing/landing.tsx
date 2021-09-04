@@ -4,6 +4,7 @@ import GeneralWrapper, {
   FirstWrapper,
   FourthContainer,
   SecondContainer,
+  SixthContainer,
   ThirdContainer,
 } from "./Elements";
 import { IContainer, IContent, IHeader } from "../../types";
@@ -14,7 +15,7 @@ import Picture from "../../components/Picture";
 import Progress from "../../components/ProgressBar";
 import TextDisplay from "../../components/TextDisplay";
 
-const data: IContent = require("../../global/text.json");
+const data: IContent = require("../../data/text.json");
 
 const getDocHeight = () => {
   return Math.max(
@@ -86,6 +87,11 @@ const Landing: React.FC = () => {
           <Picture />
           <TextDisplay {...second_container_text} />
         </SecondContainer>
+       
+        <SecondContainer>
+          <Picture />
+          <TextDisplay {...second_container_text} />
+        </SecondContainer>
         {showThirdContainer ? (
           <ThirdContainer
             showThirdContainer={showThirdContainer}
@@ -106,6 +112,13 @@ const Landing: React.FC = () => {
           ></FifthContainer>
         ) : (
           <div className="Fifth-Container"></div>
+        )}
+        {showThirdContainer ? (
+          <SixthContainer
+            showSixthContainer={showThirdContainer}
+          ></SixthContainer>
+        ) : (
+          <div className="Landing-Home"></div>
         )}
       </FirstWrapper>
     </GeneralWrapper>
