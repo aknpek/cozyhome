@@ -8,6 +8,9 @@ import {
   IThirdContainer,
 } from "../../types";
 
+import BulutFirst from "../../svgs/BulutFirst";
+import BulutSecond from "../../svgs/BulutSecond";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useEffect } from "react";
 
@@ -16,16 +19,19 @@ const GeneralWrapper = styled.div<IGeneralWrapper>`
   height: 100%;
 `;
 
+/* ---------------------------------------------------------------------------- */
+
 export const FirstWrapper = styled.div<IFirstWrapper>`
   flex-direction: row;
 `;
-
 export const FirstContainer = styled.div<IFirstContainer>`
   /* margin-left: 5%; */
   /* margin-right: 5%; */
   height: 100%;
   width: 100%;
 `;
+
+/* ---------------------------------------------------------------------------- */
 
 export const SecondContainer = styled.div<ISecondContainer>`
   @media screen and (max-width: 2000px) {
@@ -180,10 +186,13 @@ export const SecondContainer = styled.div<ISecondContainer>`
   }
 `;
 
+/* ---------------------------------------------------------------------------- */
+
 const ThirdComponent = styled.div<IThirdContainer>`
   display: grid;
-  background-color: #fad961;
-  background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+  /* background-color: #fad961; */
+  background-color: #121420;
+  /* background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%); */
   animation: 1s ease-out 0s 1 slideInFromLeft;
 
   .header {
@@ -214,6 +223,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     will-change: transform;
     transition: transform 450ms;
+    z-index: 2;
   }
   div:hover {
     transition: transform linear 250ms;
@@ -356,20 +366,58 @@ const ThirdComponent = styled.div<IThirdContainer>`
     }
   }
 
-  /* div {
-    will-change: transform;
-    transition: transform 450ms;
 
+  .BulutFirst {
+    background-color: transparent;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 0px;
+    width: 0px;
+    pointer-events: none;
+    box-shadow: none;
   }
-  div:hover {
-    transition: transform linear 250ms;
-    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px, rgba(26, 82, 119, 0.12) 0px -12px 30px, rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border-radius: 1rem;
-    transform: translateY(-20px);
+  
+  .BulutSecond {
+    background-color: transparent;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    margin-top: 20%;
+    margin-right: 30%;
+    height: 0px;
+    width: 0px;
+    pointer-events: none;
+    box-shadow: none;
+  }
 
-  } */
+  
+  .BulutThird {
+    background-color: transparent;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    margin-top: 15%;
+    margin-left: 80%;
+    height: 0px;
+    width: 0px;
+    pointer-events: none;
+    box-shadow: none;
+  }
+
+  .BulutFourth { 
+    background-color: transparent;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    margin-top: 35%;
+    margin-left: 50%;
+    height: 0px;
+    width: 0px;
+    pointer-events: none;
+    box-shadow: none;
+  }
 `;
-
 interface PropsThird {
   showThirdContainer: Boolean;
 }
@@ -380,19 +428,58 @@ export const ThirdContainer: React.FC<PropsThird> = ({
   useEffect(() => {}, [showThirdContainer]);
 
   return (
-    <ThirdComponent className="Landing-Home">
-      <header className={"cell cell-1 header"}>
-        <h1>Your Collection</h1>{" "}
-      </header>
-      <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-5 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-6 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-7 cells"}>{/* <div></div> */}</div>
-    </ThirdComponent>
+      <ThirdComponent className="Landing-Home">
+        <header className={"cell cell-1 header"}>
+          <h1>Your Collection</h1>
+        </header>
+        <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
+        <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
+        <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
+        <div className={"cell cell-5 cells"}>{/* <div></div> */}</div>
+        <div className={"cell cell-6 cells"}>{/* <div></div> */}</div>
+        <div className={"cell cell-7 cells"}>{/* <div></div> */}</div>
+        <motion.div
+          className={"BulutFirst"}
+          initial={{ scale: 0.3, opacity: 0.6 }}
+          animate={{ scale: 0.4, opacity: 1.0 , translateX: "20px" }}
+          transition={{ yoyo: Infinity, duration: 7.5 }}
+        >
+          <BulutFirst />
+        </motion.div>
+       
+        <motion.div
+          className={"BulutSecond"}
+          initial={{ scale: 0.8, opacity: 0.8}}
+          animate={{ scale: 0.9, opacity: 1, translateX: "-50px" }}
+          transition={{ yoyo: Infinity, duration: 6.5 }}
+        >
+          <BulutSecond />
+        </motion.div>
+        
+        <motion.div
+          className={"BulutThird"}
+          initial={{ scale: 0.2, opacity: 0.5 }}
+          animate={{ scale: 0.4, opacity: 1, translateX: "100px" }}
+          transition={{ yoyo: Infinity, duration: 5.5 }}
+        >
+          <BulutFirst />
+        </motion.div>
+      
+
+        <motion.div
+          className={"BulutFourth"}
+          initial={{ scale: 0.5, opacity: 0.6 }}
+          animate={{ scale: 0.6, opacity: 1, translateX: "60px" }}
+          transition={{ yoyo: Infinity, duration: 5.5 }}
+        >
+          <BulutFirst />
+        </motion.div>
+      </ThirdComponent>
   );
 };
+
+/* ---------------------------------------------------------------------------- */
+
 const FourthComponent = styled.div<IThirdContainer>`
   margin-top: 0%;
   height: calc(67rem + 20px);
@@ -402,7 +489,6 @@ const FourthComponent = styled.div<IThirdContainer>`
     display: none;
   }
 `;
-
 interface PropsFourth {
   showFourthContainer: Boolean;
 }
@@ -413,30 +499,12 @@ export const FourthContainer: React.FC<PropsFourth> = ({
   return <FourthComponent className="Fourth-Component"></FourthComponent>;
 };
 
+
+/* ---------------------------------------------------------------------------- */
+
+
 const FifthComponent = styled.div<IFifthContainer>`
-  background-color: #f4d03f;
-  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
-  margin-top: 0%;
-  height: calc(67rem + 20px);
-  animation: 1s ease-out 0s 1 slideInFromLeft;
-
-  div:hover {
-    display: none;
-  }
-`;
-
-interface PropsFifth {
-  showFifthContainer: Boolean;
-}
-
-export const FifthContainer: React.FC<PropsFifth> = ({
-  showFifthContainer,
-}) => {
-  return <FifthComponent className="Fifth-Component"></FifthComponent>;
-};
-
-const SixthComponent = styled.div<ISixthContainer>`
-display: grid;
+  display: grid;
   background-color: #fad961;
   background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
   animation: 1s ease-out 0s 1 slideInFromLeft;
@@ -532,17 +600,14 @@ display: grid;
     display: none;
   }
 `;
-
-interface PropsSixth {
-  showSixthContainer: Boolean;
+interface PropsFifth {
+  showFifthContainer: Boolean;
 }
-
-export const SixthContainer: React.FC<PropsSixth> = ({
-  showSixthContainer,
+export const FifthContainer: React.FC<PropsFifth> = ({
+  showFifthContainer,
 }) => {
-  
   return (
-    <SixthComponent className="Sixth-Component">
+    <FifthComponent className="Fifth-Component">
       <header className={"cell cell-1 header"}>
         <h1>Your Collection</h1>
         <h2>Your Message here</h2>
@@ -550,8 +615,34 @@ export const SixthContainer: React.FC<PropsSixth> = ({
       <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
       <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
       <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
-    </SixthComponent>
+    </FifthComponent>
   );
 };
+
+/* ---------------------------------------------------------------------------- */
+
+
+const SixthComponent = styled.div<ISixthContainer>`
+  background-color: #f4d03f;
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+  margin-top: 0%;
+  height: calc(67rem + 20px);
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+  div:hover {
+    display: none;
+  }
+`;
+interface PropsSixty {
+  showSixthContainer: Boolean;
+}
+export const SixthContainer: React.FC<PropsSixty> = ({
+  showSixthContainer,
+}) => {
+  return <SixthComponent className="Sixth-Component"></SixthComponent>;
+};
+
+/* ---------------------------------------------------------------------------- */
+
 
 export default GeneralWrapper;

@@ -38,7 +38,6 @@ const getDocHeight = () => {
 
 const Landing: React.FC = () => {
   const header_data: IHeader = data["landing"]["header"];
-  const second_container_text: IContainer = data["landing"]["containers"][0];
   const [scrollPosition, setPosition] = useState<Number>(0);
   const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(false);
   const [showFourthContainer] = useState<Boolean>(false);
@@ -77,21 +76,27 @@ const Landing: React.FC = () => {
 
   return (
     <GeneralWrapper>
-      <div className={"Home"}></div>
+      {/* <div className={"Home"}></div> */}
       <Progress scroll={scrollPosition + "%"} />
       <FirstWrapper>
         <FirstContainer>
-          <Header {...header_data} showThirdContainer={showThirdContainer} scrollPosition={scrollPosition} />
+          <Header
+            {...header_data}
+            showThirdContainer={showThirdContainer}
+            scrollPosition={scrollPosition}
+          />
         </FirstContainer>
+        
         <SecondContainer>
           <Picture />
-          <TextDisplay {...second_container_text} />
+          <TextDisplay {...data["landing"]["containers"][0]} />
         </SecondContainer>
-       
+
         <SecondContainer>
           <Picture />
-          <TextDisplay {...second_container_text} />
+          <TextDisplay {...data["landing"]["containers"][1]} />
         </SecondContainer>
+
         {showThirdContainer ? (
           <ThirdContainer
             showThirdContainer={showThirdContainer}
@@ -99,27 +104,19 @@ const Landing: React.FC = () => {
         ) : (
           <div className="Landing-Home"></div>
         )}
-        {showThirdContainer ? (
+
           <FourthContainer
             showFourthContainer={showFourthContainer}
           ></FourthContainer>
-        ) : (
-          <div className="Fourth-Container"></div>
-        )}
-        {showThirdContainer ? (
+
           <FifthContainer
-            showFifthContainer={showFourthContainer}
+            showFifthContainer={showThirdContainer}
           ></FifthContainer>
-        ) : (
-          <div className="Fifth-Container"></div>
-        )}
-        {showThirdContainer ? (
+
           <SixthContainer
             showSixthContainer={showThirdContainer}
           ></SixthContainer>
-        ) : (
-          <div className="Landing-Home"></div>
-        )}
+        
       </FirstWrapper>
     </GeneralWrapper>
   );

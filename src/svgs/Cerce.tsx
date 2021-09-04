@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SvgComponent: React.FC = () => {
+const Cerce: React.FC = () => {
     return (
       <svg
         viewBox="0 0 841 840"
@@ -17,4 +17,4 @@ const SvgComponent: React.FC = () => {
     );
   };
 
-  export default SvgComponent;
+  export default Cerce;

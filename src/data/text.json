@@ -7,7 +7,7 @@
     },
     "containers": [
       {
-        "component-place": "container-first",
+        "component-place": "container-second",
         "component-type": "promotion",
         "title": "CozyHome",
         "subtitle": "",
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "component-place": "container-second",
+        "component-place": "container-third",
         "component-type": "collection",
         "title": "THE COLLECTION",
         "subtitle": "",
@@ -49,7 +49,7 @@
         ]
       },
       {
-        "component-place": "container-third",
+        "component-place": "container-fourth",
         "component-type": "banner",
         "title": "",
         "subtitle": "",
@@ -111,6 +111,57 @@
             "subtitle": "Luxry home follow up will be released as Type-III",
             "hyperlink": "",
             "description": "Type-III 1111 owner will be add-up to community (Type-II owners gets 2%)"
+          }
+        ]
+      },
+      {
+        "component-place": "container-fifth",
+        "component-type": "banner",
+        "title": "",
+        "subtitle": "",
+        "slogan": "Home Is Home",
+        "pictures": [
+          {
+            "id": 0,
+            "picture_url": "",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "component-place": "container-sixth",
+        "component-type": "banner",
+        "title": "",
+        "subtitle": "",
+        "slogan": "Home Is Home",
+        "pictures": [
+          {
+            "id": 0,
+            "picture_url": "",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "component-place": "container-seventh",
+        "component-type": "banner",
+        "title": "",
+        "subtitle": "",
+        "slogan": "Home Is Home",
+        "pictures": [
+          {
+            "id": 0,
+            "picture_url": "",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
           }
         ]
       }

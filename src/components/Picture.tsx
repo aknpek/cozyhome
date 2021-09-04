@@ -1,5 +1,5 @@
+import Cerce from "../svgs/Cerce";
 import React from "react";
-import SvgComponent from "../svgs/Cerce";
 import homes from "../data/Home.gif";
 import styled from "styled-components";
 
@@ -122,7 +122,7 @@ const Picture: React.FC = () => {
     <PicStyled className={"picture"}>
       <div>
         <div className={"cerceve"}>
-          <SvgComponent />
+          <Cerce />
         </div>
         <img
           src={homes}
