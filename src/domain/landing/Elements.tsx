@@ -209,7 +209,7 @@ interface PropsSecond {
 export const SecondContainer: React.FC<PropsSecond> = (props) => {
   return (
     <SecondComponent textDireciton={props.textDirection}>
-      <Picture />
+      <Picture picture={props.data["pictures"]}/>
       <TextDisplay {...props.data} />
       <motion.div
         animate={{
@@ -472,12 +472,24 @@ export const ThirdContainer: React.FC<PropsThird> = ({
       <header className={"cell cell-1 header"}>
         <h1>Your Collection</h1>
       </header>
-      <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-5 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-6 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-7 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-2 cells"}>
+        <img></img>
+      </div>
+      <div className={"cell cell-3 cells"}>
+        <img></img>
+      </div>
+      <div className={"cell cell-4 cells"}>
+        <img></img>
+      </div>
+      <div className={"cell cell-5 cells"}>
+        <img></img>
+      </div>
+      <div className={"cell cell-6 cells"}>
+        <img></img>
+      </div>
+      <div className={"cell cell-7 cells"}>
+        <img></img>
+      </div>
       <motion.div
         className={"BulutFirst"}
         initial={{ scale: 0.3, opacity: 0.6 }}
@@ -700,13 +712,22 @@ export const FourthContainer: React.FC<PropsFourth> = (props) => {
       <div className={"blockSecond"}>
         {props.data["pictures"].map((value: any) => (
           <div className={"roadBlock"} key={value.id + "block"}>
-            <div className={`roadPercent ${value.id}`} key={value.id + "percent"}>
-              <div className={`roadPercentBlock ${value.id}`} key={value.id + "percentblock"}>
+            <div
+              className={`roadPercent ${value.id}`}
+              key={value.id + "percent"}
+            >
+              <div
+                className={`roadPercentBlock ${value.id}`}
+                key={value.id + "percentblock"}
+              >
                 <h1>{value.title}</h1>
               </div>
             </div>
             <div className={`roadText ${value.id}`} key={value.id + "road"}>
-              <div className={`roadTextBlock ${value.id}`} key={value.id + "roadblock"}>
+              <div
+                className={`roadTextBlock ${value.id}`}
+                key={value.id + "roadblock"}
+              >
                 <h1>{value.subtitle}</h1>
                 <h2>{value.description}</h2>
               </div>
@@ -754,7 +775,7 @@ const FifthComponent = styled.div<IFifthContainer>`
       color: #ffffffbe;
     }
   }
-  .titleDiv:hover { 
+  .titleDiv:hover {
     transition: transform 150ms background-color 0.5s ease color 0.5s ease;
     transform: scale(1.05);
     text-decoration: underline;
@@ -790,7 +811,21 @@ const FifthComponent = styled.div<IFifthContainer>`
       height: 300px;
       width: 300px;
       border-radius: 300px;
-      background-color: red;
+      background-color: white;
+      -webkit-transition: 0.1s;
+      -moz-transition: 0.1s;
+      -ms-transition: 0.1s;
+      -o-transition: 0.1s;
+      transition: 0.1s;
+    }
+
+    img:hover {
+      transition: transform linear 250ms;
+      box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px,
+        rgba(26, 82, 119, 0.12) 0px -12px 30px,
+        rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      transform: translateY(-20px);
     }
   }
 `;
@@ -808,34 +843,15 @@ export const FifthContainer: React.FC<PropsFifth> = (props) => {
         <h2>{props.data.slogan}</h2>
       </div>
       <div className={"pictureDiv"}>
-        <img></img>
-        <img></img>
-        <img></img>
+        {props.data["pictures"].map((value: any) => (
+          <div key={value.id + "div"}>
+            <img key={value.id + "img"}></img>
+            <h1 key={value.id + "h1"}></h1>
+          </div>
+        ))}
       </div>
     </FifthComponent>
   );
-};
-
-/* ---------------------------------------------------------------------------- */
-
-const SixthComponent = styled.div<ISixthContainer>`
-  background-color: #f4d03f;
-  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
-  margin-top: 0%;
-  height: calc(67rem + 20px);
-  animation: 1s ease-out 0s 1 slideInFromLeft;
-
-  div:hover {
-    display: none;
-  }
-`;
-interface PropsSixty {
-  showSixthContainer: Boolean;
-}
-export const SixthContainer: React.FC<PropsSixty> = ({
-  showSixthContainer,
-}) => {
-  return <SixthComponent className="Sixth-Component"></SixthComponent>;
 };
 
 /* ---------------------------------------------------------------------------- */
@@ -948,7 +964,11 @@ export const SeventhContainer: React.FC<PropsSeven> = (props) => {
           <div key={value.id + "photos"}>
             <div key={value.id + "photosinner"}>
               <a href={value.hyperlink} key={value.id + "a"}>
-                <img src={value.picture_url} alt={value.title} key={value.id + "image"}/>
+                <img
+                  src={value.picture_url}
+                  alt={value.title}
+                  key={value.id + "image"}
+                />
               </a>
             </div>
 

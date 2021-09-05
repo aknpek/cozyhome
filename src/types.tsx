@@ -23,7 +23,7 @@ export interface IPictures {
   subtitle: string;
   hyperlink: string;
   description: string;
-  map: CallableFunction;
+  // map: CallableFunction;
 }
 
 export interface IMenu {
@@ -49,7 +49,7 @@ export interface IContainer {
   "component-type": string;
   title: string;
   subtitle: string;
-  pictures: IPictures;
+  pictures: IPictures[];
   slogan: string;
 }
 

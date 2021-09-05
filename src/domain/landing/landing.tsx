@@ -5,7 +5,6 @@ import GeneralWrapper, {
   FourthContainer,
   SecondContainer,
   SeventhContainer,
-  SixthContainer,
   ThirdContainer,
 } from "./Elements";
 import { IContent, IHeader } from "../../types";
@@ -13,9 +12,6 @@ import React, { useEffect, useState } from "react";
 
 import Header from "../../components/Header";
 import Progress from "../../components/ProgressBar";
-
-const data: IContent = require("../../data/text.json");
-// const animation_data: IAnimation
 
 const getDocHeight = () => {
   return Math.max(
@@ -29,8 +25,9 @@ const getDocHeight = () => {
 };
 
 const Landing: React.FC = () => {
+  const data: IContent = require("../../data/json/text.json")
   const header_data: IHeader = data["landing"]["header"];
-  // const animation-data: IAnimSecond = animation_data["secondContainer"]
+
   const [scrollPosition, setPosition] = useState<Number>(0);
   const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(false);
   const [showFourthContainer] = useState<Boolean>(false);
@@ -65,6 +62,7 @@ const Landing: React.FC = () => {
       setShowThirdContainer(false);
     }
   }, [scrollPosition]);
+
 
   return (
     <GeneralWrapper>

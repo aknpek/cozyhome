@@ -128,7 +128,6 @@ const HeaderCo = styled.div<IHead>`
 `;
 
 const scrollToSection = (className: string) => {
-  console.log(className);
   scroller.scrollTo(className, {
     duration: 800,
     delay: 0,

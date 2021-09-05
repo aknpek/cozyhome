@@ -1,22 +1,9 @@
+import { IPictures } from "../types";
+import Pictures from "../components/Locals";
 import React from "react";
 import styled from "styled-components";
 
-// import mainLogo from "../../public/yarasa 1.png";
-
-
-// interface IPictureJson {
-//   id: number;
-//   url: string;
-//   description: string;
-// }
-
-// interface PictureData {
-//   pictures: IPictureJson[];
-// }
-
 interface IPicture {}
-
-// const data: PictureData = require("../data/statics.json");
 
 const PicStyled = styled.div<IPicture>`
   margin: auto;
@@ -119,19 +106,28 @@ const PicStyled = styled.div<IPicture>`
   }
 `;
 
-const Picture: React.FC = () => {
+interface Props {
+  picture: IPictures[];
+}
 
-
+const Picture: React.FC<Props> = (props) => {
   return (
-
     <PicStyled className={"picture"}>
       <div>
-        {/* <img
-          src={homes}
-          className={"gif"}
-          alt={data["pictures"][0].description}
-        ></img> */}
-        <img className={"gif"} src={require("../data/yarasa 1.png")} alt="amk"/>
+        {props.picture.map((value: IPictures) => {
+          if (value) {
+            return (
+              <img
+                className={"gif"}
+                src={Pictures[value["picture_url"]].default}
+                alt="amk"
+                key={value.id}
+              />
+            );
+          } else {
+            <div></div>;
+          }
+        })}
       </div>
     </PicStyled>
   );

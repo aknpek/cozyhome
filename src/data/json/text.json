@@ -1,4 +1,5 @@
-{
+
+ {
   "landing": {
     "header": {
       "menu": { "home": "home", "about": "about", "roadmap": "roadmap", "team": "team" },
@@ -15,7 +16,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "./data/Home.gif",
+            "picture_url": "yarasa",
             "title": "",
             "subtitle": "",
             "hyperlink": "",
@@ -32,15 +33,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "",
-            "title": "",
-            "subtitle": "",
-            "hyperlink": "",
-            "description": ""
-          },
-          {
-            "id": 1,
-            "picture_url": "",
+            "picture_url": "cadi",
             "title": "",
             "subtitle": "",
             "hyperlink": "",
@@ -57,7 +50,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "",
             "subtitle": "",
             "hyperlink": "",
@@ -74,7 +67,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "0%",
             "subtitle": "Build Home. Welcome to Land of Legends!",
             "hyperlink": "",
@@ -82,7 +75,7 @@
           },
           {
             "id": 1,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "20%",
             "subtitle": "The Community Wallet is opened.",
             "hyperlink": "",
@@ -90,7 +83,7 @@
           },
           {
             "id": 2,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "40%",
             "subtitle": "ROARwards Program Lunch with Type-II!",
             "hyperlink": "",
@@ -98,7 +91,7 @@
           },
           {
             "id": 3,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "60%",
             "subtitle": "Special home follow up will be released as Type-II",
             "hyperlink": "",
@@ -106,7 +99,7 @@
           },
           {
             "id": 4,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "80%",
             "subtitle": "New NFT Type-III",
             "hyperlink": "",
@@ -123,7 +116,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
@@ -131,7 +124,7 @@
           },
           {
             "id": 1,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
@@ -139,7 +132,7 @@
           },
           {
             "id": 2,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
@@ -149,7 +142,7 @@
         ]
       },
       {
-        "component-place": "container-sixth",
+        "component-place": "container-second",
         "component-type": "banner",
         "title": "Presale",
         "subtitle": "Mint",
@@ -157,7 +150,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "",
             "subtitle": "",
             "hyperlink": "",
@@ -174,7 +167,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "Egemen",
             "subtitle": "Project Manager",
             "hyperlink": "https://twitter.com/DropNFTArt",
@@ -182,7 +175,7 @@
           },
           {
             "id": 1,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "Elif",
             "subtitle": "Designer",
             "hyperlink": "https://twitter.com/DesignofNFT",
@@ -190,7 +183,7 @@
           },
           {
             "id": 2,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "Akın",
             "subtitle": "Developer",
             "hyperlink": "https://twitter.com/nftsell",
@@ -198,7 +191,7 @@
           }, 
           {
             "id": 3,
-            "picture_url": "",
+            "picture_url": "yarasa",
             "title": "Burak",
             "subtitle": "Social Media",
             "hyperlink": "https://twitter.com/FluidMilo",
