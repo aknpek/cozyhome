@@ -248,7 +248,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
       position: absolute;
       margin-top: 8%;
       font-size: 10rem;
-      color: white;
+      color: #ffffffbe;
       font-family: "Josefin Sans", cursive;
     }
   }
@@ -260,7 +260,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
     max-height: 28rem;
     min-width: 325px;
     min-height: 325px;
-    background-color: white;
+    background-color: #ffffffbe;
     margin: auto;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     will-change: transform;
@@ -387,7 +387,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
         position: absolute;
         margin-top: 20%;
         font-size: 6rem;
-        color: white;
+        color: #ffffffbe;
         font-family: "Josefin Sans", cursive;
       }
     }
@@ -520,12 +520,12 @@ export const ThirdContainer: React.FC<PropsThird> = ({
 /* ---------------------------------------------------------------------------- */
 
 const FourthComponent = styled.div<IThirdContainer>`
-  height: calc(67rem + 20px);
+  height: 1080px;
   background-color: #121420;
   animation: 1s ease-out 0s 1 slideInFromLeft;
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
-  grid-template-rows: 0.2fr 0.5fr 2fr 0.5fr 0.2fr;
+  grid-template-rows: 0.5fr 0.5fr 2fr 0.5fr 0.5fr;
   grid-template-areas:
     "titleDiv"
     "blockFirst blockSecond";
@@ -540,12 +540,24 @@ const FourthComponent = styled.div<IThirdContainer>`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+
     h1 {
       font-size: 10rem;
-      color: white;
+      color: #ffffffbe;
       text-align: center;
       font-family: "Josefin Sans", cursive;
     }
+  }
+  .titleDiv:hover {
+    transition: transform 150ms background-color 0.5s ease color 0.5s ease;
+    transform: scale(1.05);
+    text-decoration: underline;
   }
 
   .blockFirst {
@@ -561,7 +573,7 @@ const FourthComponent = styled.div<IThirdContainer>`
       line-height: 3;
       font-size: 2rem;
       font-weight: 400;
-      color: white;
+      color: #ffffffbe;
       text-align: left;
       font-family: "Josefin Sans", cursive;
     }
@@ -571,7 +583,7 @@ const FourthComponent = styled.div<IThirdContainer>`
       line-height: 2;
       font-size: 1.2rem;
       font-weight: 100;
-      color: white;
+      color: #ffffffbe;
       text-align: left;
       font-family: "Josefin Sans", cursive;
     }
@@ -586,6 +598,11 @@ const FourthComponent = styled.div<IThirdContainer>`
     .roadBlock {
       display: flex;
       flex-direction: row;
+      -webkit-transition: 0.1s;
+      -moz-transition: 0.1s;
+      -ms-transition: 0.1s;
+      -o-transition: 0.1s;
+      transition: 0.1s;
 
       .roadPercent {
         height: 8rem;
@@ -593,30 +610,75 @@ const FourthComponent = styled.div<IThirdContainer>`
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
 
         .roadPercentBlock {
           height: 4rem;
           width: 4rem;
-          background-color: white;
+          background-color: #ffffffbe;
           border-radius: 1.2rem;
-          -webkit-transition: 0.1s;
-          -moz-transition: 0.1s;
-          -ms-transition: 0.1s;
-          -o-transition: 0.1s;
-          transition: 0.1s;
-        }
-        .roadPercentBlock:hover {
-          transition: transform 150ms background-color 0.5s ease;
-          transform: scale(1.2);
-          height: 4rem;
-          width: 4rem;
-          background-color: #ff961b;
-          border-radius: 1.2rem;
+          font-family: "Josefin Sans", cursive;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          h1 {
+            font-size: 1.2rem;
+            font-weight: 400;
+          }
         }
       }
       .roadText {
         height: 8rem;
+        font-family: "Josefin Sans", cursive;
+        color: #ffffffbe;
+        display: flex;
+        align-items: center;
         width: 80%;
+
+        h1 {
+          font-size: 1rem;
+          font-weight: 200;
+          line-height: 1.5;
+          text-decoration: underline;
+        }
+
+        h2 {
+          font-size: 0.8rem;
+          font-weight: 100;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .roadBlock:hover {
+      transition: transform 150ms background-color 0.5s ease color 0.5s ease;
+      transform: scale(1.05);
+      background-color: #ff961b;
+      border-radius: 1.5rem;
+      .roadPercentBlock {
+        h1 {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+      .roadText {
+        h1 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #121420;
+          text-decoration: underline;
+          width: 95%;
+        }
+
+        h2 {
+          font-size: 1rem;
+          font-weight: 400;
+          color: #121420;
+          width: 95%;
+        }
       }
     }
   }
@@ -626,7 +688,6 @@ interface PropsFourth {
 }
 
 export const FourthContainer: React.FC<PropsFourth> = (props) => {
-  console.log(props.data);
   return (
     <FourthComponent className="Fourth-Component">
       <div className={"titleDiv"}>
@@ -638,14 +699,17 @@ export const FourthContainer: React.FC<PropsFourth> = (props) => {
       </div>
       <div className={"blockSecond"}>
         {props.data["pictures"].map((value: any) => (
-          <div className={"roadBlock"}>
-            <div className={`roadPercent ${value.id}`}>
-              <div className={`roadPercentBlock ${value.id}`}>
+          <div className={"roadBlock"} key={value.id + "block"}>
+            <div className={`roadPercent ${value.id}`} key={value.id + "percent"}>
+              <div className={`roadPercentBlock ${value.id}`} key={value.id + "percentblock"}>
                 <h1>{value.title}</h1>
               </div>
             </div>
-            <div className={`roadText ${value.id}`}>
-              <div className={`roadTextBlock ${value.id}`}></div>
+            <div className={`roadText ${value.id}`} key={value.id + "road"}>
+              <div className={`roadTextBlock ${value.id}`} key={value.id + "roadblock"}>
+                <h1>{value.subtitle}</h1>
+                <h2>{value.description}</h2>
+              </div>
             </div>
           </div>
         ))}
@@ -678,12 +742,24 @@ const FifthComponent = styled.div<IFifthContainer>`
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-transition: 0.15s;
+    -moz-transition: 0.15s;
+    -ms-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
+
     h1 {
       font-size: 10rem;
       font-family: "Josefin Sans", cursive;
-      color: white;
+      color: #ffffffbe;
     }
   }
+  .titleDiv:hover { 
+    transition: transform 150ms background-color 0.5s ease color 0.5s ease;
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+
   .sloganDiv {
     grid-area: sloganDiv;
     grid-row-start: 3;
@@ -696,8 +772,7 @@ const FifthComponent = styled.div<IFifthContainer>`
       line-height: 2.5;
       font-weight: 100;
       font-family: "Josefin Sans", cursive;
-      color: white;
-
+      color: #ffffffbe;
     }
   }
   .pictureDiv {
@@ -791,7 +866,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
     align-items: center;
     h1 {
       font-size: 10rem;
-      color: white;
+      color: #ffffffbe;
       text-align: center;
       font-family: "Josefin Sans", cursive;
     }
@@ -818,7 +893,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
       div {
         height: 15rem;
         width: 15rem;
-        background-color: white;
+        background-color: #ffffffbe;
         border-radius: 15rem;
 
         a {
@@ -828,12 +903,12 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
 
       h3 {
-        color: white;
+        color: #ffffffbe;
         font-size: 2rem;
         font-family: "Josefin Sans", cursive;
       }
       h4 {
-        color: white;
+        color: #ffffffbe;
         font-size: 0.9rem;
         font-family: "Josefin Sans", cursive;
       }
@@ -850,7 +925,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
     align-items: center;
     a {
       h1 {
-        color: white;
+        color: #ffffffbe;
         font-family: "Josefin Sans", cursive;
         text-decoration: underline;
       }
@@ -870,15 +945,15 @@ export const SeventhContainer: React.FC<PropsSeven> = (props) => {
       </div>
       <div className={"photosTeam"}>
         {props.data["pictures"].map((value: any) => (
-          <div>
-            <div>
-              <a href={value.hyperlink}>
-                <img src={value.picture_url} alt={value.title} />
+          <div key={value.id + "photos"}>
+            <div key={value.id + "photosinner"}>
+              <a href={value.hyperlink} key={value.id + "a"}>
+                <img src={value.picture_url} alt={value.title} key={value.id + "image"}/>
               </a>
             </div>
 
-            <h3>{value.title}</h3>
-            <h4>{value.subtitle}</h4>
+            <h3 key={value.id + "h3"}>{value.title}</h3>
+            <h4 key={value.id + "h4"}>{value.subtitle}</h4>
           </div>
         ))}
       </div>

@@ -104,9 +104,10 @@ const Landing: React.FC = () => {
           data={data["landing"]["containers"][4]}
         ></FifthContainer>
 
-        <SixthContainer
-          showSixthContainer={showThirdContainer}
-        ></SixthContainer>
+        <SecondContainer
+          data={data["landing"]["containers"][5]}
+          textDirection={false}
+        />
 
         <SeventhContainer
           data={data["landing"]["containers"][6]}

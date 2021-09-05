@@ -26,9 +26,9 @@
       {
         "component-place": "container-third",
         "component-type": "collection",
-        "title": "The Collection",
-        "subtitle": "Amk",
-        "slogan": "This CozyHome is one of the 7,777 residences On the land of legends of Ethereum blockchain. On 1th of Sep 04:00PM EST, 5555 CozyHome will be available to mint for 0.03ETH",
+        "title": "MetaHomes",
+        "subtitle": "Collect Now!",
+        "slogan": "Welcome to Your Crazy Home in MetaVerse. We are lunching a new sky-rocket NFT for you!",
         "pictures": [
           {
             "id": 0,
@@ -69,13 +69,13 @@
         "component-place": "container-fourth",
         "component-type": "roadmap",
         "title": "The Roadmap",
-        "subtitle": "Home is Homes",
+        "subtitle": "Home is Home!",
         "slogan": "Every home owner gets access to private land of Etherium with Cozy Homes. We are going to start the consturction!",
         "pictures": [
           {
             "id": 0,
             "picture_url": "",
-            "title": "%0",
+            "title": "0%",
             "subtitle": "Build Home. Welcome to Land of Legends!",
             "hyperlink": "",
             "description": "The private properties are open! The Private DISCORD CHANNEL will be opened to HOME OWNERS."
@@ -83,7 +83,7 @@
           {
             "id": 1,
             "picture_url": "",
-            "title": "%20",
+            "title": "20%",
             "subtitle": "The Community Wallet is opened.",
             "hyperlink": "",
             "description": "We opened a first store in Land of Legends, goods are free to Home Owners! Order your free t-shirt with our logo and slogan 'Home Is Home'"
@@ -91,7 +91,7 @@
           {
             "id": 2,
             "picture_url": "",
-            "title": "%40",
+            "title": "40%",
             "subtitle": "ROARwards Program Lunch with Type-II!",
             "hyperlink": "",
             "description": "Every month, CozyHomies will receive their share of 8% of royalties in a unique ROARwards Program that rewards community engagement."
@@ -99,7 +99,7 @@
           {
             "id": 3,
             "picture_url": "",
-            "title": "%60",
+            "title": "60%",
             "subtitle": "Special home follow up will be released as Type-II",
             "hyperlink": "",
             "description": "Type-II 2222 owner will be add-up to community (Type-II owners gets 4%)"
@@ -107,7 +107,7 @@
           {
             "id": 4,
             "picture_url": "",
-            "title": "%80",
+            "title": "80%",
             "subtitle": "New NFT Type-III",
             "hyperlink": "",
             "description": "Luxry home follow up will be released as Type-III Type-III 1111 owner will be add-up to community (Type-II owners gets 2%)"
@@ -151,9 +151,9 @@
       {
         "component-place": "container-sixth",
         "component-type": "banner",
-        "title": "",
-        "subtitle": "",
-        "slogan": "Home Is Home",
+        "title": "Presale",
+        "subtitle": "Mint",
+        "slogan": "0.03ETH       1000Left",
         "pictures": [
           {
             "id": 0,
