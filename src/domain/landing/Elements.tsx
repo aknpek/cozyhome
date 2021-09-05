@@ -640,7 +640,9 @@ export const FourthContainer: React.FC<PropsFourth> = (props) => {
         {props.data["pictures"].map((value: any) => (
           <div className={"roadBlock"}>
             <div className={`roadPercent ${value.id}`}>
-              <div className={`roadPercentBlock ${value.id}`}></div>
+              <div className={`roadPercentBlock ${value.id}`}>
+                <h1>{value.title}</h1>
+              </div>
             </div>
             <div className={`roadText ${value.id}`}>
               <div className={`roadTextBlock ${value.id}`}></div>
@@ -656,116 +658,85 @@ export const FourthContainer: React.FC<PropsFourth> = (props) => {
 
 const FifthComponent = styled.div<IFifthContainer>`
   display: grid;
-  background-color: #fad961;
-  background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+  background-color: #121420;
+  height: 1080px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 
-  .header {
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+  grid-template-rows: 0.2fr 0.5fr 0.5fr 2fr 0.2fr;
+  grid-template-areas:
+    "titleDiv"
+    "sloganDiv"
+    "picturesDiv";
+
+  .titleDiv {
+    grid-area: titleDiv;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
     display: flex;
     justify-content: center;
-    align-content: center;
     align-items: center;
-    text-align: center;
-
     h1 {
-      position: absolute;
-      margin-top: 2%;
       font-size: 10rem;
-      color: white;
       font-family: "Josefin Sans", cursive;
+      color: white;
     }
+  }
+  .sloganDiv {
+    grid-area: sloganDiv;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
     h2 {
-      position: absolute;
-      margin-top: 15%;
-      font-size: 6rem;
-      color: white;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 2.5;
+      font-weight: 100;
       font-family: "Josefin Sans", cursive;
-    }
-  }
-  .cells {
-    border-radius: 200rem;
-  }
-  div {
-    max-width: 35rem;
-    max-height: 28rem;
-    min-width: 325px;
-    min-height: 325px;
-    background-color: white;
-    margin: auto;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    will-change: transform;
-    transition: transform 450ms;
-  }
-  div:hover {
-    transition: transform linear 250ms;
-    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px,
-      rgba(26, 82, 119, 0.12) 0px -12px 30px,
-      rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-      rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    transform: translateY(-20px);
-  }
+      color: white;
 
-  @media screen and (max-width: 2000px) {
-    height: calc(65.5rem + 20px);
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
-    grid-template-rows: 1fr 1.7fr 1fr;
-    grid-template-areas:
-      "header"
-      "cell-2 cell-3 cell-4"
-      "cell-5 cell-6 cell-7";
-
-    .cell-1 {
-      grid-area: header;
-      grid-row: 1/1;
-      grid-column: 1/6;
-    }
-    .cell-2 {
-      grid-area: cell-2;
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
-    .cell-3 {
-      grid-area: cell-3;
-      grid-column-start: 3;
-      grid-column-end: 4;
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
-    .cell-4 {
-      grid-area: cell-4;
-      grid-column-start: 4;
-      grid-column-end: 5;
-      grid-row-start: 2;
-      grid-row-end: 3;
     }
   }
+  .pictureDiv {
+    grid-area: pictureDiv;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
 
-  background-color: #292929;
-  margin-top: 0%;
-  height: calc(67rem + 20px);
-  animation: 1s ease-out 0s 1 slideInFromLeft;
-
-  div:hover {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      height: 300px;
+      width: 300px;
+      border-radius: 300px;
+      background-color: red;
+    }
   }
 `;
 interface PropsFifth {
   showFifthContainer: Boolean;
+  data: IContainer;
 }
-export const FifthContainer: React.FC<PropsFifth> = ({
-  showFifthContainer,
-}) => {
+export const FifthContainer: React.FC<PropsFifth> = (props) => {
   return (
     <FifthComponent className="Fifth-Component">
-      <header className={"cell cell-1 header"}>
-        <h1>Your Collection</h1>
-        <h2>Your Message here</h2>
-      </header>
-      <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
-      <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
+      <div className={"titleDiv"}>
+        <h1>{props.data.title}</h1>
+      </div>
+      <div className={"sloganDiv"}>
+        <h2>{props.data.slogan}</h2>
+      </div>
+      <div className={"pictureDiv"}>
+        <img></img>
+        <img></img>
+        <img></img>
+      </div>
     </FifthComponent>
   );
 };
@@ -790,6 +761,134 @@ export const SixthContainer: React.FC<PropsSixty> = ({
   showSixthContainer,
 }) => {
   return <SixthComponent className="Sixth-Component"></SixthComponent>;
+};
+
+/* ---------------------------------------------------------------------------- */
+
+const SeventhComponent = styled.div<ISixthContainer>`
+  background-color: #121420;
+  margin-top: 0%;
+  height: calc(67rem + 20px);
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-areas:
+    "titleDiv"
+    "photosTeam"
+    "smartContract";
+
+  .titleTeam {
+    grid-area: titleDiv;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 10rem;
+      color: white;
+      text-align: center;
+      font-family: "Josefin Sans", cursive;
+    }
+  }
+
+  .photosTeam {
+    grid-area: blockFirst;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 6;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      width: 20rem;
+      height: 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      div {
+        height: 15rem;
+        width: 15rem;
+        background-color: white;
+        border-radius: 15rem;
+
+        a {
+          img {
+          }
+        }
+      }
+
+      h3 {
+        color: white;
+        font-size: 2rem;
+        font-family: "Josefin Sans", cursive;
+      }
+      h4 {
+        color: white;
+        font-size: 0.9rem;
+        font-family: "Josefin Sans", cursive;
+      }
+    }
+  }
+  .smartContract {
+    grid-area: blockSecond;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      h1 {
+        color: white;
+        font-family: "Josefin Sans", cursive;
+        text-decoration: underline;
+      }
+      h1:hover {
+      }
+    }
+  }
+`;
+interface PropsSeven {
+  data: IContainer;
+}
+export const SeventhContainer: React.FC<PropsSeven> = (props) => {
+  return (
+    <SeventhComponent className="Seven-Component">
+      <div className={"titleTeam"}>
+        <h1>{props.data.title}</h1>
+      </div>
+      <div className={"photosTeam"}>
+        {props.data["pictures"].map((value: any) => (
+          <div>
+            <div>
+              <a href={value.hyperlink}>
+                <img src={value.picture_url} alt={value.title} />
+              </a>
+            </div>
+
+            <h3>{value.title}</h3>
+            <h4>{value.subtitle}</h4>
+          </div>
+        ))}
+      </div>
+      <div className={"smartContract"}>
+        <a>
+          <h1>Smart Contract</h1>
+        </a>
+      </div>
+    </SeventhComponent>
+  );
 };
 
 /* ---------------------------------------------------------------------------- */

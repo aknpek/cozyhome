@@ -75,60 +75,77 @@
           {
             "id": 0,
             "picture_url": "",
-            "title": "%0: BUILD HOME. WELCOME TO LAND OF LEGENDS.",
-            "subtitle": "The private properties are open!",
+            "title": "%0",
+            "subtitle": "Build Home. Welcome to Land of Legends!",
             "hyperlink": "",
-            "description": "The Private DISCORD CHANNEL will be opened to HOME OWNERS."
+            "description": "The private properties are open! The Private DISCORD CHANNEL will be opened to HOME OWNERS."
           },
           {
             "id": 1,
             "picture_url": "",
-            "title": "%20: The Community Wallet is opened.",
-            "subtitle": "We opened a first store in Land of Legends, goods are free to Home Owners!",
+            "title": "%20",
+            "subtitle": "The Community Wallet is opened.",
             "hyperlink": "",
-            "description": "Order your free t-shirt with our logo and slogan 'Home Is Home'"
+            "description": "We opened a first store in Land of Legends, goods are free to Home Owners! Order your free t-shirt with our logo and slogan 'Home Is Home'"
           },
           {
             "id": 2,
             "picture_url": "",
-            "title": "%40: ROARwards Program Lunch with Type-II!",
-            "subtitle": "",
+            "title": "%40",
+            "subtitle": "ROARwards Program Lunch with Type-II!",
             "hyperlink": "",
             "description": "Every month, CozyHomies will receive their share of 8% of royalties in a unique ROARwards Program that rewards community engagement."
           },
           {
             "id": 3,
             "picture_url": "",
-            "title": "%60: Special home follow up will be released as Type-II",
-            "subtitle": "",
+            "title": "%60",
+            "subtitle": "Special home follow up will be released as Type-II",
             "hyperlink": "",
             "description": "Type-II 2222 owner will be add-up to community (Type-II owners gets 4%)"
           },
           {
             "id": 4,
             "picture_url": "",
-            "title": "%80: New NFT Type-III",
-            "subtitle": "Luxry home follow up will be released as Type-III",
+            "title": "%80",
+            "subtitle": "New NFT Type-III",
             "hyperlink": "",
-            "description": "Type-III 1111 owner will be add-up to community (Type-II owners gets 2%)"
+            "description": "Luxry home follow up will be released as Type-III Type-III 1111 owner will be add-up to community (Type-II owners gets 2%)"
           }
         ]
       },
       {
         "component-place": "container-fifth",
         "component-type": "banner",
-        "title": "",
+        "title": "Rarity",
         "subtitle": "",
-        "slogan": "Home Is Home",
+        "slogan": "Every House has unique layers which appointed with unique algorithm. Each unique item will be randomly selected in a ratio.",
         "pictures": [
           {
             "id": 0,
             "picture_url": "",
-            "title": "",
+            "title": "Unique",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          },
+          {
+            "id": 1,
+            "picture_url": "",
+            "title": "Unique",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          },
+          {
+            "id": 2,
+            "picture_url": "",
+            "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
             "description": ""
           }
+
         ]
       },
       {
@@ -151,16 +168,40 @@
       {
         "component-place": "container-seventh",
         "component-type": "banner",
-        "title": "",
+        "title": "Team",
         "subtitle": "",
-        "slogan": "Home Is Home",
+        "slogan": "",
         "pictures": [
           {
             "id": 0,
             "picture_url": "",
-            "title": "",
-            "subtitle": "",
-            "hyperlink": "",
+            "title": "Egemen",
+            "subtitle": "Project Manager",
+            "hyperlink": "https://twitter.com/DropNFTArt",
+            "description": ""
+          },
+          {
+            "id": 1,
+            "picture_url": "",
+            "title": "Elif",
+            "subtitle": "Designer",
+            "hyperlink": "https://twitter.com/DesignofNFT",
+            "description": ""
+          },
+          {
+            "id": 2,
+            "picture_url": "",
+            "title": "Akın",
+            "subtitle": "Developer",
+            "hyperlink": "https://twitter.com/nftsell",
+            "description": ""
+          }, 
+          {
+            "id": 3,
+            "picture_url": "",
+            "title": "Burak",
+            "subtitle": "Social Media",
+            "hyperlink": "https://twitter.com/FluidMilo",
             "description": ""
           }
         ]

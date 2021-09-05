@@ -4,6 +4,7 @@ import GeneralWrapper, {
   FirstWrapper,
   FourthContainer,
   SecondContainer,
+  SeventhContainer,
   SixthContainer,
   ThirdContainer,
 } from "./Elements";
@@ -26,7 +27,6 @@ const getDocHeight = () => {
     document.documentElement.clientHeight
   );
 };
-
 
 const Landing: React.FC = () => {
   const header_data: IHeader = data["landing"]["header"];
@@ -78,8 +78,14 @@ const Landing: React.FC = () => {
           />
         </FirstContainer>
 
-        <SecondContainer data={data["landing"]["containers"][0]} textDirection={true}/>
-        <SecondContainer data={data["landing"]["containers"][1]} textDirection={false}/>
+        <SecondContainer
+          data={data["landing"]["containers"][0]}
+          textDirection={true}
+        />
+        <SecondContainer
+          data={data["landing"]["containers"][1]}
+          textDirection={false}
+        />
 
         {showThirdContainer ? (
           <ThirdContainer
@@ -95,11 +101,16 @@ const Landing: React.FC = () => {
 
         <FifthContainer
           showFifthContainer={showThirdContainer}
+          data={data["landing"]["containers"][4]}
         ></FifthContainer>
 
         <SixthContainer
           showSixthContainer={showThirdContainer}
         ></SixthContainer>
+
+        <SeventhContainer
+          data={data["landing"]["containers"][6]}
+        ></SeventhContainer>
       </FirstWrapper>
     </GeneralWrapper>
   );
