@@ -116,7 +116,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "yarasa",
+            "picture_url": "lgbt",
             "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
@@ -124,7 +124,7 @@
           },
           {
             "id": 1,
-            "picture_url": "yarasa",
+            "picture_url": "rare",
             "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
@@ -132,7 +132,7 @@
           },
           {
             "id": 2,
-            "picture_url": "yarasa",
+            "picture_url": "uncom",
             "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
@@ -150,7 +150,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "yarasa",
+            "picture_url": "presale",
             "title": "",
             "subtitle": "",
             "hyperlink": "",
@@ -167,7 +167,7 @@
         "pictures": [
           {
             "id": 0,
-            "picture_url": "yarasa",
+            "picture_url": "egemen",
             "title": "Egemen",
             "subtitle": "Project Manager",
             "hyperlink": "https://twitter.com/DropNFTArt",
@@ -175,7 +175,7 @@
           },
           {
             "id": 1,
-            "picture_url": "yarasa",
+            "picture_url": "elif",
             "title": "Elif",
             "subtitle": "Designer",
             "hyperlink": "https://twitter.com/DesignofNFT",
@@ -183,7 +183,7 @@
           },
           {
             "id": 2,
-            "picture_url": "yarasa",
+            "picture_url": "akin",
             "title": "Akın",
             "subtitle": "Developer",
             "hyperlink": "https://twitter.com/nftsell",
@@ -191,7 +191,7 @@
           }, 
           {
             "id": 3,
-            "picture_url": "yarasa",
+            "picture_url": "burak",
             "title": "Burak",
             "subtitle": "Social Media",
             "hyperlink": "https://twitter.com/FluidMilo",

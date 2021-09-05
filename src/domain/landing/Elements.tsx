@@ -11,6 +11,7 @@ import BulutFirst from "../../svgs/BulutFirst";
 import BulutSecond from "../../svgs/BulutSecond";
 import { IContainer } from "../../types";
 import Picture from "../../components/Picture";
+import Pictures from "../../components/Locals";
 import TextDisplay from "../../components/TextDisplay";
 import Yildiz from "../../svgs/Yildiz";
 import { motion } from "framer-motion";
@@ -209,7 +210,7 @@ interface PropsSecond {
 export const SecondContainer: React.FC<PropsSecond> = (props) => {
   return (
     <SecondComponent textDireciton={props.textDirection}>
-      <Picture picture={props.data["pictures"]}/>
+      <Picture picture={props.data["pictures"]} />
       <TextDisplay {...props.data} />
       <motion.div
         animate={{
@@ -260,9 +261,9 @@ const ThirdComponent = styled.div<IThirdContainer>`
     max-height: 28rem;
     min-width: 325px;
     min-height: 325px;
-    background-color: #ffffffbe;
+    background-color: transparent;
     margin: auto;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
     will-change: transform;
     transition: transform 450ms;
     z-index: 2;
@@ -473,22 +474,22 @@ export const ThirdContainer: React.FC<PropsThird> = ({
         <h1>Your Collection</h1>
       </header>
       <div className={"cell cell-2 cells"}>
-        <img></img>
+        <img src={Pictures["ufo"].default} />
       </div>
       <div className={"cell cell-3 cells"}>
-        <img></img>
+        <img src={Pictures["ktp"].default} />
       </div>
       <div className={"cell cell-4 cells"}>
-        <img></img>
+        <img src={Pictures["sade"].default} />
       </div>
       <div className={"cell cell-5 cells"}>
-        <img></img>
+        <img src={Pictures["ejderha"].default} />
       </div>
       <div className={"cell cell-6 cells"}>
-        <img></img>
+        <img src={Pictures["dondurma"].default} />
       </div>
       <div className={"cell cell-7 cells"}>
-        <img></img>
+        <img src={Pictures["sade2"].default} />
       </div>
       <motion.div
         className={"BulutFirst"}
@@ -845,7 +846,7 @@ export const FifthContainer: React.FC<PropsFifth> = (props) => {
       <div className={"pictureDiv"}>
         {props.data["pictures"].map((value: any) => (
           <div key={value.id + "div"}>
-            <img key={value.id + "img"}></img>
+            <img src={Pictures[value.picture_url].default} key={value.id + "img"}></img>
             <h1 key={value.id + "h1"}></h1>
           </div>
         ))}
@@ -900,17 +901,17 @@ const SeventhComponent = styled.div<ISixthContainer>`
     justify-content: space-between;
     align-items: center;
     div {
-      width: 20rem;
-      height: 20rem;
+      width: 22rem;
+      height: 22rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       div {
-        height: 15rem;
-        width: 15rem;
+        height: 16rem;
+        width: 16rem;
         background-color: #ffffffbe;
-        border-radius: 15rem;
+        border-radius: 16rem;
 
         a {
           img {
@@ -965,7 +966,7 @@ export const SeventhContainer: React.FC<PropsSeven> = (props) => {
             <div key={value.id + "photosinner"}>
               <a href={value.hyperlink} key={value.id + "a"}>
                 <img
-                  src={value.picture_url}
+                  src={Pictures[value.picture_url].default}
                   alt={value.title}
                   key={value.id + "image"}
                 />

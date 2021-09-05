@@ -146,12 +146,11 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>
       <main>
-        <img src={props.logo["url"]} alt={props.logo["description"]} />
+        {/* <img src={props.logo["url"]} alt={props.logo["description"]} /> */}
         <span>
           <h1 onClick={() => scrollToSection("Home")}>{props.menu["home"]}</h1>
           <h1 onClick={() => scrollToSection("Landing-Home")}>
             {props.menu["about"]}
-            {/* {props.showThirdContainer && <div className={"Deneme"}></div>} */}
           </h1>
           <h1 onClick={() => scrollToSection("Fourth-Component")}>
             {props.menu["roadmap"]}
