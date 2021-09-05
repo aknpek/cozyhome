@@ -34,6 +34,7 @@ export const FirstContainer = styled.div<IFirstContainer>`
 /* ---------------------------------------------------------------------------- */
 
 export const SecondContainer = styled.div<ISecondContainer>`
+  background-color: #121420;
   @media screen and (max-width: 2000px) {
     position: relative;
     display: grid;

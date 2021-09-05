@@ -112,7 +112,7 @@ const HeaderCo = styled.div<IHead>`
     bottom: 0;
     left: 0;
     inset: 0 0 0 0;
-    background: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+    background: linear-gradient(132deg, #f4d03f 0%, #ff961b 100%);
     z-index: -1;
     transition: transform 0.3s ease;
   }

@@ -1,3 +1,5 @@
+import {SVGProps} from "react";
+
 export interface IFirstWrapper {}
 
 export interface IFirstContainer {}
@@ -62,3 +64,7 @@ export interface IContent {
 export interface IHeaderProps extends IHeader {
   onclickFunction: CallableFunction
 } 
+
+export interface IProps { 
+  props: SVGProps<SVGElement>
+}

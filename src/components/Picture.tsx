@@ -1,6 +1,5 @@
-import Cerce from "../svgs/Cerce";
 import React from "react";
-import homes from "../data/Home.gif";
+import mainLogo from'../data/pics/yarasa 1.png';
 import styled from "styled-components";
 
 interface IPictureJson {
@@ -19,6 +18,7 @@ const data: PictureData = require("../data/statics.json");
 
 const PicStyled = styled.div<IPicture>`
   margin: auto;
+  background-color: transparent;
 
   div {
     will-change: transform;
@@ -82,16 +82,7 @@ const PicStyled = styled.div<IPicture>`
     }
   }
 
-  div:hover {
-    transition: transform 250ms;
-    box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px,
-      rgba(26, 82, 119, 0.12) 0px -12px 30px,
-      rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-      rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border-radius: 0.4rem;
-    transform: translateY(-20px);
-    transform: rotate(-10deg);
-  }
+  
 
   .cerceve {
     width: 100%;
@@ -115,20 +106,35 @@ const PicStyled = styled.div<IPicture>`
     z-index: 1;
     object-fit: contain;
   }
+
+  .gif:hover {
+    transition: transform 250ms;
+    /* box-shadow: rgba(163, 162, 162, 0.25) 0px 54px 55px,
+      rgba(26, 82, 119, 0.12) 0px -12px 30px,
+      rgba(155, 27, 123, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    border-radius: 0.4rem;
+    transform: rotate(-10deg);
+    /* border-radius: 100rem; */
+  }
 `;
 
 const Picture: React.FC = () => {
   return (
     <PicStyled className={"picture"}>
       <div>
-        <div className={"cerceve"}>
+        {/* <div className={"cerceve"}>
           <Cerce />
-        </div>
-        <img
+        </div> */}
+        
+        {/* <img
           src={homes}
           className={"gif"}
           alt={data["pictures"][0].description}
-        ></img>
+        ></img> */}
+
+        <img className={"gif"} src={mainLogo}/>
+        
       </div>
     </PicStyled>
   );
