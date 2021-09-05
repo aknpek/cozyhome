@@ -36,44 +36,44 @@ export const FirstContainer = styled.div<IFirstContainer>`
 
 /* ---------------------------------------------------------------------------- */
 interface ISecondComponent {
+  textDireciton: Boolean;
 }
-
 
 export const SecondComponent = styled.div<ISecondComponent>`
   background-color: #121420;
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: calc(55.5rem + 20px);
+  grid-template-columns: 0.4fr 1.2fr 0.2fr 1.2fr 0.4fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  grid-template-areas: "picture text-display";
+  .picture {
+    grid-area: picture;
+    grid-row-start: 1;
+    grid-row-start: 2;
+    grid-column-start: ${(props) => (props.textDireciton ? 2 : 4)};
+    grid-column-end: ${(props) => (props.textDireciton ? 3 : 5)};
+    z-index: 1;
+  }
+
+  .textdisplay {
+    grid-area: text-display;
+    grid-row-start: 1;
+    grid-row-start: 2;
+    grid-column-start: ${(props) => (props.textDireciton ? 4 : 2)};
+    grid-column-end: ${(props) => (props.textDireciton ? 5 : 3)};
+    z-index: 1;
+  }
+
+  .yildizDiv {
+    position: absolute;
+    z-index: 0;
+  }
 
   @media screen and (max-width: 2000px) {
-    position: relative;
-    display: grid;
-    width: 100%;
-    height: calc(55.5rem + 20px);
-    grid-template-columns: 0.4fr 1.2fr 0.2fr 1.2fr 0.4fr;
-    grid-template-rows: 0.5fr 1fr 0.5fr;
-    grid-template-areas: "picture text-display";
-
-    .picture {
-      grid-area: picture;
-      grid-row-start: 1;
-      grid-row-start: 2;
-      grid-column-start: 2;
-      grid-column-end: 3;
-      z-index: 1;
-    }
-
-    .textdisplay {
-      grid-area: text-display;
-      grid-row-start: 1;
-      grid-row-start: 2;
-      grid-column-start: 4;
-      grid-column-end: 5;
-      z-index: 1;
-    }
-
-    .yildizDiv {
-      position: absolute;
-      z-index: 0;
-    }
   }
+ 
   @media screen and (max-width: 1700px) {
     position: relative;
     display: grid;
@@ -202,12 +202,13 @@ export const SecondComponent = styled.div<ISecondComponent>`
 `;
 
 interface PropsSecond {
-  data: IContainer
+  data: IContainer;
+  textDirection: Boolean;
 }
 
 export const SecondContainer: React.FC<PropsSecond> = (props) => {
   return (
-    <SecondComponent>
+    <SecondComponent textDireciton={props.textDirection}>
       <Picture />
       <TextDisplay {...props.data} />
       <motion.div
