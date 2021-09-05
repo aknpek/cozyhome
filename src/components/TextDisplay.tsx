@@ -51,11 +51,10 @@ const TextBlock = styled.div<ITextDisplay>`
       display: flex;
       justify-content: center;
       align-items: center;
-      .message{ 
+      .message {
         color: #f1f1f1;
       }
     }
-
   }
   .subTitleDiv {
     text-align: center;
@@ -73,12 +72,17 @@ const TextBlock = styled.div<ITextDisplay>`
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: 1s ease;
       .subTitle {
         color: white;
       }
     }
 
-    div:hover { 
+    div:hover {
+      -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      transform: scale(0.8);
+      transition: 0.8s ease;
       cursor: pointer;
     }
   }

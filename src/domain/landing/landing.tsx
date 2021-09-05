@@ -7,15 +7,14 @@ import GeneralWrapper, {
   SixthContainer,
   ThirdContainer,
 } from "./Elements";
-import { IContainer, IContent, IHeader } from "../../types";
+import { IContent, IHeader } from "../../types";
 import React, { useEffect, useState } from "react";
 
 import Header from "../../components/Header";
-import Picture from "../../components/Picture";
 import Progress from "../../components/ProgressBar";
-import TextDisplay from "../../components/TextDisplay";
 
 const data: IContent = require("../../data/text.json");
+// const animation_data: IAnimation
 
 const getDocHeight = () => {
   return Math.max(
@@ -28,20 +27,13 @@ const getDocHeight = () => {
   );
 };
 
-// const scrollToSection = (className: string) => {
-//   scroller.scrollTo(className, {
-//     duration: 200,
-//     delay: 0,
-//     smooth: "easeInOutQuart",
-//   });
-// };
 
 const Landing: React.FC = () => {
   const header_data: IHeader = data["landing"]["header"];
+  // const animation-data: IAnimSecond = animation_data["secondContainer"]
   const [scrollPosition, setPosition] = useState<Number>(0);
   const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(false);
   const [showFourthContainer] = useState<Boolean>(false);
-  // const [scrollable, setScrollable] = useState<Boolean>(true);
 
   const calculateScrollPercentage = () => {
     const scrollTop = window.pageYOffset;
@@ -76,7 +68,6 @@ const Landing: React.FC = () => {
 
   return (
     <GeneralWrapper>
-      {/* <div className={"Home"}></div> */}
       <Progress scroll={scrollPosition + "%"} />
       <FirstWrapper>
         <FirstContainer>
@@ -86,16 +77,14 @@ const Landing: React.FC = () => {
             scrollPosition={scrollPosition}
           />
         </FirstContainer>
-        
-        <SecondContainer>
-          <Picture />
-          <TextDisplay {...data["landing"]["containers"][0]} />
-        </SecondContainer>
 
-        <SecondContainer>
+        <SecondContainer data={data["landing"]["containers"][0]}/>
+        
+
+        {/* <SecondContainer>
           <Picture />
           <TextDisplay {...data["landing"]["containers"][1]} />
-        </SecondContainer>
+        </SecondContainer> */}
 
         {showThirdContainer ? (
           <ThirdContainer
@@ -105,18 +94,17 @@ const Landing: React.FC = () => {
           <div className="Landing-Home"></div>
         )}
 
-          <FourthContainer
-            showFourthContainer={showFourthContainer}
-          ></FourthContainer>
+        <FourthContainer
+          showFourthContainer={showFourthContainer}
+        ></FourthContainer>
 
-          <FifthContainer
-            showFifthContainer={showThirdContainer}
-          ></FifthContainer>
+        <FifthContainer
+          showFifthContainer={showThirdContainer}
+        ></FifthContainer>
 
-          <SixthContainer
-            showSixthContainer={showThirdContainer}
-          ></SixthContainer>
-        
+        <SixthContainer
+          showSixthContainer={showThirdContainer}
+        ></SixthContainer>
       </FirstWrapper>
     </GeneralWrapper>
   );

@@ -3,13 +3,16 @@ import {
   IFirstContainer,
   IFirstWrapper,
   IGeneralWrapper,
-  ISecondContainer,
   ISixthContainer,
   IThirdContainer,
 } from "../../types";
 
 import BulutFirst from "../../svgs/BulutFirst";
 import BulutSecond from "../../svgs/BulutSecond";
+import { IContainer } from "../../types";
+import Picture from "../../components/Picture";
+import TextDisplay from "../../components/TextDisplay";
+import Yildiz from "../../svgs/Yildiz";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useEffect } from "react";
@@ -32,9 +35,13 @@ export const FirstContainer = styled.div<IFirstContainer>`
 `;
 
 /* ---------------------------------------------------------------------------- */
+interface ISecondComponent {
+}
 
-export const SecondContainer = styled.div<ISecondContainer>`
+
+export const SecondComponent = styled.div<ISecondComponent>`
   background-color: #121420;
+
   @media screen and (max-width: 2000px) {
     position: relative;
     display: grid;
@@ -50,6 +57,7 @@ export const SecondContainer = styled.div<ISecondContainer>`
       grid-row-start: 2;
       grid-column-start: 2;
       grid-column-end: 3;
+      z-index: 1;
     }
 
     .textdisplay {
@@ -58,6 +66,12 @@ export const SecondContainer = styled.div<ISecondContainer>`
       grid-row-start: 2;
       grid-column-start: 4;
       grid-column-end: 5;
+      z-index: 1;
+    }
+
+    .yildizDiv {
+      position: absolute;
+      z-index: 0;
     }
   }
   @media screen and (max-width: 1700px) {
@@ -187,6 +201,32 @@ export const SecondContainer = styled.div<ISecondContainer>`
   }
 `;
 
+interface PropsSecond {
+  data: IContainer
+}
+
+export const SecondContainer: React.FC<PropsSecond> = (props) => {
+  return (
+    <SecondComponent>
+      <Picture />
+      <TextDisplay {...props.data} />
+      <motion.div
+        animate={{
+          scale: [0.9, 0.8, 0.9, 0.8, 0.6],
+          rotate: [0, 10, 0, -10, 0],
+          opacity: [0.9, 0.2, 0.9, 0.2, 0.6],
+        }}
+        transition={{
+          yoyo: Infinity,
+          duration: 30,
+        }}
+        className={"yildizDiv"}
+      >
+        <Yildiz props={{}} />
+      </motion.div>
+    </SecondComponent>
+  );
+};
 /* ---------------------------------------------------------------------------- */
 
 const ThirdComponent = styled.div<IThirdContainer>`
@@ -367,7 +407,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
     }
   }
 
-
   .BulutFirst {
     background-color: transparent;
     display: flex;
@@ -378,7 +417,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
     pointer-events: none;
     box-shadow: none;
   }
-  
+
   .BulutSecond {
     background-color: transparent;
     display: flex;
@@ -392,7 +431,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
     box-shadow: none;
   }
 
-  
   .BulutThird {
     background-color: transparent;
     display: flex;
@@ -406,7 +444,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
     box-shadow: none;
   }
 
-  .BulutFourth { 
+  .BulutFourth {
     background-color: transparent;
     display: flex;
     position: absolute;
@@ -429,53 +467,52 @@ export const ThirdContainer: React.FC<PropsThird> = ({
   useEffect(() => {}, [showThirdContainer]);
 
   return (
-      <ThirdComponent className="Landing-Home">
-        <header className={"cell cell-1 header"}>
-          <h1>Your Collection</h1>
-        </header>
-        <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
-        <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
-        <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
-        <div className={"cell cell-5 cells"}>{/* <div></div> */}</div>
-        <div className={"cell cell-6 cells"}>{/* <div></div> */}</div>
-        <div className={"cell cell-7 cells"}>{/* <div></div> */}</div>
-        <motion.div
-          className={"BulutFirst"}
-          initial={{ scale: 0.3, opacity: 0.6 }}
-          animate={{ scale: 0.4, opacity: 1.0 , translateX: "20px" }}
-          transition={{ yoyo: Infinity, duration: 7.5 }}
-        >
-          <BulutFirst />
-        </motion.div>
-       
-        <motion.div
-          className={"BulutSecond"}
-          initial={{ scale: 0.8, opacity: 0.8}}
-          animate={{ scale: 0.9, opacity: 1, translateX: "-50px" }}
-          transition={{ yoyo: Infinity, duration: 6.5 }}
-        >
-          <BulutSecond />
-        </motion.div>
-        
-        <motion.div
-          className={"BulutThird"}
-          initial={{ scale: 0.2, opacity: 0.5 }}
-          animate={{ scale: 0.4, opacity: 1, translateX: "100px" }}
-          transition={{ yoyo: Infinity, duration: 5.5 }}
-        >
-          <BulutFirst />
-        </motion.div>
-      
+    <ThirdComponent className="Landing-Home">
+      <header className={"cell cell-1 header"}>
+        <h1>Your Collection</h1>
+      </header>
+      <div className={"cell cell-2 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-3 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-4 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-5 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-6 cells"}>{/* <div></div> */}</div>
+      <div className={"cell cell-7 cells"}>{/* <div></div> */}</div>
+      <motion.div
+        className={"BulutFirst"}
+        initial={{ scale: 0.3, opacity: 0.6 }}
+        animate={{ scale: 0.4, opacity: 1.0, translateX: "20px" }}
+        transition={{ yoyo: Infinity, duration: 7.5 }}
+      >
+        <BulutFirst />
+      </motion.div>
 
-        <motion.div
-          className={"BulutFourth"}
-          initial={{ scale: 0.5, opacity: 0.6 }}
-          animate={{ scale: 0.6, opacity: 1, translateX: "60px" }}
-          transition={{ yoyo: Infinity, duration: 5.5 }}
-        >
-          <BulutFirst />
-        </motion.div>
-      </ThirdComponent>
+      <motion.div
+        className={"BulutSecond"}
+        initial={{ scale: 0.8, opacity: 0.8 }}
+        animate={{ scale: 0.9, opacity: 1, translateX: "-50px" }}
+        transition={{ yoyo: Infinity, duration: 6.5 }}
+      >
+        <BulutSecond />
+      </motion.div>
+
+      <motion.div
+        className={"BulutThird"}
+        initial={{ scale: 0.2, opacity: 0.5 }}
+        animate={{ scale: 0.4, opacity: 1, translateX: "100px" }}
+        transition={{ yoyo: Infinity, duration: 5.5 }}
+      >
+        <BulutFirst />
+      </motion.div>
+
+      <motion.div
+        className={"BulutFourth"}
+        initial={{ scale: 0.5, opacity: 0.6 }}
+        animate={{ scale: 0.6, opacity: 1, translateX: "60px" }}
+        transition={{ yoyo: Infinity, duration: 5.5 }}
+      >
+        <BulutFirst />
+      </motion.div>
+    </ThirdComponent>
   );
 };
 
@@ -500,9 +537,7 @@ export const FourthContainer: React.FC<PropsFourth> = ({
   return <FourthComponent className="Fourth-Component"></FourthComponent>;
 };
 
-
 /* ---------------------------------------------------------------------------- */
-
 
 const FifthComponent = styled.div<IFifthContainer>`
   display: grid;
@@ -622,7 +657,6 @@ export const FifthContainer: React.FC<PropsFifth> = ({
 
 /* ---------------------------------------------------------------------------- */
 
-
 const SixthComponent = styled.div<ISixthContainer>`
   background-color: #f4d03f;
   background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
@@ -644,6 +678,5 @@ export const SixthContainer: React.FC<PropsSixty> = ({
 };
 
 /* ---------------------------------------------------------------------------- */
-
 
 export default GeneralWrapper;

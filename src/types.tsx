@@ -4,7 +4,6 @@ export interface IFirstWrapper {}
 
 export interface IFirstContainer {}
 
-export interface ISecondContainer {}
 
 export interface IThirdContainer {
 }
