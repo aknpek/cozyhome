@@ -26,7 +26,7 @@
       {
         "component-place": "container-third",
         "component-type": "collection",
-        "title": "Collection",
+        "title": "The Collection",
         "subtitle": "Amk",
         "slogan": "This CozyHome is one of the 7,777 residences On the land of legends of Ethereum blockchain. On 1th of Sep 04:00PM EST, 5555 CozyHome will be available to mint for 0.03ETH",
         "pictures": [
@@ -69,8 +69,8 @@
         "component-place": "container-fourth",
         "component-type": "roadmap",
         "title": "The Roadmap",
-        "subtitle": "",
-        "slogan": "EVERY HOME OWNER GETS ACCESS TO PRIVATE LAND OF ETHERIUM with HOMIE",
+        "subtitle": "Home is Homes",
+        "slogan": "Every home owner gets access to private land of Etherium with Cozy Homes. We are going to start the consturction!",
         "pictures": [
           {
             "id": 0,

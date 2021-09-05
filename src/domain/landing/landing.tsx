@@ -90,7 +90,7 @@ const Landing: React.FC = () => {
         )}
 
         <FourthContainer
-          showFourthContainer={showFourthContainer}
+          data={data["landing"]["containers"][3]}
         ></FourthContainer>
 
         <FifthContainer

@@ -73,7 +73,7 @@ export const SecondComponent = styled.div<ISecondComponent>`
 
   @media screen and (max-width: 2000px) {
   }
- 
+
   @media screen and (max-width: 1700px) {
     position: relative;
     display: grid;
@@ -218,7 +218,7 @@ export const SecondContainer: React.FC<PropsSecond> = (props) => {
           opacity: [0.9, 0.2, 0.9, 0.2, 0.6],
         }}
         transition={{
-          yoyo: Infinity,
+          repeat: Infinity,
           duration: 30,
         }}
         className={"yildizDiv"}
@@ -482,7 +482,7 @@ export const ThirdContainer: React.FC<PropsThird> = ({
         className={"BulutFirst"}
         initial={{ scale: 0.3, opacity: 0.6 }}
         animate={{ scale: 0.4, opacity: 1.0, translateX: "20px" }}
-        transition={{ yoyo: Infinity, duration: 7.5 }}
+        transition={{ repeat: Infinity, duration: 7.5 }}
       >
         <BulutFirst />
       </motion.div>
@@ -491,7 +491,7 @@ export const ThirdContainer: React.FC<PropsThird> = ({
         className={"BulutSecond"}
         initial={{ scale: 0.8, opacity: 0.8 }}
         animate={{ scale: 0.9, opacity: 1, translateX: "-50px" }}
-        transition={{ yoyo: Infinity, duration: 6.5 }}
+        transition={{ repeat: Infinity, duration: 6.5 }}
       >
         <BulutSecond />
       </motion.div>
@@ -500,7 +500,7 @@ export const ThirdContainer: React.FC<PropsThird> = ({
         className={"BulutThird"}
         initial={{ scale: 0.2, opacity: 0.5 }}
         animate={{ scale: 0.4, opacity: 1, translateX: "100px" }}
-        transition={{ yoyo: Infinity, duration: 5.5 }}
+        transition={{ repeat: Infinity, duration: 5.5 }}
       >
         <BulutFirst />
       </motion.div>
@@ -509,7 +509,7 @@ export const ThirdContainer: React.FC<PropsThird> = ({
         className={"BulutFourth"}
         initial={{ scale: 0.5, opacity: 0.6 }}
         animate={{ scale: 0.6, opacity: 1, translateX: "60px" }}
-        transition={{ yoyo: Infinity, duration: 5.5 }}
+        transition={{ repeat: Infinity, duration: 5.5 }}
       >
         <BulutFirst />
       </motion.div>
@@ -520,22 +520,136 @@ export const ThirdContainer: React.FC<PropsThird> = ({
 /* ---------------------------------------------------------------------------- */
 
 const FourthComponent = styled.div<IThirdContainer>`
-  margin-top: 0%;
   height: calc(67rem + 20px);
+  background-color: #121420;
   animation: 1s ease-out 0s 1 slideInFromLeft;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.2fr 0.5fr 2fr 0.5fr 0.2fr;
+  grid-template-areas:
+    "titleDiv"
+    "blockFirst blockSecond";
 
-  div:hover {
-    display: none;
+  .titleDiv {
+    grid-area: titleDiv;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 10rem;
+      color: white;
+      text-align: center;
+      font-family: "Josefin Sans", cursive;
+    }
+  }
+
+  .blockFirst {
+    grid-area: blockFirst;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    h3 {
+      width: 80%;
+      margin: auto;
+      line-height: 3;
+      font-size: 2rem;
+      font-weight: 400;
+      color: white;
+      text-align: left;
+      font-family: "Josefin Sans", cursive;
+    }
+    h4 {
+      width: 80%;
+      margin: auto;
+      line-height: 2;
+      font-size: 1.2rem;
+      font-weight: 100;
+      color: white;
+      text-align: left;
+      font-family: "Josefin Sans", cursive;
+    }
+  }
+  .blockSecond {
+    grid-area: blockSecond;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+
+    .roadBlock {
+      display: flex;
+      flex-direction: row;
+
+      .roadPercent {
+        height: 8rem;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .roadPercentBlock {
+          height: 4rem;
+          width: 4rem;
+          background-color: white;
+          border-radius: 1.2rem;
+          -webkit-transition: 0.1s;
+          -moz-transition: 0.1s;
+          -ms-transition: 0.1s;
+          -o-transition: 0.1s;
+          transition: 0.1s;
+        }
+        .roadPercentBlock:hover {
+          transition: transform 150ms background-color 0.5s ease;
+          transform: scale(1.2);
+          height: 4rem;
+          width: 4rem;
+          background-color: #ff961b;
+          border-radius: 1.2rem;
+        }
+      }
+      .roadText {
+        height: 8rem;
+        width: 80%;
+      }
+    }
   }
 `;
 interface PropsFourth {
-  showFourthContainer: Boolean;
+  data: IContainer;
 }
 
-export const FourthContainer: React.FC<PropsFourth> = ({
-  showFourthContainer,
-}) => {
-  return <FourthComponent className="Fourth-Component"></FourthComponent>;
+export const FourthContainer: React.FC<PropsFourth> = (props) => {
+  console.log(props.data);
+  return (
+    <FourthComponent className="Fourth-Component">
+      <div className={"titleDiv"}>
+        <h1>{props.data.title}</h1>
+      </div>
+      <div className={"blockFirst"}>
+        <h3>{props.data.subtitle}</h3>
+        <h4>{props.data.slogan}</h4>
+      </div>
+      <div className={"blockSecond"}>
+        {props.data["pictures"].map((value: any) => (
+          <div className={"roadBlock"}>
+            <div className={`roadPercent ${value.id}`}>
+              <div className={`roadPercentBlock ${value.id}`}></div>
+            </div>
+            <div className={`roadText ${value.id}`}>
+              <div className={`roadTextBlock ${value.id}`}></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </FourthComponent>
+  );
 };
 
 /* ---------------------------------------------------------------------------- */

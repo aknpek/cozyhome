@@ -1,6 +1,8 @@
 import React from "react";
-import mainLogo from "../data/pics/yarasa 1.png";
 import styled from "styled-components";
+
+// import mainLogo from "../../public/yarasa 1.png";
+
 
 // interface IPictureJson {
 //   id: number;
@@ -118,7 +120,10 @@ const PicStyled = styled.div<IPicture>`
 `;
 
 const Picture: React.FC = () => {
+
+
   return (
+
     <PicStyled className={"picture"}>
       <div>
         {/* <img
@@ -126,7 +131,7 @@ const Picture: React.FC = () => {
           className={"gif"}
           alt={data["pictures"][0].description}
         ></img> */}
-        <img className={"gif"} src={mainLogo} />
+        <img className={"gif"} src={require("../data/yarasa 1.png")} alt="amk"/>
       </div>
     </PicStyled>
   );

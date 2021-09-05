@@ -23,6 +23,7 @@ export interface IPictures {
   subtitle: string;
   hyperlink: string;
   description: string;
+  map: CallableFunction;
 }
 
 export interface IMenu {
