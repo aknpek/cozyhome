@@ -1,17 +1,17 @@
 import GeneralWrapper, {
-  FifthContainer,
   FirstContainer,
   FirstWrapper,
-  FourthContainer,
-  SecondContainer,
   SeventhContainer,
   ThirdContainer,
 } from "./Elements";
 import { IContent, IHeader } from "../../types";
 import React, { useEffect, useState } from "react";
 
+import FifthContainer from "./FifthContainer";
+import FourthContainer from "./FourthContainer";
 import Header from "../../components/Header";
 import Progress from "../../components/ProgressBar";
+import SecondContainer from "./SecondContainer";
 
 const getDocHeight = () => {
   return Math.max(
@@ -25,12 +25,10 @@ const getDocHeight = () => {
 };
 
 const Landing: React.FC = () => {
-  const data: IContent = require("../../data/json/text.json")
+  const data: IContent = require("../../data/json/text.json");
   const header_data: IHeader = data["landing"]["header"];
-
   const [scrollPosition, setPosition] = useState<Number>(0);
   const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(false);
-  const [showFourthContainer] = useState<Boolean>(false);
 
   const calculateScrollPercentage = () => {
     const scrollTop = window.pageYOffset;
@@ -63,7 +61,6 @@ const Landing: React.FC = () => {
     }
   }, [scrollPosition]);
 
-
   return (
     <GeneralWrapper>
       <Progress scroll={scrollPosition + "%"} />
@@ -85,31 +82,33 @@ const Landing: React.FC = () => {
           textDirection={false}
         />
 
-        {showThirdContainer ? (
+        {/* {showThirdContainer ? (
           <ThirdContainer
             showThirdContainer={showThirdContainer}
           ></ThirdContainer>
         ) : (
           <div className="Landing-Home"></div>
-        )}
+        )} */}
 
-        <FourthContainer
-          data={data["landing"]["containers"][3]}
-        ></FourthContainer>
+       
 
         <FifthContainer
           showFifthContainer={showThirdContainer}
           data={data["landing"]["containers"][4]}
         ></FifthContainer>
+        
+         <FourthContainer
+          data={data["landing"]["containers"][3]}
+        ></FourthContainer>
 
         <SecondContainer
           data={data["landing"]["containers"][5]}
           textDirection={false}
         />
-
+        {/* 
         <SeventhContainer
           data={data["landing"]["containers"][6]}
-        ></SeventhContainer>
+        ></SeventhContainer> */}
       </FirstWrapper>
     </GeneralWrapper>
   );

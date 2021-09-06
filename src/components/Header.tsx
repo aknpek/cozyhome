@@ -146,7 +146,6 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>
       <main>
-        {/* <img src={props.logo["url"]} alt={props.logo["description"]} /> */}
         <span>
           <h1 onClick={() => scrollToSection("Home")}>{props.menu["home"]}</h1>
           <h1 onClick={() => scrollToSection("Landing-Home")}>
