@@ -192,6 +192,24 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    .sloganDiv {
+      margin-top: 18rem;
+      .cozyHomeLogoDiv {
+        height: 5rem;
+        .cozyHomeLogoDiv2 {
+          transform: scale(0.30);
+        }
+      }
+    }
+    .messageDiv {
+      .message {
+        font-size: 0.9rem;
+        line-height: 3;
+      }
+    }
+  }
 `;
 
 const TextDisplay: React.FC<Props> = (props) => {

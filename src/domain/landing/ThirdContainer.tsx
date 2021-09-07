@@ -12,7 +12,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
   display: grid;
   background-color: #121420;
   animation: 1s ease-out 0s 1 slideInFromLeft;
-  height: 600px;
+  height: 900px;
 
   .header {
     display: flex;
@@ -60,7 +60,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
     transform: translateY(-20px);
   }
 
-  height: 900px;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
   grid-template-rows: 1.5fr 1.5fr 1.5fr;
   grid-template-areas:
@@ -164,6 +163,103 @@ const ThirdComponent = styled.div<IThirdContainer>`
     width: 0px;
     pointer-events: none;
     box-shadow: none;
+  }
+
+  @media screen and (max-width: 1000px) {
+    height: 1200px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 1.5fr 1.5fr 1.5fr;
+    .cell-1 {
+      grid-row: 1/1;
+      grid-column: 1/4;
+    }
+    .cell-2 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .cell-3 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .cell-4 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    .cell-5 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    .cell-6 {
+      grid-area: cell-6;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+    .cell-7 {
+      grid-area: cell-7;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    height: 2200px;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    .cell-1 {
+      grid-row: 1/1;
+      grid-column: 1/4
+    }
+    .cell-2 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .cell-3 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    .cell-4 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+    .cell-5 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 5;
+      grid-row-end: 6;
+    }
+    .cell-6 {
+      grid-area: cell-6;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 6;
+      grid-row-end: 7;
+    }
+    .cell-7 {
+      grid-area: cell-7;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 7;
+      grid-row-end: 8;
+    }
   }
 `;
 interface PropsThird {

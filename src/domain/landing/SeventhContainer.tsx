@@ -207,7 +207,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
       grid-column-end: 3;
     }
   } 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     height: 1650px;
     .photosTeam {
       display: grid;

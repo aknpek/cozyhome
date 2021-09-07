@@ -24,16 +24,14 @@ const FifthComponent = styled.div<IFifthContainer>`
     position: absolute;
     background-color: transparent;
     z-index: 0;
-
   }
 
   .backGroundFirst {
     width: 100%;
     position: absolute;
     background-color: transparent;
-
   }
-  
+
   .titleDiv {
     grid-area: titleDiv;
     grid-row-start: 2;
@@ -50,7 +48,6 @@ const FifthComponent = styled.div<IFifthContainer>`
     transition: 0.15s;
     z-index: 1;
 
-
     h1 {
       font-size: 4.5rem;
       font-family: "Josefin Sans", cursive;
@@ -63,7 +60,6 @@ const FifthComponent = styled.div<IFifthContainer>`
     transform: scale(1.05);
     text-decoration: underline;
     text-decoration-color: #13222f;
-
   }
   .sloganDiv {
     grid-area: sloganDiv;
@@ -74,7 +70,6 @@ const FifthComponent = styled.div<IFifthContainer>`
     width: 90%;
     margin: auto;
     z-index: 1;
-
 
     h2 {
       text-align: center;
@@ -99,7 +94,6 @@ const FifthComponent = styled.div<IFifthContainer>`
     justify-content: space-around;
     align-items: center;
     z-index: 1;
-
 
     h1 {
       text-align: center;
@@ -137,8 +131,45 @@ const FifthComponent = styled.div<IFifthContainer>`
   @media screen and (max-width: 1000px) {
     grid-template-columns: 0.2fr 5fr 0.2fr;
   }
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 900px) {
+    height: 1600px;
     grid-template-columns: 0.2fr 6fr 0.2fr;
+    grid-template-rows: 0.2fr 0.1fr 0.1fr 1fr 0.2fr;
+
+    .titleDiv {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      h1 {
+      }
+    }
+
+    .sloganDiv {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      width: 90%;
+      margin: auto;
+      z-index: 1;
+
+      h2 {
+      }
+    }
+    .pictureDiv {
+
+      display: grid;
+
+      h1 {
+      }
+      img {
+      }
+
+   
+    }
+
+   
   }
 `;
 interface PropsFifth {
@@ -156,7 +187,7 @@ const FifthContainer: React.FC<PropsFifth> = (props) => {
       </div>
       <div className={"pictureDiv"}>
         {props.data["pictures"].map((value: any) => (
-          <div key={value.id + "div"}>
+          <div key={value.id + "div"} className={`pictureDiv${value.id}`}>
             <img
               src={Pictures[value.picture_url].default}
               key={value.id + "img"}
@@ -167,7 +198,6 @@ const FifthContainer: React.FC<PropsFifth> = (props) => {
         ))}
       </div>
 
-      
       {/* <div className={"backGroundFirst"}>
         <BackGroundFirst
          props={{}}/>

@@ -291,19 +291,61 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   @media screen and (max-width: 950px) {
-    grid-template-columns: 0.2fr 4fr 4fr 0.2fr;
+    height: 1100px;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    grid-template-rows: 0.1fr 0.8fr 2fr 2fr 0.1fr;
+
+    .titleDiv {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .blockFirst {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+
+      h5 {
+        margin: auto;
+        line-height: 1.2;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #ffffffbe;
+        text-align: left;
+        font-family: "Josefin Sans", cursive;
+      }
+      h4 {
+        margin: auto;
+        line-height: 2;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #ffffffbe;
+        text-align: left;
+        font-family: "Josefin Sans", cursive;
+      }
+    }
+
     .blockSecond {
+      grid-area: blockSecond;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      grid-column-start: 2;
+      grid-column-end: 3;
+
       .roadBlock {
         .roadText {
           h1 {
-            font-size: 0.8rem;
+            font-size: 1.2rem;
             font-weight: 200;
             line-height: 1.5;
             text-decoration: underline;
           }
 
           h2 {
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             font-weight: 100;
             line-height: 1.5;
           }
@@ -312,17 +354,71 @@ const FourthComponent = styled.div<IFourthContainer>`
       .roadBlock:hover {
         .roadText {
           h1 {
-            font-size: 0.7rem;
+            font-size: 1.1rem;
             font-weight: 600;
           }
 
           h2 {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             font-weight: 400;
           }
         }
       }
     }
+  }
+  @media screen and (max-width: 800px) {
+    height: 1400px;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    grid-template-rows: 0.1fr 0.8fr 1fr 1fr 0.1fr;
+
+    .blockSecond {
+      .roadBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+
+        .roadText {
+          h1 {
+            margin: auto;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 200;
+            line-height: 1.5;
+            text-decoration: underline;
+          }
+
+          h2 {
+            margin: auto;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 100;
+            line-height: 1.5;
+          }
+        }
+      }
+      .roadBlock:hover {
+        .roadText {
+          h1 {
+            margin: auto;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+          }
+
+          h2 {
+            margin: auto;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 700px) {
+    height: 1500px;
   }
 `;
 interface PropsFourth {
