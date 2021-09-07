@@ -1,7 +1,6 @@
 import GeneralWrapper, {
   FirstContainer,
   FirstWrapper,
-  ThirdContainer,
 } from "./Elements";
 import { IContent, IHeader } from "../../types";
 import React, { useEffect, useState } from "react";
@@ -12,6 +11,7 @@ import Header from "../../components/Header";
 import Progress from "../../components/ProgressBar";
 import SecondContainer from "./SecondContainer";
 import SeventhContainer from "./SeventhContainer";
+import ThirdContainer from "./ThirdContainer";
 
 const getDocHeight = () => {
   return Math.max(
@@ -87,6 +87,7 @@ const Landing: React.FC = () => {
         {showThirdContainer ? (
           <ThirdContainer
             showThirdContainer={showThirdContainer}
+            data={data["landing"]["containers"][2]}
           ></ThirdContainer>
         ) : (
           <div className="Landing-Home"></div>

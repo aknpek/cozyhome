@@ -34,7 +34,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
       font-family: "Josefin Sans", cursive;
     }
   }
-
   .photosTeam {
     grid-area: blockFirst;
     grid-row-start: 3;
@@ -44,7 +43,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     div {
@@ -129,13 +128,11 @@ const SeventhComponent = styled.div<ISixthContainer>`
 
     .photosTeam {
       div {
-        width: 20rem;
-        height: 20rem;
         div {
         }
         img {
-          height: 13rem;
-          width: 13rem;
+          height: 12rem;
+          width: 12rem;
         }
       }
 
@@ -149,18 +146,80 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
     }
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1100px) {
     height: 650px;
-
     .photosTeam {
       div {
-        width: 20rem;
-        height: 20rem;
         div {
         }
         img {
-          height: 10rem;
-          width: 10rem;
+          /* height: 10rem; */
+          /* width: 10rem; */
+        }
+      }
+
+      h3 {
+        font-size: 1.8rem;
+      }
+      h4 {
+        font-size: 1rem;
+        font-weight: 100;
+        margin-top: -1rem;
+      }
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    height: 950px;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+
+    .titleTeam {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .photosTeam {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+      div {
+        display: flex;
+        justify-content: center;
+
+        div {
+        }
+        img {
+        }
+      }
+
+      h3 {
+        font-size: 1.8rem;
+      }
+      h4 {
+        font-size: 1rem;
+        font-weight: 100;
+        margin-top: -1rem;
+      }
+    }
+    .smartContract {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  } 
+  @media screen and (max-width: 600px) {
+    height: 1650px;
+    .photosTeam {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 2rem;
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+        }
+        img {
         }
       }
 
@@ -186,7 +245,7 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
       </div>
       <div className={"photosTeam"}>
         {props.data["pictures"].map((value: any) => (
-          <div key={value.id + "photos"}>
+          <div key={value.id + "photos"} className={`teamMember${value.id}`}>
             <div key={value.id + "photosinner"}>
               <a href={value.hyperlink} key={value.id + "a"}>
                 <img

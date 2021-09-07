@@ -71,7 +71,7 @@ interface ISecondComponent {
       <SecondComponent textDireciton={props.textDirection}>
         <Picture picture={props.data["pictures"]} />
         <TextDisplay {...props.data} />
-        <motion.div
+        {/* <motion.div
           animate={{
             scale: [0.9, 0.8, 0.9, 0.8, 0.6],
             rotate: [0, 10, 0, -10, 0],
@@ -84,7 +84,7 @@ interface ISecondComponent {
           className={"yildizDiv"}
         >
           <Yildiz props={{}} />
-        </motion.div>
+        </motion.div> */}
       </SecondComponent>
     );
   };

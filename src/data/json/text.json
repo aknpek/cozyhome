@@ -48,9 +48,50 @@
         "subtitle": "",
         "slogan": "Home Is Home",
         "pictures": [
+        
           {
             "id": 0,
-            "picture_url": "yarasa",
+            "picture_url": "ufo",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          }, 
+          {
+            "id": 1,
+            "picture_url": "ktp",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          },
+          {
+            "id": 2,
+            "picture_url": "sade",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          },
+          {
+            "id": 3,
+            "picture_url": "ejderha",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          },
+          {
+            "id": 4,
+            "picture_url": "dondurma",
+            "title": "",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          },
+          {
+            "id": 5,
+            "picture_url": "sade2",
             "title": "",
             "subtitle": "",
             "hyperlink": "",

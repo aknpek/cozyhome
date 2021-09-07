@@ -168,10 +168,10 @@ const FifthContainer: React.FC<PropsFifth> = (props) => {
       </div>
 
       
-      <div className={"backGroundFirst"}>
+      {/* <div className={"backGroundFirst"}>
         <BackGroundFirst
          props={{}}/>
-      </div>
+      </div> */}
 
       {/* <div className={"backGroundSecond"}>
         <BackGroundSecond
