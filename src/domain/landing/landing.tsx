@@ -1,7 +1,6 @@
 import GeneralWrapper, {
   FirstContainer,
   FirstWrapper,
-  SeventhContainer,
   ThirdContainer,
 } from "./Elements";
 import { IContent, IHeader } from "../../types";
@@ -12,6 +11,7 @@ import FourthContainer from "./FourthContainer";
 import Header from "../../components/Header";
 import Progress from "../../components/ProgressBar";
 import SecondContainer from "./SecondContainer";
+import SeventhContainer from "./SeventhContainer";
 
 const getDocHeight = () => {
   return Math.max(
@@ -63,7 +63,9 @@ const Landing: React.FC = () => {
 
   return (
     <GeneralWrapper>
-      <Progress scroll={scrollPosition + "%"} />
+      <div className={"progressDiv"}>
+        <Progress scroll={scrollPosition + "%"} />
+      </div>
       <FirstWrapper>
         <FirstContainer>
           <Header
@@ -82,22 +84,20 @@ const Landing: React.FC = () => {
           textDirection={false}
         />
 
-        {/* {showThirdContainer ? (
+        {showThirdContainer ? (
           <ThirdContainer
             showThirdContainer={showThirdContainer}
           ></ThirdContainer>
         ) : (
           <div className="Landing-Home"></div>
-        )} */}
-
-       
+        )}
 
         <FifthContainer
           showFifthContainer={showThirdContainer}
           data={data["landing"]["containers"][4]}
         ></FifthContainer>
-        
-         <FourthContainer
+
+        <FourthContainer
           data={data["landing"]["containers"][3]}
         ></FourthContainer>
 
@@ -105,10 +105,9 @@ const Landing: React.FC = () => {
           data={data["landing"]["containers"][5]}
           textDirection={false}
         />
-        {/* 
         <SeventhContainer
           data={data["landing"]["containers"][6]}
-        ></SeventhContainer> */}
+        ></SeventhContainer> 
       </FirstWrapper>
     </GeneralWrapper>
   );

@@ -16,7 +16,7 @@ interface ISecondComponent {
     position: relative;
     display: grid;
     width: 100%;
-    height: 700px;
+    height: 600px;
     grid-template-columns: 0.4fr 1.2fr 0.2fr 1.2fr 0.4fr;
     grid-template-rows: 1fr 2fr 0.5fr;
     grid-template-areas: "picture text-display";
@@ -43,12 +43,21 @@ interface ISecondComponent {
     }
     @media screen and (max-width: 1700px) {
       height: 600px;
+      .yildizDiv {
+        width: 1700px
+      }
     }
     @media screen and (max-width: 1500px) {
       height: 550px;
+      .yildizDiv {
+        width: 1500px
+      }
     }
     @media screen and (max-width: 1300px) {
-      height: 500px;
+      height: 550px;
+      .yildizDiv {
+        width: 1300px
+      }
     }
   `;
   

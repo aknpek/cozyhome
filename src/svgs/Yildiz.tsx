@@ -7,9 +7,9 @@ const Yildiz: React.FC<IProps> = (props) =>  {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width={1920}
-      height={1080}
-      viewBox="0 0 1920 1080"
+      width={"95%"}
+      height={"95%"}
+      // viewBox="0 0 1920 1080"
       {...props}
     >
       <g data-name="\xC7al\u0131\u015Fma y\xFCzeyi 1">

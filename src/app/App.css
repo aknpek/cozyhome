@@ -10,6 +10,10 @@
   flex-direction: row;
 }
 
+.progressDiv {
+  height: 100px;
+  background-color: #121420;
+}
 
 .ThirdContainer {
   top: 10%;
