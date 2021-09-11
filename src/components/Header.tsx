@@ -1,5 +1,5 @@
 import { IContainer, IHeader, IMenu } from "../types";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { scroller } from "react-scroll";
 import styled from "styled-components";
@@ -181,6 +181,8 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   const disconnector = props.metaMask.disconnector;
   const account = props.metaMask.account;
   const library = props.metaMask.library;
+
+  console.log(library)
 
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>
