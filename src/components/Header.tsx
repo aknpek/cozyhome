@@ -1,6 +1,6 @@
+import { IContainer, IHeader, IMenu } from "../types";
 import React, { useEffect } from "react";
 
-import { IHeader } from "../types";
 import { scroller } from "react-scroll";
 import styled from "styled-components";
 
@@ -135,28 +135,63 @@ const scrollToSection = (className: string) => {
   });
 };
 
+interface IMeta {
+  connector: any;
+  disconnector: any;
+  active: any;
+  account: any;
+}
 interface IHeaderExtension extends IHeader {
   showThirdContainer: Boolean;
   scrollPosition: Number;
+  metaMask: IMeta;
 }
 
 const Header: React.FC<IHeaderExtension> = (props) => {
   useEffect(() => {}, [props.showThirdContainer]);
 
+  const metaActive = props.metaMask.active;
+  const connector = props.metaMask.connector
+  const disconnector = props.metaMask.disconnector
+
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>
       <main>
         <span>
-          <h1 onClick={() => scrollToSection("Home")}>{props.menu["home"]}</h1>
-          <h1 onClick={() => scrollToSection("Landing-Home")}>
-            {props.menu["about"]}
-          </h1>
-          <h1 onClick={() => scrollToSection("Fourth-Component")}>
-            {props.menu["roadmap"]}
-          </h1>
-          <h1 onClick={() => scrollToSection("Fifth-Component")}>
-            {props.menu["team"]}
-          </h1>
+          {props.menu.map((value: IMenu) => {
+            return (
+              <div key={"div" + value.id}>
+                {value.title === "connect wallet" ? (
+                  [
+                    metaActive ? (
+                      <h1
+                        onClick={disconnector}
+                        key={"h1" + value.id}
+                      >
+                        disconnect
+                      </h1>
+                    ) : (
+                      <h1
+                        onClick={connector}
+                        key={"h1" + value.id}
+                      >
+                        {value.title}
+                      </h1>
+                    ),
+                  ]
+                ) : (
+                  <div key={"div2" + value.id}>
+                    <h1
+                      onClick={() => scrollToSection(value.scroll)}
+                      key={"h1" + value.id}
+                    >
+                      {value.title}
+                    </h1>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </span>
       </main>
     </HeaderCo>

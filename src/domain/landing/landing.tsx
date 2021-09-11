@@ -1,7 +1,4 @@
-import GeneralWrapper, {
-  FirstContainer,
-  FirstWrapper,
-} from "./Elements";
+import GeneralWrapper, { FirstContainer, FirstWrapper } from "./Elements";
 import { IContent, IHeader } from "../../types";
 import React, { useEffect, useState } from "react";
 
@@ -12,6 +9,8 @@ import Progress from "../../components/ProgressBar";
 import SecondContainer from "./SecondContainer";
 import SeventhContainer from "./SeventhContainer";
 import ThirdContainer from "./ThirdContainer";
+import { injected } from "../../components/Wallet";
+import { useWeb3React } from "@web3-react/core";
 
 const getDocHeight = () => {
   return Math.max(
@@ -27,8 +26,46 @@ const getDocHeight = () => {
 const Landing: React.FC = () => {
   const data: IContent = require("../../data/json/text.json");
   const header_data: IHeader = data["landing"]["header"];
+  const [tryWallet, setTryWallet] = useState<Boolean>(false);
   const [scrollPosition, setPosition] = useState<Number>(0);
   const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(false);
+  const { active, account, library, connector, activate, deactivate } =
+    useWeb3React();
+
+  const connect = async () => {
+    try {
+      await activate(injected);
+      console.log("active called");
+    } catch (ex) {
+      console.log(ex);
+    }
+  };
+
+  const disconnect = async () => {
+    try {
+      await deactivate();
+    } catch (ex) {
+      console.log(ex);
+    }
+  };
+
+  useEffect(() => {
+    injected.isAuthorized().then((isAuthorized: boolean) => {
+      if (isAuthorized) {
+        connect();
+        setTryWallet(true);
+      } else {
+        setTryWallet(false);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!tryWallet && active) {
+      setTryWallet(true)
+    }
+  }, [tryWallet, active])
+
 
   const calculateScrollPercentage = () => {
     const scrollTop = window.pageYOffset;
@@ -72,6 +109,12 @@ const Landing: React.FC = () => {
             {...header_data}
             showThirdContainer={showThirdContainer}
             scrollPosition={scrollPosition}
+            metaMask={{
+              active: active,
+              account: account,
+              connector: connect,
+              disconnector: disconnect,
+            }}
           />
         </FirstContainer>
 
@@ -108,7 +151,7 @@ const Landing: React.FC = () => {
         />
         <SeventhContainer
           data={data["landing"]["containers"][6]}
-        ></SeventhContainer> 
+        ></SeventhContainer>
       </FirstWrapper>
     </GeneralWrapper>
   );

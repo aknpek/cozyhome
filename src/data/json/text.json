@@ -2,7 +2,33 @@
  {
   "landing": {
     "header": {
-      "menu": { "home": "home", "about": "about", "roadmap": "roadmap", "team": "team" },
+      "menu": [
+        {
+          "id": 0,
+          "title": "home", 
+          "scroll": "Home"
+        }, 
+        { 
+          "id": 1,
+          "title": "about",
+          "scroll": "Landing-Hone"
+        },
+        {
+          "id": 2,
+          "title": "roadmap",
+          "scroll": "Fourth-Component"
+        },
+        {
+          "id": 3,
+          "title": "team",
+          "scroll": "Fifth-Component"
+        },
+        {
+          "id": 4,
+          "title": "connect wallet", 
+          "scroll": ""
+        }
+      ],
       "logo": {"description":"", "url": ""},
       "title": "CozyHome"
     },

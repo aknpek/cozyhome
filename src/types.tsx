@@ -1,16 +1,12 @@
-import {SVGProps} from "react";
+import { SVGProps } from "react";
 
 export interface IFirstWrapper {}
 
 export interface IFirstContainer {}
 
+export interface IThirdContainer {}
 
-export interface IThirdContainer {
-}
-
-export interface IFourthContainer {
-  
-}
+export interface IFourthContainer {}
 
 export interface IFifthContainer {}
 
@@ -29,10 +25,9 @@ export interface IPictures {
 }
 
 export interface IMenu {
-  home: string;
-  about: string;
-  roadmap: string;
-  team: string;
+  id: number;
+  title: string;
+  scroll: string;
 }
 
 export interface ILogo {
@@ -41,7 +36,7 @@ export interface ILogo {
 }
 
 export interface IHeader {
-  menu: IMenu;
+  menu: IMenu[];
   title: string;
   logo: ILogo;
 }
@@ -62,11 +57,10 @@ export interface IContent {
   };
 }
 
-
 export interface IHeaderProps extends IHeader {
-  onclickFunction: CallableFunction
-} 
+  onclickFunction: CallableFunction;
+}
 
-export interface IProps { 
-  props: SVGProps<SVGElement>
+export interface IProps {
+  props: SVGProps<SVGElement>;
 }
