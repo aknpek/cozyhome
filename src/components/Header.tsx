@@ -168,8 +168,11 @@ interface IHeaderExtension extends IHeader {
 const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
   const fetchBalance = async () => {
-    const response = await props.metaMask.library.eth.getBalance(account);
-    setBalanceAccount(`${(Number(response) / 1000000000000000000)}`);
+    if (props.metaMask.library !== undefined) {
+      props.metaMask.library.eth.getBalance(account).then((response: string) => {
+        setBalanceAccount(`${Number(response) / 1000000000000000000}`);
+      });
+    }
   };
   useEffect(() => {}, [props.showThirdContainer]);
   useEffect(() => {
@@ -180,9 +183,6 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   const connector = props.metaMask.connector;
   const disconnector = props.metaMask.disconnector;
   const account = props.metaMask.account;
-  const library = props.metaMask.library;
-
-  console.log(library)
 
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>
@@ -201,7 +201,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                           key={"wlc" + value.id}
                         >
                           <h1 key={"wls" + value.id}>
-                            wallet ID:{" "}
+                            wallet id:{" "}
                             {account === null
                               ? "-"
                               : account
@@ -217,9 +217,11 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                               ? "-"
                               : balanceAccount
                               ? `${balanceAccount.substring(
-                                0,
-                                6
-                              )}...${balanceAccount.substring(balanceAccount.length - 4)}`
+                                  0,
+                                  6
+                                )}...${balanceAccount.substring(
+                                  balanceAccount.length - 4
+                                )}`
                               : ""}
                           </h1>
                           <h1 onClick={disconnector} key={"h1" + value.id}>

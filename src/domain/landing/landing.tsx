@@ -35,7 +35,6 @@ const Landing: React.FC = () => {
   const connect = async () => {
     try {
       await activate(injected);
-      console.log("active called");
     } catch (ex) {
       console.log(ex);
     }
@@ -60,11 +59,11 @@ const Landing: React.FC = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   if (!tryWallet && active) {
-  //     setTryWallet(true)
-  //   }
-  // }, [tryWallet, active])
+  useEffect(() => {
+    if (!tryWallet && active) {
+      setTryWallet(true)
+    }
+  }, [tryWallet, active])
 
 
   const calculateScrollPercentage = () => {
