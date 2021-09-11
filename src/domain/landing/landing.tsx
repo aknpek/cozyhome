@@ -60,11 +60,11 @@ const Landing: React.FC = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (!tryWallet && active) {
-      setTryWallet(true)
-    }
-  }, [tryWallet, active])
+  // useEffect(() => {
+  //   if (!tryWallet && active) {
+  //     setTryWallet(true)
+  //   }
+  // }, [tryWallet, active])
 
 
   const calculateScrollPercentage = () => {
@@ -114,6 +114,7 @@ const Landing: React.FC = () => {
               account: account,
               connector: connect,
               disconnector: disconnect,
+              library: library
             }}
           />
         </FirstContainer>
