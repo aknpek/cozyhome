@@ -171,6 +171,50 @@ const FifthComponent = styled.div<IFifthContainer>`
 
    
   }
+
+  @media screen and (max-width: 500px) {
+    height: 1500px;
+    grid-template-columns: 0.2fr 6fr 0.2fr;
+    grid-template-rows: 0.2fr 0.1fr 0.1fr 1fr 0.2fr;
+
+    .titleDiv {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .sloganDiv {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      width: 90%;
+      margin: auto;
+      z-index: 1;
+
+      h2 {
+      }
+    }
+    .pictureDiv {
+
+      display: grid;
+
+      h1 {
+      }
+      img {
+        height: 15rem;
+        width: 15rem;
+      }
+
+   
+    }
+
+   
+  }
 `;
 interface PropsFifth {
   showFifthContainer: Boolean;

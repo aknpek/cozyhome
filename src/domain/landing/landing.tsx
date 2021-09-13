@@ -36,7 +36,6 @@ const Landing: React.FC = () => {
     try {
       await activate(injected);
     } catch (ex) {
-      console.log(ex);
     }
   };
 
@@ -44,7 +43,6 @@ const Landing: React.FC = () => {
     try {
       await deactivate();
     } catch (ex) {
-      console.log(ex);
     }
   };
 

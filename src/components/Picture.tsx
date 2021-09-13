@@ -19,55 +19,70 @@ const PicStyled = styled.div<IPicture>`
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
-      max-height: 35rem;
-      max-width: 35rem;
-      min-width: 35rem;
-      min-height: 35rem;
+      max-height: 30rem;
+      max-width: 30rem;
+      min-width: 30rem;
+      min-height: 30rem;
     }
   }
 
   @media screen and (max-width: 1700px) {
     div {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      max-height: 31rem;
-      max-width: 31rem;
-      min-width: 31rem;
-      min-height: 31rem;
+      max-height: 28rem;
+      max-width: 28rem;
+      min-width: 28rem;
+      min-height: 28rem;
     }
   }
   @media screen and (max-width: 1500px) {
     div {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      max-height: 27rem;
-      max-width: 27rem;
-      min-width: 27rem;
-      min-height: 27rem;
+      max-height: 26rem;
+      max-width: 26rem;
+      min-width: 26rem;
+      min-height: 26rem;
     }
   }
   @media screen and (max-width: 1200px) {
     div {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
       max-height: 25rem;
       max-width: 25rem;
       min-width: 25rem;
       min-height: 25rem;
     }
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 900px) {
     div {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
       max-height: 22rem;
       max-width: 22rem;
       min-width: 22rem;
       min-height: 22rem;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    div {
+      max-height: 20rem;
+      max-width: 20rem;
+      min-width: 20rem;
+      min-height: 20rem;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    div {
+      max-height: 18rem;
+      max-width: 18rem;
+      min-width: 18rem;
+      min-height: 18rem;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    div {
+      max-height: 16rem;
+      max-width: 16rem;
+      min-width: 16rem;
+      min-height: 16rem;
     }
   }
 

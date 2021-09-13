@@ -3,6 +3,8 @@ import { IContainer as Props } from "../types";
 import React from "react";
 import styled from "styled-components";
 
+// import { pinJSONToIPFS } from "./Pinata";
+
 interface ITextDisplay {}
 
 const TextBlock = styled.div<ITextDisplay>`
@@ -181,7 +183,7 @@ const TextBlock = styled.div<ITextDisplay>`
       .cozyHomeLogoDiv {
         height: 5rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.30);
+          transform: scale(0.3);
         }
       }
     }
@@ -192,14 +194,13 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
   }
-
   @media screen and (max-width: 800px) {
     .sloganDiv {
       margin-top: 18rem;
       .cozyHomeLogoDiv {
         height: 5rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.30);
+          transform: scale(0.3);
         }
       }
     }
@@ -207,6 +208,47 @@ const TextBlock = styled.div<ITextDisplay>`
       .message {
         font-size: 0.9rem;
         line-height: 3;
+        text-align: center;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .sloganDiv {
+      margin-top: 12rem;
+
+      .sloganDivBlock {
+        display: flex;
+        justify-content: center;
+
+        .slogan {
+          margin-top: -5rem;
+          font-size: 3rem;
+        }
+      }
+
+      .cozyHomeLogoDiv {
+        height: 3rem;
+
+        .cozyHomeLogoDiv2 {
+          transform: scale(0.2);
+        }
+      }
+    }
+    .messageDiv {
+
+      .message {
+        font-size: 0.9rem;
+        line-height: 3.5;
+        text-align: center;
+      }
+    }
+    .subTitleDiv {
+      margin: auto;
+      width: 12rem;
+      height: 7rem;
+      border-radius: 2rem;
+
+      .subTitle {
       }
     }
   }

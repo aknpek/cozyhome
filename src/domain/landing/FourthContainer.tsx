@@ -419,6 +419,29 @@ const FourthComponent = styled.div<IFourthContainer>`
   }
   @media screen and (max-width: 700px) {
     height: 1500px;
+    grid-template-rows: 0.1fr 0fr 1fr 1fr 0.1fr;
+
+    .blockFirst {
+      .blockFirstDiv {
+        h5 {
+          text-align: center;
+        }
+        h4 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 1500px;
+
+    .titleDiv {
+      h1 {
+        text-align: center;
+        font-size: 3.5rem;
+      }
+    }
   }
 `;
 interface PropsFourth {

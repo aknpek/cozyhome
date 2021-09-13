@@ -220,7 +220,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
 
     .cell-1 {
       grid-row: 1/1;
-      grid-column: 1/4
+      grid-column: 1/4;
     }
     .cell-2 {
       grid-column-start: 2;
@@ -259,6 +259,33 @@ const ThirdComponent = styled.div<IThirdContainer>`
       grid-column-end: 3;
       grid-row-start: 7;
       grid-row-end: 8;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    height: 1800px;
+    font-size: 1.2rem;
+
+    .header {
+      margin: auto;
+      h1 {
+        height: 15rem;
+        font-size: 3rem;
+      }
+    }
+
+    .cells {
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      min-width: 50px;
+      min-height: 100px;
+      img {
+        height: 17rem;
+        width: 17rem;
+      }
     }
   }
 `;

@@ -86,6 +86,33 @@ export const SecondComponent = styled.div<ISecondComponent>`
       }
     }
   }
+
+  @media screen and (max-width: 500px) {
+    height: 750px;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+    .picture {
+      margin: auto;
+      grid-row-start: 2;
+      grid-row-start: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      z-index: 1;
+    }
+
+    .textdisplay {
+      margin: auto;
+      grid-row-start: 4;
+      grid-row-start: 5;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      z-index: 1;
+
+      .yildizDiv {
+        width: 800px;
+      }
+    }
+  }
 `;
 
 interface PropsSecond {
