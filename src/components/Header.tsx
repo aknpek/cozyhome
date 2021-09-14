@@ -1,6 +1,9 @@
 import { IContainer, IHeader, IMenu } from "../types";
 import React, { useEffect, useRef, useState } from "react";
 
+import DiscordLogo from "../svgs/DiscordLogo";
+import OpenSeaLogo from "../svgs/OpenSeaLogo";
+import TwitterLogo from "../svgs/TwitterLogo";
 import { scroller } from "react-scroll";
 import styled from "styled-components";
 
@@ -24,31 +27,79 @@ const HeaderCo = styled.div<IHead>`
     display: flex;
     z-index: 3;
     position: fixed;
-    top: 2%;
-    background-color: #00000023;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 
-  span {
-    display: flex;
-    font-family: "Josefin Sans", cursive;
-    font-weight: 400;
-    color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
-    h1 {
+  .headerContainer {
+    background-color: red;
+    
+    span {
       display: flex;
-      position: relative;
-      font-size: 1rem;
-      height: 4rem;
-      width: 8rem;
-      margin: 1rem;
+      font-family: "Josefin Sans", cursive;
+      font-weight: 400;
       color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
-      transition: color 0.2s ease-in-out;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      letter-spacing: 1.5;
+      h1 {
+        background-color: white;
+        border-radius: 0.3rem;
+        display: flex;
+        position: relative;
+        font-size: 0.8rem;
+        height: 2rem;
+        width: 6rem;
+        font-weight: 800;
+        margin: 1rem;
+        color: ${(props) => (props.showThirdContainer ? "#0f0f0f" : "#0f0f0f")};
+        transition: color 0.2s ease-in-out;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 1.5;
+      }
     }
   }
+
+  .logoContainer {
+    background-color: red;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .twitterLogo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.2rem;
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    .discordLogo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.2rem;
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    .openSeaLogo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.2rem;
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+
   .dropDownContent {
     display: none;
     position: absolute;
@@ -66,9 +117,6 @@ const HeaderCo = styled.div<IHead>`
 
   .dropDownWallet:hover .dropDownContent {
     display: block;
-  }
-
-  @media screen and (max-width: 2000px) {
   }
 
   @media screen and (max-width: 700px) {
@@ -104,15 +152,17 @@ const HeaderCo = styled.div<IHead>`
   }
 
   h1:hover {
-    color: white;
+    color: #ffffff;
     font-weight: 200;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     cursor: pointer;
+    z-index: 2;
   }
 
   h1::before {
     transform: scaleX(0);
     transform-origin: bottom right;
+    border-radius: 1.2rem;
   }
 
   h1:hover::before {
@@ -129,6 +179,8 @@ const HeaderCo = styled.div<IHead>`
     bottom: 0;
     left: 0;
     inset: 0 0 0 0;
+    border-radius: 0.5rem;
+    font-weight: 600;
     background: linear-gradient(132deg, #f4d03f 0%, #ff961b 100%);
     z-index: -1;
     transition: transform 0.3s ease;
@@ -169,9 +221,11 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
   const fetchBalance = async () => {
     if (props.metaMask.library !== undefined) {
-      props.metaMask.library.eth.getBalance(account).then((response: string) => {
-        setBalanceAccount(`${Number(response) / 1000000000000000000}`);
-      });
+      props.metaMask.library.eth
+        .getBalance(account)
+        .then((response: string) => {
+          setBalanceAccount(`${Number(response) / 1000000000000000000}`);
+        });
     }
   };
   useEffect(() => {}, [props.showThirdContainer]);
@@ -187,68 +241,86 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>
       <main>
-        <span>
-          {props.menu.map((value: IMenu) => {
-            return (
-              <div key={"div" + value.id}>
-                {value.title === "connect wallet" ? (
-                  [
-                    metaActive ? (
-                      <div className={"dropDownWallet"} key={"div" + value.id}>
-                        <h1>wallet</h1>
+        <div className={"headerContainer"}>
+          <span>
+            {props.menu.map((value: IMenu) => {
+              return (
+                <div key={"div" + value.id}>
+                  {value.title === "connect wallet" ? (
+                    [
+                      metaActive ? (
                         <div
-                          className={"dropDownContent"}
-                          key={"wlc" + value.id}
+                          className={"dropDownWallet"}
+                          key={"div" + value.id}
                         >
-                          <h1 key={"wls" + value.id}>
-                            wallet id:{" "}
-                            {account === null
-                              ? "-"
-                              : account
-                              ? `${account.substring(
-                                  0,
-                                  6
-                                )}...${account.substring(account.length - 4)}`
-                              : ""}
-                          </h1>
-                          <h1>
-                            balance:{" "}
-                            {balanceAccount === null
-                              ? "-"
-                              : balanceAccount
-                              ? `${balanceAccount.substring(
-                                  0,
-                                  6
-                                )}...${balanceAccount.substring(
-                                  balanceAccount.length - 4
-                                )}`
-                              : ""}
-                          </h1>
-                          <h1 onClick={disconnector} key={"h1" + value.id}>
-                            disconnect
-                          </h1>
+                          <h1>wallet</h1>
+                          <div
+                            className={"dropDownContent"}
+                            key={"wlc" + value.id}
+                          >
+                            <h1 key={"wls" + value.id}>
+                              wallet id:{" "}
+                              {account === null
+                                ? "-"
+                                : account
+                                ? `${account.substring(
+                                    0,
+                                    6
+                                  )}...${account.substring(account.length - 4)}`
+                                : ""}
+                            </h1>
+                            <h1>
+                              balance:{" "}
+                              {balanceAccount === null
+                                ? "-"
+                                : balanceAccount
+                                ? `${balanceAccount.substring(
+                                    0,
+                                    6
+                                  )}...${balanceAccount.substring(
+                                    balanceAccount.length - 4
+                                  )}`
+                                : ""}
+                            </h1>
+                            <h1 onClick={disconnector} key={"h1" + value.id}>
+                              disconnect
+                            </h1>
+                          </div>
                         </div>
-                      </div>
-                    ) : (
-                      <h1 onClick={connector} key={"h1" + value.id}>
+                      ) : (
+                        <h1 onClick={connector} key={"h1" + value.id}>
+                          {value.title}
+                        </h1>
+                      ),
+                    ]
+                  ) : (
+                    <div key={"div2" + value.id}>
+                      <h1
+                        onClick={() => scrollToSection(value.scroll)}
+                        key={"h1" + value.id}
+                      >
                         {value.title}
                       </h1>
-                    ),
-                  ]
-                ) : (
-                  <div key={"div2" + value.id}>
-                    <h1
-                      onClick={() => scrollToSection(value.scroll)}
-                      key={"h1" + value.id}
-                    >
-                      {value.title}
-                    </h1>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </span>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </span>
+        </div>
+
+        <div className={"logoContainer"}>
+          <div className={"twitterLogo"}>
+            <TwitterLogo />
+          </div>
+          <div className={"discordLogo"}>
+            <DiscordLogo />
+          </div>
+
+          <div className={"openSeaLogo"}>
+            <OpenSeaLogo props={{}} />
+          </div>
+        </div>
       </main>
     </HeaderCo>
   );
