@@ -59,7 +59,6 @@ export const SecondComponent = styled.div<ISecondComponent>`
       width: 1300px;
     }
   }
-
   @media screen and (max-width: 800px) {
     height: 750px;
     grid-template-columns: 0.5fr 1fr 0.5fr;
@@ -86,7 +85,6 @@ export const SecondComponent = styled.div<ISecondComponent>`
       }
     }
   }
-
   @media screen and (max-width: 500px) {
     height: 700px;
     grid-template-columns: 0.2fr 2fr 0.2fr;

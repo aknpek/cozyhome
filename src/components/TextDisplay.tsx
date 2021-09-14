@@ -236,10 +236,9 @@ const TextBlock = styled.div<ITextDisplay>`
 
       .cozyHomeLogoDiv {
         
+        height: 3rem;
 
         .cozyHomeLogoDiv2 {
-          top: -20rem,;
-          height: 3rem;
           transform: scale(0.2);
         }
       }

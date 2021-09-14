@@ -27,11 +27,15 @@ const HeaderCo = styled.div<IHead>`
     display: flex;
     z-index: 3;
     position: fixed;
+    background-color: #121420;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
   .headerContainer {
-    background-color: red;
-    
+    margin-right: 3rem;
+
     span {
       display: flex;
       font-family: "Josefin Sans", cursive;
@@ -58,7 +62,7 @@ const HeaderCo = styled.div<IHead>`
   }
 
   .logoContainer {
-    background-color: red;
+    margin-right: 3rem;
 
     display: flex;
     flex-direction: row;
@@ -162,7 +166,7 @@ const HeaderCo = styled.div<IHead>`
   h1::before {
     transform: scaleX(0);
     transform-origin: bottom right;
-    border-radius: 1.2rem;
+    border-radius: 0.8rem;
   }
 
   h1:hover::before {
@@ -179,9 +183,9 @@ const HeaderCo = styled.div<IHead>`
     bottom: 0;
     left: 0;
     inset: 0 0 0 0;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     font-weight: 600;
-    background: linear-gradient(132deg, #f4d03f 0%, #ff961b 100%);
+    background-color: #ff961b;
     z-index: -1;
     transition: transform 0.3s ease;
   }

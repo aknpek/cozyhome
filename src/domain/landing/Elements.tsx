@@ -17,6 +17,8 @@ export const FirstWrapper = styled.div<IFirstWrapper>`
   flex-direction: row;
 `;
 export const FirstContainer = styled.div<IFirstContainer>`
+background-color: white;
+
   height: 100%;
   width: 100%;
 `;
