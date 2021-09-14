@@ -211,11 +211,19 @@ const TextBlock = styled.div<ITextDisplay>`
         text-align: center;
       }
     }
+    .subTitleDiv {
+      margin: auto;
+      width: 11rem;
+      height: 4rem;
+      border-radius: 1.2rem;
+
+      .subTitle {
+        font-size: 1.2rem;
+      }
+    }
   }
   @media screen and (max-width: 500px) {
     .sloganDiv {
-      margin-top: 12rem;
-
       .sloganDivBlock {
         display: flex;
         justify-content: center;
@@ -227,9 +235,11 @@ const TextBlock = styled.div<ITextDisplay>`
       }
 
       .cozyHomeLogoDiv {
-        height: 3rem;
+        
 
         .cozyHomeLogoDiv2 {
+          top: -20rem,;
+          height: 3rem;
           transform: scale(0.2);
         }
       }
@@ -244,11 +254,12 @@ const TextBlock = styled.div<ITextDisplay>`
     }
     .subTitleDiv {
       margin: auto;
-      width: 12rem;
-      height: 7rem;
-      border-radius: 2rem;
+      width: 11rem;
+      height: 4rem;
+      border-radius: 1.2rem;
 
       .subTitle {
+        font-size: 1.2rem;
       }
     }
   }

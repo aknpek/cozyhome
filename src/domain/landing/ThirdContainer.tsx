@@ -26,7 +26,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
       margin-top: 8%;
       font-size: 4.5rem;
       background-color: transparent;
-      color: #ffffffbe;
+      color: white;
       font-family: "Josefin Sans", cursive;
       -webkit-transition: 0.15s;
       -moz-transition: 0.15s;
@@ -265,14 +265,15 @@ const ThirdComponent = styled.div<IThirdContainer>`
   @media screen and (max-width: 500px) {
     display: flex;
     flex-direction: column;
-    height: 1800px;
+    height: 1200px;
     font-size: 1.2rem;
 
     .header {
       margin: auto;
       h1 {
-        height: 15rem;
+        height: 5rem;
         font-size: 3rem;
+        
       }
     }
 
@@ -287,6 +288,13 @@ const ThirdComponent = styled.div<IThirdContainer>`
         width: 17rem;
       }
     }
+
+    .cell-5{
+      display: none;
+    }
+    .cell-6{
+      display: none;
+    }
   }
 `;
 interface PropsThird {
@@ -299,7 +307,7 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
   return (
     <ThirdComponent className="Landing-Home">
       <header className={"cell cell-1 header"}>
-        <h1>Your Collection</h1>
+        <h1>Collection</h1>
       </header>
 
       {props.data.pictures.map((value: IPictures) => (

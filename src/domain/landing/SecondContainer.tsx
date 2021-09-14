@@ -88,16 +88,17 @@ export const SecondComponent = styled.div<ISecondComponent>`
   }
 
   @media screen and (max-width: 500px) {
-    height: 750px;
-    grid-template-columns: 0.5fr 1fr 0.5fr;
+    height: 700px;
+    grid-template-columns: 0.2fr 2fr 0.2fr;
     grid-template-rows: 0.1fr 1fr 1fr 1fr;
     .picture {
       margin: auto;
+      grid-row-start: 1;
       grid-row-start: 2;
-      grid-row-start: 3;
       grid-column-start: 2;
       grid-column-end: 3;
       z-index: 1;
+      
     }
 
     .textdisplay {

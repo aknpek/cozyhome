@@ -9,6 +9,34 @@ const PicStyled = styled.div<IPicture>`
   margin: auto;
   background-color: transparent;
 
+  .cerceve {
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    z-index: 2;
+    object-fit: contain;
+    border-radius: 0.4rem;
+  }
+  .gif {
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    z-index: 1;
+    object-fit: contain;
+
+    -webkit-transition: 0.15s;
+    -moz-transition: 0.15s;
+    -ms-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
+  }
+
   div {
     will-change: transform;
     transition: transform 450ms;
@@ -25,7 +53,6 @@ const PicStyled = styled.div<IPicture>`
       min-height: 30rem;
     }
   }
-
   @media screen and (max-width: 1700px) {
     div {
       max-height: 28rem;
@@ -58,7 +85,6 @@ const PicStyled = styled.div<IPicture>`
       min-height: 22rem;
     }
   }
-
   @media screen and (max-width: 700px) {
     div {
       max-height: 20rem;
@@ -67,7 +93,6 @@ const PicStyled = styled.div<IPicture>`
       min-height: 20rem;
     }
   }
-
   @media screen and (max-width: 500px) {
     div {
       max-height: 18rem;
@@ -76,7 +101,6 @@ const PicStyled = styled.div<IPicture>`
       min-height: 18rem;
     }
   }
-
   @media screen and (max-width: 500px) {
     div {
       max-height: 16rem;
@@ -84,37 +108,12 @@ const PicStyled = styled.div<IPicture>`
       min-width: 16rem;
       min-height: 16rem;
     }
+    .gif { 
+      margin-top: 3rem;
+    }
   }
 
-  .cerceve {
-    width: 100%;
-    height: 100%;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    z-index: 2;
-    object-fit: contain;
-    border-radius: 0.4rem;
-  }
-  .gif {
-    width: 98%;
-    height: 98%;
-    margin: 1%auto;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    z-index: 1;
-    object-fit: contain;
-
-    -webkit-transition: 0.15s;
-    -moz-transition: 0.15s;
-    -ms-transition: 0.15s;
-    -o-transition: 0.15s;
-    transition: 0.15s;
-  }
-
+ 
   .gif:hover {
     transition: transform 250ms;
     transform: rotate(-10deg);
