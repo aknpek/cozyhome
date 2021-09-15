@@ -41,13 +41,18 @@ export interface IHeader {
   logo: ILogo;
 }
 
+export interface ISlogan {
+  id: number;
+  slogan: string;
+}
+
 export interface IContainer {
   "component-place": string;
   "component-type": string;
   title: string;
   subtitle: string;
   pictures: IPictures[];
-  slogan: string;
+  slogan: ISlogan[];
 }
 
 export interface IContent {

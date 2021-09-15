@@ -108,12 +108,11 @@ const PicStyled = styled.div<IPicture>`
       min-width: 16rem;
       min-height: 16rem;
     }
-    .gif { 
+    .gif {
       margin-top: 3rem;
     }
   }
 
- 
   .gif:hover {
     transition: transform 250ms;
     transform: rotate(-10deg);
@@ -129,13 +128,22 @@ const Picture: React.FC<Props> = (props) => {
     <PicStyled className={"picture"}>
       <div>
         {props.picture.map((value: IPictures) => {
-          if (value) {
+          if (value["picture_url"] !== "gif") {
             return (
               <img
                 className={"gif"}
                 src={Pictures[value["picture_url"]].default}
                 alt="amk"
                 key={value.id}
+              />
+            );
+          } else if (value["picture_url"] === "gif") {
+            return (
+              <img
+                className={"gif"}
+                src={Pictures[value["picture_url"]].default}
+                alt="amk"
+                key={"_"}
               />
             );
           } else {

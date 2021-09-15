@@ -19,7 +19,8 @@ const Pictures: any= {
   elif: require("../data/png/elif.png"),
   egemen:  require("../data/png/egemen.png"),
   akin: require("../data/png/akin.png"),
-  burak: require("../data/png/burak.png")
+  burak: require("../data/png/burak.png"),
+  gif: require("../data/png/logo.gif")
 
 };
 

@@ -34,11 +34,12 @@ const HeaderCo = styled.div<IHead>`
   }
 
   .headerContainer {
-    margin-right: 3rem;
+    margin-right: 10rem;
 
     span {
       display: flex;
-      font-family: "Josefin Sans", cursive;
+      font-family: "Fredoka One", normal;
+      letter-spacing: 0.05rem;
       font-weight: 400;
       color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
       h1 {
@@ -46,9 +47,9 @@ const HeaderCo = styled.div<IHead>`
         border-radius: 0.3rem;
         display: flex;
         position: relative;
-        font-size: 0.8rem;
-        height: 2rem;
-        width: 6rem;
+        font-size: 1rem;
+        height: 2.5rem;
+        width: 8rem;
         font-weight: 800;
         margin: 1rem;
         color: ${(props) => (props.showThirdContainer ? "#0f0f0f" : "#0f0f0f")};
@@ -73,11 +74,11 @@ const HeaderCo = styled.div<IHead>`
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0.2rem;
+      margin: 0.5rem;
 
       svg {
-        height: 2rem;
-        width: 2rem;
+        height: 2.5rem;
+        width: 2.5rem;
       }
     }
 
@@ -85,10 +86,10 @@ const HeaderCo = styled.div<IHead>`
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0.2rem;
+      margin: 0.5rem;
       svg {
-        height: 2rem;
-        width: 2rem;
+        height: 2.5rem;
+        width: 2.5rem;
       }
     }
 
@@ -96,10 +97,10 @@ const HeaderCo = styled.div<IHead>`
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0.2rem;
+      margin: 0.5rem;
       svg {
-        height: 2rem;
-        width: 2rem;
+        height: 2.5rem;
+        width: 2.5rem;
       }
     }
   }
@@ -116,7 +117,8 @@ const HeaderCo = styled.div<IHead>`
   .dropDownWallet {
     position: relative;
     display: inline-block;
-    font-family: "Josefin Sans", cursive;
+    font-family: "Fredoka One", normal;
+
   }
 
   .dropDownWallet:hover .dropDownContent {
@@ -135,7 +137,8 @@ const HeaderCo = styled.div<IHead>`
 
     span {
       display: flex;
-      font-family: "Josefin Sans", cursive;
+      font-family: "Fredoka One", normal;
+
       font-weight: 400;
       color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
       h1 {
@@ -201,6 +204,8 @@ const HeaderCo = styled.div<IHead>`
 `;
 
 const scrollToSection = (className: string) => {
+
+  console.log(className, "that is")
   scroller.scrollTo(className, {
     duration: 800,
     delay: 0,

@@ -12,7 +12,7 @@ const FifthComponent = styled.div<IFifthContainer>`
   animation: 1s ease-out 0s 1 slideInFromLeft;
 
   grid-template-columns: 0.2fr 1fr 0.2fr;
-  grid-template-rows: 0.2fr 0.1fr 0.1fr 0.7fr 0.2fr;
+  grid-template-rows: 0fr 1fr 2fr 1fr 1fr;
   grid-template-areas:
     "titleDiv"
     "sloganDiv"
@@ -34,8 +34,8 @@ const FifthComponent = styled.div<IFifthContainer>`
 
   .titleDiv {
     grid-area: titleDiv;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
     display: flex;
@@ -50,9 +50,9 @@ const FifthComponent = styled.div<IFifthContainer>`
 
     h1 {
       font-size: 4.5rem;
-      font-family: "Josefin Sans", cursive;
-      color: #ffffffbe;
-      font-weight: 600;
+      font-family: "Fredoka One", cursive;
+      color: white;
+      font-weight: 200;
     }
   }
   .titleDiv:hover {
@@ -63,18 +63,18 @@ const FifthComponent = styled.div<IFifthContainer>`
   }
   .sloganDiv {
     grid-area: sloganDiv;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3;
-    width: 90%;
+    width: 70%;
     margin: auto;
     z-index: 1;
 
     h2 {
       text-align: center;
       font-size: 1.2rem;
-      line-height: 2.5;
+      line-height: 2;
       font-weight: 100;
       font-family: "Josefin Sans", cursive;
       color: #ffffffbe;
@@ -97,10 +97,10 @@ const FifthComponent = styled.div<IFifthContainer>`
 
     h1 {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       line-height: 2.5;
       font-weight: 100;
-      font-family: "Josefin Sans", cursive;
+      font-family: "Fredoka One", normal;
       color: #ffffffbe;
     }
     img {

@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
 
 .MainApp {
   position: absolute;
   display: flex;
-  background-color: black;
+  background-color: #121420;
   height: 100%auto;
   width: calc(100% + 9px);
   margin: -10px;
@@ -16,25 +18,26 @@
 
 .ThirdContainer {
   top: 10%;
-  height: 200px;
+  height: 1080px;
   width: 2000px;
-  background-color: yellow;;
-
 }
 
-.Landing-Home {
-  height: calc(65rem + 20px);
+.Home-Container {
+  /* height: calc(65rem + 20px); */
   animation: 1.5s ease-out 0s 1 slideInFromRight;
 }
 .Fourth-Container {
-  margin-top: 10%;
   height: calc(65rem + 20px);
   animation: 1.5s ease-out 0s 1 slideInFromRight;
 }
 .Fifth-Container {
-  margin-top: 10%;
   height: calc(65rem + 20px);
   animation: 1.5s ease-out 0s 1 slideInFromRight;
+}
+
+.Collection-Container{
+  height: calc(65rem + 20px);
+
 }
 
 .Deneme {

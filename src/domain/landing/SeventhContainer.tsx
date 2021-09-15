@@ -31,7 +31,8 @@ const SeventhComponent = styled.div<ISixthContainer>`
       font-size: 4.5rem;
       color: #ffffffbe;
       text-align: center;
-      font-family: "Josefin Sans", cursive;
+      font-family: "Fredoka One", normal;
+      font-weight: 200;
     }
   }
   .photosTeam {
@@ -67,11 +68,12 @@ const SeventhComponent = styled.div<ISixthContainer>`
       h3 {
         color: #ffffffbe;
         font-size: 2.5rem;
-        font-family: "Josefin Sans", cursive;
+        font-family: "Fredoka One", normal;
+        font-weight: 200;
       }
       h4 {
         color: #ffffffbe;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 100;
         font-family: "Josefin Sans", cursive;
         margin-top: -1rem;
@@ -90,7 +92,8 @@ const SeventhComponent = styled.div<ISixthContainer>`
     a {
       h1 {
         color: #ffffffbe;
-        font-family: "Josefin Sans", cursive;
+        font-family: "Fredoka One", normal;
+        font-weight: 200;
         text-decoration: underline;
       }
       h1:hover {

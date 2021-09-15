@@ -1,44 +1,50 @@
+import { ISlogan, IContainer as Props } from "../types";
+import styled, { css } from "styled-components";
+
 import CozyLogo from "../svgs/CozyLogo";
-import { IContainer as Props } from "../types";
 import React from "react";
-import styled from "styled-components";
 
 // import { pinJSONToIPFS } from "./Pinata";
 
-interface ITextDisplay {}
+interface ITextDisplay {
+  textDirection: Boolean;
+  preSale: string;
+}
 
 const TextBlock = styled.div<ITextDisplay>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   .sloganDiv {
     will-change: transform;
     transition: transform 450ms;
-    font-family: "Josefin Sans", cursive;
+    font-family: "Fredoka One", normal;
+    font-weight: 200;
 
     text-align: center;
     justify-items: center;
 
     .sloganDivBlock {
+      height: 5rem;
       border-radius: 2rem;
-      /* background-color: white; */
       display: flex;
       justify-content: left;
       align-items: center;
       .slogan {
         font-size: 4.5rem;
-        letter-spacing: -0.1rem;
+        letter-spacing: 0.1rem;
         color: white;
       }
     }
     .cozyHomeLogoDiv {
       display: flex;
       height: 8rem;
-      justify-content: center;
+      justify-content: left;
       align-items: center;
       .cozyHomeLogoDiv2 {
-        position: absolute;
-        transform: scale(0.65);
+        /* position: absolute; */
+        transform: scale(1);
       }
     }
   }
@@ -49,13 +55,16 @@ const TextBlock = styled.div<ITextDisplay>`
     align-items: center;
     .message {
       color: #f1f1f1;
-      font-size: 1.5rem;
+      font-size: 18px;
       font-weight: 200;
-      line-height: 3;
+      line-height: 1.5;
+      letter-spacing: 0.05rem;
+      margin-left: ${(props) => !props.textDirection && "2rem"};
     }
   }
   .subTitleDiv {
     text-align: center;
+    margin-top: 1rem;
     width: 50%;
     font-family: "Josefin Sans", cursive;
     border-radius: 2rem;
@@ -102,7 +111,7 @@ const TextBlock = styled.div<ITextDisplay>`
         color: #f1f1f1;
         font-size: 1.2rem;
         font-weight: 200;
-        line-height: 3;
+        line-height: 1;
       }
     }
   }
@@ -158,23 +167,25 @@ const TextBlock = styled.div<ITextDisplay>`
     .messageDiv {
       .message {
         font-size: 1.1rem;
-        line-height: 3;
+        line-height: 1;
       }
     }
   }
   @media screen and (max-width: 1100px) {
     .sloganDiv {
+      /* background-color: red; */
       .cozyHomeLogoDiv {
         height: 5rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.35);
+          transform: scale(0.8);
         }
       }
     }
     .messageDiv {
       .message {
-        font-size: 1.1rem;
-        line-height: 3;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 100;
       }
     }
   }
@@ -235,7 +246,6 @@ const TextBlock = styled.div<ITextDisplay>`
       }
 
       .cozyHomeLogoDiv {
-        
         height: 3rem;
 
         .cozyHomeLogoDiv2 {
@@ -244,7 +254,6 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
     .messageDiv {
-
       .message {
         font-size: 0.9rem;
         line-height: 3.5;
@@ -264,9 +273,13 @@ const TextBlock = styled.div<ITextDisplay>`
   }
 `;
 
-const TextDisplay: React.FC<Props> = (props) => {
+interface PTextDisplay extends Props {
+  textDirection: Boolean;
+}
+
+const TextDisplay: React.FC<PTextDisplay> = (props) => {
   return (
-    <TextBlock className={"textdisplay"}>
+    <TextBlock preSale={props.title} className={"textdisplay"} textDirection={props.textDirection}>
       <div className={"sloganDiv"}>
         {props.title !== "" ? (
           <div className={"sloganDivBlock"}>
@@ -282,8 +295,22 @@ const TextDisplay: React.FC<Props> = (props) => {
       </div>
 
       <div className={"messageDiv"}>
-        <h1 className={"message"}>{props.slogan}</h1>
+        <div>
+          {props.slogan.map((value: ISlogan) => {
+            if (props.title === "presale") {
+                return (
+                  <div>
+                    <h1 className={"preSale"}></h1>
+                  </div>
+                )
+
+            } else {
+              return <h1 className={"message"}>{value.slogan}</h1>;
+            }
+          })}
+        </div>
       </div>
+
       {props.subtitle !== "" ? (
         <div className={"subTitleDiv"}>
           <h1 className={"subTitle"}>{props.subtitle}</h1>

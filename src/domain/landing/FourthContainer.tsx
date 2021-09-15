@@ -32,9 +32,10 @@ const FourthComponent = styled.div<IFourthContainer>`
 
     h1 {
       font-size: 4.5rem;
-      color: #ffffffbe;
+      color: white;
       text-align: center;
-      font-family: "Josefin Sans", cursive;
+      font-family: "Fredoka One", normal;
+      font-weight: 200;
     }
   }
   .titleDiv:hover {
@@ -53,12 +54,16 @@ const FourthComponent = styled.div<IFourthContainer>`
     justify-content: center;
     align-items: center;
     .blockFirstDiv {
-      height: 100%;
       width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* CHANGED */
 
       h5 {
-        line-height: 3;
-        font-size: 1.2rem;
+        margin-top: 0rem;
+        line-height: 1.4;
+        letter-spacing: 0rem;
+        font-size: 1.6rem;
         font-weight: 400;
         color: #ffffffbe;
         text-align: left;
@@ -66,11 +71,11 @@ const FourthComponent = styled.div<IFourthContainer>`
       }
       h4 {
         line-height: 2;
-        font-size: 2rem;
-        font-weight: 600;
+        font-size: 4rem;
+        font-weight: 200;
         color: #ffffffbe;
         text-align: left;
-        font-family: "Josefin Sans", cursive;
+        font-family: "Fredoka One", normal;
       }
     }
   }
@@ -84,11 +89,11 @@ const FourthComponent = styled.div<IFourthContainer>`
     .roadBlock {
       display: flex;
       flex-direction: row;
-      -webkit-transition: 0.1s;
-      -moz-transition: 0.1s;
-      -ms-transition: 0.1s;
-      -o-transition: 0.1s;
-      transition: 0.1s;
+      -webkit-transition: 0.2s;
+      -moz-transition: 0.2s;
+      -ms-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s;
 
       .roadPercent {
         height: 8rem;
@@ -99,11 +104,10 @@ const FourthComponent = styled.div<IFourthContainer>`
         text-align: center;
 
         .roadPercentBlock {
-          height: 4rem;
-          width: 4rem;
+          height: 5rem;
+          width: 5rem;
           background-color: #ffffffbe;
           border-radius: 1.2rem;
-          font-family: "Josefin Sans", cursive;
 
           display: flex;
           justify-content: center;
@@ -111,7 +115,10 @@ const FourthComponent = styled.div<IFourthContainer>`
           text-align: center;
 
           h1 {
-            font-size: 1.2rem;
+            font-family: "Fredoka One", normal;
+            font-weight: 200;
+
+            font-size: 1.4rem;
             font-weight: 600;
           }
         }
@@ -145,14 +152,14 @@ const FourthComponent = styled.div<IFourthContainer>`
         width: 80%;
 
         h1 {
-          font-size: 1rem;
+          font-size: 1.2rem;
           font-weight: 200;
           line-height: 1.5;
           text-decoration: underline;
         }
 
         h2 {
-          font-size: 0.8rem;
+          font-size: 1rem;
           font-weight: 100;
           line-height: 1.5;
         }
@@ -160,9 +167,10 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
 
     .roadBlock:hover {
-      transition: transform 150ms background-color 0.5s ease color 0.5s ease;
+      transition: transform 250ms background-color 0.4s ease color 0.5s ease;
       transform: scale(1.05);
-      background-color: #ff961b;
+      background-color: #121420f4;
+  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
       border-radius: 1.5rem;
       .roadPercentBlock {
         h1 {
@@ -174,7 +182,7 @@ const FourthComponent = styled.div<IFourthContainer>`
         h1 {
           font-size: 1.1rem;
           font-weight: 600;
-          color: #121420;
+          color: white;
           text-decoration: underline;
           width: 95%;
         }
@@ -182,7 +190,7 @@ const FourthComponent = styled.div<IFourthContainer>`
         h2 {
           font-size: 1rem;
           font-weight: 400;
-          color: #121420;
+          color: white;
           width: 95%;
         }
       }

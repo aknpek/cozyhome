@@ -6,12 +6,12 @@
         {
           "id": 0,
           "title": "home", 
-          "scroll": "Home"
+          "scroll": "Home-Container"
         }, 
         { 
           "id": 1,
           "title": "about",
-          "scroll": "Landing-Hone"
+          "scroll": "Fifth-Component"
         },
         {
           "id": 2,
@@ -21,7 +21,7 @@
         {
           "id": 3,
           "title": "team",
-          "scroll": "Fifth-Component"
+          "scroll": "Team-Container"
         },
         {
           "id": 4,
@@ -38,11 +38,14 @@
         "component-type": "promotion",
         "title": "",
         "subtitle": "MINT ONE",
-        "slogan": "This CozyHome is one of the 7,777 residences On the land of legends of Ethereum blockchain. On 1th of Sep 04:00PM EST, 5555 CozyHome will be available to mint for 0.03ETH",
+        "slogan": [
+          {"id": 0, "slogan": "Every home owner gets access to private land of Etherium with Cozy Homes. We are going to start the consturction!"},
+            {"id": 1, "slogan":"The fantastic realm is a piece of land on the Ethereum  Blockchain network that only those who know the secret shall have access to."}, 
+            {"id": 2, "slogan": "And the unique cozy homes in this mythical fantastic land are only limited to 7999 in quantity and the deeds will be sold for 0,04 ETH."}],
         "pictures": [
           {
             "id": 0,
-            "picture_url": "yarasa",
+            "picture_url": "gif",
             "title": "",
             "subtitle": "",
             "hyperlink": "",
@@ -55,7 +58,17 @@
         "component-type": "collection",
         "title": "MetaHomes",
         "subtitle": "",
-        "slogan": "Welcome to Your Crazy Home in MetaVerse. We are lunching a new sky-rocket NFT for you!",
+        "slogan": [
+          {"id": 0, "slogan": "Why you should buy a Cozy Home"},
+          {"id": 1, "slogan": "- To take place in the Metaverse as early as possible!"},
+          {"id": 2, "slogan": "- To be a landlord/landlady in a fantastic realm"},
+          {"id": 3, "slogan": "- To own a unique home"},
+          {"id": 4, "slogan": "- To be a part of a unique and limited network"},
+          {"id": 5, "slogan": "- For surprise gifts"},
+          {"id": 6, "slogan": "- To rent your home to someone in the community"},
+          {"id": 7, "slogan": "- To get a %1 revenue as the initial buyer from all the latter sales"},
+          {"id": 7, "slogan": "- And most importantly for a high earning guaranteed investment"}
+        ],
         "pictures": [
           {
             "id": 0,
@@ -130,7 +143,7 @@
         "component-type": "roadmap",
         "title": "Roadmap",
         "subtitle": "Home is Home!",
-        "slogan": "Every home owner gets access to private land of Etherium with Cozy Homes. We are going to start the consturction!",
+        "slogan": "The real benefits of being a part of the metaverse, which we believe will be way more valueable than it is right now, will only be obtained by you, early buyers. These Cozy Home deeds are the only tickets for those who want to enter the fantastic realm in the Metaverse. If you don't want to miss the train to the fantastic realm, buy your Cozy Home before it is too late!",
         "pictures": [
           {
             "id": 0,
@@ -177,9 +190,9 @@
       {
         "component-place": "container-fifth",
         "component-type": "banner",
-        "title": "RARITY",
+        "title": "Rarity",
         "subtitle": "",
-        "slogan": "Every House has unique layers which appointed with unique algorithm. Each unique item will be randomly selected in a ratio.",
+        "slogan": "Each and every cozy home design feature is assigned ramdomly to the artworks and all cozy homes are unique entities. However, some of them which we scattered among them are even more unique than others :) To buy more Cozy Home deeds means a bigger chance!",
         "pictures": [
           {
             "id": 0,
@@ -191,7 +204,7 @@
           },
           {
             "id": 1,
-            "picture_url": "uncom",
+            "picture_url": "rare",
             "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
@@ -199,7 +212,7 @@
           },
           {
             "id": 2,
-            "picture_url": "rare",
+            "picture_url": "uncom",
             "title": "Unique",
             "subtitle": "",
             "hyperlink": "",
@@ -213,7 +226,7 @@
         "component-type": "banner",
         "title": "Presale",
         "subtitle": "Mint",
-        "slogan": "0.03ETH       1000Left",
+        "slogan": [{"id": 0, "slogan":"0.03ETH"}, {"id": 1, "slogan": "1000 Left"}],
         "pictures": [
           {
             "id": 0,

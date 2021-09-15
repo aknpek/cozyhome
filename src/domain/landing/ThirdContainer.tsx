@@ -12,7 +12,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
   display: grid;
   background-color: #121420;
   animation: 1s ease-out 0s 1 slideInFromLeft;
-  height: 900px;
+  height: 1100px;
 
   .header {
     display: flex;
@@ -26,8 +26,9 @@ const ThirdComponent = styled.div<IThirdContainer>`
       margin-top: 8%;
       font-size: 4.5rem;
       background-color: transparent;
+      font-weight: 200;
       color: white;
-      font-family: "Josefin Sans", cursive;
+      font-family: "Fredoka One", normal;
       -webkit-transition: 0.15s;
       -moz-transition: 0.15s;
       -ms-transition: 0.15s;
@@ -54,14 +55,22 @@ const ThirdComponent = styled.div<IThirdContainer>`
     will-change: transform;
     transition: transform 450ms;
     z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img { 
+      width: 90%;
+      height: 90%;
+    }
   }
   div:hover {
     transition: transform linear 250ms;
     transform: translateY(-20px);
   }
 
-  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
-  grid-template-rows: 1.5fr 1.5fr 1.5fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr .5fr;
   grid-template-areas:
     "header"
     "cell-2 cell-3 cell-4"

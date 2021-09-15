@@ -1,3 +1,5 @@
+import styled, { css } from "styled-components";
+
 import BackGroundFirst from "../../svgs/BackGroundFirst";
 import BackGroundSecond from "../../svgs/BackGroundSecond";
 import { IContainer } from "../../types";
@@ -5,7 +7,6 @@ import Picture from "../../components/Picture";
 import TextDisplay from "../../components/TextDisplay";
 import Yildiz from "../../svgs/Yildiz";
 import { motion } from "framer-motion";
-import styled from "styled-components";
 
 interface ISecondComponent {
   textDireciton: Boolean;
@@ -13,11 +14,25 @@ interface ISecondComponent {
 
 export const SecondComponent = styled.div<ISecondComponent>`
   background-color: #121420;
+  margin-top: 100px;
   position: relative;
   display: grid;
   width: 100%;
   height: 600px;
-  grid-template-columns: 0.4fr 1.2fr 0.2fr 1.2fr 0.4fr;
+
+  ${({ textDireciton }) =>
+    textDireciton &&
+    css`
+      grid-template-columns: 1.2fr 1.2fr 0.2fr 2.2fr 1.2fr;
+    `}
+  ${({ textDireciton }) =>
+    !textDireciton &&
+    css`
+      grid-template-columns: 1.2fr 2.2fr 0.2fr 1.2fr 1.2fr;
+      .messageDiv {
+        justify-content: left;
+      }
+    `}
   grid-template-rows: 1fr 2fr 0.5fr;
   grid-template-areas: "picture text-display";
   .picture {
@@ -96,7 +111,6 @@ export const SecondComponent = styled.div<ISecondComponent>`
       grid-column-start: 2;
       grid-column-end: 3;
       z-index: 1;
-      
     }
 
     .textdisplay {
@@ -123,8 +137,9 @@ const SecondContainer: React.FC<PropsSecond> = (props) => {
   return (
     <SecondComponent textDireciton={props.textDirection}>
       <Picture picture={props.data["pictures"]} />
-      <TextDisplay {...props.data} />
-      {/* <motion.div
+        <TextDisplay textDirection={props.textDirection} {...props.data} />
+
+       <motion.div
           animate={{
             scale: [0.9, 0.8, 0.9, 0.8, 0.6],
             rotate: [0, 10, 0, -10, 0],
@@ -137,7 +152,7 @@ const SecondContainer: React.FC<PropsSecond> = (props) => {
           className={"yildizDiv"}
         >
           <Yildiz props={{}} />
-        </motion.div> */}
+        </motion.div>
     </SecondComponent>
   );
 };

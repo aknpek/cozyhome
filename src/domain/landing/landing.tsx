@@ -35,15 +35,13 @@ const Landing: React.FC = () => {
   const connect = async () => {
     try {
       await activate(injected);
-    } catch (ex) {
-    }
+    } catch (ex) {}
   };
 
   const disconnect = async () => {
     try {
       await deactivate();
-    } catch (ex) {
-    }
+    } catch (ex) {}
   };
 
   useEffect(() => {
@@ -59,10 +57,9 @@ const Landing: React.FC = () => {
 
   useEffect(() => {
     if (!tryWallet && active) {
-      setTryWallet(true)
+      setTryWallet(true);
     }
-  }, [tryWallet, active])
-
+  }, [tryWallet, active]);
 
   const calculateScrollPercentage = () => {
     const scrollTop = window.pageYOffset;
@@ -111,19 +108,21 @@ const Landing: React.FC = () => {
               account: account,
               connector: connect,
               disconnector: disconnect,
-              library: library
+              library: library,
             }}
           />
         </FirstContainer>
 
-        <SecondContainer
-          data={data["landing"]["containers"][0]}
-          textDirection={true}
-        />
-        <SecondContainer
-          data={data["landing"]["containers"][1]}
-          textDirection={false}
-        />
+        <div className={"Home-Container"}>
+          <SecondContainer
+            data={data["landing"]["containers"][0]}
+            textDirection={true}
+          />
+          <SecondContainer
+            data={data["landing"]["containers"][1]}
+            textDirection={false}
+          />
+        </div>
 
         {showThirdContainer ? (
           <ThirdContainer
@@ -131,7 +130,7 @@ const Landing: React.FC = () => {
             data={data["landing"]["containers"][2]}
           ></ThirdContainer>
         ) : (
-          <div className="Landing-Home"></div>
+          <div className="Collection-Container"></div>
         )}
 
         <FifthContainer
@@ -145,11 +144,13 @@ const Landing: React.FC = () => {
 
         <SecondContainer
           data={data["landing"]["containers"][5]}
-          textDirection={false}
+          textDirection={true}
         />
-        <SeventhContainer
-          data={data["landing"]["containers"][6]}
-        ></SeventhContainer>
+        <div className={"Team-Container"}>
+          <SeventhContainer
+            data={data["landing"]["containers"][6]}
+          ></SeventhContainer>
+        </div>
       </FirstWrapper>
     </GeneralWrapper>
   );
