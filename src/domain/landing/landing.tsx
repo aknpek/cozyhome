@@ -142,10 +142,13 @@ const Landing: React.FC = () => {
           data={data["landing"]["containers"][3]}
         ></FourthContainer>
 
-        <SecondContainer
-          data={data["landing"]["containers"][5]}
-          textDirection={true}
-        />
+        <div className={"Presale-Container"}>
+          <SecondContainer
+            data={data["landing"]["containers"][5]}
+            textDirection={true}
+          />
+        </div>
+
         <div className={"Team-Container"}>
           <SeventhContainer
             data={data["landing"]["containers"][6]}

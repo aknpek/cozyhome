@@ -1,14 +1,13 @@
 import { ISlogan, IContainer as Props } from "../types";
+import React, { useRef } from "react";
 import styled, { css } from "styled-components";
 
 import CozyLogo from "../svgs/CozyLogo";
-import React from "react";
-
-// import { pinJSONToIPFS } from "./Pinata";
+import { scrollToSection } from "../components/Header";
 
 interface ITextDisplay {
   textDirection: Boolean;
-  preSale: string;
+  preSale: Boolean;
 }
 
 const TextBlock = styled.div<ITextDisplay>`
@@ -29,7 +28,7 @@ const TextBlock = styled.div<ITextDisplay>`
       height: 5rem;
       border-radius: 2rem;
       display: flex;
-      justify-content: left;
+      justify-content: ${(props) => (props.preSale ? "center" : "left")};
       align-items: center;
       .slogan {
         font-size: 4.5rem;
@@ -51,7 +50,7 @@ const TextBlock = styled.div<ITextDisplay>`
   .messageDiv {
     font-family: "Josefin Sans", cursive;
     display: flex;
-    justify-content: center;
+    justify-content: ${(props) => (props.preSale ? "center" : "left")};
     align-items: center;
     .message {
       color: #f1f1f1;
@@ -60,6 +59,43 @@ const TextBlock = styled.div<ITextDisplay>`
       line-height: 1.5;
       letter-spacing: 0.05rem;
       margin-left: ${(props) => !props.textDirection && "2rem"};
+    }
+
+    .preSaleBlock {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      width: 40rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .preSale {
+        font-family: "Fredoka One", normal;
+        display: flex;
+        height: 4rem;
+        width: 15rem;
+        font-weight: 200;
+        border-radius: 0.8rem;
+        border-width: 2rem;
+        color: white;
+        border: 1.5px solid #05344e;
+
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .preSaleEth {
+        font-family: "Fredoka One", normal;
+        color: white;
+        border: 1.5px solid #05344e;
+        font-weight: 200;
+        display: flex;
+        height: 4rem;
+        width: 15rem;
+        border-radius: 0.8rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
     }
   }
   .subTitleDiv {
@@ -87,6 +123,55 @@ const TextBlock = styled.div<ITextDisplay>`
       cursor: pointer;
     }
   }
+  .subTitleMintBlock {
+    display: flex;
+    justify-content: space-around;
+    
+
+    .subTitleMintDiv {
+      text-align: center;
+      margin-top: 1rem;
+      width: 55%;
+      font-family: "Josefin Sans", cursive;
+      border-radius: 2rem;
+      border-radius: 1rem;
+      background-color: #ff961b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 1s ease;
+
+      .subTitleMint {
+        color: white;
+      }
+
+      :hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        transition: 0.8s ease;
+        cursor: pointer;
+      }
+    }
+    .subTitleQuantityDiv {
+      text-align: center;
+      margin-top: 1rem;
+      width: 35%;
+      font-family: "Josefin Sans", cursive;
+      border-radius: 2rem;
+      border-radius: 1rem;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 1s ease;
+
+      .subTitleQuantity{
+        color: black;
+      }
+    }
+  }
+
   .sloganDivBlock:hover {
     transition: transform 250ms;
     transform: translateX(+20px);
@@ -278,8 +363,15 @@ interface PTextDisplay extends Props {
 }
 
 const TextDisplay: React.FC<PTextDisplay> = (props) => {
+  const eth = useRef<Number>(0.3);
+  const leftMint = useRef<Number>(1000);
+
   return (
-    <TextBlock preSale={props.title} className={"textdisplay"} textDirection={props.textDirection}>
+    <TextBlock
+      preSale={props.title === "Presale"}
+      className={"textdisplay"}
+      textDirection={props.textDirection}
+    >
       <div className={"sloganDiv"}>
         {props.title !== "" ? (
           <div className={"sloganDivBlock"}>
@@ -293,30 +385,42 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
           </div>
         )}
       </div>
-
       <div className={"messageDiv"}>
         <div>
-          {props.slogan.map((value: ISlogan) => {
-            if (props.title === "presale") {
-                return (
-                  <div>
-                    <h1 className={"preSale"}></h1>
-                  </div>
-                )
-
-            } else {
+          {props.title === "Presale" ? (
+            <div className={"preSaleBlock"}>
+              <h1 className={"preSale"}>{eth.current} ETH</h1>
+              <h1 className={"preSaleEth"}>{leftMint.current} LEFT</h1>
+            </div>
+          ) : (
+            props.slogan.map((value: ISlogan) => {
               return <h1 className={"message"}>{value.slogan}</h1>;
-            }
-          })}
+            })
+          )}
         </div>
       </div>
-
-      {props.subtitle !== "" ? (
-        <div className={"subTitleDiv"}>
+      {props.subtitle !== "" && props.title !== "Presale" ? (
+        <div
+          className={"subTitleDiv"}
+          onClick={() => scrollToSection("Presale-Container")}
+        >
           <h1 className={"subTitle"}>{props.subtitle}</h1>
         </div>
       ) : (
-        <div></div>
+        [
+          props.title === "Presale" ? (
+            <div className={"subTitleMintBlock"}>
+              <div className={"subTitleMintDiv"}>
+                <h1 className={"subTitleMint"}>{props.subtitle}</h1>
+              </div>
+              <div className={"subTitleQuantityDiv"}>
+                <h1 className={"subTitleQuantity"}>{1}</h1>
+              </div>
+            </div>
+          ) : (
+            <div></div>
+          ),
+        ]
       )}
     </TextBlock>
   );

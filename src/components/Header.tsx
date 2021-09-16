@@ -203,7 +203,7 @@ const HeaderCo = styled.div<IHead>`
   }
 `;
 
-const scrollToSection = (className: string) => {
+export const scrollToSection = (className: string) => {
 
   console.log(className, "that is")
   scroller.scrollTo(className, {
