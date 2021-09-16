@@ -74,8 +74,8 @@ export const SecondComponent = styled.div<ISecondComponent>`
       width: 1300px;
     }
   }
-  @media screen and (max-width: 800px) {
-    height: 750px;
+  @media screen and (max-width: 1000px) {
+    height: 950px;
     grid-template-columns: 0.5fr 1fr 0.5fr;
     grid-template-rows: 0.1fr 1fr 1fr 1fr;
     .picture {
@@ -139,7 +139,7 @@ const SecondContainer: React.FC<PropsSecond> = (props) => {
       <Picture picture={props.data["pictures"]} />
         <TextDisplay textDirection={props.textDirection} {...props.data} />
 
-       <motion.div
+       {/* <motion.div
           animate={{
             scale: [0.9, 0.8, 0.9, 0.8, 0.6],
             rotate: [0, 10, 0, -10, 0],
@@ -152,7 +152,7 @@ const SecondContainer: React.FC<PropsSecond> = (props) => {
           className={"yildizDiv"}
         >
           <Yildiz props={{}} />
-        </motion.div>
+        </motion.div> */}
     </SecondComponent>
   );
 };

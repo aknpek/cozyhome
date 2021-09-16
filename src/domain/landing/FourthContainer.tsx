@@ -170,7 +170,7 @@ const FourthComponent = styled.div<IFourthContainer>`
       transition: transform 250ms background-color 0.4s ease color 0.5s ease;
       transform: scale(1.05);
       background-color: #121420f4;
-  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+      backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
       border-radius: 1.5rem;
       .roadPercentBlock {
         h1 {
@@ -299,7 +299,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   @media screen and (max-width: 950px) {
-    height: 1100px;
+    height: 1200px;
     grid-template-columns: 0.2fr 1fr 0.2fr;
     grid-template-rows: 0.1fr 0.8fr 2fr 2fr 0.1fr;
 
@@ -315,24 +315,27 @@ const FourthComponent = styled.div<IFourthContainer>`
       grid-row-end: 4;
       grid-column-start: 2;
       grid-column-end: 3;
+      text-align: center;
+      .blockFirstDiv {
 
-      h5 {
-        margin: auto;
-        line-height: 1.2;
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: #ffffffbe;
-        text-align: left;
-        font-family: "Josefin Sans", cursive;
-      }
-      h4 {
-        margin: auto;
-        line-height: 2;
-        font-size: 2rem;
-        font-weight: 600;
-        color: #ffffffbe;
-        text-align: left;
-        font-family: "Josefin Sans", cursive;
+        h5 {
+          margin: auto;
+          line-height: 2.2;
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: #ffffffbe;
+          text-align: center;
+          font-family: "Josefin Sans", cursive;
+        }
+        h4 {
+          margin: auto;
+          line-height: 2;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #ffffffbe;
+          text-align: left;
+          font-family: "Josefin Sans", cursive;
+        }
       }
     }
 
@@ -375,9 +378,38 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   @media screen and (max-width: 800px) {
-    height: 1400px;
+    height: 1500px;
     grid-template-columns: 0.2fr 1fr 0.2fr;
     grid-template-rows: 0.1fr 0.8fr 1fr 1fr 0.1fr;
+    .blockFirst {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      text-align: center;
+      .blockFirstDiv {
+
+        h5 {
+          margin: auto;
+          line-height: 2;
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: #ffffffbe;
+          text-align: center;
+          font-family: "Josefin Sans", cursive;
+        }
+        h4 {
+          margin: auto;
+          line-height: 2;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #ffffffbe;
+          text-align: left;
+          font-family: "Josefin Sans", cursive;
+        }
+      }
+    }
+
 
     .blockSecond {
       .roadBlock {
@@ -440,6 +472,22 @@ const FourthComponent = styled.div<IFourthContainer>`
       }
     }
   }
+  @media screen and (max-width: 600px) {
+    height: 1550px;
+    grid-template-rows: 0.1fr 0fr 1fr 1fr 0.1fr;
+
+    .blockFirst {
+      .blockFirstDiv {
+        h5 {
+          text-align: center;
+        }
+        h4 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
 
   @media screen and (max-width: 500px) {
     height: 1500px;
@@ -450,6 +498,37 @@ const FourthComponent = styled.div<IFourthContainer>`
         font-size: 3.5rem;
       }
     }
+
+    .blockSecond {
+      .roadBlock, .roadBlock:hover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+
+        .roadText {
+          h1 {
+            margin: auto;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 200;
+            line-height: 1.5;
+            text-decoration: underline;
+          }
+
+          h2 {
+            margin: auto;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 100;
+            line-height: 1.5;
+          }
+        }
+      }
+      
+    }
+
   }
 `;
 interface PropsFourth {

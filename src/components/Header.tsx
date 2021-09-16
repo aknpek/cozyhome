@@ -62,9 +62,35 @@ const HeaderCo = styled.div<IHead>`
     }
   }
 
-  .logoContainer {
-    margin-right: 3rem;
 
+  .walletContainer {
+    span {
+      display: flex;
+      font-family: "Fredoka One", normal;
+      letter-spacing: 0.05rem;
+      font-weight: 400;
+      color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
+      h1 {
+        background-color: white;
+        border-radius: 0.3rem;
+        display: flex;
+        position: relative;
+        font-size: 1rem;
+        height: 2.5rem;
+        width: 8rem;
+        font-weight: 800;
+        margin: 1rem;
+        color: ${(props) => (props.showThirdContainer ? "#0f0f0f" : "#0f0f0f")};
+        transition: color 0.2s ease-in-out;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 1.5;
+      }
+    }
+  }
+
+  .logoContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -118,44 +144,32 @@ const HeaderCo = styled.div<IHead>`
     position: relative;
     display: inline-block;
     font-family: "Fredoka One", normal;
-
   }
 
   .dropDownWallet:hover .dropDownContent {
     display: block;
   }
 
-  @media screen and (max-width: 700px) {
-    main {
-      display: flex;
-      z-index: 3;
-      position: fixed;
-      top: 2%;
-      background-color: #00000023;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  @media screen and (max-width: 1100px) {
+    .headerContainer {
+      display: none;
     }
 
-    span {
+    main{
       display: flex;
-      font-family: "Fredoka One", normal;
+      justify-content: center
+    }
+    .logoContainer {
 
-      font-weight: 400;
-      color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
-      h1 {
-        display: flex;
-        position: relative;
-        font-size: 0.6rem;
-        height: 4rem;
-        width: 2.5rem;
-        margin: 0.6rem;
-        color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
-        transition: color 0.2s ease-in-out;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        letter-spacing: 1.5;
+      .walletContainer{ 
+        margin-right: 3rem;
       }
+      
     }
+  }
+
+  @media screen and (max-width: 800px) {
+   
   }
 
   h1:hover {
@@ -204,8 +218,7 @@ const HeaderCo = styled.div<IHead>`
 `;
 
 export const scrollToSection = (className: string) => {
-
-  console.log(className, "that is")
+  console.log(className, "that is");
   scroller.scrollTo(className, {
     duration: 800,
     delay: 0,
@@ -253,56 +266,9 @@ const Header: React.FC<IHeaderExtension> = (props) => {
         <div className={"headerContainer"}>
           <span>
             {props.menu.map((value: IMenu) => {
-              return (
-                <div key={"div" + value.id}>
-                  {value.title === "connect wallet" ? (
-                    [
-                      metaActive ? (
-                        <div
-                          className={"dropDownWallet"}
-                          key={"div" + value.id}
-                        >
-                          <h1>wallet</h1>
-                          <div
-                            className={"dropDownContent"}
-                            key={"wlc" + value.id}
-                          >
-                            <h1 key={"wls" + value.id}>
-                              wallet id:{" "}
-                              {account === null
-                                ? "-"
-                                : account
-                                ? `${account.substring(
-                                    0,
-                                    6
-                                  )}...${account.substring(account.length - 4)}`
-                                : ""}
-                            </h1>
-                            <h1>
-                              balance:{" "}
-                              {balanceAccount === null
-                                ? "-"
-                                : balanceAccount
-                                ? `${balanceAccount.substring(
-                                    0,
-                                    6
-                                  )}...${balanceAccount.substring(
-                                    balanceAccount.length - 4
-                                  )}`
-                                : ""}
-                            </h1>
-                            <h1 onClick={disconnector} key={"h1" + value.id}>
-                              disconnect
-                            </h1>
-                          </div>
-                        </div>
-                      ) : (
-                        <h1 onClick={connector} key={"h1" + value.id}>
-                          {value.title}
-                        </h1>
-                      ),
-                    ]
-                  ) : (
+              if (value.title !== "connect wallet") {
+                return (
+                  <div key={"div" + value.id}>
                     <div key={"div2" + value.id}>
                       <h1
                         onClick={() => scrollToSection(value.scroll)}
@@ -311,14 +277,77 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                         {value.title}
                       </h1>
                     </div>
-                  )}
-                </div>
-              );
+                  </div>
+                );
+              }
             })}
           </span>
         </div>
 
         <div className={"logoContainer"}>
+          <div className={"walletContainer"}>
+            {props.menu.map((value: IMenu) => {
+              return (
+                <div className={""}>
+                  <span>
+                    {value.title === "connect wallet" ? (
+                      [
+                        metaActive ? (
+                          <div
+                            className={"dropDownWallet"}
+                            key={"div" + value.id}
+                          >
+                            <h1>wallet</h1>
+                            <div
+                              className={"dropDownContent"}
+                              key={"wlc" + value.id}
+                            >
+                              <h1 key={"wls" + value.id}>
+                                wallet id:{" "}
+                                {account === null
+                                  ? "-"
+                                  : account
+                                  ? `${account.substring(
+                                      0,
+                                      6
+                                    )}...${account.substring(
+                                      account.length - 4
+                                    )}`
+                                  : ""}
+                              </h1>
+                              <h1>
+                                balance:{" "}
+                                {balanceAccount === null
+                                  ? "-"
+                                  : balanceAccount
+                                  ? `${balanceAccount.substring(
+                                      0,
+                                      6
+                                    )}...${balanceAccount.substring(
+                                      balanceAccount.length - 4
+                                    )}`
+                                  : ""}
+                              </h1>
+                              <h1 onClick={disconnector} key={"h1" + value.id}>
+                                disconnect
+                              </h1>
+                            </div>
+                          </div>
+                        ) : (
+                          <h1 onClick={connector} key={"h1" + value.id}>
+                            {value.title}
+                          </h1>
+                        ),
+                      ]
+                    ) : (
+                      <div></div>
+                    )}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
           <div className={"twitterLogo"}>
             <TwitterLogo />
           </div>

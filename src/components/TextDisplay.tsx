@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import styled, { css } from "styled-components";
 
 import CozyLogo from "../svgs/CozyLogo";
+import Dropdown from "react-dropdown";
 import { scrollToSection } from "../components/Header";
 
 interface ITextDisplay {
@@ -126,7 +127,6 @@ const TextBlock = styled.div<ITextDisplay>`
   .subTitleMintBlock {
     display: flex;
     justify-content: space-around;
-    
 
     .subTitleMintDiv {
       text-align: center;
@@ -166,7 +166,7 @@ const TextBlock = styled.div<ITextDisplay>`
       align-items: center;
       transition: 1s ease;
 
-      .subTitleQuantity{
+      .subTitleQuantity {
         color: black;
       }
     }
@@ -181,9 +181,8 @@ const TextBlock = styled.div<ITextDisplay>`
   @media screen and (max-width: 1700px) {
     .sloganDiv {
       .cozyHomeLogoDiv {
-        height: 7rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.55);
+          transform: scale(0.75);
         }
       }
     }
@@ -203,9 +202,8 @@ const TextBlock = styled.div<ITextDisplay>`
   @media screen and (max-width: 1600px) {
     .sloganDiv {
       .cozyHomeLogoDiv {
-        height: 6rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.52);
+          transform: scale(0.7);
         }
       }
     }
@@ -213,9 +211,8 @@ const TextBlock = styled.div<ITextDisplay>`
   @media screen and (max-width: 1500px) {
     .sloganDiv {
       .cozyHomeLogoDiv {
-        height: 5rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.5);
+          transform: scale(0.65);
         }
       }
     }
@@ -233,9 +230,8 @@ const TextBlock = styled.div<ITextDisplay>`
   @media screen and (max-width: 1300px) {
     .sloganDiv {
       .cozyHomeLogoDiv {
-        height: 5rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.4);
+          transform: scale(0.55);
         }
       }
     }
@@ -243,9 +239,8 @@ const TextBlock = styled.div<ITextDisplay>`
   @media screen and (max-width: 1200px) {
     .sloganDiv {
       .cozyHomeLogoDiv {
-        height: 5rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.38);
+          transform: scale(0.5);
         }
       }
     }
@@ -260,7 +255,6 @@ const TextBlock = styled.div<ITextDisplay>`
     .sloganDiv {
       /* background-color: red; */
       .cozyHomeLogoDiv {
-        height: 5rem;
         .cozyHomeLogoDiv2 {
           transform: scale(0.8);
         }
@@ -274,47 +268,46 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
   }
-  @media screen and (max-width: 900px) {
+
+  @media screen and (max-width: 1000px) {
     .sloganDiv {
+      margin-top: 25rem;
+
+      .sloganDivBlock {
+        justify-content: center;
+      }
+
       .cozyHomeLogoDiv {
         height: 5rem;
         .cozyHomeLogoDiv2 {
-          transform: scale(0.3);
+          transform: scale(0.8);
         }
       }
     }
     .messageDiv {
+      margin-top: 2rem;
+      text-align: center;
+
       .message {
-        font-size: 0.9rem;
-        line-height: 3;
-      }
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .sloganDiv {
-      margin-top: 18rem;
-      .cozyHomeLogoDiv {
-        height: 5rem;
-        .cozyHomeLogoDiv2 {
-          transform: scale(0.3);
-        }
-      }
-    }
-    .messageDiv {
-      .message {
-        font-size: 0.9rem;
-        line-height: 3;
+        font-size: 1.1rem;
+        line-height: 2;
         text-align: center;
+      }
+      div {
+        width: ${(props) => (props.preSale ? "100%" : "80%")};;
+        h1 {
+        }
       }
     }
     .subTitleDiv {
       margin: auto;
+      margin-top: 2rem;
       width: 11rem;
       height: 4rem;
       border-radius: 1.2rem;
 
       .subTitle {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
     }
   }
@@ -365,6 +358,8 @@ interface PTextDisplay extends Props {
 const TextDisplay: React.FC<PTextDisplay> = (props) => {
   const eth = useRef<Number>(0.3);
   const leftMint = useRef<Number>(1000);
+  const options = [1, 2, 3, 5, 10, 20, 100];
+  const defaultOption = options[0];
 
   return (
     <TextBlock
