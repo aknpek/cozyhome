@@ -6,9 +6,6 @@
   position: absolute;
   display: flex;
   background-color: #121420;
-  height: 100%auto;
-  width: calc(100% + 9px);
-  margin: -10px;
   flex-direction: row;
 }
 
@@ -19,11 +16,9 @@
 .ThirdContainer {
   top: 10%;
   height: 1080px;
-  width: 2000px;
 }
 
 .Home-Container {
-  /* height: calc(65rem + 20px); */
   animation: 1.5s ease-out 0s 1 slideInFromRight;
 }
 .Fourth-Container {

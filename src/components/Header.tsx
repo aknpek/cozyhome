@@ -28,7 +28,7 @@ const HeaderCo = styled.div<IHead>`
     z-index: 3;
     position: fixed;
     background-color: #121420;
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
     align-items: center;
   }
@@ -174,7 +174,6 @@ const HeaderCo = styled.div<IHead>`
     }
 
     main{
-      width: 90%;
       display: flex;
       justify-content: center
     }
@@ -231,6 +230,8 @@ const HeaderCo = styled.div<IHead>`
     margin-bottom: auto;
     margin-right: calc(10rem + 20px);
   }
+
+  
 `;
 
 export const scrollToSection = (className: string) => {
