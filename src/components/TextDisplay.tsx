@@ -9,6 +9,7 @@ import { scrollToSection } from "../components/Header";
 interface ITextDisplay {
   textDirection: Boolean;
   preSale: Boolean;
+  metaHomes: Boolean;
 }
 
 const TextBlock = styled.div<ITextDisplay>`
@@ -40,7 +41,8 @@ const TextBlock = styled.div<ITextDisplay>`
     .cozyHomeLogoDiv {
       display: flex;
       height: 8rem;
-      justify-content: left;
+      justify-content: ${(props) =>
+        props.preSale || props.metaHomes ? "center" : "left"};
       align-items: center;
       .cozyHomeLogoDiv2 {
         /* position: absolute; */
@@ -171,7 +173,6 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
   }
-
   .sloganDivBlock:hover {
     transition: transform 250ms;
     transform: translateX(+20px);
@@ -279,6 +280,7 @@ const TextBlock = styled.div<ITextDisplay>`
 
       .cozyHomeLogoDiv {
         height: 5rem;
+     
         .cozyHomeLogoDiv2 {
           transform: scale(0.8);
         }
@@ -290,11 +292,12 @@ const TextBlock = styled.div<ITextDisplay>`
 
       .message {
         font-size: 1.1rem;
-        line-height: 2;
-        text-align: center;
+        line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+        text-align: ${(props) => (props.metaHomes ? "left" : "center")};
       }
       div {
-        width: ${(props) => (props.preSale ? "100%" : "80%")};;
+        width: ${(props) =>
+          props.metaHomes || props.preSale ? "100%" : "80%"};
         h1 {
         }
       }
@@ -311,41 +314,87 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
     .sloganDiv {
-      .sloganDivBlock {
-        display: flex;
-        justify-content: center;
+      margin-top: 25rem;
 
-        .slogan {
-          margin-top: -5rem;
-          font-size: 3rem;
-        }
+      .sloganDivBlock {
+        justify-content: center;
       }
 
       .cozyHomeLogoDiv {
-        height: 3rem;
+        height: 5rem;
+        ${(props) => (props.metaHomes ? "center" : "left")};
 
         .cozyHomeLogoDiv2 {
-          transform: scale(0.2);
+          transform: scale(0.8);
         }
       }
     }
     .messageDiv {
+      margin-top: 2rem;
+      text-align: center;
+
       .message {
-        font-size: 0.9rem;
-        line-height: 3.5;
-        text-align: center;
+        font-size: 1.1rem;
+        line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+        text-align: ${(props) => (props.metaHomes ? "left" : "center")};
+      }
+      div {
+        width: ${(props) =>
+          props.metaHomes || props.preSale ? "100%" : "80%"};
+        h1 {
+        }
+      }
+
+      .preSaleBlock {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        width: 30rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .preSale {
+          font-family: "Fredoka One", normal;
+          display: flex;
+          height: 3rem;
+          width: 10rem;
+          font-weight: 200;
+          border-radius: 0.8rem;
+          border-width: 2rem;
+          color: white;
+          border: 1.5px solid #05344e;
+          font-size: 1.2rem;
+
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .preSaleEth {
+          font-family: "Fredoka One", normal;
+          color: white;
+          border: 1.5px solid #05344e;
+          font-weight: 200;
+          display: flex;
+          height: 3rem;
+          width: 10rem;
+          border-radius: 0.8rem;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: 1.2rem;
+        }
       }
     }
     .subTitleDiv {
       margin: auto;
+      margin-top: 2rem;
       width: 11rem;
       height: 4rem;
       border-radius: 1.2rem;
 
       .subTitle {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
     }
   }
@@ -363,6 +412,7 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
 
   return (
     <TextBlock
+      metaHomes={props.title === "MetaHomes"}
       preSale={props.title === "Presale"}
       className={"textdisplay"}
       textDirection={props.textDirection}

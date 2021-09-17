@@ -57,18 +57,21 @@ export const SecondComponent = styled.div<ISecondComponent>`
     z-index: 0;
   }
   @media screen and (max-width: 1700px) {
+    max-width: 1700px;
     height: 600px;
     .yildizDiv {
       width: 1700px;
     }
   }
   @media screen and (max-width: 1500px) {
+    max-width: 1500px;
     height: 550px;
     .yildizDiv {
       width: 1500px;
     }
   }
   @media screen and (max-width: 1300px) {
+    max-width: 1300px;
     height: 550px;
     .yildizDiv {
       width: 1300px;
@@ -76,12 +79,65 @@ export const SecondComponent = styled.div<ISecondComponent>`
   }
   @media screen and (max-width: 1000px) {
     height: 950px;
+    max-width: 1000px;
     grid-template-columns: 0.5fr 1fr 0.5fr;
-    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.5fr 1fr 1fr;
     .picture {
       margin: auto;
       grid-row-start: 2;
       grid-row-start: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      z-index: 1;
+    }
+
+    .textdisplay {
+      margin: auto;
+      grid-row-start: 3;
+      grid-row-start: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      z-index: 1;
+
+      .yildizDiv {
+        width: 800px;
+      }
+    }
+  }
+  @media screen and (max-width: 750px) {
+    max-width: 750px;
+    grid-template-columns: 0.2fr 2fr 0.2fr;
+    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+    .picture {
+      margin: auto;
+      grid-row-start: 1;
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      z-index: 1;
+    }
+
+    .textdisplay {
+      margin: auto;
+      grid-row-start: 4;
+      grid-row-start: 5;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      z-index: 1;
+
+      .yildizDiv {
+        width: 800px;
+      }
+    }
+  }
+  @media screen and (max-width: 650px) {
+    max-width: 650px;
+    grid-template-columns: 0.2fr 5fr 0.2fr;
+    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+    .picture {
+      margin: auto;
+      grid-row-start: 1;
+      grid-row-start: 2;
       grid-column-start: 2;
       grid-column-end: 3;
       z-index: 1;
@@ -101,6 +157,7 @@ export const SecondComponent = styled.div<ISecondComponent>`
     }
   }
   @media screen and (max-width: 500px) {
+    max-width: 500px;
     height: 700px;
     grid-template-columns: 0.2fr 2fr 0.2fr;
     grid-template-rows: 0.1fr 1fr 1fr 1fr;

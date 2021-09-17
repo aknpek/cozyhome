@@ -47,13 +47,45 @@ const PicStyled = styled.div<IPicture>`
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
+      max-height: 340px;
+      max-width: 340px;
+      min-width: 340px;
+      min-height: 340px;
+    }
+  }
+  @media screen and (max-width: 1700px) {
+    div {
+      max-height: 330px;
+      max-width: 330px;
+      min-width: 330px;
+      min-height: 330px;
+    }
+  }
+  @media screen and (max-width: 1500px) {
+    div {
+      max-height: 320px;
+      max-width: 320px;
+      min-width: 320px;
+      min-height: 320px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    div {
       max-height: 310px;
       max-width: 310px;
       min-width: 310px;
       min-height: 310px;
     }
   }
-  @media screen and (max-width: 1700px) {
+  @media screen and (max-width: 900px) {
+    div {
+      max-height: 310px;
+      max-width: 310px;
+      min-width: 310px;
+      min-height: 310px;
+    }
+  }
+  @media screen and (max-width: 700px) {
     div {
       max-height: 300px;
       max-width: 300px;
@@ -61,7 +93,7 @@ const PicStyled = styled.div<IPicture>`
       min-height: 300px;
     }
   }
-  @media screen and (max-width: 1500px) {
+  @media screen and (max-width: 500px) {
     div {
       max-height: 290px;
       max-width: 290px;
@@ -69,44 +101,12 @@ const PicStyled = styled.div<IPicture>`
       min-height: 290px;
     }
   }
-  @media screen and (max-width: 1200px) {
-    div {
-      max-height: 280px;
-      max-width: 280px;
-      min-width: 280px;
-      min-height: 280px;
-    }
-  }
-  @media screen and (max-width: 900px) {
-    div {
-      max-height: 280px;
-      max-width: 280px;
-      min-width: 280px;
-      min-height: 280px;
-    }
-  }
-  @media screen and (max-width: 700px) {
-    div {
-      max-height: 270px;
-      max-width: 270px;
-      min-width: 270px;
-      min-height: 270px;
-    }
-  }
-  @media screen and (max-width: 500px) {
-    div {
-      max-height: 260px;
-      max-width: 260px;
-      min-width: 260px;
-      min-height: 260px;
-    }
-  }
   @media screen and (max-width: 400px) {
     div {
-      max-height: 250px;
-      max-width: 250px;
-      min-width: 250px;
-      min-height: 250px;
+      max-height: 280px;
+      max-width: 280px;
+      min-width: 280px;
+      min-height: 280px;
     }
     .gif {
       margin-top: 3rem;

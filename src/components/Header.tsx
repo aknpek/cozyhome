@@ -169,7 +169,23 @@ const HeaderCo = styled.div<IHead>`
   }
 
   @media screen and (max-width: 800px) {
-   
+    .headerContainer {
+      display: none;
+    }
+
+    main{
+      width: 90%;
+      display: flex;
+      justify-content: center
+    }
+    .logoContainer {
+
+      .walletContainer{ 
+        /* margin-right: 3  rem; */
+      }
+      
+    }
+  }
   }
 
   h1:hover {
