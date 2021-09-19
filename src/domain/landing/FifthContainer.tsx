@@ -169,7 +169,6 @@ const FifthComponent = styled.div<IFifthContainer>`
   @media screen and (max-width: 750px) {
     height: 1550px;
   }
-
   @media screen and (max-width: 500px) {
     height: 1200px;
     grid-template-columns: 0.2fr 6fr 0.2fr;
@@ -195,6 +194,48 @@ const FifthComponent = styled.div<IFifthContainer>`
       z-index: 1;
 
       h2 {
+      }
+    }
+    .pictureDiv {
+      display: grid;
+
+      h1 {
+        display: none;
+      }
+      img {
+        margin-top: 1.2rem;
+        height: 14rem;
+        width: 14rem;
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    height: 1100px;
+    grid-template-columns: 0.2fr 6fr 0.2fr;
+    grid-template-rows: 1fr 0.1fr 0.1fr 1fr 0.2fr;
+
+    .titleDiv {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    .sloganDiv {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      width: 90%;
+      margin: auto;
+      z-index: 1;
+
+      h2 {
+        font-size: 1.1rem;
+        line-height: 1.3;
       }
     }
     .pictureDiv {

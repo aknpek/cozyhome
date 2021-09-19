@@ -598,9 +598,14 @@ const TextBlock = styled.div<ITextDisplay>`
   }
   @media screen and (max-width: 400px) {
     .sloganDiv {
+      margin-top: ${(props) => (props.preSale ? "17rem" : "18rem")};
+
 
       .sloganDivBlock {
         justify-content: center;
+        .slogan {
+          font-size: 2.5rem;
+        }
       }
 
       .cozyHomeLogoDiv {
@@ -613,22 +618,23 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
     .messageDiv {
-      margin-top: -1rem;
+      margin-top: -.5rem;
       text-align: center;
 
       .messageMiddleDiv {
         width: ${(props) =>
-          props.metaHomes || props.preSale ? "100%" : "80%"};
+          props.metaHomes || props.preSale ? "90%" : "80%"};
         .message {
           display: flex;
           justify-content: left;
-          font-size: 1.1rem;
-          line-height: ${(props) => (props.metaHomes ? .9: 1.2)};
+          font-size: 0.9rem;
+          line-height: ${(props) => (props.metaHomes ? .8: 1)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }
 
       .preSaleBlock {
+        margin-top: 0rem;
         width: 14rem;
         display: flex;
         flex-direction: row;
@@ -677,6 +683,7 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
     .subTitleMintBlock {
+      margin-top: -3rem;
       width: 16rem;
       display: flex;
       justify-content: space-around;

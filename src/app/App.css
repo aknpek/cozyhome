@@ -7,7 +7,6 @@
   display: flex;
   background-color: #121420;
   flex-direction: row;
-  width: 100% + 2rem;
 }
 
 .progressDiv {

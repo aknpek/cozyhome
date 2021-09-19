@@ -253,9 +253,40 @@ const SeventhComponent = styled.div<ISixthContainer>`
   @media screen and (max-width: 500px) {
     height: 1600px;
     .photosTeam {
+      margin-top: -1.4rem;
       display: grid;
       grid-template-columns: 1fr;
       grid-gap: 2rem;
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+        }
+        img {
+        }
+      }
+
+      h3 {
+        margin-top: -1.2rem;
+        font-size: 1.1rem;
+      }
+      h4 {
+        font-size: 0.8rem;
+        font-weight: 100;
+        margin-top: -1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    height: 1600px;
+
+    .photosTeam {
+      margin-top: -1.4rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
       div {
         display: flex;
         justify-content: center;

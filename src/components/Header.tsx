@@ -15,6 +15,8 @@ const HeaderCo = styled.div<IHead>`
   @supports not (position: "sticky") {
   }
 
+  margin-top: -0.8rem;
+  background-color: #121420;
   display: flex;
   justify-content: center;
 
@@ -28,7 +30,7 @@ const HeaderCo = styled.div<IHead>`
     z-index: 3;
     position: fixed;
     background-color: #121420;
-    /* width: 100%; */
+    width: 100%;
     justify-content: center;
     align-items: center;
   }
