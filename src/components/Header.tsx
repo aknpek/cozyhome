@@ -13,9 +13,9 @@ interface IHead {
 
 const HeaderCo = styled.div<IHead>`
   @supports not (position: "sticky") {
+    margin-top: -0.5rem;
   }
 
-  margin-top: -0.8rem;
   background-color: #121420;
   display: flex;
   justify-content: center;
