@@ -468,13 +468,13 @@ const TextBlock = styled.div<ITextDisplay>`
   }
   @media screen and (max-width: 500px) {
     .sloganDiv {
-
+      margin-top: ${(props) => (props.preSale ? "16rem" : "")};
       .sloganDivBlock {
         justify-content: center;
       }
 
       .cozyHomeLogoDiv {
-        margin-top: 1rem;
+        margin-top: -1rem;
         ${(props) => (props.metaHomes ? "center" : "left")};
 
         .cozyHomeLogoDiv2 {
@@ -483,7 +483,7 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
     .messageDiv {
-      margin-top: 1rem;
+      margin-top: ${(props) => props.preSale ? "-3rem" : "-0.5rem"};
       text-align: center;
 
       .messageMiddleDiv {
@@ -492,8 +492,8 @@ const TextBlock = styled.div<ITextDisplay>`
         .message {
           display: flex;
           justify-content: left;
-          font-size: 1.1rem;
-          line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+          font-size: 1rem;
+          line-height: ${(props) => (props.metaHomes ? .8 : 1.5)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }
@@ -547,6 +547,7 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
     .subTitleMintBlock {
+      margin-top: -2rem;
       width: 20rem;
       display: flex;
       justify-content: space-around;
@@ -603,7 +604,7 @@ const TextBlock = styled.div<ITextDisplay>`
       }
 
       .cozyHomeLogoDiv {
-        margin-top: 1rem;
+        margin-top: -1rem;
         ${(props) => (props.metaHomes ? "center" : "left")};
 
         .cozyHomeLogoDiv2 {
@@ -612,7 +613,7 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
     .messageDiv {
-      margin-top: 1rem;
+      margin-top: -1rem;
       text-align: center;
 
       .messageMiddleDiv {
@@ -622,7 +623,7 @@ const TextBlock = styled.div<ITextDisplay>`
           display: flex;
           justify-content: left;
           font-size: 1.1rem;
-          line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+          line-height: ${(props) => (props.metaHomes ? .9: 1.2)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }

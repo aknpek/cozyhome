@@ -197,8 +197,32 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
 
+  
   @media screen and (max-width: 1300px) {
     grid-template-columns: 0.2fr 2fr 2fr 0.2fr;
+    .blockFirst {
+      .blockFirstDiv {
+        h5 {
+          margin-top: calc(-2rem + 50px);
+          line-height: 1.4;
+          letter-spacing: 0rem;
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: #ffffffbe;
+          text-align: left;
+          font-family: "Josefin Sans", cursive;
+        }
+        h4 {
+          line-height: 2;
+          font-size: 3rem;
+          font-weight: 200;
+          color: #ffffffbe;
+          text-align: left;
+          font-family: "Fredoka One", normal;
+        }
+      }
+    }
+
     .blockSecond {
       .roadBlock {
         .roadText {
@@ -232,6 +256,30 @@ const FourthComponent = styled.div<IFourthContainer>`
   }
   @media screen and (max-width: 1100px) {
     grid-template-columns: 0.2fr 2fr 2fr 0.2fr;
+
+    .blockFirst {
+      .blockFirstDiv {
+        h5 {
+          margin-top: calc(2rem - 50px);
+          line-height: 1.4;
+          letter-spacing: 0rem;
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: #ffffffbe;
+          text-align: left;
+          font-family: "Josefin Sans", cursive;
+        }
+        h4 {
+          line-height: 2;
+          font-size: 3rem;
+          font-weight: 200;
+          color: #ffffffbe;
+          text-align: left;
+          font-family: "Fredoka One", normal;
+        }
+      }
+    }
+
     .blockSecond {
       .roadBlock {
         .roadText {
@@ -266,6 +314,31 @@ const FourthComponent = styled.div<IFourthContainer>`
   }
   @media screen and (max-width: 1000px) {
     grid-template-columns: 0.2fr 3fr 3fr 0.2fr;
+
+    .blockFirst {
+      .blockFirstDiv {
+        margin-top: -1rem;
+        h5 {
+          margin-top: 0rem;
+          line-height: 1.4;
+          letter-spacing: 0rem;
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: #ffffffbe;
+          text-align: left;
+          font-family: "Josefin Sans", cursive;
+        }
+        h4 {
+          line-height: 2;
+          font-size: 3rem;
+          font-weight: 200;
+          color: #ffffffbe;
+          text-align: left;
+          font-family: "Fredoka One", normal;
+        }
+      }
+    }
+
     .blockSecond {
       .roadBlock {
         .roadText {
@@ -333,7 +406,8 @@ const FourthComponent = styled.div<IFourthContainer>`
           font-weight: 600;
           color: #ffffffbe;
           text-align: left;
-          font-family: "Josefin Sans", cursive;
+          font-family: "Fredoka One", classic;
+          font-weight: 200;
         }
       }
     }
@@ -400,10 +474,10 @@ const FourthComponent = styled.div<IFourthContainer>`
           margin: auto;
           line-height: 2;
           font-size: 2rem;
-          font-weight: 600;
+          font-family: "Fredoka One", classic;
+          font-weight: 200;
           color: #ffffffbe;
           text-align: left;
-          font-family: "Josefin Sans", cursive;
         }
       }
     }
@@ -465,6 +539,8 @@ const FourthComponent = styled.div<IFourthContainer>`
         }
         h4 {
           text-align: center;
+          font-family: "Fredoka One", classic;
+          font-weight: 200;
         }
       }
     }
@@ -480,18 +556,35 @@ const FourthComponent = styled.div<IFourthContainer>`
         }
         h4 {
           text-align: center;
+          font-family: "Fredoka One", classic;
+          font-weight: 200;
         }
       }
     }
   }
   @media screen and (max-width: 500px) {
-    height: 1500px;
+    height: 1250px;
     grid-template-columns: 0.2fr 2fr 0.2fr;
 
     .titleDiv {
       h1 {
         text-align: center;
         font-size: 3.5rem;
+      }
+    }
+    .blockFirst {
+      .blockFirstDiv {
+        h5 {
+          text-align: center;
+          line-height: 1.6rem;
+          font-size: 1rem;
+        }
+        h4 {
+          font-family: "Fredoka One", classic;
+          font-weight: 200;
+          text-align: center;
+
+        }
       }
     }
 

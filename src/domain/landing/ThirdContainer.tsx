@@ -287,6 +287,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
     }
 
     .cells {
+      margin-top: 3rem;
       display: flex;
       justify-content: center;
       justify-items: center;

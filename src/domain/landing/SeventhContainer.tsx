@@ -117,6 +117,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
 
       h3 {
+        margin-top: 1rem;
         font-size: 2.5rem;
       }
       h4 {
@@ -140,6 +141,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
 
       h3 {
+        margin-top: -0.5rem;
         font-size: 2rem;
       }
       h4 {
@@ -156,18 +158,17 @@ const SeventhComponent = styled.div<ISixthContainer>`
         div {
         }
         img {
-          /* height: 10rem; */
-          /* width: 10rem; */
         }
-      }
 
-      h3 {
-        font-size: 1.8rem;
-      }
-      h4 {
-        font-size: 1rem;
-        font-weight: 100;
-        margin-top: -1rem;
+        h3 {
+          margin-top: -0.5rem;
+          font-size: 1.8rem;
+        }
+        h4 {
+          font-size: 1rem;
+          font-weight: 100;
+          margin-top: -1rem;
+        }
       }
     }
   }
@@ -178,6 +179,9 @@ const SeventhComponent = styled.div<ISixthContainer>`
     .titleTeam {
       grid-column-start: 2;
       grid-column-end: 3;
+      h1 {
+        font-size: 4.5rem;
+      }
     }
 
     .photosTeam {
@@ -197,6 +201,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
 
       h3 {
+        margin-top: -1.2rem;
         font-size: 1.8rem;
       }
       h4 {
@@ -209,9 +214,17 @@ const SeventhComponent = styled.div<ISixthContainer>`
       grid-column-start: 2;
       grid-column-end: 3;
     }
-  } 
+  }
   @media screen and (max-width: 700px) {
     height: 1650px;
+   
+    .titleTeam {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      h1 {
+        font-size: 3.2rem;
+      }
+    }
     .photosTeam {
       display: grid;
       grid-template-columns: 1fr;
@@ -227,10 +240,38 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
 
       h3 {
+        margin-top: -1.2rem;
         font-size: 1.8rem;
       }
       h4 {
         font-size: 1rem;
+        font-weight: 100;
+        margin-top: -1rem;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    height: 1600px;
+    .photosTeam {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 2rem;
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+        }
+        img {
+        }
+      }
+
+      h3 {
+        margin-top: -1.2rem;
+        font-size: 1.1rem;
+      }
+      h4 {
+        font-size: 0.8rem;
         font-weight: 100;
         margin-top: -1rem;
       }

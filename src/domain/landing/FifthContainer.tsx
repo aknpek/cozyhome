@@ -49,6 +49,7 @@ const FifthComponent = styled.div<IFifthContainer>`
     z-index: 1;
 
     h1 {
+      margin-bottom: 0.5rem;
       font-size: 4.5rem;
       font-family: "Fredoka One", cursive;
       color: white;
@@ -58,8 +59,6 @@ const FifthComponent = styled.div<IFifthContainer>`
   .titleDiv:hover {
     transition: transform 150ms background-color 0.5s ease color 0.5s ease;
     transform: scale(1.05);
-    text-decoration: underline;
-    text-decoration-color: #13222f;
   }
   .sloganDiv {
     grid-area: sloganDiv;
@@ -132,11 +131,12 @@ const FifthComponent = styled.div<IFifthContainer>`
     grid-template-columns: 0.2fr 5fr 0.2fr;
   }
   @media screen and (max-width: 900px) {
-    height: 1650px;
+    height: 1550px;
     grid-template-columns: 0.2fr 6fr 0.2fr;
-    grid-template-rows: 0.2fr 0.1fr 0.1fr 1fr 0.2fr;
+    grid-template-rows: 0.1fr 0.15fr 0.1fr 2fr 0.2fr;
 
     .titleDiv {
+      
       grid-row-start: 2;
       grid-row-end: 3;
       grid-column-start: 2;
@@ -165,6 +165,9 @@ const FifthComponent = styled.div<IFifthContainer>`
       img {
       }
     }
+  }
+  @media screen and (max-width: 750px) {
+    height: 1550px;
   }
 
   @media screen and (max-width: 500px) {
