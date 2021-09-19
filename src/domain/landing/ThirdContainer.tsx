@@ -1,7 +1,6 @@
 import { IContainer, IPictures, IThirdContainer } from "../../types";
 
-import BulutFirst from "../../svgs/BulutFirst";
-import BulutSecond from "../../svgs/BulutSecond";
+import BulutlarContainer from "../../components/Bulutlar";
 import OpenSeaLogo from "../../svgs/OpenSeaLogo";
 import Pictures from "../../components/Locals";
 import { motion } from "framer-motion";
@@ -122,56 +121,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 4;
-  }
-
-  .BulutFirst {
-    background-color: transparent;
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    height: 0px;
-    width: 0px;
-    pointer-events: none;
-    box-shadow: none;
-  }
-
-  .BulutSecond {
-    background-color: transparent;
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    margin-top: 20%;
-    margin-right: 30%;
-    height: 0px;
-    width: 0px;
-    pointer-events: none;
-    box-shadow: none;
-  }
-
-  .BulutThird {
-    background-color: transparent;
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    margin-top: 15%;
-    margin-left: 80%;
-    height: 0px;
-    width: 0px;
-    pointer-events: none;
-    box-shadow: none;
-  }
-
-  .BulutFourth {
-    background-color: transparent;
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    margin-top: 35%;
-    margin-left: 50%;
-    height: 0px;
-    width: 0px;
-    pointer-events: none;
-    box-shadow: none;
   }
 
   @media screen and (max-width: 1000px) {
@@ -308,6 +257,13 @@ const ThirdComponent = styled.div<IThirdContainer>`
   @media screen and (max-width: 400px) {
     height: 1100px;
   }
+  .BulutFirst {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    /* background-color: yellow; */
+    
+  }
 `;
 interface PropsThird {
   showThirdContainer: Boolean;
@@ -335,38 +291,9 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
         </div>
       ))}
 
-      {/* <motion.div
-        className={"BulutFirst"}
-        initial={{ scale: 0.3, opacity: 0.6 }}
-        animate={{ scale: 0.4, opacity: 1.0, translateX: "20px" }}
-        transition={{ repeat: Infinity, duration: 7.5 }}
-      >
-        <BulutFirst />
-      </motion.div>
-      <motion.div
-        className={"BulutSecond"}
-        initial={{ scale: 0.8, opacity: 0.8 }}
-        animate={{ scale: 0.9, opacity: 1, translateX: "-50px" }}
-        transition={{ repeat: Infinity, duration: 6.5 }}
-      >
-        <BulutSecond />
-      </motion.div>
-      <motion.div
-        className={"BulutThird"}
-        initial={{ scale: 0.2, opacity: 0.5 }}
-        animate={{ scale: 0.4, opacity: 1, translateX: "100px" }}
-        transition={{ repeat: Infinity, duration: 5.5 }}
-      >
-        <BulutFirst />
-      </motion.div>
-      <motion.div
-        className={"BulutFourth"}
-        initial={{ scale: 0.5, opacity: 0.6 }}
-        animate={{ scale: 0.6, opacity: 1, translateX: "60px" }}
-        transition={{ repeat: Infinity, duration: 5.5 }}
-      >
-        <BulutFirst />
-      </motion.div> */}
+      <main className={"BulutFirst"}>
+        <BulutlarContainer />
+      </main>
     </ThirdComponent>
   );
 };

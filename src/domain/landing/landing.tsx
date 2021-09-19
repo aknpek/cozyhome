@@ -88,16 +88,6 @@ const Landing: React.FC = () => {
     };
   });
 
-  // useEffect(() => {
-  //   if (scrollPosition.current > 15) {
-  //     setShowThirdContainer(true);
-  //   }
-
-  //   if (scrollPosition.current < 3) {
-  //     setShowThirdContainer(false);
-  //   }
-  // }, []);
-
   return (
     <GeneralWrapper>
       <div className={"progressDiv"}>
