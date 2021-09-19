@@ -10,8 +10,6 @@ export interface IFourthContainer {}
 
 export interface IFifthContainer {}
 
-export interface ISixthContainer {}
-
 export interface IGeneralWrapper {}
 
 export interface IPictures {
@@ -68,4 +66,10 @@ export interface IHeaderProps extends IHeader {
 
 export interface IProps {
   props: SVGProps<SVGElement>;
+}
+
+export interface IYildiz {
+  margintop: number;
+  marginright: number;
+  size: number;
 }

@@ -1,6 +1,6 @@
 import GeneralWrapper, { FirstContainer, FirstWrapper } from "./Elements";
 import { IContent, IHeader } from "../../types";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import FifthContainer from "./FifthContainer";
 import FourthContainer from "./FourthContainer";
@@ -27,7 +27,7 @@ const Landing: React.FC = () => {
   const data: IContent = require("../../data/json/text.json");
   const header_data: IHeader = data["landing"]["header"];
   const [tryWallet, setTryWallet] = useState<Boolean>(false);
-  const [scrollPosition, setPosition] = useState<Number>(0);
+  const scrollPosition = useRef<Number>(0);
   const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(false);
   const { active, account, library, connector, activate, deactivate } =
     useWeb3React();
@@ -67,8 +67,14 @@ const Landing: React.FC = () => {
     const docHeight = getDocHeight();
 
     const totalDocScrollLength = docHeight - windowHeight;
-    const scrollPostion = (scrollTop / totalDocScrollLength) * 100;
-    setPosition(scrollPostion);
+    const _scrollPosition = (scrollTop / totalDocScrollLength) * 100;
+    if (_scrollPosition > 15) {
+      setShowThirdContainer(true);
+    }
+    if (_scrollPosition < 3) {
+      setShowThirdContainer(false);
+    }
+    scrollPosition.current = _scrollPosition; 
   };
   const scrollDistance = () => {
     requestAnimationFrame(() => {
@@ -82,15 +88,15 @@ const Landing: React.FC = () => {
     };
   });
 
-  useEffect(() => {
-    if (scrollPosition > 15) {
-      setShowThirdContainer(true);
-    }
+  // useEffect(() => {
+  //   if (scrollPosition.current > 15) {
+  //     setShowThirdContainer(true);
+  //   }
 
-    if (scrollPosition < 3) {
-      setShowThirdContainer(false);
-    }
-  }, [scrollPosition]);
+  //   if (scrollPosition.current < 3) {
+  //     setShowThirdContainer(false);
+  //   }
+  // }, []);
 
   return (
     <GeneralWrapper>
@@ -102,7 +108,7 @@ const Landing: React.FC = () => {
           <Header
             {...header_data}
             showThirdContainer={showThirdContainer}
-            scrollPosition={scrollPosition}
+            scrollPosition={scrollPosition.current}
             metaMask={{
               active: active,
               account: account,

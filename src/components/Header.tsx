@@ -428,7 +428,6 @@ const HeaderCo = styled.div<IHead>`
 `;
 
 export const scrollToSection = (className: string) => {
-  console.log(className, "that is");
   scroller.scrollTo(className, {
     duration: 800,
     delay: 0,

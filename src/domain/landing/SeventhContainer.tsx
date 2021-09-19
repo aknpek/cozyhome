@@ -1,7 +1,13 @@
-import { IContainer, ISixthContainer } from "../../types";
+import { IContainer, IYildiz } from "../../types";
+import react, { useEffect, useRef, useState } from "react";
 
 import Pictures from "../../components/Locals";
+import YildizContainer from "../../components/Yildizlar";
 import styled from "styled-components";
+
+interface ISixthContainer {
+  yildizlar: IYildiz[];
+}
 
 const SeventhComponent = styled.div<ISixthContainer>`
   background-color: #121420;
@@ -41,6 +47,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
     grid-row-end: 4;
     grid-column-start: 2;
     grid-column-end: 6;
+    z-index: 1;
 
     display: flex;
     flex-direction: row;
@@ -217,7 +224,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
   }
   @media screen and (max-width: 700px) {
     height: 1650px;
-   
+
     .titleTeam {
       grid-column-start: 2;
       grid-column-end: 3;
@@ -278,7 +285,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
     }
   }
-
   @media screen and (max-width: 400px) {
     height: 1700px;
 
@@ -308,13 +314,56 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
     }
   }
+
+  .starDiv {
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    z-index: 0;
+
+    div { 
+
+    }
+
+  }
 `;
 interface PropsSeven {
   data: IContainer;
 }
+
+function getRandomArbitrary(min: number, max: number) {
+  return Math.random() * (max - min) + min;
+}
+
 const SeventhContainer: React.FC<PropsSeven> = (props) => {
+  const [yildizlar, setYildizlar] = useState<IYildiz[]>([]);
+  const [yildizlar2, setYildizlar2] = useState<IYildiz[]>([]);
+
+  const render = useRef<Number>(0);
+  const yildizMaker = (
+    yildizlar: IYildiz[],
+    setYildizlar: react.Dispatch<react.SetStateAction<IYildiz[]>>
+  ) => {
+    for (let i = 0; i < getRandomArbitrary(0, 100); i++) {
+      yildizlar.push({
+        margintop: Math.round(Math.random() * 95),
+        marginright: Math.round(Math.random() * 95),
+        size: Math.round(Math.random() * 80),
+      });
+    }
+    setYildizlar(yildizlar);
+  };
+
+  useEffect(() => {
+    if (render.current === 0) {
+      yildizMaker(yildizlar, setYildizlar);
+      yildizMaker(yildizlar2, setYildizlar2);
+      render.current = 1;
+    }
+  });
+
   return (
-    <SeventhComponent className="Seven-Component">
+    <SeventhComponent className="Seven-Component" yildizlar={yildizlar}>
       <div className={"titleTeam"}>
         <h1>{props.data.title}</h1>
       </div>
@@ -340,6 +389,15 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
         <a>
           <h1>Smart Contract</h1>
         </a>
+      </div>
+
+      <div className={"starDiv"}>
+        <div className={""}>
+          <YildizContainer yildizlar={yildizlar} />
+        </div>
+        <div>
+          <YildizContainer yildizlar={yildizlar2} />
+        </div>
       </div>
     </SeventhComponent>
   );

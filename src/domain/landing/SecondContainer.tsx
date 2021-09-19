@@ -229,10 +229,6 @@ export const SecondComponent = styled.div<ISecondComponent>`
       grid-column-start: 2;
       grid-column-end: 3;
       z-index: 1;
-
-      .yildizDiv {
-        width: 650px;
-      }
     }
   }
 `;
@@ -253,21 +249,6 @@ const SecondContainer: React.FC<PropsSecond> = (props) => {
     >
       <Picture picture={props.data["pictures"]} />
       <TextDisplay textDirection={props.textDirection} {...props.data} />
-
-      {/* <motion.div
-          animate={{
-            scale: [0.9, 0.8, 0.9, 0.8, 0.6],
-            rotate: [0, 10, 0, -10, 0],
-            opacity: [0.9, 0.2, 0.9, 0.2, 0.6],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 30,
-          }}
-          className={"yildizDiv"}
-        >
-          <Yildiz props={{}} />
-        </motion.div> */}
     </SecondComponent>
   );
 };
