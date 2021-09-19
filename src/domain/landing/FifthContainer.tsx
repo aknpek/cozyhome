@@ -126,13 +126,13 @@ const FifthComponent = styled.div<IFifthContainer>`
   }
 
   @media screen and (max-width: 1100px) {
-    grid-template-columns: 0.2fr 4fr 0.2fr;
+    grid-template-columns: 0.2fr 5fr 0.2fr;
   }
   @media screen and (max-width: 1000px) {
     grid-template-columns: 0.2fr 5fr 0.2fr;
   }
   @media screen and (max-width: 900px) {
-    height: 1600px;
+    height: 1650px;
     grid-template-columns: 0.2fr 6fr 0.2fr;
     grid-template-rows: 0.2fr 0.1fr 0.1fr 1fr 0.2fr;
 
@@ -158,22 +158,17 @@ const FifthComponent = styled.div<IFifthContainer>`
       }
     }
     .pictureDiv {
-
       display: grid;
 
       h1 {
       }
       img {
       }
-
-   
     }
-
-   
   }
 
   @media screen and (max-width: 500px) {
-    height: 1500px;
+    height: 1200px;
     grid-template-columns: 0.2fr 6fr 0.2fr;
     grid-template-rows: 0.2fr 0.1fr 0.1fr 1fr 0.2fr;
 
@@ -200,20 +195,17 @@ const FifthComponent = styled.div<IFifthContainer>`
       }
     }
     .pictureDiv {
-
       display: grid;
 
       h1 {
+        display: none;
       }
       img {
-        height: 15rem;
-        width: 15rem;
+        margin-top: 1.2rem;
+        height: 14rem;
+        width: 14rem;
       }
-
-   
     }
-
-   
   }
 `;
 interface PropsFifth {

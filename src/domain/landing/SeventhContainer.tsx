@@ -29,7 +29,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
     align-items: center;
     h1 {
       font-size: 4.5rem;
-      color: #ffffffbe;
+      color: white;
       text-align: center;
       font-family: "Fredoka One", normal;
       font-weight: 200;
@@ -66,13 +66,13 @@ const SeventhComponent = styled.div<ISixthContainer>`
       }
 
       h3 {
-        color: #ffffffbe;
+        color: white;
         font-size: 2.5rem;
         font-family: "Fredoka One", normal;
         font-weight: 200;
       }
       h4 {
-        color: #ffffffbe;
+        color: white;
         font-size: 1.2rem;
         font-weight: 100;
         font-family: "Josefin Sans", cursive;
@@ -91,7 +91,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
     align-items: center;
     a {
       h1 {
-        color: #ffffffbe;
+        color: white;
         font-family: "Fredoka One", normal;
         font-weight: 200;
         text-decoration: underline;

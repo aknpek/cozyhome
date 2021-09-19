@@ -595,6 +595,135 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
   }
+  @media screen and (max-width: 400px) {
+    .sloganDiv {
+
+      .sloganDivBlock {
+        justify-content: center;
+      }
+
+      .cozyHomeLogoDiv {
+        margin-top: 1rem;
+        ${(props) => (props.metaHomes ? "center" : "left")};
+
+        .cozyHomeLogoDiv2 {
+          transform: scale(0.5);
+        }
+      }
+    }
+    .messageDiv {
+      margin-top: 1rem;
+      text-align: center;
+
+      .messageMiddleDiv {
+        width: ${(props) =>
+          props.metaHomes || props.preSale ? "100%" : "80%"};
+        .message {
+          display: flex;
+          justify-content: left;
+          font-size: 1.1rem;
+          line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+          text-align: ${(props) => (props.metaHomes ? "left" : "center")};
+        }
+      }
+
+      .preSaleBlock {
+        width: 14rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .preSale {
+          font-family: "Fredoka One", normal;
+          display: flex;
+          height: 3rem;
+          width: 6rem;
+          font-weight: 200;
+          border-radius: 0.8rem;
+          border-width: 2rem;
+          color: white;
+          border: 1.5px solid #05344e;
+          font-size: 1rem;
+
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .preSaleEth {
+          font-family: "Fredoka One", normal;
+          color: white;
+          border: 1.5px solid #05344e;
+          font-weight: 200;
+          display: flex;
+          height: 3rem;
+          width: 6rem;
+          border-radius: 0.8rem;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: 1rem;
+        }
+      }
+    }
+    .subTitleDiv {
+      margin: auto;
+      margin-top: 1rem;
+      width: 11rem;
+      height: 3rem;
+      border-radius: 1rem;
+
+      .subTitle {
+        font-size: 1.4rem;
+      }
+    }
+    .subTitleMintBlock {
+      width: 16rem;
+      display: flex;
+      justify-content: space-around;
+
+      .subTitleMintDiv {
+        text-align: center;
+        width: 55%;
+        height: 3.5rem;
+        font-family: "Josefin Sans", cursive;
+        border-radius: 2rem;
+        border-radius: 1rem;
+        background-color: #ff961b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+
+        .subTitleMint {
+          color: white;
+        }
+
+        :hover {
+          -webkit-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+          transform: scale(0.8);
+          transition: 0.8s ease;
+          cursor: pointer;
+        }
+      }
+      .subTitleQuantityDiv {
+        text-align: center;
+        width: 35%;
+        height: 3.5rem;
+        font-family: "Josefin Sans", cursive;
+        border-radius: 2rem;
+        border-radius: 1rem;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+
+        .subTitleQuantity {
+          color: black;
+        }
+      }
+    }
+  }
 `;
 
 interface PTextDisplay extends Props {

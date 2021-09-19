@@ -62,7 +62,6 @@ const HeaderCo = styled.div<IHead>`
     }
   }
 
-
   .walletContainer {
     span {
       display: flex;
@@ -155,16 +154,14 @@ const HeaderCo = styled.div<IHead>`
       display: none;
     }
 
-    main{
+    main {
       display: flex;
-      justify-content: center
+      justify-content: center;
     }
     .logoContainer {
-
-      .walletContainer{ 
+      .walletContainer {
         margin-right: 3rem;
       }
-      
     }
   }
 
@@ -173,18 +170,214 @@ const HeaderCo = styled.div<IHead>`
       display: none;
     }
 
-    main{
+    main {
       display: flex;
-      justify-content: center
+      justify-content: center;
     }
     .logoContainer {
-
-      .walletContainer{ 
+      .walletContainer {
         /* margin-right: 3  rem; */
       }
-      
     }
   }
+
+  @media screen and (max-width: 500px) {
+    .headerContainer {
+      display: none;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+    }
+
+    .walletContainer {
+      span {
+        display: flex;
+        font-family: "Fredoka One", normal;
+        letter-spacing: 0.05rem;
+        font-weight: 400;
+        color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
+        h1 {
+          background-color: white;
+          border-radius: 0.3rem;
+          display: flex;
+          position: relative;
+          font-size: 1rem;
+          height: 2rem;
+          width: 5rem;
+          font-weight: 800;
+          margin: 1rem;
+          color: ${(props) =>
+            props.showThirdContainer ? "#0f0f0f" : "#0f0f0f"};
+          transition: color 0.2s ease-in-out;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          letter-spacing: 1.5;
+        }
+      }
+    }
+
+    .logoContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .twitterLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem;
+
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      .discordLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem;
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      .openSeaLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem;
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+
+    .dropDownContent {
+      display: none;
+      position: absolute;
+      background-color: #121420;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropDownWallet {
+      position: relative;
+      display: inline-block;
+      font-family: "Fredoka One", normal;
+    }
+
+    .dropDownWallet:hover .dropDownContent {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .headerContainer {
+      display: none;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+    }
+
+    .walletContainer {
+      span {
+        display: flex;
+        font-family: "Fredoka One", normal;
+        letter-spacing: 0.05rem;
+        font-weight: 400;
+        color: ${(props) => (props.showThirdContainer ? "white" : "#cecad3")};
+        h1 {
+          background-color: white;
+          border-radius: 0.3rem;
+          display: flex;
+          position: relative;
+          font-size: 1rem;
+          height: 2rem;
+          width: 5rem;
+          font-weight: 800;
+          margin: 1rem;
+          color: ${(props) =>
+            props.showThirdContainer ? "#0f0f0f" : "#0f0f0f"};
+          transition: color 0.2s ease-in-out;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          letter-spacing: 1.5;
+        }
+      }
+    }
+
+    .logoContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .twitterLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem;
+
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+
+      .discordLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem;
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+
+      .openSeaLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem;
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+    }
+
+    .dropDownContent {
+      display: none;
+      position: absolute;
+      background-color: #121420;
+      min-width: 100%;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropDownWallet {
+      position: relative;
+      display: inline-block;
+      font-family: "Fredoka One", normal;
+    }
+
+    .dropDownWallet:hover .dropDownContent {
+      display: block;
+
+    }
   }
 
   h1:hover {
@@ -230,8 +423,6 @@ const HeaderCo = styled.div<IHead>`
     margin-bottom: auto;
     margin-right: calc(10rem + 20px);
   }
-
-  
 `;
 
 export const scrollToSection = (className: string) => {

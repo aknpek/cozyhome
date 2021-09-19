@@ -317,7 +317,6 @@ const FourthComponent = styled.div<IFourthContainer>`
       grid-column-end: 3;
       text-align: center;
       .blockFirstDiv {
-
         h5 {
           margin: auto;
           line-height: 2.2;
@@ -388,7 +387,6 @@ const FourthComponent = styled.div<IFourthContainer>`
       grid-column-end: 3;
       text-align: center;
       .blockFirstDiv {
-
         h5 {
           margin: auto;
           line-height: 2;
@@ -409,7 +407,6 @@ const FourthComponent = styled.div<IFourthContainer>`
         }
       }
     }
-
 
     .blockSecond {
       .roadBlock {
@@ -487,10 +484,9 @@ const FourthComponent = styled.div<IFourthContainer>`
       }
     }
   }
-
-
   @media screen and (max-width: 500px) {
     height: 1500px;
+    grid-template-columns: 0.2fr 2fr 0.2fr;
 
     .titleDiv {
       h1 {
@@ -500,7 +496,8 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
 
     .blockSecond {
-      .roadBlock, .roadBlock:hover {
+      .roadBlock,
+      .roadBlock:hover {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -511,7 +508,7 @@ const FourthComponent = styled.div<IFourthContainer>`
           h1 {
             margin: auto;
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 200;
             line-height: 1.5;
             text-decoration: underline;
@@ -525,10 +522,22 @@ const FourthComponent = styled.div<IFourthContainer>`
             line-height: 1.5;
           }
         }
-      }
-      
-    }
+        .roadPercent {
+          .roadPercentBlock {
+            height: 3rem;
+            width: 3rem;
+            border-radius: 1rem;
+            h1 {
+              font-family: "Fredoka One", normal;
+              font-weight: 200;
 
+              font-size: 1rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
   }
 `;
 interface PropsFourth {
