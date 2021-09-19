@@ -280,10 +280,10 @@ const SeventhComponent = styled.div<ISixthContainer>`
   }
 
   @media screen and (max-width: 400px) {
-    height: 1600px;
+    height: 1700px;
 
     .photosTeam {
-      margin-top: -1.4rem;
+      margin-top: -2.5rem;
       display: grid;
       grid-template-columns: 1fr;
       grid-gap: 1rem;

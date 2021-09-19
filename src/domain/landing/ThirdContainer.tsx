@@ -59,7 +59,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
     display: flex;
     justify-content: center;
     align-items: center;
-    img { 
+    img {
       width: 90%;
       height: 90%;
     }
@@ -70,7 +70,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
   }
 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 2fr .5fr;
+  grid-template-rows: 1fr 2fr 2fr 0.5fr;
   grid-template-areas:
     "header"
     "cell-2 cell-3 cell-4"
@@ -282,12 +282,11 @@ const ThirdComponent = styled.div<IThirdContainer>`
       h1 {
         height: 5rem;
         font-size: 3rem;
-        
       }
     }
 
     .cells {
-      margin-top: 3rem;
+      margin-top: 5rem;
       display: flex;
       justify-content: center;
       justify-items: center;
@@ -299,12 +298,15 @@ const ThirdComponent = styled.div<IThirdContainer>`
       }
     }
 
-    .cell-5{
+    .cell-5 {
       display: none;
     }
-    .cell-6{
+    .cell-6 {
       display: none;
     }
+  }
+  @media screen and (max-width: 400px) {
+    height: 1100px;
   }
 `;
 interface PropsThird {

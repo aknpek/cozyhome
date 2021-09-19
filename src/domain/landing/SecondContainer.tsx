@@ -192,7 +192,7 @@ export const SecondComponent = styled.div<ISecondComponent>`
       !metaHomes &&
       css`
         margin-top: 50px;
-        max-height: 500px;
+        max-height: 550px;
       `}
 
     ${({ metaHomes }) =>
@@ -206,7 +206,7 @@ export const SecondComponent = styled.div<ISecondComponent>`
     ${({ preSale }) =>
       preSale &&
       css`
-        margin-top: 250px;
+        margin-top: 300px;
         grid-template-rows: 0.1fr 1fr 1fr 0.1fr;
         max-height: 500px;
         min-height: 500px;

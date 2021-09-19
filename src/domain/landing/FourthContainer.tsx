@@ -491,6 +491,8 @@ const FourthComponent = styled.div<IFourthContainer>`
         height: 200px;
 
         .roadText {
+          margin-top: -2rem;
+
           h1 {
             margin: auto;
             text-align: center;

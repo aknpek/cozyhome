@@ -5,6 +5,7 @@
 .MainApp {
   position: absolute;
   display: flex;
+  left: 0;
   background-color: #121420;
   flex-direction: row;
 }
@@ -35,11 +36,6 @@
 
 }
 
-.Deneme {
-  background-color: rgb(0, 0, 0);
-  height: 60px;
-  width: 20px;
-}
 
 @keyframes slideInFromLeft {
   0% {

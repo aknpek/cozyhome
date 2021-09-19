@@ -78,7 +78,7 @@ const HeaderCo = styled.div<IHead>`
         position: relative;
         font-size: 1rem;
         height: 2.5rem;
-        width: 8rem;
+        width: 9rem;
         font-weight: 800;
         margin: 1rem;
         color: ${(props) => (props.showThirdContainer ? "#0f0f0f" : "#0f0f0f")};
@@ -205,9 +205,9 @@ const HeaderCo = styled.div<IHead>`
           border-radius: 0.3rem;
           display: flex;
           position: relative;
-          font-size: 1rem;
+          font-size: 0.7rem;
           height: 2rem;
-          width: 5rem;
+          width: 8rem;
           font-weight: 800;
           margin: 1rem;
           color: ${(props) =>

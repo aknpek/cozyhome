@@ -20,7 +20,8 @@ export const FirstContainer = styled.div<IFirstContainer>`
 background-color: white;
 
   height: 100%;
-  width: 100%;
+  /* width: 100%auto; */
+
 `;
 
 
