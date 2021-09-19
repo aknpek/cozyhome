@@ -269,7 +269,6 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
   }
-
   @media screen and (max-width: 1000px) {
     .sloganDiv {
       margin-top: 25rem;
@@ -280,9 +279,11 @@ const TextBlock = styled.div<ITextDisplay>`
 
       .cozyHomeLogoDiv {
         height: 5rem;
-     
+        justify-content: center;
+
         .cozyHomeLogoDiv2 {
           transform: scale(0.8);
+          justify-content: center;
         }
       }
     }
@@ -316,34 +317,52 @@ const TextBlock = styled.div<ITextDisplay>`
   }
   @media screen and (max-width: 700px) {
     .sloganDiv {
-      margin-top: 25rem;
-
+      margin-top: 19rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .sloganDivBlock {
         justify-content: center;
+
+        .slogan {
+          font-size: 3.2rem;
+        }
       }
 
       .cozyHomeLogoDiv {
+        width: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 5rem;
-        ${(props) => (props.metaHomes ? "center" : "left")};
 
         .cozyHomeLogoDiv2 {
-          transform: scale(0.8);
+          ${(props) => (props.metaHomes ? "center" : "left")};
+          transform: scale(0.5);
+          svg {
+          }
         }
       }
     }
     .messageDiv {
-      margin-top: 2rem;
-      text-align: center;
-
-      .message {
-        font-size: 1.1rem;
-        line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
-        text-align: ${(props) => (props.metaHomes ? "left" : "center")};
-      }
-      div {
-        width: ${(props) =>
-          props.metaHomes || props.preSale ? "100%" : "80%"};
-        h1 {
+      margin-top: 0rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .messageMiddleDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        .message {
+          display: flex;
+          font-size: 1.1rem;
+          line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+          justify-content: center;
+          text-align: center;
+          width: ${(props) => (props.preSale ? "100%" : "90%")};
+          margin-right: ${(props) => (props.metaHomes ? "2rem" : "0rem")}
         }
       }
 
@@ -382,19 +401,197 @@ const TextBlock = styled.div<ITextDisplay>`
           justify-content: center;
           align-items: center;
           text-align: center;
-          font-size: 1.2rem;
+          font-size: 1rem;
+        }
+      }
+    }
+    .subTitleMintBlock {
+      display: flex;
+      justify-content: space-around;
+
+      .subTitleMintDiv {
+        text-align: center;
+        margin-top: 1rem;
+        width: 55%;
+        height: 3.5rem;
+        font-family: "Josefin Sans", cursive;
+        border-radius: 2rem;
+        border-radius: 1rem;
+        background-color: #ff961b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+
+        .subTitleMint {
+          color: white;
+        }
+
+        :hover {
+          -webkit-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+          transform: scale(0.8);
+          transition: 0.8s ease;
+          cursor: pointer;
+        }
+      }
+      .subTitleQuantityDiv {
+        text-align: center;
+        margin-top: 1rem;
+        width: 35%;
+        height: 3.5rem;
+        font-family: "Josefin Sans", cursive;
+        border-radius: 2rem;
+        border-radius: 1rem;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+
+        .subTitleQuantity {
+          color: black;
         }
       }
     }
     .subTitleDiv {
       margin: auto;
-      margin-top: 2rem;
+      margin-top: 1rem;
       width: 11rem;
-      height: 4rem;
-      border-radius: 1.2rem;
+      height: 3rem;
+      border-radius: 1rem;
 
       .subTitle {
         font-size: 1.4rem;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .sloganDiv {
+
+      .sloganDivBlock {
+        justify-content: center;
+      }
+
+      .cozyHomeLogoDiv {
+        margin-top: 1rem;
+        ${(props) => (props.metaHomes ? "center" : "left")};
+
+        .cozyHomeLogoDiv2 {
+          transform: scale(0.5);
+        }
+      }
+    }
+    .messageDiv {
+      margin-top: 1rem;
+      text-align: center;
+
+      .messageMiddleDiv {
+        width: ${(props) =>
+          props.metaHomes || props.preSale ? "100%" : "80%"};
+        .message {
+          display: flex;
+          justify-content: left;
+          font-size: 1.1rem;
+          line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+          text-align: ${(props) => (props.metaHomes ? "left" : "center")};
+        }
+      }
+
+      .preSaleBlock {
+        width: 14rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .preSale {
+          font-family: "Fredoka One", normal;
+          display: flex;
+          height: 3rem;
+          width: 6rem;
+          font-weight: 200;
+          border-radius: 0.8rem;
+          border-width: 2rem;
+          color: white;
+          border: 1.5px solid #05344e;
+          font-size: 1rem;
+
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .preSaleEth {
+          font-family: "Fredoka One", normal;
+          color: white;
+          border: 1.5px solid #05344e;
+          font-weight: 200;
+          display: flex;
+          height: 3rem;
+          width: 6rem;
+          border-radius: 0.8rem;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: 1rem;
+        }
+      }
+    }
+    .subTitleDiv {
+      margin: auto;
+      margin-top: 1rem;
+      width: 11rem;
+      height: 3rem;
+      border-radius: 1rem;
+
+      .subTitle {
+        font-size: 1.4rem;
+      }
+    }
+    .subTitleMintBlock {
+      width: 20rem;
+      display: flex;
+      justify-content: space-around;
+
+      .subTitleMintDiv {
+        text-align: center;
+        width: 55%;
+        height: 3.5rem;
+        font-family: "Josefin Sans", cursive;
+        border-radius: 2rem;
+        border-radius: 1rem;
+        background-color: #ff961b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+
+        .subTitleMint {
+          color: white;
+        }
+
+        :hover {
+          -webkit-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+          transform: scale(0.8);
+          transition: 0.8s ease;
+          cursor: pointer;
+        }
+      }
+      .subTitleQuantityDiv {
+        text-align: center;
+        width: 35%;
+        height: 3.5rem;
+        font-family: "Josefin Sans", cursive;
+        border-radius: 2rem;
+        border-radius: 1rem;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+
+        .subTitleQuantity {
+          color: black;
+        }
       }
     }
   }
@@ -431,7 +628,7 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
         )}
       </div>
       <div className={"messageDiv"}>
-        <div>
+        <div className={"messageMiddleDiv"}>
           {props.title === "Presale" ? (
             <div className={"preSaleBlock"}>
               <h1 className={"preSale"}>{eth.current} ETH</h1>
@@ -444,6 +641,7 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
           )}
         </div>
       </div>
+
       {props.subtitle !== "" && props.title !== "Presale" ? (
         <div
           className={"subTitleDiv"}

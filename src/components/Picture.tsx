@@ -108,9 +108,6 @@ const PicStyled = styled.div<IPicture>`
       min-width: 280px;
       min-height: 280px;
     }
-    .gif {
-      margin-top: 3rem;
-    }
   }
 
   .gif:hover {

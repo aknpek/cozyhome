@@ -117,10 +117,14 @@ const Landing: React.FC = () => {
           <SecondContainer
             data={data["landing"]["containers"][0]}
             textDirection={true}
+            preSale={false}
+            metaHomes={false}
           />
           <SecondContainer
             data={data["landing"]["containers"][1]}
             textDirection={false}
+            preSale={false}
+            metaHomes={true}
           />
         </div>
 
@@ -146,6 +150,8 @@ const Landing: React.FC = () => {
           <SecondContainer
             data={data["landing"]["containers"][5]}
             textDirection={true}
+            preSale={true}
+            metaHomes={false}
           />
         </div>
 

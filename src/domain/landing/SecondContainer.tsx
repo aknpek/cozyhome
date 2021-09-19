@@ -10,10 +10,11 @@ import { motion } from "framer-motion";
 
 interface ISecondComponent {
   textDireciton: Boolean;
+  preSale: Boolean;
+  metaHomes: Boolean;
 }
 
 export const SecondComponent = styled.div<ISecondComponent>`
-  background-color: #121420;
   margin-top: 100px;
   position: relative;
   display: grid;
@@ -104,36 +105,12 @@ export const SecondComponent = styled.div<ISecondComponent>`
       }
     }
   }
-  @media screen and (max-width: 750px) {
+
+  @media screen and (max-width: 700px) {
     max-width: 750px;
-    grid-template-columns: 0.2fr 2fr 0.2fr;
-    grid-template-rows: 0.1fr 1fr 1fr 1fr;
-    .picture {
-      margin: auto;
-      grid-row-start: 1;
-      grid-row-start: 2;
-      grid-column-start: 2;
-      grid-column-end: 3;
-      z-index: 1;
-    }
-
-    .textdisplay {
-      margin: auto;
-      grid-row-start: 4;
-      grid-row-start: 5;
-      grid-column-start: 2;
-      grid-column-end: 3;
-      z-index: 1;
-
-      .yildizDiv {
-        width: 800px;
-      }
-    }
-  }
-  @media screen and (max-width: 650px) {
-    max-width: 650px;
-    grid-template-columns: 0.2fr 5fr 0.2fr;
-    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+    max-height: 850px;
+    grid-template-columns: 0.2fr 7fr 0.2fr;
+    grid-template-rows: 0.1fr 1fr 1fr 2fr;
     .picture {
       margin: auto;
       grid-row-start: 1;
@@ -157,11 +134,35 @@ export const SecondComponent = styled.div<ISecondComponent>`
     }
   }
   @media screen and (max-width: 500px) {
-    max-width: 500px;
-    height: 700px;
-    grid-template-columns: 0.2fr 2fr 0.2fr;
+    grid-template-columns: 0.2fr 5fr 0.2fr;
     grid-template-rows: 0.1fr 1fr 1fr 1fr;
-    .picture {
+
+    ${({ metaHomes }) =>
+      !metaHomes &&
+      css`
+        margin-top: 50px;
+        max-height: 1550px;
+      `}
+
+    ${({ metaHomes }) =>
+      metaHomes &&
+      css`
+        margin-top: 200px;
+        max-height: 1050px;
+        min-height: 1050px;
+      `}
+
+    ${({ preSale }) =>
+      preSale &&
+      css`
+        margin-top: 300px;
+        grid-template-rows: 0.1fr 1fr 1fr 0.1fr;
+        max-height: 700px;
+        min-height: 700px;
+      `}
+
+
+      .picture {
       margin: auto;
       grid-row-start: 1;
       grid-row-start: 2;
@@ -172,14 +173,65 @@ export const SecondComponent = styled.div<ISecondComponent>`
 
     .textdisplay {
       margin: auto;
+      grid-row-start: 3;
       grid-row-start: 4;
-      grid-row-start: 5;
       grid-column-start: 2;
       grid-column-end: 3;
       z-index: 1;
 
       .yildizDiv {
-        width: 800px;
+        width: 650px;
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    grid-template-columns: 0.2fr 5fr 0.2fr;
+    grid-template-rows: 0.1fr 1fr 1fr 1fr;
+
+    ${({ metaHomes }) =>
+      !metaHomes &&
+      css`
+        margin-top: 50px;
+        max-height: 1550px;
+      `}
+
+    ${({ metaHomes }) =>
+      metaHomes &&
+      css`
+        margin-top: 200px;
+        max-height: 1050px;
+        min-height: 1050px;
+      `}
+
+    ${({ preSale }) =>
+      preSale &&
+      css`
+        margin-top: 340px;
+        grid-template-rows: 0.1fr 1fr 1fr 0.1fr;
+        max-height: 750px;
+        min-height: 750px;
+      `}
+
+
+      .picture {
+      margin: auto;
+      grid-row-start: 1;
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      z-index: 1;
+    }
+
+    .textdisplay {
+      margin: auto;
+      grid-row-start: 3;
+      grid-row-start: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      z-index: 1;
+
+      .yildizDiv {
+        width: 650px;
       }
     }
   }
@@ -188,15 +240,21 @@ export const SecondComponent = styled.div<ISecondComponent>`
 interface PropsSecond {
   data: IContainer;
   textDirection: Boolean;
+  preSale: Boolean;
+  metaHomes: Boolean;
 }
 
 const SecondContainer: React.FC<PropsSecond> = (props) => {
   return (
-    <SecondComponent textDireciton={props.textDirection}>
+    <SecondComponent
+      textDireciton={props.textDirection}
+      preSale={props.preSale}
+      metaHomes={props.metaHomes}
+    >
       <Picture picture={props.data["pictures"]} />
-        <TextDisplay textDirection={props.textDirection} {...props.data} />
+      <TextDisplay textDirection={props.textDirection} {...props.data} />
 
-       {/* <motion.div
+      {/* <motion.div
           animate={{
             scale: [0.9, 0.8, 0.9, 0.8, 0.6],
             rotate: [0, 10, 0, -10, 0],
