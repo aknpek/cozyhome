@@ -12,9 +12,6 @@ interface IHead {
 }
 
 const HeaderCo = styled.div<IHead>`
-  @supports not (position: "sticky") {
-    margin-top: -0.5rem;
-  }
 
   background-color: #121420;
   display: flex;
@@ -424,6 +421,13 @@ const HeaderCo = styled.div<IHead>`
     margin-top: auto;
     margin-bottom: auto;
     margin-right: calc(10rem + 20px);
+  }
+
+  @supports not (position: "sticky") {
+    main {
+      margin-top: -7rem;
+    }
+
   }
 `;
 
