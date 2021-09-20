@@ -128,7 +128,7 @@ const FifthComponent = styled.div<IFifthContainer>`
     grid-template-columns: 0.2fr 5fr 0.2fr;
   }
   @media screen and (max-width: 1000px) {
-    grid-template-columns: 0.2fr 5fr 0.2fr;
+    grid-template-columns: 0.2fr 8fr 0.2fr;
   }
   @media screen and (max-width: 900px) {
     height: 1550px;

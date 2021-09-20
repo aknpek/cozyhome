@@ -6,6 +6,7 @@ import { IContainer } from "../../types";
 import Picture from "../../components/Picture";
 import TextDisplay from "../../components/TextDisplay";
 import Yildiz from "../../svgs/Yildiz";
+import YildizContainer from "../../components/Yildizlar";
 import { motion } from "framer-motion";
 
 interface ISecondComponent {
@@ -231,6 +232,21 @@ export const SecondComponent = styled.div<ISecondComponent>`
       z-index: 1;
     }
   }
+
+  .starDiv {
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* z-index: 0; */
+
+    .startSubDiv {
+      margin-left: 25%;
+    }
+    .startSubDiv2 {
+      margin-top: 25%;
+    }
+  }
 `;
 
 interface PropsSecond {
@@ -249,6 +265,11 @@ const SecondContainer: React.FC<PropsSecond> = (props) => {
     >
       <Picture picture={props.data["pictures"]} />
       <TextDisplay textDirection={props.textDirection} {...props.data} />
+      <div className={"starDiv"}>
+        <div className={"startSubDiv2"}>
+          <YildizContainer />
+        </div>
+      </div>
     </SecondComponent>
   );
 };

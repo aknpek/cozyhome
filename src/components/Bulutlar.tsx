@@ -48,18 +48,19 @@
 //     box-shadow: none;
 //   }
 
+import Ay from "../svgs/Ay";
 import BulutFirst from "../svgs/BulutFirst";
 import BulutSecond from "../svgs/BulutSecond";
+import Cerce from "../svgs/Cerce";
 import React from "react";
+import TwitterLogo from "../svgs/TwitterLogo";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
 interface IBulut {}
 
 const BulutlarComponent = styled.div`
-  display: flex;
-  z-index: 2;
-
+  
 `;
 
 const BulutlarContainer: React.FC<IBulut> = () => {
@@ -67,53 +68,15 @@ const BulutlarContainer: React.FC<IBulut> = () => {
     <BulutlarComponent>
       <motion.div
         className={"BulutFirst"}
-        initial={{ scale: 0.3, opacity: 0.6 }}
-        animate={{ scale: 0.4, opacity: 1.0, translateX: "20px" }}
-        transition={{ repeat: Infinity, duration: 7.5 }}
+        initial={{ scale: 0.9, opacity: 1.0 }}
+        animate={{ scale: 0.6, opacity: 1.0, translateX: "20px" }}
+        transition={{ repeat: Infinity, duration: 20 }}
       >
-        <BulutSecond />
+        <BulutFirst />
 
-        <BulutlarComponent />
       </motion.div>
     </BulutlarComponent>
   );
 };
 
 export default BulutlarContainer;
-
-
-
-    //   {/* <motion.div
-    //     className={"BulutFirst"}
-    //     initial={{ scale: 0.3, opacity: 0.6 }}
-    //     animate={{ scale: 0.4, opacity: 1.0, translateX: "20px" }}
-    //     transition={{ repeat: Infinity, duration: 7.5 }}
-    //   >
-    //     <BulutFirst />
-    //   </motion.div>
-    //   <motion.div
-    //     className={"BulutSecond"}
-    //     initial={{ scale: 0.8, opacity: 0.8 }}
-    //     animate={{ scale: 0.9, opacity: 1, translateX: "-50px" }}
-    //     transition={{ repeat: Infinity, duration: 6.5 }}
-    //   >
-    //     <BulutSecond />
-    //   </motion.div>
-    //   <motion.div
-    //     className={"BulutThird"}
-    //     initial={{ scale: 0.2, opacity: 0.5 }}
-    //     animate={{ scale: 0.4, opacity: 1, translateX: "100px" }}
-    //     transition={{ repeat: Infinity, duration: 5.5 }}
-    //   >
-    //     <BulutFirst />
-    //   </motion.div>
-    //   <motion.div
-    //     className={"BulutFourth"}
-    //     initial={{ scale: 0.5, opacity: 0.6 }}
-    //     animate={{ scale: 0.6, opacity: 1, translateX: "60px" }}
-    //     transition={{ repeat: Infinity, duration: 5.5 }}
-    //   >
-    //     <BulutFirst />
-    //   </motion.div>
-   
-    // */}

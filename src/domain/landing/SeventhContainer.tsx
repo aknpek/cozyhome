@@ -6,7 +6,6 @@ import YildizContainer from "../../components/Yildizlar";
 import styled from "styled-components";
 
 interface ISixthContainer {
-  yildizlar: IYildiz[];
 }
 
 const SeventhComponent = styled.div<ISixthContainer>`
@@ -326,50 +325,19 @@ const SeventhComponent = styled.div<ISixthContainer>`
     }
     .startSubDiv2 {
       margin-top: 25%;
-      
-
     }
-
-
   }
 `;
 interface PropsSeven {
   data: IContainer;
 }
 
-function getRandomArbitrary(min: number, max: number) {
-  return Math.random() * (max - min) + min;
-}
+
 
 const SeventhContainer: React.FC<PropsSeven> = (props) => {
-  const [yildizlar, setYildizlar] = useState<IYildiz[]>([]);
-  const [yildizlar2, setYildizlar2] = useState<IYildiz[]>([]);
-
-  const render = useRef<Number>(0);
-  const yildizMaker = (
-    yildizlar: IYildiz[],
-    setYildizlar: react.Dispatch<react.SetStateAction<IYildiz[]>>
-  ) => {
-    for (let i = 0; i < getRandomArbitrary(0, 10); i++) {
-      yildizlar.push({
-        margintop: Math.round(Math.random() * 95),
-        marginright: Math.round(Math.random() * 95),
-        size: Math.round(Math.random() * 80),
-      });
-    }
-    setYildizlar(yildizlar);
-  };
-
-  useEffect(() => {
-    if (render.current === 0) {
-      yildizMaker(yildizlar, setYildizlar);
-      yildizMaker(yildizlar2, setYildizlar2);
-      render.current = 1;
-    }
-  });
-
+ 
   return (
-    <SeventhComponent className="Seven-Component" yildizlar={yildizlar}>
+    <SeventhComponent className="Seven-Component">
       <div className={"titleTeam"}>
         <h1>{props.data.title}</h1>
       </div>
@@ -399,10 +367,10 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
 
       <div className={"starDiv"}>
         <div className={"starSubDiv"}>
-          <YildizContainer yildizlar={yildizlar} />
+          <YildizContainer/>
         </div>
         <div className={"startSubDiv2"}>
-          <YildizContainer yildizlar={yildizlar2} />
+          <YildizContainer/>
         </div>
       </div>
     </SeventhComponent>

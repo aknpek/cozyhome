@@ -259,10 +259,10 @@ const ThirdComponent = styled.div<IThirdContainer>`
   }
   .BulutFirst {
     position: absolute;
-    height: 100px;
-    width: 100px;
-    /* background-color: yellow; */
-    
+    z-index: 1;
+    pointer-events: none;
+    margin-top: 0%;
+    margin-left: 0%;
   }
 `;
 interface PropsThird {
@@ -291,9 +291,9 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
         </div>
       ))}
 
-      <main className={"BulutFirst"}>
+      <div className={"BulutFirst"}>
         <BulutlarContainer />
-      </main>
+      </div>
     </ThirdComponent>
   );
 };

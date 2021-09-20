@@ -1,25 +1,56 @@
+import react, { useEffect, useRef, useState } from "react";
+
 import { IYildiz } from "../types";
 import TekYildiz from "../svgs/TekYildiz";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
 interface IYildizContainer {
-  yildizlar: IYildiz[];
 }
 
 const YildizComponent = styled.div<IYildiz>`
   .eachYildizDiv {
     position: absolute;
-    margin-top: ${(props) => `${props.margintop * 0.7}%`};
-    margin-left: ${(props) => `${props.marginright * 0.7}%`};
+    top: ${(props) => `${props.margintop * 0.7}%`};
+    right: ${(props) => `${props.marginright * 0.7}%`};
     z-index: 0;
   }
 `;
 
-const YildizContainer: React.FC<IYildizContainer> = (props) => {
+function getRandomArbitrary(min: number, max: number) {
+  return Math.random() * (max - min) + min;
+}
+
+const YildizContainer: React.FC<IYildizContainer> = () => {
+  const render = useRef<Number>(0);
+  const [yildizlar, setYildizlar] = useState<IYildiz[]>([]);
+
+  const yildizMaker = (
+    yildizlar: IYildiz[],
+    setYildizlar: react.Dispatch<react.SetStateAction<IYildiz[]>>
+  ) => {
+    for (let i = 0; i < getRandomArbitrary(0, 10); i++) {
+      yildizlar.push({
+        margintop: Math.round(Math.random() * 95),
+        marginright: Math.round(Math.random() * 95),
+        size: Math.round(Math.random() * 50),
+      });
+    }
+    setYildizlar(yildizlar);
+  };
+
+  
+
+  useEffect(() => {
+    if (render.current === 0) {
+      yildizMaker(yildizlar, setYildizlar);
+      render.current = 1;
+    }
+  });
+
   return (
     <div>
-      {props.yildizlar.map((value: IYildiz) => {
+      {yildizlar.map((value: IYildiz) => {
 
         return (
           <YildizComponent
@@ -38,7 +69,7 @@ const YildizContainer: React.FC<IYildizContainer> = (props) => {
                   repeat: Infinity,
                   duration: 60,
                 }}
-                className={"yildizDiv"}
+                // className={"yildizDiv"}
               >
                 <TekYildiz props={{}} />
               </motion.div>

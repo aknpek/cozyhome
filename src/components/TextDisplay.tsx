@@ -105,7 +105,9 @@ const TextBlock = styled.div<ITextDisplay>`
     text-align: center;
     margin-top: 1rem;
     width: 50%;
-    font-family: "Josefin Sans", cursive;
+
+    font-family: "Fredoka One", normal;
+    letter-spacing: 0.3rem;
     border-radius: 2rem;
     border-radius: 1rem;
     background-color: #ff961b;
@@ -134,7 +136,7 @@ const TextBlock = styled.div<ITextDisplay>`
       text-align: center;
       margin-top: 1rem;
       width: 55%;
-      font-family: "Josefin Sans", cursive;
+      font-family: "Fredoka One", normal;
       border-radius: 2rem;
       border-radius: 1rem;
       background-color: #ff961b;
@@ -159,7 +161,8 @@ const TextBlock = styled.div<ITextDisplay>`
       text-align: center;
       margin-top: 1rem;
       width: 35%;
-      font-family: "Josefin Sans", cursive;
+      font-family: "Fredoka One", normal;
+
       border-radius: 2rem;
       border-radius: 1rem;
       background-color: white;
@@ -362,7 +365,7 @@ const TextBlock = styled.div<ITextDisplay>`
           justify-content: center;
           text-align: center;
           width: ${(props) => (props.preSale ? "100%" : "90%")};
-          margin-right: ${(props) => (props.metaHomes ? "2rem" : "0rem")}
+          margin-right: ${(props) => (props.metaHomes ? "2rem" : "0rem")};
         }
       }
 
@@ -483,7 +486,7 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
     .messageDiv {
-      margin-top: ${(props) => props.preSale ? "-3rem" : "-0.5rem"};
+      margin-top: ${(props) => (props.preSale ? "-3rem" : "-0.5rem")};
       text-align: center;
 
       .messageMiddleDiv {
@@ -493,7 +496,7 @@ const TextBlock = styled.div<ITextDisplay>`
           display: flex;
           justify-content: left;
           font-size: 1rem;
-          line-height: ${(props) => (props.metaHomes ? .8 : 1.5)};
+          line-height: ${(props) => (props.metaHomes ? 0.8 : 1.5)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }
@@ -600,7 +603,6 @@ const TextBlock = styled.div<ITextDisplay>`
     .sloganDiv {
       margin-top: ${(props) => (props.preSale ? "17rem" : "18rem")};
 
-
       .sloganDivBlock {
         justify-content: center;
         .slogan {
@@ -618,17 +620,16 @@ const TextBlock = styled.div<ITextDisplay>`
       }
     }
     .messageDiv {
-      margin-top: -.5rem;
+      margin-top: -0.5rem;
       text-align: center;
 
       .messageMiddleDiv {
-        width: ${(props) =>
-          props.metaHomes || props.preSale ? "90%" : "80%"};
+        width: ${(props) => (props.metaHomes || props.preSale ? "90%" : "80%")};
         .message {
           display: flex;
           justify-content: left;
           font-size: 0.9rem;
-          line-height: ${(props) => (props.metaHomes ? .8: 1)};
+          line-height: ${(props) => (props.metaHomes ? 0.8 : 1)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }
@@ -692,7 +693,7 @@ const TextBlock = styled.div<ITextDisplay>`
         text-align: center;
         width: 55%;
         height: 3.5rem;
-        font-family: "Josefin Sans", cursive;
+        font-family: "Fredoka One", normal;
         border-radius: 2rem;
         border-radius: 1rem;
         background-color: #ff961b;
