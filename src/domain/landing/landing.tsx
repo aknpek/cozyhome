@@ -2,6 +2,9 @@ import GeneralWrapper, { FirstContainer, FirstWrapper } from "./Elements";
 import { IContent, IHeader } from "../../types";
 import React, { useEffect, useRef, useState } from "react";
 
+import BackGroundContainer from "../../components/BackgroundFirst"
+import BackGroundContainerSecond from "../../components/BackgroundSecond"
+import BulutlarContainer from "../../components/Bulutlar";
 import FifthContainer from "./FifthContainer";
 import FourthContainer from "./FourthContainer";
 import Header from "../../components/Header";
@@ -74,7 +77,7 @@ const Landing: React.FC = () => {
     if (_scrollPosition < 3) {
       setShowThirdContainer(false);
     }
-    scrollPosition.current = _scrollPosition; 
+    scrollPosition.current = _scrollPosition;
   };
   const scrollDistance = () => {
     requestAnimationFrame(() => {
@@ -108,6 +111,26 @@ const Landing: React.FC = () => {
             }}
           />
         </FirstContainer>
+
+        <div className={"firstBackGround"}>
+           <BackGroundContainer/>
+        </div>
+
+        <div className={"secondBackGround"}>
+           <BackGroundContainerSecond/>
+        </div>
+
+        <div className={"firstBackGround2"}>
+           <BackGroundContainer/>
+        </div>
+
+        <div className={"secondBackGround2"}>
+           <BackGroundContainerSecond/>
+        </div>
+
+        <div className={"bulutFirst"}>
+          <BulutlarContainer/>
+        </div>
 
         <div className={"Home-Container"}>
           <SecondContainer

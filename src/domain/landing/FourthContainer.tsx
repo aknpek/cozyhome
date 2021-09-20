@@ -1,5 +1,6 @@
 import { IContainer, IFourthContainer } from "../../types";
 
+import { AyContainer } from "../../components/Ay";
 import styled from "styled-components";
 
 const FourthComponent = styled.div<IFourthContainer>`
@@ -197,7 +198,6 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
 
-  
   @media screen and (max-width: 1300px) {
     grid-template-columns: 0.2fr 2fr 2fr 0.2fr;
     .blockFirst {
@@ -585,7 +585,6 @@ const FourthComponent = styled.div<IFourthContainer>`
           font-family: "Fredoka One", classic;
           font-weight: 200;
           text-align: center;
-
         }
       }
     }
@@ -634,6 +633,13 @@ const FourthComponent = styled.div<IFourthContainer>`
       }
     }
   }
+
+  .ayContainer {
+    position: absolute;
+    width: 170%;
+    top: 37%;
+    transform: scale(0.1);
+  }
 `;
 interface PropsFourth {
   data: IContainer;
@@ -676,6 +682,10 @@ const FourthContainer: React.FC<PropsFourth> = (props) => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className={"ayContainer"}>
+        <AyContainer />
       </div>
     </FourthComponent>
   );

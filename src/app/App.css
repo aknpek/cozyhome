@@ -65,3 +65,39 @@
     opacity: 0.0;
   }
 }
+
+.firstBackGround {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  top: 2%;
+}
+
+.secondBackGround {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  top: 10%;
+}
+
+.firstBackGround2 {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  top: 40%;
+}
+
+.secondBackGround2 {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  top: 50%;
+}
+
+.bulutFirst {
+  position: absolute;
+  width: 0%;
+  z-index: 2;
+  top: 40%;
+  right: 40%;
+}
