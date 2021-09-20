@@ -12,6 +12,7 @@ interface IHead {
 }
 
 const HeaderCo = styled.div<IHead>`
+  margin-top: -1rem;
 
   background-color: #121420;
   display: flex;
@@ -423,9 +424,9 @@ const HeaderCo = styled.div<IHead>`
     margin-right: calc(10rem + 20px);
   }
 
-  @supports not (position: "sticky") {
+  @supports (position: "sticky") {
     main {
-      margin-top: -7rem;
+      /* margin-top: -7rem; */
     }
 
   }

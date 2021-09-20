@@ -10,8 +10,8 @@ interface IYildizContainer {
 const YildizComponent = styled.div<IYildiz>`
   .eachYildizDiv {
     position: absolute;
-    margin-top: ${(props) => `${props.margintop * 0.5}%`};
-    margin-left: ${(props) => `${props.marginright * 0.5}%`};
+    margin-top: ${(props) => `${props.margintop * 0.7}%`};
+    margin-left: ${(props) => `${props.marginright * 0.7}%`};
     z-index: 0;
   }
 `;

@@ -321,9 +321,15 @@ const SeventhComponent = styled.div<ISixthContainer>`
     width: 100%;
     z-index: 0;
 
-    div { 
+    .startSubDiv {
+      margin-left: 25%;
+    }
+    .startSubDiv2 {
+      margin-top: 25%;
+      
 
     }
+
 
   }
 `;
@@ -344,7 +350,7 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
     yildizlar: IYildiz[],
     setYildizlar: react.Dispatch<react.SetStateAction<IYildiz[]>>
   ) => {
-    for (let i = 0; i < getRandomArbitrary(0, 100); i++) {
+    for (let i = 0; i < getRandomArbitrary(0, 10); i++) {
       yildizlar.push({
         margintop: Math.round(Math.random() * 95),
         marginright: Math.round(Math.random() * 95),
@@ -392,10 +398,10 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
       </div>
 
       <div className={"starDiv"}>
-        <div className={""}>
+        <div className={"starSubDiv"}>
           <YildizContainer yildizlar={yildizlar} />
         </div>
-        <div>
+        <div className={"startSubDiv2"}>
           <YildizContainer yildizlar={yildizlar2} />
         </div>
       </div>
