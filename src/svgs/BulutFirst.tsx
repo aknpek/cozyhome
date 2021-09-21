@@ -7,7 +7,7 @@ const BulutFirst: React.FC = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       // width={445}
       // height={445}
-      viewBox="0 0 800 850"
+      viewBox="0 0 900 550"
     >
       <image
         data-name="Katman 1"

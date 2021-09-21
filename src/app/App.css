@@ -95,9 +95,11 @@
 }
 
 .bulutFirst {
-  position: absolute;
-  width: 0%;
-  z-index: 2;
-  top: 40%;
-  right: 40%;
+  /* position: absolute; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* transform: scale(1.2);
+  z-index: 5; */
+   
 }

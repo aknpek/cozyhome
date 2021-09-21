@@ -290,10 +290,6 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
           />
         </div>
       ))}
-
-      <div className={"BulutFirst"}>
-        <BulutlarContainer />
-      </div>
     </ThirdComponent>
   );
 };

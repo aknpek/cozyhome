@@ -4,6 +4,7 @@ import { AyContainer } from "../../components/Ay";
 import styled from "styled-components";
 
 const FourthComponent = styled.div<IFourthContainer>`
+  display: flex;
   height: 800px;
   background-color: #121420;
   animation: 1s ease-out 0s 1 slideInFromLeft;
@@ -81,6 +82,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   .blockSecond {
+    z-index: 8;
     grid-area: blockSecond;
     grid-row-start: 3;
     grid-row-end: 4;

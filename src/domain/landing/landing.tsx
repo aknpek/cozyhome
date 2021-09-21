@@ -2,8 +2,8 @@ import GeneralWrapper, { FirstContainer, FirstWrapper } from "./Elements";
 import { IContent, IHeader } from "../../types";
 import React, { useEffect, useRef, useState } from "react";
 
-import BackGroundContainer from "../../components/BackgroundFirst"
-import BackGroundContainerSecond from "../../components/BackgroundSecond"
+import BackGroundContainer from "../../components/BackgroundFirst";
+import BackGroundContainerSecond from "../../components/BackgroundSecond";
 import BulutlarContainer from "../../components/Bulutlar";
 import FifthContainer from "./FifthContainer";
 import FourthContainer from "./FourthContainer";
@@ -112,24 +112,42 @@ const Landing: React.FC = () => {
           />
         </FirstContainer>
 
+        <BulutlarContainer {...{ top: "10", right: "0", scale: 2.2 }} />
+        <BulutlarContainer {...{ top: "10", right: "70", scale: 1 }} />
+        <BulutlarContainer {...{ top: "40", right: "80", scale: 1.5 }} />
+        <BulutlarContainer {...{ top: "15", right: "80", scale: 1.5 }} />
+        <BulutlarContainer {...{ top: "22", right: "0", scale: 2 }} />
+        <BulutlarContainer {...{ top: "30", right: "0", scale: 1.5 }} />
+        <BulutlarContainer {...{ top: "25", right: "75", scale: 1.5 }} />
+        <BulutlarContainer {...{ top: "65", right: "0", scale: 1.2 }} />
+        <BulutlarContainer {...{ top: "82", right: "75", scale: 1.2 }} />
+        <BulutlarContainer {...{ top: "95", right: "0", scale: 1.2 }} />
+        <BulutlarContainer {...{ top: "75", right: "0", scale: 1.2 }} />
+        <BulutlarContainer {...{ top: "72", right: "75", scale: 2.2 }} />
+        <BulutlarContainer {...{ top: "40", right: "0", scale: 1.2 }} />
+        <BulutlarContainer {...{ top: "42", right: "5", scale: 1.2 }} />
+        <BulutlarContainer {...{ top: "55", right: "75", scale: 1.8 }} />
+        <BulutlarContainer {...{ top: "52", right: "0", scale: 1.8 }} />
+        <BulutlarContainer {...{ top: "45", right: "75", scale: 1.8 }} />
+
+
+
+
+
         <div className={"firstBackGround"}>
-           <BackGroundContainer/>
+          <BackGroundContainer />
         </div>
 
         <div className={"secondBackGround"}>
-           <BackGroundContainerSecond/>
+          <BackGroundContainerSecond />
         </div>
 
         <div className={"firstBackGround2"}>
-           <BackGroundContainer/>
+          <BackGroundContainer />
         </div>
 
         <div className={"secondBackGround2"}>
-           <BackGroundContainerSecond/>
-        </div>
-
-        <div className={"bulutFirst"}>
-          <BulutlarContainer/>
+          <BackGroundContainerSecond />
         </div>
 
         <div className={"Home-Container"}>
