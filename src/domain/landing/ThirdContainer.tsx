@@ -37,8 +37,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
     h1:hover {
       transition: transform 150ms background-color 0.5s ease color 0.5s ease;
       transform: scale(1.05);
-      text-decoration: underline;
-      text-decoration-color: #13222f;
     }
   }
   .cells {

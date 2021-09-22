@@ -132,7 +132,7 @@ const HeaderCo = styled.div<IHead>`
         width: 2.5rem;
       }
     }
-
+    
   .discordLogo:hover {
       color: #ffffff;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

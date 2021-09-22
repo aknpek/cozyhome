@@ -29,7 +29,7 @@ const YildizContainer: React.FC<IYildizContainer> = () => {
     yildizlar: IYildiz[],
     setYildizlar: react.Dispatch<react.SetStateAction<IYildiz[]>>
   ) => {
-    for (let i = 0; i < getRandomArbitrary(0, 10); i++) {
+    for (let i = 0; i < getRandomArbitrary(0, 50); i++) {
       yildizlar.push({
         margintop: Math.round(Math.random() * 95),
         marginright: Math.round(Math.random() * 95),
