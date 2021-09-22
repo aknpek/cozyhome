@@ -74,6 +74,9 @@ export const SecondComponent = styled.div<ISecondComponent>`
   }
   @media screen and (max-width: 1300px) {
     max-width: 1300px;
+
+
+
     height: 550px;
     .yildizDiv {
       width: 1300px;
@@ -84,6 +87,16 @@ export const SecondComponent = styled.div<ISecondComponent>`
     max-width: 1000px;
     grid-template-columns: 0.5fr 1fr 0.5fr;
     grid-template-rows: 0.1fr 0.5fr 1fr 1fr;
+
+    ${({ preSale }) =>
+      preSale &&
+      css`
+        margin-top: 220px;
+        max-height: 1050px;
+        min-height: 1050px;
+      `}
+
+
     .picture {
       margin: auto;
       grid-row-start: 2;
