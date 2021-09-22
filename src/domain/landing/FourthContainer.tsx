@@ -11,11 +11,14 @@ const FourthComponent = styled.div<IFourthContainer>`
   display: grid;
   grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
   grid-template-rows: 0.1fr 0.8fr 2fr 0.5fr 0.5fr;
+  z-index: 6;
+
   grid-template-areas:
     "titleDiv"
     "blockFirst blockSecond";
 
   .titleDiv {
+    z-index: 3;
     grid-area: titleDiv;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -54,6 +57,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     justify-content: center;
     align-items: center;
     .blockFirstDiv {
+      z-index: 3;
       width: 90%;
       display: flex;
       flex-direction: column;
