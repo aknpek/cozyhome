@@ -97,9 +97,9 @@ export const SecondComponent = styled.div<ISecondComponent>`
     ${({ preSale }) =>
       preSale &&
       css`
-        margin-top: 220px;
-        max-height: 1050px;
-        min-height: 1050px;
+        margin-top: 320px;
+        max-height: 950px;
+        min-height: 950px;
       `}
 
 
