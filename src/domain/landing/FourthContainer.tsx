@@ -80,7 +80,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   .blockSecond {
-    z-index: 8;
+    z-index: 3;
     grid-area: blockSecond;
     grid-row-start: 3;
     grid-row-end: 4;

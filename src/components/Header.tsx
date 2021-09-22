@@ -13,7 +13,7 @@ interface IHead {
 
 const HeaderCo = styled.div<IHead>`
   margin-top: -1rem;
-  z-index: 5;
+  z-index: 9;
 
   background-color: #121420;
   display: flex;
@@ -114,7 +114,7 @@ const HeaderCo = styled.div<IHead>`
         color: #ffffff;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       cursor: pointer;
-      z-index: 4;
+      z-index: 9;
       transform: scale(1.1);
       background: #ff961b;
       border-radius: 5rem;
@@ -137,7 +137,7 @@ const HeaderCo = styled.div<IHead>`
       color: #ffffff;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       cursor: pointer;
-      z-index: 4;
+      z-index: 9;
       transform: scale(1.1);
       background: #ff961b;
       border-radius: 5rem;
@@ -159,7 +159,7 @@ const HeaderCo = styled.div<IHead>`
       color: #ffffff;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       cursor: pointer;
-      z-index: 4;
+      z-index: 9;
       transform: scale(1.1);
       background: #ff961b;
       border-radius: 5rem;
@@ -172,7 +172,7 @@ const HeaderCo = styled.div<IHead>`
     background-color: #121420;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 4;
+    z-index: 9;
   }
 
   .dropDownWallet {
@@ -302,7 +302,7 @@ const HeaderCo = styled.div<IHead>`
       background-color: #121420;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 4;
+      z-index: 9;
     }
 
     .dropDownWallet {
@@ -401,7 +401,7 @@ const HeaderCo = styled.div<IHead>`
       background-color: #121420;
       min-width: 100%;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 4;
+      z-index: 8;
     }
 
     .dropDownWallet {
@@ -421,7 +421,7 @@ const HeaderCo = styled.div<IHead>`
     font-weight: 200;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     cursor: pointer;
-    z-index: 4;
+    z-index: 8;
   }
 
   h1::before {
