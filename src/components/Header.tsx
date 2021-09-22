@@ -13,6 +13,7 @@ interface IHead {
 
 const HeaderCo = styled.div<IHead>`
   margin-top: -1rem;
+  z-index: 5;
 
   background-color: #121420;
   display: flex;
@@ -25,7 +26,7 @@ const HeaderCo = styled.div<IHead>`
 
   main {
     display: flex;
-    z-index: 3;
+    z-index: 4;
     position: fixed;
     background-color: #121420;
     width: 100%;
@@ -105,7 +106,21 @@ const HeaderCo = styled.div<IHead>`
         height: 2.5rem;
         width: 2.5rem;
       }
+
     }
+
+
+    .twitterLogo:hover {
+        color: #ffffff;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      cursor: pointer;
+      z-index: 4;
+      transform: scale(1.1);
+      background: #ff961b;
+      border-radius: 5rem;
+    }
+
+
 
     .discordLogo {
       display: flex;
@@ -118,6 +133,17 @@ const HeaderCo = styled.div<IHead>`
       }
     }
 
+  .discordLogo:hover {
+      color: #ffffff;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      cursor: pointer;
+      z-index: 4;
+      transform: scale(1.1);
+      background: #ff961b;
+      border-radius: 5rem;
+    }
+
+
     .openSeaLogo {
       display: flex;
       justify-content: center;
@@ -128,6 +154,16 @@ const HeaderCo = styled.div<IHead>`
         width: 2.5rem;
       }
     }
+
+  .openSeaLogo:hover {
+      color: #ffffff;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      cursor: pointer;
+      z-index: 4;
+      transform: scale(1.1);
+      background: #ff961b;
+      border-radius: 5rem;
+    }
   }
 
   .dropDownContent {
@@ -136,7 +172,7 @@ const HeaderCo = styled.div<IHead>`
     background-color: #121420;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 4;
   }
 
   .dropDownWallet {
@@ -266,7 +302,7 @@ const HeaderCo = styled.div<IHead>`
       background-color: #121420;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+      z-index: 4;
     }
 
     .dropDownWallet {
@@ -365,7 +401,7 @@ const HeaderCo = styled.div<IHead>`
       background-color: #121420;
       min-width: 100%;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+      z-index: 4;
     }
 
     .dropDownWallet {
@@ -385,7 +421,7 @@ const HeaderCo = styled.div<IHead>`
     font-weight: 200;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 4;
   }
 
   h1::before {
@@ -414,6 +450,7 @@ const HeaderCo = styled.div<IHead>`
     z-index: -1;
     transition: transform 0.3s ease;
   }
+
 
   img {
     width: 3rem;
