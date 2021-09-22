@@ -74,7 +74,13 @@ export const SecondComponent = styled.div<ISecondComponent>`
   }
   @media screen and (max-width: 1300px) {
     max-width: 1300px;
-
+    ${({ preSale }) =>
+          preSale &&
+          css`
+            margin-top: 320px;
+            max-height: 550px;
+            min-height: 550px;
+          `}
 
 
     height: 550px;
