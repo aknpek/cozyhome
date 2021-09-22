@@ -67,6 +67,8 @@ const SeventhComponent = styled.div<ISixthContainer>`
 
         a {
           img {
+            height: 16rem;
+            width: 16rem;
           }
         }
       }
@@ -115,11 +117,16 @@ const SeventhComponent = styled.div<ISixthContainer>`
         width: 20rem;
         height: 20rem;
         div {
+        a{
+
+          img {
+          height: 13rem;
+          width: 13rem;
         }
-        img {
-          height: 15rem;
-          width: 15rem;
         }
+        }
+
+        
       }
 
       h3 {
@@ -138,12 +145,16 @@ const SeventhComponent = styled.div<ISixthContainer>`
 
     .photosTeam {
       div {
-        div {
-        }
-        img {
+         div {
+        a{
+
+          img {
           height: 12rem;
           width: 12rem;
         }
+        }
+        }
+
       }
 
       h3 {
@@ -162,8 +173,13 @@ const SeventhComponent = styled.div<ISixthContainer>`
     .photosTeam {
       div {
         div {
+        a{
+
+          img {
+          height: 11rem;
+          width: 11rem;
         }
-        img {
+        }
         }
 
         h3 {
