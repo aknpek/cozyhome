@@ -22,7 +22,7 @@ svg {
   transform: scale(${(props) => (props.scale)});
   
   }
-  z-index: 2;
+  z-index: 1;
 `;
 
 const BulutlarContainer: React.FC<IBulut> = (props) => {

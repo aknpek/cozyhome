@@ -16,6 +16,7 @@ const TextBlock = styled.div<ITextDisplay>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 3;
 
   .sloganDiv {
     will-change: transform;
