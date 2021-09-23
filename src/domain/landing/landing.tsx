@@ -47,16 +47,16 @@ const Landing: React.FC = () => {
     } catch (ex) {}
   };
 
-  useEffect(() => {
-    injected.isAuthorized().then((isAuthorized: boolean) => {
-      if (isAuthorized) {
-        connect();
-        setTryWallet(true);
-      } else {
-        setTryWallet(false);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   injected.isAuthorized().then((isAuthorized: boolean) => {
+  //     if (isAuthorized) {
+  //       connect();
+  //       setTryWallet(true);
+  //     } else {
+  //       setTryWallet(false);
+  //     }
+  //   });
+  // }, []);
 
   useEffect(() => {
     if (!tryWallet && active) {
@@ -129,10 +129,6 @@ const Landing: React.FC = () => {
         <BulutlarContainer {...{ top: "55", right: "75", scale: 1.8 }} />
         <BulutlarContainer {...{ top: "52", right: "0", scale: 1.8 }} />
         <BulutlarContainer {...{ top: "45", right: "75", scale: 1.8 }} />
-
-
-
-
 
         <div className={"firstBackGround"}>
           <BackGroundContainer />

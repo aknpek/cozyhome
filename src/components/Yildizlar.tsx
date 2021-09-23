@@ -57,8 +57,9 @@ const YildizContainer: React.FC<IYildizContainer> = () => {
           margintop={value.margintop}
             marginright={value.marginright}
             size={value.size}
+            key={`${Math.random()}`}
           >
-            <div className={"eachYildizDiv"}>
+            <div className={"eachYildizDiv"} key={"yildiz1"}>
               <motion.div
                 animate={{
                   scale:  [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
@@ -70,6 +71,7 @@ const YildizContainer: React.FC<IYildizContainer> = () => {
                   duration: 60,
                 }}
                 // className={"yildizDiv"}
+                key={"yildiz2"}
               >
                 <TekYildiz props={{}} />
               </motion.div>

@@ -539,21 +539,21 @@ const Header: React.FC<IHeaderExtension> = (props) => {
           <div className={"walletContainer"}>
             {props.menu.map((value: IMenu) => {
               return (
-                <div className={""}>
-                  <span>
+                <div className={""} key={"div" + value.id}>
+                  <span key={"div" + value.id}>
                     {value.title === "connect wallet" ? (
                       [
                         metaActive ? (
                           <div
                             className={"dropDownWallet"}
-                            key={"div" + value.id}
+                            key={"div" + value.id + "a"}
                           >
-                            <h1>wallet</h1>
+                            <h1 key={"div" + value.id + "b"}>allet</h1>
                             <div
                               className={"dropDownContent"}
-                              key={"wlc" + value.id}
+                              key={"wlc" + value.id  + "c"}
                             >
-                              <h1 key={"wls" + value.id}>
+                              <h1 key={"wls" + value.id  + "d"}>
                                 wallet id:{" "}
                                 {account === null
                                   ? "-"
@@ -566,7 +566,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                                     )}`
                                   : ""}
                               </h1>
-                              <h1>
+                              <h1 key={"div" + value.id  + "e"}>
                                 balance:{" "}
                                 {balanceAccount === null
                                   ? "-"
@@ -579,7 +579,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                                     )}`
                                   : ""}
                               </h1>
-                              <h1 onClick={disconnector} key={"h1" + value.id}>
+                              <h1 onClick={disconnector} key={"h1" + value.id  + "f"}>
                                 disconnect
                               </h1>
                             </div>
@@ -591,7 +591,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                         ),
                       ]
                     ) : (
-                      <div></div>
+                      <div key={"div" + value.id}></div>
                     )}
                   </span>
                 </div>

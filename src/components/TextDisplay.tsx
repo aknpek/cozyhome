@@ -774,7 +774,7 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
             </div>
           ) : (
             props.slogan.map((value: ISlogan) => {
-              return <h1 className={"message"}>{value.slogan}</h1>;
+              return <h1 className={"message"} key={Math.random()}>{value.slogan}</h1>;
             })
           )}
         </div>
@@ -784,22 +784,23 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
         <div
           className={"subTitleDiv"}
           onClick={() => scrollToSection("Presale-Container")}
+          key={"subtitlediv"}
         >
-          <h1 className={"subTitle"}>{props.subtitle}</h1>
+          <h1 className={"subTitle"} key={"subtitle"}>{props.subtitle}</h1>
         </div>
       ) : (
         [
           props.title === "Presale" ? (
-            <div className={"subTitleMintBlock"}>
-              <div className={"subTitleMintDiv"}>
-                <h1 className={"subTitleMint"}>{props.subtitle}</h1>
+            <div className={"subTitleMintBlock"} key={"subtitlemintblock"}>
+              <div className={"subTitleMintDiv"} key={"subtitlemintdiv"}>
+                <h1 className={"subTitleMint"} key={"sustitlemin"}>{props.subtitle}</h1>
               </div>
-              <div className={"subTitleQuantityDiv"}>
-                <h1 className={"subTitleQuantity"}>{1}</h1>
+              <div className={"subTitleQuantityDiv"} key={"subtitlequantitydiv"}>
+                <h1 className={"subTitleQuantity"} key={"subtitlequantity"}>{1}</h1>
               </div>
             </div>
           ) : (
-            <div></div>
+            <div key={"divbos"}></div>
           ),
         ]
       )}
