@@ -9,7 +9,7 @@ interface ISixthContainer {}
 
 const SeventhComponent = styled.div<ISixthContainer>`
   background-color: #121420;
-  margin-top: 10%;
+  margin-top: 18%;
   height: 1050px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 
@@ -45,7 +45,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
     grid-row-end: 4;
     grid-column-start: 2;
     grid-column-end: 6;
-    z-index: 1;
+    z-index: 6;
 
     display: flex;
     flex-direction: row;
@@ -336,7 +336,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
     position: absolute;
     height: 10%;
     width: 100%;
-    z-index: 0;
+    z-index: 2;
 
     .startSubDiv {
       margin-left: 25%;

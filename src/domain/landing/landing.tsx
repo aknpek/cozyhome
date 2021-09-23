@@ -129,6 +129,9 @@ const Landing: React.FC = () => {
         <BulutlarContainer {...{ top: "55", right: "75", scale: 1.8 }} />
         <BulutlarContainer {...{ top: "52", right: "0", scale: 1.8 }} />
         <BulutlarContainer {...{ top: "45", right: "75", scale: 1.8 }} />
+        <BulutlarContainer {...{ top: "85", right: "5", scale: 1.2 }} />
+        <BulutlarContainer {...{ top: "88", right: "75", scale: 1.2 }} />
+
 
         <div className={"firstBackGround"}>
           <BackGroundContainer />
