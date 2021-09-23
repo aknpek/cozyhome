@@ -461,9 +461,9 @@ const HeaderCo = styled.div<IHead>`
     margin-right: calc(10rem + 20px);
   }
 
-  @supports (position: "sticky") {
+  @supports not(position: "sticky") {
     main {
-      /* margin-top: -7rem; */
+      margin-top: -6rem;
     }
 
   }
