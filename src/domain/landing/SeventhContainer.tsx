@@ -5,8 +5,7 @@ import Pictures from "../../components/Locals";
 import YildizContainer from "../../components/Yildizlar";
 import styled from "styled-components";
 
-interface ISixthContainer {
-}
+interface ISixthContainer {}
 
 const SeventhComponent = styled.div<ISixthContainer>`
   background-color: #121420;
@@ -69,6 +68,15 @@ const SeventhComponent = styled.div<ISixthContainer>`
           img {
             height: 16rem;
             width: 16rem;
+            transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+          }
+          img:hover {
+            transform: scale(1.1);
+            top:0px;
+            opacity:0.5;
           }
         }
       }
@@ -117,16 +125,13 @@ const SeventhComponent = styled.div<ISixthContainer>`
         width: 20rem;
         height: 20rem;
         div {
-        a{
-
-          img {
-          height: 13rem;
-          width: 13rem;
+          a {
+            img {
+              height: 13rem;
+              width: 13rem;
+            }
+          }
         }
-        }
-        }
-
-        
       }
 
       h3 {
@@ -145,16 +150,14 @@ const SeventhComponent = styled.div<ISixthContainer>`
 
     .photosTeam {
       div {
-         div {
-        a{
-
-          img {
-          height: 12rem;
-          width: 12rem;
+        div {
+          a {
+            img {
+              height: 12rem;
+              width: 12rem;
+            }
+          }
         }
-        }
-        }
-
       }
 
       h3 {
@@ -173,13 +176,12 @@ const SeventhComponent = styled.div<ISixthContainer>`
     .photosTeam {
       div {
         div {
-        a{
-
-          img {
-          height: 11rem;
-          width: 11rem;
-        }
-        }
+          a {
+            img {
+              height: 11rem;
+              width: 11rem;
+            }
+          }
         }
 
         h3 {
@@ -348,10 +350,7 @@ interface PropsSeven {
   data: IContainer;
 }
 
-
-
 const SeventhContainer: React.FC<PropsSeven> = (props) => {
- 
   return (
     <SeventhComponent className="Seven-Component">
       <div className={"titleTeam"}>
@@ -383,10 +382,10 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
 
       <div className={"starDiv"}>
         <div className={"starSubDiv"}>
-          <YildizContainer/>
+          <YildizContainer />
         </div>
         <div className={"startSubDiv2"}>
-          <YildizContainer/>
+          <YildizContainer />
         </div>
       </div>
     </SeventhComponent>
