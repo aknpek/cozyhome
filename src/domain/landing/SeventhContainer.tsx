@@ -76,7 +76,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
           img:hover {
             transform: scale(1.1);
             top:0px;
-            opacity:0.5;
+            opacity:0.4;
           }
         }
       }
