@@ -741,10 +741,11 @@ interface PTextDisplay extends Props {
 }
 
 const TextDisplay: React.FC<PTextDisplay> = (props) => {
-  const eth = useRef<Number>(0.3);
-  const leftMint = useRef<Number>(1000);
+  const eth = useRef<String>("*");
+  const leftMint = useRef<String>("*");
   const options = [1, 2, 3, 5, 10, 20, 100];
   const defaultOption = options[0];
+  const defaultBuy = useRef<String>("*");
 
   return (
     <TextBlock
@@ -797,7 +798,7 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
                 <h1 className={"subTitleMint"} key={"sustitlemin"}>{props.subtitle}</h1>
               </div>
               <div className={"subTitleQuantityDiv"} key={"subtitlequantitydiv"}>
-                <h1 className={"subTitleQuantity"} key={"subtitlequantity"}>{1}</h1>
+                <h1 className={"subTitleQuantity"} key={"subtitlequantity"}>{defaultBuy.current}</h1>
               </div>
             </div>
           ) : (

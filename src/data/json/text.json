@@ -37,7 +37,7 @@
         "component-place": "container-second",
         "component-type": "promotion",
         "title": "",
-        "subtitle": "MINT SOON!",
+        "subtitle": "SOON!",
         "slogan": [
           {"id": 0, "slogan": "Every home owner gets access to private land of Etherium with Cozy Homes. We are going to start the consturction!"},
             {"id": 1, "slogan":"The fantastic realm is a piece of land on the Ethereum  Blockchain network that only those who know the secret shall have access to."}, 
@@ -225,7 +225,7 @@
         "component-place": "container-second",
         "component-type": "banner",
         "title": "Presale",
-        "subtitle": "Mint Soon!",
+        "subtitle": "Soon!",
         "slogan": [{"id": 0, "slogan":"*** ETH"}, {"id": 1, "slogan": "*** Left"}],
         "pictures": [
           {
