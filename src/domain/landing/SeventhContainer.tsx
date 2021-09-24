@@ -9,7 +9,7 @@ interface ISixthContainer {}
 
 const SeventhComponent = styled.div<ISixthContainer>`
   background-color: #121420;
-  margin-top: 18%;
+  margin-top: 15%;
   height: 1050px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 

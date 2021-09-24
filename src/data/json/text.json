@@ -41,7 +41,7 @@
         "slogan": [
           {"id": 0, "slogan": "Every home owner gets access to private land of Etherium with Cozy Homes. We are going to start the consturction!"},
             {"id": 1, "slogan":"The fantastic realm is a piece of land on the Ethereum  Blockchain network that only those who know the secret shall have access to."}, 
-            {"id": 2, "slogan": "And the unique cozy homes in this mythical fantastic land are only limited to 7999 in quantity and the deeds will be sold for 0,04 ETH."}],
+            {"id": 2, "slogan": "And the unique cozy homes in this mythical fantastic land are only limited to 7999 in quantity and the deeds will be sold for *** ETH."}],
         "pictures": [
           {
             "id": 0,
@@ -151,7 +151,7 @@
             "title": "0",
             "subtitle": "Build Home. Welcome to Land of Legends!",
             "hyperlink": "",
-            "description": "10 cozy home giweaway,  0.1 eth gift for 10 people."
+            "description": "10 cozy home giweaway, *** eth gift for 10 people."
           },
           {
             "id": 1,
@@ -159,7 +159,7 @@
             "title": "25",
             "subtitle": "The Community Wallet is opened.",
             "hyperlink": "",
-            "description": "10 cozy home giweaway, 0.2 eth gift for 5 people"
+            "description": "10 cozy home giweaway, *** eth gift for 5 people"
           },
           {
             "id": 2,
@@ -167,7 +167,7 @@
             "title": "50",
             "subtitle": "Giveaway Program Lunch with Type-II",
             "hyperlink": "",
-            "description": "10 cozy home giweaway, 0,1 eth gift for 10 people"
+            "description": "10 cozy home giweaway, *** eth gift for 10 people"
           },
           {
             "id": 3,
@@ -175,7 +175,7 @@
             "title": "75",
             "subtitle": "Special home follow up will be released as Type-II",
             "hyperlink": "",
-            "description": "10 cozy home giweaway, 0,1 eth gift for 10 people"
+            "description": "10 cozy home giweaway, *** eth gift for 10 people"
           },
           {
             "id": 4,
@@ -183,7 +183,7 @@
             "title": "100",
             "subtitle": "New NFT Type-III",
             "hyperlink": "",
-            "description": "Buying lands for deed owners in the Metaverse! 1 eth gift for 3 people"
+            "description": "Buying lands for deed owners in the Metaverse! *** eth gift for 3 people"
           }
         ]
       },
@@ -226,7 +226,7 @@
         "component-type": "banner",
         "title": "Presale",
         "subtitle": "Mint",
-        "slogan": [{"id": 0, "slogan":"? ETH"}, {"id": 1, "slogan": "? Left"}],
+        "slogan": [{"id": 0, "slogan":"*** ETH"}, {"id": 1, "slogan": "*** Left"}],
         "pictures": [
           {
             "id": 0,
