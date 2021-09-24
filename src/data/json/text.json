@@ -226,7 +226,7 @@
         "component-type": "banner",
         "title": "Presale",
         "subtitle": "Mint",
-        "slogan": [{"id": 0, "slogan":"0.03ETH"}, {"id": 1, "slogan": "1000 Left"}],
+        "slogan": [{"id": 0, "slogan":"? ETH"}, {"id": 1, "slogan": "? Left"}],
         "pictures": [
           {
             "id": 0,
