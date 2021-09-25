@@ -490,6 +490,11 @@ interface IHeaderExtension extends IHeader {
   metaMask: IMeta;
 }
 
+const openInNewTab = (url: string) => {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  if (newWindow) newWindow.opener = null
+}
+
 const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
   const fetchBalance = async () => {
@@ -599,10 +604,10 @@ const Header: React.FC<IHeaderExtension> = (props) => {
             })}
           </div>
 
-          <div className={"twitterLogo"}>
+          <div className={"twitterLogo"} onClick={() => openInNewTab('https://twitter.com/CozyHomeNFT')}>
             <TwitterLogo />
           </div>
-          <div className={"discordLogo"}>
+          <div className={"discordLogo"} onClick={() => openInNewTab('https://discord.gg/4kcCQp9d')}>
             <DiscordLogo />
           </div>
 
