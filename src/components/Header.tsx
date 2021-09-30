@@ -463,7 +463,7 @@ const HeaderCo = styled.div<IHead>`
 
   @supports not(position: "sticky") {
     main {
-      margin-top: -6rem;
+      margin-top: -4rem;
     }
 
   }

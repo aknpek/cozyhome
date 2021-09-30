@@ -75,8 +75,8 @@ const SeventhComponent = styled.div<ISixthContainer>`
           }
           img:hover {
             transform: scale(1.1);
-            top:0px;
-            opacity:0.4;
+            top: 0px;
+            opacity: 0.4;
           }
         }
       }
@@ -276,6 +276,8 @@ const SeventhComponent = styled.div<ISixthContainer>`
   }
   @media screen and (max-width: 500px) {
     height: 1600px;
+    pointer-events: none;
+
     .photosTeam {
       margin-top: -1.4rem;
       display: grid;
@@ -286,8 +288,13 @@ const SeventhComponent = styled.div<ISixthContainer>`
         justify-content: center;
         align-items: center;
         div {
-        }
-        img {
+          a {
+            img {
+            }
+            img:not(.nohover):hover {
+              pointer-events: none;
+            }
+          }
         }
       }
 
@@ -315,8 +322,13 @@ const SeventhComponent = styled.div<ISixthContainer>`
         justify-content: center;
         align-items: center;
         div {
-        }
-        img {
+          a {
+            img {
+            }
+            img:not(.nohover):hover {
+              pointer-events: none;
+            }
+          }
         }
       }
 

@@ -549,7 +549,9 @@ const TextBlock = styled.div<ITextDisplay>`
       .subTitle {
         font-size: 1.4rem;
       }
+      
     }
+    
     .subTitleMintBlock {
       margin-top: -2rem;
       width: 20rem;
@@ -599,6 +601,8 @@ const TextBlock = styled.div<ITextDisplay>`
         }
       }
     }
+
+ 
   }
   @media screen and (max-width: 400px) {
     .sloganDiv {

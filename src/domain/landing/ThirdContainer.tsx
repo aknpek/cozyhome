@@ -1,9 +1,7 @@
 import { IContainer, IPictures, IThirdContainer } from "../../types";
 
-import BulutlarContainer from "../../components/Bulutlar";
 import OpenSeaLogo from "../../svgs/OpenSeaLogo";
 import Pictures from "../../components/Locals";
-import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useEffect } from "react";
 
@@ -223,6 +221,8 @@ const ThirdComponent = styled.div<IThirdContainer>`
     flex-direction: column;
     height: 1200px;
     font-size: 1.2rem;
+    pointer-events: none;
+
 
     .header {
       margin: auto;
@@ -232,6 +232,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
       }
     }
 
+    
     .cells {
       margin-top: 5rem;
       display: flex;

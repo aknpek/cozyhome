@@ -568,6 +568,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   @media screen and (max-width: 500px) {
+    pointer-events: none;
     height: 1250px;
     grid-template-columns: 0.2fr 2fr 0.2fr;
 
