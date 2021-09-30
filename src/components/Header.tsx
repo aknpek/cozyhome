@@ -338,7 +338,7 @@ const HeaderCo = styled.div<IHead>`
           border-radius: 0.3rem;
           display: flex;
           position: relative;
-          font-size: 1rem;
+          font-size: 0.7rem;
           height: 2rem;
           width: 5rem;
           font-weight: 800;
@@ -463,9 +463,13 @@ const HeaderCo = styled.div<IHead>`
 
   @supports not(position: "sticky") {
     main {
-      margin-top: -4rem;
+      margin-top: -6rem;
     }
-
+    @media screen and (max-width: 500px) {
+      main {
+        margin-top: -3.5rem;
+      }
+    }
   }
 `;
 
@@ -553,7 +557,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                             className={"dropDownWallet"}
                             key={"div" + value.id + "a"}
                           >
-                            <h1 key={"div" + value.id + "b"}>allet</h1>
+                            <h1 key={"div" + value.id + "b"}>Wallet</h1>
                             <div
                               className={"dropDownContent"}
                               key={"wlc" + value.id  + "c"}
