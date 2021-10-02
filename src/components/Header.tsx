@@ -13,7 +13,7 @@ interface IHead {
 
 const HeaderCo = styled.div<IHead>`
   margin-top: -1rem;
-  z-index: 9;
+  z-index: 10;
 
   background-color: #121420;
   display: flex;
@@ -26,7 +26,7 @@ const HeaderCo = styled.div<IHead>`
 
   main {
     display: flex;
-    z-index: 4;
+    z-index: 10;
     position: fixed;
     background-color: #121420;
     width: 100%;
@@ -467,7 +467,7 @@ const HeaderCo = styled.div<IHead>`
     }
     @media screen and (max-width: 500px) {
       main {
-        margin-top: -3.5rem;
+        margin-top: -4rem;
       }
     }
   }
