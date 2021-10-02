@@ -16,6 +16,7 @@ const BulutlarComponent = styled.div<IBulut>`
   align-items: center;
   top: ${(props) => `${props.top}%`};
   right: ${(props) => `${props.right}%`};
+  
   svg {
     width: calc(100% - 8em);
     height: calc(100% - 5em);

@@ -467,7 +467,7 @@ const HeaderCo = styled.div<IHead>`
     }
     @media screen and (max-width: 500px) {
       main {
-        margin-top: -4rem;
+        margin-top: -3rem;
       }
     }
   }
