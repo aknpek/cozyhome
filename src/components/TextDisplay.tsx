@@ -497,7 +497,7 @@ const TextBlock = styled.div<ITextDisplay>`
           display: flex;
           justify-content: left;
           font-size: 1rem;
-          line-height: ${(props) => (props.metaHomes ? 0.8 : 1.5)};
+          line-height: ${(props) => (props.metaHomes ? 1.1 : 1.5)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }
@@ -634,7 +634,7 @@ const TextBlock = styled.div<ITextDisplay>`
           display: flex;
           justify-content: left;
           font-size: 0.9rem;
-          line-height: ${(props) => (props.metaHomes ? 0.8 : 1)};
+          line-height: ${(props) => (props.metaHomes ? 1.1 : 1)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }

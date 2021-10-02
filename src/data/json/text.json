@@ -59,14 +59,12 @@
         "title": "MetaHomes",
         "subtitle": "",
         "slogan": [
-          {"id": 0, "slogan": "Why you should buy a Cozy Home"},
-          {"id": 1, "slogan": "- To take place in the Metaverse as early as possible!"},
-          {"id": 2, "slogan": "- To be a landlord/landlady in a fantastic realm!"},
-          {"id": 3, "slogan": "- To own a unique home (for rare homeowners!)"},
-          {"id": 4, "slogan": "- To be a part of a unique and limited network chain!"},
-          {"id": 5, "slogan": "- To rent your home to someone in the community!"},
-          {"id": 6, "slogan": "- To get a %1 revenue as the initial buyer from all the sales!"},
-          {"id": 7, "slogan": "- Last but not least high-earning guaranteed investment with surprise gifts!"}
+          {"id": 0, "slogan": "- Why you should buy a Cozy Home"},
+          {"id": 1, "slogan": "- Own a real part of our Cozy Neighborhood and be part of the Cozy Community!"},
+          {"id": 2, "slogan": "- Generate revenue on your investment by managing a Bed and Breakfast (A cozy way to advertise renting the space!)!"},
+          {"id": 3, "slogan": "- Mint a Cozy Home to receive 1% revenue on all of its secondary sales!"},
+          {"id": 4, "slogan": "- Link your Cozy Homes throughout the Metaverse to appear in virtual spaces (i.e. Decentraland, or VR Reality Spaces)!"},
+          {"id": 5, "slogan": "- Get surprise gifts for special events like new year, Halloween for your Cozy Home!"}
         ],
         "pictures": [
           {

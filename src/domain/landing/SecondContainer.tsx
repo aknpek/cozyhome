@@ -1,13 +1,9 @@
 import styled, { css } from "styled-components";
 
-import BackGroundFirst from "../../svgs/BackGroundFirst";
-import BackGroundSecond from "../../svgs/BackGroundSecond";
 import { IContainer } from "../../types";
 import Picture from "../../components/Picture";
 import TextDisplay from "../../components/TextDisplay";
-import Yildiz from "../../svgs/Yildiz";
 import YildizContainer from "../../components/Yildizlar";
-import { motion } from "framer-motion";
 
 interface ISecondComponent {
   textDireciton: Boolean;
@@ -219,8 +215,8 @@ export const SecondComponent = styled.div<ISecondComponent>`
       metaHomes &&
       css`
         margin-top: 170px;
-        max-height: 800px;
-        min-height: 800px;
+        max-height: 900px;
+        min-height: 900px;
       `}
 
     ${({ preSale }) =>
