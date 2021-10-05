@@ -30,7 +30,10 @@ const marginCalc = (title: string, barlength: number = 15) => {
     return 8;
   } else if (title.length === 4) {
     return 7;
+  } else if (title.length === 10) { 
+    return 1.5
   }
+
   return (barlength - title.length) / 2;
 };
 
