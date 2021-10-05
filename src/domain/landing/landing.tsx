@@ -1,7 +1,8 @@
 import GeneralWrapper, { FirstContainer, FirstWrapper } from "./Elements";
-import { IContent, IHeader } from "../../types";
+import { IContent, IHeader, IRarity } from "../../types";
 import React, { useEffect, useRef, useState } from "react";
 
+import { AttributesContainer } from "./Attributes";
 import BackGroundContainer from "../../components/BackgroundFirst";
 import BackGroundContainerSecond from "../../components/BackgroundSecond";
 import BulutlarContainer from "../../components/Bulutlar";
@@ -28,6 +29,8 @@ const getDocHeight = () => {
 
 const Landing: React.FC = () => {
   const data: IContent = require("../../data/json/text.json");
+  const rarity: IRarity = require("../../data/json/rarity.json");
+
   const header_data: IHeader = data["landing"]["header"];
   const [tryWallet, setTryWallet] = useState<Boolean>(false);
   const scrollPosition = useRef<Number>(0);
@@ -132,7 +135,6 @@ const Landing: React.FC = () => {
         <BulutlarContainer {...{ top: "85", right: "5", scale: 1.2 }} />
         <BulutlarContainer {...{ top: "88", right: "75", scale: 1.2 }} />
 
-
         <div className={"firstBackGround"}>
           <BackGroundContainer />
         </div>
@@ -189,6 +191,13 @@ const Landing: React.FC = () => {
             preSale={true}
             metaHomes={false}
           />
+        </div>
+
+        <div>
+          <AttributesContainer
+            elements={rarity["elements"]}
+            data={data["landing"]["containers"][7]}
+          ></AttributesContainer>
         </div>
 
         <div className={"Team-Container"}>

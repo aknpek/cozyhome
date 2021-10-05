@@ -19,7 +19,6 @@ export interface IPictures {
   subtitle: string;
   hyperlink: string;
   description: string;
-  // map: CallableFunction;
 }
 
 export interface IMenu {
@@ -72,4 +71,15 @@ export interface IYildiz {
   margintop: number;
   marginright: number;
   size: number;
+}
+
+
+export interface RareItem {
+  title: string;
+  quantity: number;
+  id: number;
+  color: string;
+}
+export interface IRarity { 
+  elements: RareItem[]
 }

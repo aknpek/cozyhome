@@ -20,8 +20,15 @@ const Pictures: any= {
   egemen:  require("../data/png/egemen.png"),
   akin: require("../data/png/akin.png"),
   burak: require("../data/png/burak.png"),
-  gif: require("../data/png/logo.gif")
+  gif: require("../data/png/logo.gif"),
 
+  window: require("../data/jpg/window.jpg"),
+  wall: require("../data/jpg/wall.jpg"),
+  sky: require("../data/jpg/sky.jpg"),
+  ornament: require("../data/jpg/ornament.jpg"),
+  roof: require("../data/jpg/roof.jpg"),
+  door: require("../data/jpg/door.jpg"),
+  background: require("../data/jpg/background.jpg"),
 };
 
 export default Pictures;

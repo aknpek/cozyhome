@@ -1,6 +1,4 @@
-import { IContainer, IYildiz } from "../../types";
-import react, { useEffect, useRef, useState } from "react";
-
+import { IContainer } from "../../types";
 import Pictures from "../../components/Locals";
 import YildizContainer from "../../components/Yildizlar";
 import styled from "styled-components";
