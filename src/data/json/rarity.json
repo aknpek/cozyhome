@@ -9,13 +9,13 @@
 
     {
       "title": "roof",
-      "quantity": 31,
+      "quantity": 43,
       "color": "#B2489B",
       "id": 1
     },
     {
       "title": "windows",
-      "quantity": 31,
+      "quantity": 42,
       "color": "#8BC343",
       "id": 2
     },
