@@ -109,11 +109,11 @@ const CozyLandComponent = styled.div`
   @media screen and (max-width: 1500px) {
     height: 900px;
     .photosComponent {
-      img {
+      /* img {
         min-height: 70%;
         width: 100%;
         max-width: 75%
-      }
+      } */
     }
   }
 
@@ -169,11 +169,11 @@ const CozyLandComponent = styled.div`
     }
 
     .photosComponent {
-      img {
+      /* img {
         min-height: 80%;
         width: 100%;
         max-width: 85%
-      }
+      } */
     }
   }
 
@@ -203,10 +203,10 @@ const CozyLandComponent = styled.div`
     }
 
     .photosComponent {
-      img {
+      /* img {
         height: 100%;
         width: 60%;
-      }
+      } */
     }
   }
 
