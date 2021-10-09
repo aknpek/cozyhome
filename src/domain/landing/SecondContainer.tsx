@@ -71,13 +71,12 @@ export const SecondComponent = styled.div<ISecondComponent>`
   @media screen and (max-width: 1300px) {
     max-width: 1300px;
     ${({ preSale }) =>
-          preSale &&
-          css`
-            margin-top: 320px;
-            max-height: 550px;
-            min-height: 550px;
-          `}
-
+      preSale &&
+      css`
+        margin-top: 320px;
+        max-height: 550px;
+        min-height: 550px;
+      `}
 
     height: 550px;
     .yildizDiv {
@@ -97,7 +96,6 @@ export const SecondComponent = styled.div<ISecondComponent>`
         max-height: 950px;
         min-height: 950px;
       `}
-
 
     .picture {
       margin: auto;
@@ -249,7 +247,6 @@ export const SecondComponent = styled.div<ISecondComponent>`
   }
 
   .starDiv {
-
     position: absolute;
     height: 100%;
     width: 100%;

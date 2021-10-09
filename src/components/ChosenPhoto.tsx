@@ -44,7 +44,6 @@ const ChosenPhoto: React.FC<IChosenPhoto> = (props) => {
   ];
 
   useEffect(() => {
-    console.log(props.referenceItem)
     setChosenPhoto(photos[props.referenceItem]);
   }, [props.referenceItem]);
 

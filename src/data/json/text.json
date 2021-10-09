@@ -308,7 +308,25 @@
         "subtitle": "Cozy Home designs consist of 7 different attributes. Each attribute has a different number of designed features with varying rarity scores. Hover on each attribute to see how many different features exist!",
         "slogan": "",
         "pictures": []
+      },
+      {
+        "component-place": "container-cozyland",
+        "component-type": "banner",
+        "title": "COZYLAND",
+        "subtitle": "CozyLand where you can find your neighbors and check where your Cozy Home is located! Check out now your neighbors and your neighborhood!",
+        "slogan": "GO TO COZYLAND",
+        "pictures": [
+          {
+            "id": 0,
+            "picture_url": "cozyland",
+            "title": "CozyLand",
+            "subtitle": "",
+            "hyperlink": "",
+            "description": ""
+          }
+        ]
       }
+
     ]
   }
 }

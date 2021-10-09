@@ -5,8 +5,7 @@ import TekYildiz from "../svgs/TekYildiz";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-interface IYildizContainer {
-}
+interface IYildizContainer {}
 
 const YildizComponent = styled.div<IYildiz>`
   .eachYildizDiv {
@@ -39,8 +38,6 @@ const YildizContainer: React.FC<IYildizContainer> = () => {
     setYildizlar(yildizlar);
   };
 
-  
-
   useEffect(() => {
     if (render.current === 0) {
       yildizMaker(yildizlar, setYildizlar);
@@ -51,10 +48,9 @@ const YildizContainer: React.FC<IYildizContainer> = () => {
   return (
     <div>
       {yildizlar.map((value: IYildiz) => {
-
         return (
           <YildizComponent
-          margintop={value.margintop}
+            margintop={value.margintop}
             marginright={value.marginright}
             size={value.size}
             key={`${Math.random()}`}
@@ -62,9 +58,27 @@ const YildizContainer: React.FC<IYildizContainer> = () => {
             <div className={"eachYildizDiv"} key={"yildiz1"}>
               <motion.div
                 animate={{
-                  scale:  [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-                  rotate: [Math.random() * 100, -Math.random() * 100, Math.random() * 100, -Math.random() * 100, Math.random() * 100],
-                  opacity: [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+                  scale: [
+                    Math.random(),
+                    Math.random(),
+                    Math.random(),
+                    Math.random(),
+                    Math.random(),
+                  ],
+                  rotate: [
+                    Math.random() * 100,
+                    -Math.random() * 100,
+                    Math.random() * 100,
+                    -Math.random() * 100,
+                    Math.random() * 100,
+                  ],
+                  opacity: [
+                    Math.random(),
+                    Math.random(),
+                    Math.random(),
+                    Math.random(),
+                    Math.random(),
+                  ],
                 }}
                 transition={{
                   repeat: Infinity,

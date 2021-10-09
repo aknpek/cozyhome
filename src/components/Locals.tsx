@@ -29,6 +29,8 @@ const Pictures: any= {
   roof: require("../data/jpg/roof.jpg"),
   door: require("../data/jpg/door.jpg"),
   background: require("../data/jpg/background.jpg"),
+
+  cozyland: require('../data/png/cozyland.png')
 };
 
 export default Pictures;

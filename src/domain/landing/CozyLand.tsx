@@ -1,25 +1,37 @@
-import { IContainer, IRarity } from "../../types";
-import React, { useEffect, useState } from "react";
+import { IContainer, IPictures } from "../../types";
 
-import Barchart from "../../components/Barchart";
-import ChosenPhoto from "../../components/ChosenPhoto";
+import Pictures from "../../components/Locals";
+import React from "react";
 import styled from "styled-components";
 
-const AttributeComponent = styled.div`
-  margin-top: 15%;
+const CozyLandComponent = styled.div`
+  margin-top: 10%;
+  margin-bottom: 10%;
   display: grid;
-  height: 900px;
+  height: 1100px;
   width: 100%;
-  z-index: 20;
+  z-index: 5;
   flex-direction: column;
   grid-template-areas:
     "attributesText"
     "photosComponent"
-    "barChart";
+    "subTitleDiv";
   grid-template-columns: 0.2fr 1.2fr 0.2fr;
-  grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 0.4fr 1.2fr 0.2fr;
+  grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 1fr 0.2fr 1.2fr;
+
+  .photosComponent {
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 100%;
+      width: 70%;
+    }
+  }
 
   .attributesText {
+    z-index: 5;
     grid-area: attributesText;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -58,59 +70,44 @@ const AttributeComponent = styled.div`
     grid-column-end: 3;
     z-index: 1;
   }
-  .barChart {
-    grid-area: barChart;
+
+  .subTitleDiv {
+    grid-area: subTitleDiv;
     grid-row-start: 6;
     grid-row-end: 7;
     grid-column-start: 2;
     grid-column-end: 3;
-    z-index: 1;
-  }
-  svg {
+
+    text-align: center;
+    height: 90%;
+    width: 50%;
+    margin: auto;
+
+    font-family: "Fredoka One", normal;
+    letter-spacing: 0.3rem;
+    border-radius: 1.2rem;
+    background-color: #ff961b;
     display: flex;
     justify-content: center;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-  svg g rect {
-    -webkit-transition: fill 0.35s;
-    -moz-transition: fill 0.35s;
-    -ms-transition: fill 0.35s;
-    transition: transform 450ms;
-  }
-  svg g:hover {
-    rect {
-      pointer-events: all;
-      fill: #121420;
-      -webkit-transition: fill 100ms ease-in;
-      -moz-tranition: fill 100ms ease-in;
-      -ms-transition: fill 100ms ease-in;
-      transition: fill 100ms ease-in;
-      stroke: #ffffff;
-      stroke-width: 1px;
-      stroke-linejoin: round;
+    align-items: center;
+    transition: 1s ease;
+
+    .subTitle {
+      color: white;
     }
-    .numberText {
-      display: flex;
-      fill: white;
-    }
-    .attributeText {
-      display: none;
-    }
-  }
-  svg {
-    g {
-      .attributeText {
-        fill: white;
-        z-index: 20;
-      }
-      .numberText {
-        display: none;
-      }
+
+    :hover {
+      -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      transform: scale(0.8);
+      transition: 0.8s ease;
+      cursor: pointer;
     }
   }
 
   @media screen and (max-width: 1300px) {
+    height: 700px;
+
     .attributesText {
       h1 {
         font-size: 4.5rem;
@@ -120,6 +117,12 @@ const AttributeComponent = styled.div`
         width: 90%;
         font-size: 1.4rem;
         line-height: 2.2rem;
+      }
+    }
+
+    .subTitleDiv {
+      h1 {
+        font-size: 1.5rem;
       }
     }
   }
@@ -134,6 +137,14 @@ const AttributeComponent = styled.div`
         width: 80%;
         font-size: 1.2rem;
         line-height: 2rem;
+      }
+    }
+
+    .subTitleDiv {
+    border-radius: .7rem;
+
+      h1 {
+        font-size: 1rem;
       }
     }
   }
@@ -171,37 +182,42 @@ const AttributeComponent = styled.div`
   }
 `;
 
-interface IAttribute extends IRarity {
+interface ICozyLand {
   data: IContainer;
 }
 
-export const AttributesContainer: React.FC<IAttribute> = (props) => {
-  const [referenceItem, setReferenceItem] = useState<number>(0);
-
-  const getElement = (event: any) => {
-    const id = event.target.id;
-    if (id !== undefined) {
-      if (typeof id === "string" && id !== "") {
-        setReferenceItem(Number(event.target.id));
-      }
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mouseover", getElement);
-    return () => {
-      document.removeEventListener("mouseover ", getElement);
-    };
-  });
-
+const CozyLand: React.FC<ICozyLand> = (props) => {
+  console.log(props.data.pictures);
   return (
-    <AttributeComponent>
+    <CozyLandComponent>
       <div className={"attributesText"}>
-        ,<h1>{props.data.title}</h1>
+        <h1>{props.data.title}</h1>
         <h2>{props.data.subtitle}</h2>
       </div>
-      <ChosenPhoto referenceItem={referenceItem} />
-      <Barchart elements={props.elements} />
-    </AttributeComponent>
+
+      {props.data.pictures.map((value: IPictures) => {
+        return (
+          <div className={"photosComponent"} key={"photoseId"}>
+            <img
+              src={Pictures[value.picture_url].default}
+              alt={"sky"}
+              key={"image"}
+            />
+          </div>
+        );
+      })}
+
+      <div
+        className={"subTitleDiv"}
+        onClick={() => console.log("not yet")}
+        key={"subtitlediv"}
+      >
+        <h1 className={"subTitle"} key={"subtitle"}>
+          {props.data.slogan}
+        </h1>
+      </div>
+    </CozyLandComponent>
   );
 };
+
+export default CozyLand;

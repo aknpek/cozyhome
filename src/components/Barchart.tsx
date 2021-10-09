@@ -51,7 +51,7 @@ const Bar: React.FC<IBar> = (props) => {
         y={props.y + props.height - 2}
         x={props.x + marginCalc(props.title)}
         fontSize={3}
-        font-family="Fredoka One"
+        fontFamily="Fredoka One"
         fontWeight={200}
         className={"attributeText"}
       >
@@ -62,7 +62,7 @@ const Bar: React.FC<IBar> = (props) => {
         y={props.y + props.height - 2}
         x={props.x + 7.5}
         fontSize={5}
-        font-family="Fredoka One"
+        fontFamily="Fredoka One"
         fontWeight={200}
         className={"numberText"}
       >
