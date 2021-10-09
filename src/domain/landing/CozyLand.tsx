@@ -205,7 +205,7 @@ const CozyLandComponent = styled.div`
     .photosComponent {
       img {
         height: 100%;
-        width: 100%;
+        width: 90%;
       }
     }
   }
@@ -221,7 +221,7 @@ const CozyLandComponent = styled.div`
       width: 70%;
 
       h1 {
-        font-size: 1rem;
+        font-size: 1rem; 
       }
     }
 
