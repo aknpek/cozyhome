@@ -213,7 +213,6 @@ const CozyLandComponent = styled.div`
   @media screen and (max-width: 500px) {
     height: 700px;
     grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 0.5fr 0.2fr 1.2fr;
-    grid-template-columns: 0.1fr 2fr 0.1fr;
 
     .subTitleDiv {
       border-radius: 0.7rem;
@@ -239,7 +238,6 @@ const CozyLandComponent = styled.div`
   }
 
   @media screen and (max-width: 400px) {
-    grid-template-columns: 0.2fr 4fr 0.2fr;
 
     .attributesText {
       h1 {
