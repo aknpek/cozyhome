@@ -8,7 +8,7 @@ const CozyLandComponent = styled.div`
   margin-top: 10%;
   margin-bottom: 10%;
   display: grid;
-  height: 1100px;
+  height: 1000px;
   width: 100%;
   z-index: 5;
   flex-direction: column;
@@ -17,7 +17,8 @@ const CozyLandComponent = styled.div`
     "photosComponent"
     "subTitleDiv";
   grid-template-columns: 0.2fr 1.2fr 0.2fr;
-  grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 1fr 0.2fr 1.2fr;
+  grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 0.5fr 0.2fr 1.2fr;
+
 
   .photosComponent {
     z-index: 5;
@@ -26,7 +27,7 @@ const CozyLandComponent = styled.div`
     align-items: center;
     img {
       height: 100%;
-      width: 70%;
+      width: 60%;
     }
   }
 
@@ -105,8 +106,19 @@ const CozyLandComponent = styled.div`
     }
   }
 
+  @media screen and (max-width: 1500px) {
+    height: 900px;
+    .photosComponent {
+      img {
+        min-height: 70%;
+        width: 100%;
+        max-width: 75%
+      }
+    }
+  }
+
   @media screen and (max-width: 1300px) {
-    height: 700px;
+    height: 800px;
 
     .attributesText {
       h1 {
@@ -122,12 +134,52 @@ const CozyLandComponent = styled.div`
 
     .subTitleDiv {
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    .photosComponent {
+      img {
+        min-height: 70%;
+        width: 100%;
+        max-width: 75%
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    height: 800px;
+
+    .attributesText {
+      h1 {
+        font-size: 4.5rem;
+        letter-spacing: 0.1rem;
+      }
+      h2 {
+        width: 90%;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+      }
+    }
+
+    .subTitleDiv {
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .photosComponent {
+      img {
+        min-height: 80%;
+        width: 100%;
+        max-width: 85%
       }
     }
   }
 
   @media screen and (max-width: 700px) {
+    height: 700px;
+
     .attributesText {
       h1 {
         font-size: 3.2rem;
@@ -141,16 +193,37 @@ const CozyLandComponent = styled.div`
     }
 
     .subTitleDiv {
-    border-radius: .7rem;
+      border-radius: 0.7rem;
+      height: 90%;
+      width: 60%;
 
       h1 {
         font-size: 1rem;
       }
     }
+
+    .photosComponent {
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: 0.2fr 4fr 0.2fr;
+    height: 700px;
+    grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 0.5fr 0.2fr 1.2fr;
+    grid-template-columns: 0.1fr 2fr 0.1fr;
+
+    .subTitleDiv {
+      border-radius: 0.7rem;
+      height: 90%;
+      width: 70%;
+
+      h1 {
+        font-size: 1rem;
+      }
+    }
 
     .attributesText {
       h1 {
@@ -158,7 +231,7 @@ const CozyLandComponent = styled.div`
         letter-spacing: 0.1rem;
       }
       h2 {
-        width: 60%;
+        width: 80%;
         font-size: 1rem;
         line-height: 1.5rem;
       }
