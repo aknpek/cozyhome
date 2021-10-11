@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { AttributesContainer } from "./Attributes";
 import BackGroundContainer from "../../components/BackgroundFirst";
 import BackGroundContainerSecond from "../../components/BackgroundSecond";
-import CozyLand  from "./CozyLand";
+import CozyLand from "./CozyLand";
 import FifthContainer from "./FifthContainer";
 import FourthContainer from "./FourthContainer";
 import { HardCodeBulut } from "./HardCodeBulut";
@@ -35,7 +35,7 @@ const Landing: React.FC = () => {
   const header_data: IHeader = data["landing"]["header"];
   const [tryWallet, setTryWallet] = useState<Boolean>(false);
   const scrollPosition = useRef<Number>(0);
-  const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(false);
+  const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(true);
   const { active, account, library, connector, activate, deactivate } =
     useWeb3React();
 
@@ -44,7 +44,6 @@ const Landing: React.FC = () => {
       await activate(injected);
     } catch (ex) {}
   };
-
 
   const disconnect = async () => {
     try {
@@ -77,11 +76,14 @@ const Landing: React.FC = () => {
     const totalDocScrollLength = docHeight - windowHeight;
     const _scrollPosition = (scrollTop / totalDocScrollLength) * 100;
     if (_scrollPosition > 15) {
-      setShowThirdContainer(true);
+      // setShowThirdContainer(true);
     }
     if (_scrollPosition < 3) {
-      setShowThirdContainer(false);
+      // setShowThirdContainer(false);
     }
+
+    console.log(_scrollPosition, 'this is scroll')
+
     scrollPosition.current = _scrollPosition;
   };
   const scrollDistance = () => {
@@ -117,8 +119,8 @@ const Landing: React.FC = () => {
           />
         </FirstContainer>
 
-        <HardCodeBulut/>
-       
+        <HardCodeBulut />
+
         <div className={"firstBackGround"}>
           <BackGroundContainer />
         </div>
@@ -150,11 +152,9 @@ const Landing: React.FC = () => {
           />
         </div>
 
-
         <div className={"CozyLand-Container"}>
-            <CozyLand data={data["landing"]["containers"][8]} />
+          <CozyLand data={data["landing"]["containers"][8]} />
         </div>
-
 
         {showThirdContainer ? (
           <ThirdContainer

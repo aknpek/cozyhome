@@ -211,6 +211,7 @@ const CozyLandComponent = styled.div`
   }
 
   @media screen and (max-width: 500px) {
+    display: none;
     height: 800px;
     grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 0.5fr 0.2fr 1.2fr;
 
