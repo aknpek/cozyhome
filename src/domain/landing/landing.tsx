@@ -15,7 +15,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import SecondContainer from "./SecondContainer";
 import SeventhContainer from "./SeventhContainer";
 import ThirdContainer from "./ThirdContainer";
-import  gsap from "gsap";
+import gsap from "gsap";
 import { injected } from "../../components/Wallet";
 import { useWeb3React } from "@web3-react/core";
 
@@ -56,22 +56,19 @@ const Landing: React.FC = () => {
     gsap.from(refHeader.current!, {
       y: -50,
       duration: 0.6,
-      scrollTrigger: refHeader.current!,
     });
 
     gsap.from(refSec.current!, {
-      opacity: 0.8,
-      y: -500,
+      opacity: 0.1,
+      y: 200,
       scale: 0.4,
       duration: 1,
-      scrollTrigger: refSec.current!,
     });
 
     gsap.from(refSec2.current!, {
-      opacity: 0.8,
-      x: 500,
+      opacity: 0.2,
+      y: 100,
       scale: 0.8,
-      
       duration: 1,
       scrollTrigger: refSec2.current!,
     });
@@ -84,7 +81,7 @@ const Landing: React.FC = () => {
     });
     gsap.from(refCollection.current!, {
       opacity: 0.8,
-      y: -500,
+      y: 100,
       scale: 0.8,
       duration: 1,
       scrollTrigger: refCollection.current!,
@@ -105,14 +102,14 @@ const Landing: React.FC = () => {
     });
     gsap.from(refPresale.current!, {
       opacity: 0.5,
-      y: -200,
+      y: 200,
       scale: 0.7,
       duration: 1,
       scrollTrigger: refPresale.current!,
     });
     gsap.from(refAttributes.current!, {
       opacity: 0.5,
-      y: -200,
+      y: 100,
       scale: 0.7,
       duration: 1,
       scrollTrigger: refAttributes.current!,
