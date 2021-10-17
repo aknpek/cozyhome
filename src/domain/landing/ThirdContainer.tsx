@@ -1,9 +1,11 @@
 import { IContainer, IPictures, IThirdContainer } from "../../types";
+import { animationControls, motion, useAnimation, } from 'framer-motion';
 
 import OpenSeaLogo from "../../svgs/OpenSeaLogo";
 import Pictures from "../../components/Locals";
 import styled from "styled-components";
 import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const ThirdComponent = styled.div<IThirdContainer>`
   display: grid;
@@ -223,7 +225,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
     font-size: 1.2rem;
     pointer-events: none;
 
-
     .header {
       margin: auto;
       h1 {
@@ -232,7 +233,6 @@ const ThirdComponent = styled.div<IThirdContainer>`
       }
     }
 
-    
     .cells {
       margin-top: 5rem;
       display: flex;
@@ -270,7 +270,17 @@ interface PropsThird {
 }
 
 const ThirdContainer: React.FC<PropsThird> = (props) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   useEffect(() => {}, [props.showThirdContainer]);
+
+
   return (
     <ThirdComponent className="Landing-Home">
       <header className={"cell cell-1 header"}>

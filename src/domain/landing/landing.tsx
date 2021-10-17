@@ -82,7 +82,7 @@ const Landing: React.FC = () => {
       // setShowThirdContainer(false);
     }
 
-    console.log(_scrollPosition, 'this is scroll')
+    // console.log(_scrollPosition, 'this is scroll')
 
     scrollPosition.current = _scrollPosition;
   };

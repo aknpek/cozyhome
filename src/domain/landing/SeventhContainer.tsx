@@ -1,7 +1,12 @@
+import { animationControls, motion, useAnimation, } from 'framer-motion';
+
 import { IContainer } from "../../types";
 import Pictures from "../../components/Locals";
 import YildizContainer from "../../components/Yildizlar";
 import styled from "styled-components";
+import {useEffect} from 'react'
+import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 
 interface ISixthContainer {}
 
@@ -360,7 +365,24 @@ interface PropsSeven {
   data: IContainer;
 }
 
+
+
 const SeventhContainer: React.FC<PropsSeven> = (props) => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  });
+
+
+  useEffect(() => {
+
+    console.log(inView)
+    if (inView) { 
+        console.log('IS THIS VIEW IN')
+    }
+  }, [inView, ref])
+
+
+
   return (
     <SeventhComponent className="Seven-Component">
       <div className={"titleTeam"}>
@@ -386,7 +408,7 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
       </div>
       <div className={"smartContract"}>
         <a>
-          <h1>Smart Contract</h1>
+          <h1>Smart Contract Soon!</h1>
         </a>
       </div>
 
