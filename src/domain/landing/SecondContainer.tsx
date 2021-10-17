@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { useEffect, useRef } from "react";
 
 import { IContainer } from "../../types";
 import Picture from "../../components/Picture";
@@ -275,7 +276,7 @@ const SecondContainer: React.FC<PropsSecond> = (props) => {
       preSale={props.preSale}
       metaHomes={props.metaHomes}
     >
-      <Picture picture={props.data["pictures"]} />
+        <Picture picture={props.data["pictures"]} />
       <TextDisplay textDirection={props.textDirection} {...props.data} />
       <div className={"starDiv"}>
         <div className={"startSubDiv2"}>

@@ -1,6 +1,9 @@
+import React, {useEffect, useRef} from "react";
+
 import { IPictures } from "../types";
 import Pictures from "../components/Locals";
-import React from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
 import styled from "styled-components";
 
 interface IPicture {}
@@ -121,9 +124,21 @@ interface Props {
 }
 
 const Picture: React.FC<Props> = (props) => {
+  let refPictures = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refPictures.current!, {
+      y: -100,
+      opacity: 0.5,
+      duration: 0.6,
+      delay: 0.4,
+    });
+  });
+
   return (
     <PicStyled className={"picture"}>
-      <div>
+      <div ref={refPictures}>
         {props.picture.map((value: IPictures) => {
           if (value["picture_url"] !== "gif") {
             return (
