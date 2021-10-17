@@ -9,7 +9,6 @@ import { useInView } from "react-intersection-observer";
 
 const ThirdComponent = styled.div<IThirdContainer>`
   display: grid;
-  background-color: #121420;
   animation: 1s ease-out 0s 1 slideInFromLeft;
   height: 1100px;
 

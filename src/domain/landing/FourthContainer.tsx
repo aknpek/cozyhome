@@ -6,7 +6,6 @@ import styled from "styled-components";
 const FourthComponent = styled.div<IFourthContainer>`
   display: flex;
   height: 800px;
-  background-color: #121420;
   animation: 1s ease-out 0s 1 slideInFromLeft;
   display: grid;
   grid-template-columns: 0.2fr 1fr 1fr 0.2fr;

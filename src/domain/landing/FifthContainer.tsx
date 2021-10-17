@@ -7,7 +7,6 @@ import styled from "styled-components";
 
 const FifthComponent = styled.div<IFifthContainer>`
   display: grid;
-  background-color: #121420;
   height: 800px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 
