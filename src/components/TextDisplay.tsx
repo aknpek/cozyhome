@@ -1,12 +1,11 @@
 import { ISlogan, IContainer as Props } from "../types";
 import React, { useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
 
 import CozyLogo from "../svgs/CozyLogo";
-import Dropdown from "react-dropdown";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { scrollToSection } from "../components/Header";
+import styled from "styled-components";
 
 interface ITextDisplay {
   textDirection: Boolean;
@@ -754,21 +753,21 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refHeader.current!, {
-      y: 100,
+      y: -100,
       opacity: 0,
-      duration: 0.7,
+      duration: 0.3,
       delay: 0.2,
     });
     gsap.from(refText.current!, {
-      y: 200,
+      y: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.2,
       delay: 0.2,
     });
     gsap.from(refButton.current!, {
-      y: 300,
+      y: 400,
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       delay: 0.2,
     });
   });
