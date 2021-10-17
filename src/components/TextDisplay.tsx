@@ -1,9 +1,11 @@
 import { ISlogan, IContainer as Props } from "../types";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
 
 import CozyLogo from "../svgs/CozyLogo";
 import Dropdown from "react-dropdown";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
 import { scrollToSection } from "../components/Header";
 
 interface ITextDisplay {
@@ -745,6 +747,31 @@ interface PTextDisplay extends Props {
 }
 
 const TextDisplay: React.FC<PTextDisplay> = (props) => {
+  let refHeader = useRef<HTMLDivElement>(null);
+  let refText = useRef<HTMLDivElement>(null);
+  let refButton = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refHeader.current!, {
+      y: 100,
+      opacity: 0,
+      duration: 0.7,
+      delay: 0.2,
+    });
+    gsap.from(refText.current!, {
+      y: 200,
+      opacity: 0,
+      duration: 1,
+      delay: 0.2,
+    });
+    gsap.from(refButton.current!, {
+      y: 300,
+      opacity: 0,
+      duration: 1,
+      delay: 0.2,
+    });
+  });
   const eth = useRef<String>("*");
   const leftMint = useRef<String>("*");
   const options = [1, 2, 3, 5, 10, 20, 100];
@@ -758,20 +785,20 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
       className={"textdisplay"}
       textDirection={props.textDirection}
     >
-      <div className={"sloganDiv"}>
+      <div ref={refHeader} className={"sloganDiv"}>
         {props.title !== "" ? (
           <div className={"sloganDivBlock"}>
             <h1 className={"slogan"}>{props.title}</h1>
           </div>
         ) : (
-          <div className={"cozyHomeLogoDiv"}>
+          <div ref={refHeader} className={"cozyHomeLogoDiv"}>
             <div className={"cozyHomeLogoDiv2"}>
               <CozyLogo props={{}} />
             </div>
           </div>
         )}
       </div>
-      <div className={"messageDiv"}>
+      <div ref={refText} className={"messageDiv"}>
         <div className={"messageMiddleDiv"}>
           {props.title === "Presale" ? (
             <div className={"preSaleBlock"}>
@@ -788,6 +815,7 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
 
       {props.subtitle !== "" && props.title !== "Presale" ? (
         <div
+          ref={refText}
           className={"subTitleDiv"}
           onClick={() => scrollToSection("Presale-Container")}
           key={"subtitlediv"}
@@ -797,7 +825,7 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
       ) : (
         [
           props.title === "Presale" ? (
-            <div className={"subTitleMintBlock"} key={"subtitlemintblock"}>
+            <div ref={refButton} className={"subTitleMintBlock"} key={"subtitlemintblock"}>
               <div className={"subTitleMintDiv"} key={"subtitlemintdiv"}>
                 <h1 className={"subTitleMint"} key={"sustitlemin"}>{props.subtitle}</h1>
               </div>
@@ -806,7 +834,7 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
               </div>
             </div>
           ) : (
-            <div key={"divbos"}></div>
+            <div ref={refButton} key={"divbos"}></div>
           ),
         ]
       )}

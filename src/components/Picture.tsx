@@ -130,8 +130,9 @@ const Picture: React.FC<Props> = (props) => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refPictures.current!, {
       y: -100,
-      opacity: 0.5,
-      duration: 0.6,
+      opacity: 0.1,
+      scale: 0.8,
+      duration: 0.3,
       delay: 0.4,
     });
   });
