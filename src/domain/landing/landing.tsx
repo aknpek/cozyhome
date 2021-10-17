@@ -15,7 +15,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import SecondContainer from "./SecondContainer";
 import SeventhContainer from "./SeventhContainer";
 import ThirdContainer from "./ThirdContainer";
-import { gsap } from "gsap";
+import  gsap from "gsap";
 import { injected } from "../../components/Wallet";
 import { useWeb3React } from "@web3-react/core";
 
