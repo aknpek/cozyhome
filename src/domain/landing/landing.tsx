@@ -71,6 +71,7 @@ const Landing: React.FC = () => {
       opacity: 0.8,
       x: 500,
       scale: 0.8,
+      
       duration: 1,
       scrollTrigger: refSec2.current!,
     });
