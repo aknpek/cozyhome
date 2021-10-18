@@ -1,6 +1,9 @@
-import { IContainer, IFourthContainer } from "../../types";
+import { IContainer, IFourthContainer, IPictures } from "../../types";
+import { useEffect, useRef } from "react";
 
 import { AyContainer } from "../../components/Ay";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
 import styled from "styled-components";
 
 const FourthComponent = styled.div<IFourthContainer>`
@@ -648,42 +651,95 @@ interface PropsFourth {
   data: IContainer;
 }
 
+
+const EachPercentage: React.FC<IPictures> = (props) => {
+  let refEachPercentage = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refEachPercentage.current!, {
+      y: 100 * props.id/2,
+      opacity: 0.1,
+      scale: 0.5,
+      delay: 0.1 * props.id,
+      duration: 0.5,
+      scrollTrigger: refEachPercentage.current!,
+    });
+  });
+
+  return (
+    <div ref={refEachPercentage} className={"roadBlock"} key={props.id + "block"}>
+    <div
+      className={`roadPercent ${props.id}`}
+      key={props.id + "percent"}
+    >
+      <div
+        className={`roadPercentBlock percent${props.title}`}
+        key={props.id + "percentblock"}
+      >
+        <h1>{props.title}%</h1>
+      </div>
+    </div>
+    <div className={`roadText ${props.id}`} key={props.id + "road"}>
+      <div
+        className={`roadTextBlock ${props.id}`}
+        key={props.id + "roadblock"}
+      >
+        <h1>{props.subtitle}</h1>
+        <h2>{props.description}</h2>
+      </div>
+    </div>
+  </div>
+  );
+};
+
+
 const FourthContainer: React.FC<PropsFourth> = (props) => {
+  let refTitle = useRef<HTMLDivElement>(null);
+  let refFirstBlock = useRef<HTMLDivElement>(null);
+  let refPercentages = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refTitle.current!, {
+      y: -100,
+      opacity: 0,
+      duration: 0.3,
+      delay: 0.2,
+      scrollTrigger: refTitle.current!,
+    });
+    gsap.from(refFirstBlock.current!, {
+      y: 100,
+      opacity: 0.5,
+      scale: 0.8,
+      duration: 0.8,
+      delay: 0.1,
+      scrollTrigger: refFirstBlock.current!,
+    });
+    gsap.from(refPercentages.current!, {
+      y: 100,
+      opacity: 0.5,
+      scale: 0.8,
+      duration: 0.8,
+      delay: 0.1,
+      scrollTrigger: refPercentages.current!,
+    });
+  });
+
   return (
     <FourthComponent className="Fourth-Component">
-      <div className={"titleDiv"}>
+      <div ref={refTitle} className={"titleDiv"}>
         <h1>{props.data.title}</h1>
       </div>
-      <div className={"blockFirst"}>
+      <div ref={refFirstBlock} className={"blockFirst"}>
         <div className={"blockFirstDiv"}>
           <h5>{props.data.slogan}</h5>
           <h4>{props.data.subtitle}</h4>
         </div>
       </div>
       <div className={"blockSecond"}>
-        {props.data["pictures"].map((value: any) => (
-          <div className={"roadBlock"} key={value.id + "block"}>
-            <div
-              className={`roadPercent ${value.id}`}
-              key={value.id + "percent"}
-            >
-              <div
-                className={`roadPercentBlock percent${value.title}`}
-                key={value.id + "percentblock"}
-              >
-                <h1>{value.title}%</h1>
-              </div>
-            </div>
-            <div className={`roadText ${value.id}`} key={value.id + "road"}>
-              <div
-                className={`roadTextBlock ${value.id}`}
-                key={value.id + "roadblock"}
-              >
-                <h1>{value.subtitle}</h1>
-                <h2>{value.description}</h2>
-              </div>
-            </div>
-          </div>
+        {props.data["pictures"].map((value: IPictures) => (
+         <EachPercentage {...value}/>
         ))}
       </div>
 

@@ -1,10 +1,12 @@
 import { IContainer, IPictures, IThirdContainer } from "../../types";
-import { animationControls, motion, useAnimation, } from 'framer-motion';
+import { animationControls, motion, useAnimation } from "framer-motion";
+import { createRef, useEffect, useRef } from "react";
+import gsap, { TweenMax } from "gsap";
 
 import OpenSeaLogo from "../../svgs/OpenSeaLogo";
 import Pictures from "../../components/Locals";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import styled from "styled-components";
-import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 const ThirdComponent = styled.div<IThirdContainer>`
@@ -268,6 +270,40 @@ interface PropsThird {
   data: IContainer;
 }
 
+interface IEachContainer {
+  value: IPictures;
+}
+
+const EachImage: React.FC<IEachContainer> = (props) => {
+  let refEachImage = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refEachImage.current!, {
+      y: 200 * props.value.id,
+      opacity: 0.1,
+      scale: 0.5,
+      delay: 0.1,
+      duration: 0.5,
+      scrollTrigger: refEachImage.current!,
+    });
+  });
+
+  return (
+    <div
+      ref={refEachImage}
+      className={`cell cell-${props.value.id + 2} cells`}
+      key={props.value.id + "cell"}
+    >
+      <img
+        src={Pictures[props.value.picture_url].default}
+        key={props.value.id + "picture"}
+        alt={props.value.description}
+      />
+    </div>
+  );
+};
+
 const ThirdContainer: React.FC<PropsThird> = (props) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -279,7 +315,6 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
   }, [controls, inView]);
   useEffect(() => {}, [props.showThirdContainer]);
 
-
   return (
     <ThirdComponent className="Landing-Home">
       <header className={"cell cell-1 header"}>
@@ -287,16 +322,7 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
       </header>
 
       {props.data.pictures.map((value: IPictures) => (
-        <div
-          className={`cell cell-${value.id + 2} cells`}
-          key={value.id + "cell"}
-        >
-          <img
-            src={Pictures[value.picture_url].default}
-            key={value.id + "picture"}
-            alt={value.description}
-          />
-        </div>
+        <EachImage value={value} />
       ))}
     </ThirdComponent>
   );

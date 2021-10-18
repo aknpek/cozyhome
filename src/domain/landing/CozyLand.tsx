@@ -1,7 +1,9 @@
 import { IContainer, IPictures } from "../../types";
+import React, { useEffect, useRef } from "react";
 
 import Pictures from "../../components/Locals";
-import React from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
 import styled from "styled-components";
 
 const CozyLandComponent = styled.div`
@@ -18,7 +20,6 @@ const CozyLandComponent = styled.div`
     "subTitleDiv";
   grid-template-columns: 0.2fr 1.2fr 0.2fr;
   grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 0.5fr 0.2fr 1.2fr;
-
 
   .photosComponent {
     z-index: 5;
@@ -142,7 +143,7 @@ const CozyLandComponent = styled.div`
       img {
         min-height: 70%;
         width: 100%;
-        max-width: 75%
+        max-width: 75%;
       }
     }
   }
@@ -221,7 +222,7 @@ const CozyLandComponent = styled.div`
       width: 70%;
 
       h1 {
-        font-size: 1rem; 
+        font-size: 1rem;
       }
     }
 
@@ -260,17 +261,56 @@ interface ICozyLand {
 }
 
 const CozyLand: React.FC<ICozyLand> = (props) => {
-  console.log(props.data.pictures);
+  let refTitle = useRef<HTMLDivElement>(null);
+  let refSubTitle = useRef<HTMLDivElement>(null);
+  let refCozyLandPic = useRef<HTMLDivElement>(null);
+  let refCozyLandButton = useRef<HTMLDivElement>(null);
+  
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refTitle.current!, {
+      y: -50,
+      duration: 0.6,
+      delay: 0.2,
+      scrollTrigger: refTitle.current!,
+    });
+    gsap.from(refSubTitle.current!, {
+      y: 10,
+      duration: 0.8,
+      scrollTrigger: refSubTitle.current!,
+    });
+    gsap.from(refCozyLandPic.current!, {
+      y: -100,
+      opacity: 0.2,
+      scale: 0.5,
+      duration: 2,
+      scrollTrigger: refCozyLandPic.current!,
+    });
+    gsap.from(refCozyLandButton.current!, {
+      y: 100,
+      opacity: 0.7,
+      scale: 0.5,
+      delay: 0.2,
+      duration: 1,
+      scrollTrigger: refCozyLandButton.current!,
+    });
+  });
+
   return (
     <CozyLandComponent>
       <div className={"attributesText"}>
-        <h1>{props.data.title}</h1>
-        <h2>{props.data.subtitle}</h2>
+        <h1 ref={refTitle}>{props.data.title}</h1>
+        <h2 ref={refSubTitle}>{props.data.subtitle}</h2>
       </div>
 
       {props.data.pictures.map((value: IPictures) => {
         return (
-          <div className={"photosComponent"} key={"photoseId"}>
+          <div
+            ref={refCozyLandPic}
+            className={"photosComponent"}
+            key={"photoseId"}
+          >
             <img
               src={Pictures[value.picture_url].default}
               alt={"sky"}
@@ -284,6 +324,7 @@ const CozyLand: React.FC<ICozyLand> = (props) => {
         className={"subTitleDiv"}
         onClick={() => console.log("not yet")}
         key={"subtitlediv"}
+        ref={refCozyLandButton}
       >
         <h1 className={"subTitle"} key={"subtitle"}>
           {props.data.slogan}

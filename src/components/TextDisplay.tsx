@@ -757,18 +757,20 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
       opacity: 0,
       duration: 0.3,
       delay: 0.2,
+      scrollTrigger: refHeader.current!,
     });
     gsap.from(refText.current!, {
       y: 100,
       opacity: 0,
       duration: 0.2,
       delay: 0.2,
+      scrollTrigger: refText.current!,
     });
     gsap.from(refButton.current!, {
       y: 400,
       opacity: 0,
-      duration: 0.5,
-      delay: 0.2,
+      duration: .6,
+      scrollTrigger: refButton.current!,
     });
   });
   const eth = useRef<String>("*");

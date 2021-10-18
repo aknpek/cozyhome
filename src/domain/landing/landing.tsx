@@ -74,7 +74,7 @@ const Landing: React.FC = () => {
     });
     gsap.from(refSecCozyLand.current!, {
       opacity: 0.8,
-      x: -500,
+      y: -200,
       scale: 0.8,
       duration: 1,
       scrollTrigger: refSecCozyLand.current!,
@@ -224,7 +224,7 @@ const Landing: React.FC = () => {
         </div>
 
         <div className={"Home-Container"}>
-          <div ref={refSec}>
+          <div >
             <SecondContainer
               data={data["landing"]["containers"][0]}
               textDirection={true}
@@ -232,7 +232,7 @@ const Landing: React.FC = () => {
               metaHomes={false}
             />
           </div>
-          <div ref={refSec2}>
+          <div >
             <SecondContainer
               data={data["landing"]["containers"][1]}
               textDirection={false}
@@ -246,12 +246,12 @@ const Landing: React.FC = () => {
           <CozyLand data={data["landing"]["containers"][8]} />
         </div>
 
-        <div ref={refCollection}>
+        {/* <div ref={refCollection}> */}
           <ThirdContainer
             showThirdContainer={showThirdContainer}
             data={data["landing"]["containers"][2]}
           ></ThirdContainer>
-        </div>
+        {/* </div> */}
 
         <div ref={refRarity}>
           <FifthContainer
