@@ -108,12 +108,14 @@ const SeventhComponent = styled.div<ISixthContainer>`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     a {
       h1 {
         color: white;
         font-family: "Fredoka One", normal;
         font-weight: 200;
         text-decoration: underline;
+        text-align: center;
       }
       h1:hover {
       }
