@@ -375,7 +375,6 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
 
   useEffect(() => {
 
-    console.log(inView)
     if (inView) { 
         console.log('IS THIS VIEW IN')
     }
