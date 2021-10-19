@@ -1,12 +1,13 @@
-import { animationControls, motion, useAnimation, } from 'framer-motion';
+import { IContainer, IPictures } from "../../types";
+import { useRef, useState } from "react";
 
-import { IContainer } from "../../types";
 import Pictures from "../../components/Locals";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import YildizContainer from "../../components/Yildizlar";
+import gsap from "gsap";
 import styled from "styled-components";
-import {useEffect} from 'react'
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 
 interface ISixthContainer {}
 
@@ -367,22 +368,49 @@ interface PropsSeven {
   data: IContainer;
 }
 
+const TeamsImages: React.FC<IPictures> = (value) => {
+  let refEachImage = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refEachImage.current!, {
+      y: 100 * value.id,
+      opacity: 0.1,
+      scale: 0.5,
+      delay: 0.1,
+      duration: 0.5,
+      scrollTrigger: refEachImage.current!,
+    });
+  });
+
+  return (
+    <div ref={refEachImage} key={value.id + "photos"} className={`teamMember${value.id}`}>
+      <div key={value.id + "photosinner"}>
+        <a href={value.hyperlink} key={value.id + "a"}>
+          <img
+            src={Pictures[value.picture_url].default}
+            alt={value.title}
+            key={value.id + "image"}
+          />
+        </a>
+      </div>
+
+      <h3 key={value.id + "h3"}>{value.title}</h3>
+      <h4 key={value.id + "h4"}>{value.subtitle}</h4>
+    </div>
+  );
+};
 
 const SeventhContainer: React.FC<PropsSeven> = (props) => {
   const [ref, inView] = useInView({
     threshold: 0,
   });
 
-
   useEffect(() => {
-
-    if (inView) { 
-        console.log('IS THIS VIEW IN')
+    if (inView) {
+      console.log("IS THIS VIEW IN");
     }
-  }, [inView, ref])
-
-
+  }, [inView, ref]);
 
   return (
     <SeventhComponent className="Seven-Component">
@@ -390,21 +418,8 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
         <h1>{props.data.title}</h1>
       </div>
       <div className={"photosTeam"}>
-        {props.data["pictures"].map((value: any) => (
-          <div key={value.id + "photos"} className={`teamMember${value.id}`}>
-            <div key={value.id + "photosinner"}>
-              <a href={value.hyperlink} key={value.id + "a"}>
-                <img
-                  src={Pictures[value.picture_url].default}
-                  alt={value.title}
-                  key={value.id + "image"}
-                />
-              </a>
-            </div>
-
-            <h3 key={value.id + "h3"}>{value.title}</h3>
-            <h4 key={value.id + "h4"}>{value.subtitle}</h4>
-          </div>
+        {props.data["pictures"].map((value: IPictures) => (
+          <TeamsImages {...value} />
         ))}
       </div>
       <div className={"smartContract"}>

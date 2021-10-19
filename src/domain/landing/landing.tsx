@@ -251,20 +251,16 @@ const Landing: React.FC = () => {
             data={data["landing"]["containers"][2]}
           ></ThirdContainer>
 
-        {/* <div ref={refRarity}> */}
           <FifthContainer
             showFifthContainer={showThirdContainer}
             data={data["landing"]["containers"][4]}
           ></FifthContainer>
-        {/* </div> */}
 
-        <div ref={refRoadMap}>
           <FourthContainer
             data={data["landing"]["containers"][3]}
           ></FourthContainer>
-        </div>
 
-        <div ref={refPresale} className={"Presale-Container"}>
+        <div className={"Presale-Container"}>
           <SecondContainer
             data={data["landing"]["containers"][5]}
             textDirection={true}

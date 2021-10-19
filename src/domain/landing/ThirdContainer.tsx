@@ -284,7 +284,7 @@ const EachImage: React.FC<IEachContainer> = (props) => {
       opacity: 0.1,
       scale: 0.5,
       delay: 0.1,
-      duration: 0.5,
+      duration: 0.2,
       scrollTrigger: refEachImage.current!,
     });
   });
