@@ -767,9 +767,9 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
       scrollTrigger: refText.current!,
     });
     gsap.from(refButton.current!, {
-      y: 400,
+      y: 200,
       opacity: 0,
-      duration: .6,
+      duration: .2,
       scrollTrigger: refButton.current!,
     });
   });

@@ -1,12 +1,12 @@
 import { IContainer, IPictures, IThirdContainer } from "../../types";
-import { animationControls, motion, useAnimation } from "framer-motion";
-import { createRef, useEffect, useRef } from "react";
-import gsap, { TweenMax } from "gsap";
+import { useEffect, useRef } from "react";
 
 import OpenSeaLogo from "../../svgs/OpenSeaLogo";
 import Pictures from "../../components/Locals";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
 import styled from "styled-components";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const ThirdComponent = styled.div<IThirdContainer>`
@@ -280,7 +280,7 @@ const EachImage: React.FC<IEachContainer> = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refEachImage.current!, {
-      y: 200 * props.value.id,
+      y: 100 * props.value.id,
       opacity: 0.1,
       scale: 0.5,
       delay: 0.1,

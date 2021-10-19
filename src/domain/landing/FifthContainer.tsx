@@ -1,8 +1,11 @@
-import { IContainer, IFifthContainer } from "../../types";
+import { IContainer, IFifthContainer, IPictures } from "../../types";
+import { useEffect, useRef } from "react";
 
 import BackGroundFirst from "../../svgs/BackGroundFirst";
 import BackGroundSecond from "../../svgs/BackGroundSecond";
 import Pictures from "../../components/Locals";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
 import styled from "styled-components";
 
 const FifthComponent = styled.div<IFifthContainer>`
@@ -135,7 +138,6 @@ const FifthComponent = styled.div<IFifthContainer>`
     grid-template-rows: 0.1fr 0.15fr 0.1fr 2fr 0.2fr;
 
     .titleDiv {
-      
       grid-row-start: 2;
       grid-row-end: 3;
       grid-column-start: 2;
@@ -252,41 +254,83 @@ const FifthComponent = styled.div<IFifthContainer>`
     }
   }
 `;
+
+const RarirtyImages: React.FC<IPictures> = (props) => {
+  let refEachImage = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refEachImage.current!, {
+      y: 100 * props.id,
+      opacity: 0.1,
+      scale: 0.5,
+      delay: 0.1,
+      duration: 0.5,
+      scrollTrigger: refEachImage.current!,
+    });
+  });
+
+
+  return (
+    <div ref={refEachImage} key={props.id + "div"} className={`pictureDiv${props.id}`}>
+      <img
+        src={Pictures[props.picture_url].default}
+        key={props.id + "img"}
+        alt={props.description}
+      ></img>
+      <h1 key={props.id + "h1"}>{props.title}</h1>
+    </div>
+  );
+};
+
 interface PropsFifth {
   showFifthContainer: Boolean;
   data: IContainer;
 }
+
 const FifthContainer: React.FC<PropsFifth> = (props) => {
+  let refTitle = useRef<HTMLDivElement>(null);
+  let refMiddleText = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refTitle.current!, {
+      y: -100,
+      opacity: 0,
+      duration: 0.3,
+      delay: 0.2,
+      scrollTrigger: refTitle.current!,
+    });
+    gsap.from(refMiddleText.current!, {
+      y: -100,
+      opacity: 0,
+      duration: 0.3,
+      delay: 0.2,
+      scrollTrigger: refMiddleText.current!,
+    });
+  });
+
   return (
     <FifthComponent className="Fifth-Component">
-      <div className={"titleDiv"}>
+      <div ref={refTitle} className={"titleDiv"}>
         <h1>{props.data.title}</h1>
       </div>
-      <div className={"sloganDiv"}>
+      <div ref={refMiddleText} className={"sloganDiv"}>
         <h2>{props.data.slogan}</h2>
       </div>
       <div className={"pictureDiv"}>
-        {props.data["pictures"].map((value: any) => (
-          <div key={value.id + "div"} className={`pictureDiv${value.id}`}>
-            <img
-              src={Pictures[value.picture_url].default}
-              key={value.id + "img"}
-              alt={value.description}
-            ></img>
-            <h1 key={value.id + "h1"}>{value.title}</h1>
-          </div>
+        {props.data["pictures"].map((value: IPictures) => (
+          <RarirtyImages {...value} />
         ))}
       </div>
 
-      {/* <div className={"backGroundFirst"}>
-        <BackGroundFirst
-         props={{}}/>
-      </div> */}
+      <div className={"backGroundFirst"}>
+        <BackGroundFirst props={{}} />
+      </div>
 
-      {/* <div className={"backGroundSecond"}>
-        <BackGroundSecond
-         props={{}}/>
-      </div> */}
+      <div className={"backGroundSecond"}>
+        <BackGroundSecond props={{}} />
+      </div>
     </FifthComponent>
   );
 };

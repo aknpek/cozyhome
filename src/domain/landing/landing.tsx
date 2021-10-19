@@ -246,19 +246,17 @@ const Landing: React.FC = () => {
           <CozyLand data={data["landing"]["containers"][8]} />
         </div>
 
-        {/* <div ref={refCollection}> */}
           <ThirdContainer
             showThirdContainer={showThirdContainer}
             data={data["landing"]["containers"][2]}
           ></ThirdContainer>
-        {/* </div> */}
 
-        <div ref={refRarity}>
+        {/* <div ref={refRarity}> */}
           <FifthContainer
             showFifthContainer={showThirdContainer}
             data={data["landing"]["containers"][4]}
           ></FifthContainer>
-        </div>
+        {/* </div> */}
 
         <div ref={refRoadMap}>
           <FourthContainer
