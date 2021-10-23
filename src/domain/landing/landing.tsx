@@ -40,99 +40,48 @@ const Landing: React.FC = () => {
   const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(true);
   const { active, account, library, connector, activate, deactivate } =
     useWeb3React();
-  let refSec = useRef<HTMLDivElement>(null);
-  let refSec2 = useRef<HTMLDivElement>(null);
   let refSecCozyLand = useRef<HTMLDivElement>(null);
-  let refCollection = useRef<HTMLDivElement>(null);
-  let refRarity = useRef<HTMLDivElement>(null);
-  let refRoadMap = useRef<HTMLDivElement>(null);
-  let refPresale = useRef<HTMLDivElement>(null);
   let refAttributes = useRef<HTMLDivElement>(null);
   let refTeam = useRef<HTMLDivElement>(null);
   let refHeader = useRef<HTMLDivElement>(null);
+  let renderEffects = useRef<number>(0);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from(refHeader.current!, {
-      y: -50,
-      duration: 0.6,
-    });
-
-    gsap.from(refSec.current!, {
-      opacity: 0.1,
-      y: 200,
-      scale: 0.4,
-      duration: 1,
-    });
-
-    gsap.from(refSec2.current!, {
-      opacity: 0.2,
-      y: 100,
-      scale: 0.8,
-      duration: 1,
-      scrollTrigger: refSec2.current!,
-    });
-    gsap.from(refSecCozyLand.current!, {
-      opacity: 0.8,
-      y: -200,
-      scale: 0.8,
-      duration: 1,
-      scrollTrigger: refSecCozyLand.current!,
-    });
-    gsap.from(refCollection.current!, {
-      opacity: 0.8,
-      y: 100,
-      scale: 0.8,
-      duration: 1,
-      scrollTrigger: refCollection.current!,
-    });
-    gsap.from(refRarity.current!, {
-      opacity: 0.5,
-      y: 200,
-      scale: 0.7,
-      duration: 1,
-      scrollTrigger: refRarity.current!,
-    });
-    gsap.from(refRoadMap.current!, {
-      opacity: 0.5,
-      y: 200,
-      scale: 0.7,
-      duration: 1,
-      scrollTrigger: refRoadMap.current!,
-    });
-    gsap.from(refPresale.current!, {
-      opacity: 0.5,
-      y: 200,
-      scale: 0.7,
-      duration: 1,
-      scrollTrigger: refPresale.current!,
-    });
-    gsap.from(refAttributes.current!, {
-      opacity: 0.5,
-      y: 100,
-      scale: 0.7,
-      duration: 1,
-      scrollTrigger: refAttributes.current!,
-    });
-    gsap.from(refTeam.current!, {
-      opacity: 0.5,
-      y: -200,
-      scale: 0.7,
-      duration: 1,
-      scrollTrigger: refTeam.current!,
-    });
+    if (renderEffects.current === 0) {
+      console.log(renderEffects)
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from(refHeader.current!, {
+        y: -50,
+        duration: 0.6,
+      });
+      gsap.from(refAttributes.current!, {
+        opacity: 0.5,
+        y: 100,
+        scale: 0.7,
+        duration: 1,
+        scrollTrigger: refAttributes.current!,
+      });
+      gsap.from(refTeam.current!, {
+        opacity: 0.5,
+        y: -200,
+        scale: 0.7,
+        duration: 1,
+        scrollTrigger: refTeam.current!,
+      });
+      renderEffects.current += 1;
+    }
   });
 
   const connect = async () => {
     try {
       await activate(injected);
-    } catch (ex) {}
+    } catch (ex) { }
   };
 
   const disconnect = async () => {
     try {
       await deactivate();
-    } catch (ex) {}
+    } catch (ex) { }
   };
 
   // useEffect(() => {
@@ -159,15 +108,6 @@ const Landing: React.FC = () => {
 
     const totalDocScrollLength = docHeight - windowHeight;
     const _scrollPosition = (scrollTop / totalDocScrollLength) * 100;
-    if (_scrollPosition > 15) {
-      // setShowThirdContainer(true);
-    }
-    if (_scrollPosition < 3) {
-      // setShowThirdContainer(false);
-    }
-
-    // console.log(_scrollPosition, 'this is scroll')
-
     scrollPosition.current = _scrollPosition;
   };
   const scrollDistance = () => {
@@ -246,19 +186,19 @@ const Landing: React.FC = () => {
           <CozyLand data={data["landing"]["containers"][8]} />
         </div>
 
-          <ThirdContainer
-            showThirdContainer={showThirdContainer}
-            data={data["landing"]["containers"][2]}
-          ></ThirdContainer>
+        <ThirdContainer
+          showThirdContainer={showThirdContainer}
+          data={data["landing"]["containers"][2]}
+        ></ThirdContainer>
 
-          <FifthContainer
-            showFifthContainer={showThirdContainer}
-            data={data["landing"]["containers"][4]}
-          ></FifthContainer>
+        <FifthContainer
+          showFifthContainer={showThirdContainer}
+          data={data["landing"]["containers"][4]}
+        ></FifthContainer>
 
-          <FourthContainer
-            data={data["landing"]["containers"][3]}
-          ></FourthContainer>
+        <FourthContainer
+          data={data["landing"]["containers"][3]}
+        ></FourthContainer>
 
         <div className={"Presale-Container"}>
           <SecondContainer
