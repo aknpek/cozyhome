@@ -320,7 +320,7 @@ const FifthContainer: React.FC<PropsFifth> = (props) => {
       </div>
       <div className={"pictureDiv"}>
         {props.data["pictures"].map((value: IPictures) => (
-          <RarirtyImages {...value} />
+          <RarirtyImages {...value} key={`${value.id}`} />
         ))}
       </div>
 
