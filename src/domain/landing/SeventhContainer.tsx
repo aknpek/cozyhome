@@ -419,21 +419,21 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
       </div>
       <div className={"photosTeam"}>
         {props.data["pictures"].map((value: IPictures) => (
-          <TeamsImages {...value} />
+          <TeamsImages {...value}  key={`${value.id}`}/>
         ))}
       </div>
-      <div className={"smartContract"}>
-        <a>
-          <h1>Smart Contract Soon!</h1>
+      <div key={"smartContract"} className={"smartContract"}>
+        <a key={"smartContracta"}>
+          <h1 key={"smartContracth1"}>Smart Contract Soon!</h1>
         </a>
       </div>
 
-      <div className={"starDiv"}>
-        <div className={"starSubDiv"}>
-          <YildizContainer />
+      <div key={"starDiv"} className={"starDiv"}>
+        <div key={"starSubDiv"} className={"starSubDiv"}>
+          <YildizContainer key={"starContainer1"} />
         </div>
-        <div className={"startSubDiv2"}>
-          <YildizContainer />
+        <div key={"starSubDiv2"} className={"startSubDiv2"}>
+          <YildizContainer key={"starContainer2"} />
         </div>
       </div>
     </SeventhComponent>
