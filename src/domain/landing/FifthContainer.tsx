@@ -21,7 +21,7 @@ const FifthComponent = styled.div<IFifthContainer>`
     "picturesDiv";
 
   .backGroundSecond {
-    top: 20%;
+    top: 25%;
     width: 100%;
     position: absolute;
     background-color: transparent;
@@ -328,9 +328,6 @@ const FifthContainer: React.FC<PropsFifth> = (props) => {
         <BackGroundFirst props={{}} />
       </div>
 
-      <div className={"backGroundSecond"}>
-        <BackGroundSecond props={{}} />
-      </div>
     </FifthComponent>
   );
 };

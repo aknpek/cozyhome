@@ -12,7 +12,7 @@ const CozyLandComponent = styled.div`
   display: grid;
   height: 1000px;
   width: 100%;
-  z-index: 5;
+  z-index: 10;
   flex-direction: column;
   grid-template-areas:
     "attributesText"
@@ -22,7 +22,7 @@ const CozyLandComponent = styled.div`
   grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 0.5fr 0.2fr 1.2fr;
 
   .photosComponent {
-    z-index: 5;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@ const CozyLandComponent = styled.div`
   }
 
   .attributesText {
-    z-index: 5;
+    z-index: 10;
     grid-area: attributesText;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -70,7 +70,7 @@ const CozyLandComponent = styled.div`
     grid-row-end: 5;
     grid-column-start: 2;
     grid-column-end: 3;
-    z-index: 1;
+    z-index: 10;
   }
 
   .subTitleDiv {
