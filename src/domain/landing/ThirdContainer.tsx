@@ -322,7 +322,7 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
       </header>
 
       {props.data.pictures.map((value: IPictures) => (
-        <EachImage value={value} />
+        <EachImage value={value} key={`${value.id}`} />
       ))}
     </ThirdComponent>
   );
