@@ -739,7 +739,7 @@ const FourthContainer: React.FC<PropsFourth> = (props) => {
       </div>
       <div className={"blockSecond"}>
         {props.data["pictures"].map((value: IPictures) => (
-         <EachPercentage {...value}/>
+         <EachPercentage {...value} key={`${value.id}`}/>
         ))}
       </div>
 
