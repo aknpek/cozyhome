@@ -16,7 +16,7 @@ interface IHead {
 
 const HeaderCo = styled.div<IHead>`
   margin-top: -1rem;
-  z-index: 10;
+  z-index: 20;
 
   background-color: #121420;
   display: flex;
@@ -29,7 +29,7 @@ const HeaderCo = styled.div<IHead>`
 
   main {
     display: flex;
-    z-index: 10;
+    z-index: 15;
     position: fixed;
     background-color: #121420;
     width: 100%;
@@ -175,7 +175,7 @@ const HeaderCo = styled.div<IHead>`
     background-color: #121420;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 9;
+    z-index: 20;
   }
 
   .dropDownWallet {
@@ -305,7 +305,7 @@ const HeaderCo = styled.div<IHead>`
       background-color: #121420;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 9;
+      z-index: 20;
     }
 
     .dropDownWallet {
@@ -404,7 +404,7 @@ const HeaderCo = styled.div<IHead>`
       background-color: #121420;
       min-width: 100%;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 8;
+      z-index: 20;
     }
 
     .dropDownWallet {
@@ -424,7 +424,7 @@ const HeaderCo = styled.div<IHead>`
     font-weight: 200;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     cursor: pointer;
-    z-index: 8;
+    z-index: 15;
   }
 
   h1::before {

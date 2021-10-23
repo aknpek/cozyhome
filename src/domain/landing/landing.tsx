@@ -96,15 +96,15 @@ const Landing: React.FC = () => {
         <Progress scroll={scrollPosition + "%"} />
       </div>
       <FirstWrapper>
-        <div ref={refHeader}>
-          <FirstContainer>
+        {/* <div ref={refHeader}> */}
+          <FirstContainer >
             <Header
               {...header_data}
               showThirdContainer={showThirdContainer}
               scrollPosition={scrollPosition.current}
             />
           </FirstContainer>
-        </div>
+        {/* </div> */}
 
         <HardCodeBulut />
 

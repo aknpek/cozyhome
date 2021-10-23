@@ -18,6 +18,7 @@ export const FirstWrapper = styled.div<IFirstWrapper>`
 `;
 export const FirstContainer = styled.div<IFirstContainer>`
 background-color: white;
+z-index: 20;
 
   height: 100%;
   /* width: 100%auto; */
