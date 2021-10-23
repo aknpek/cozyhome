@@ -1,6 +1,9 @@
-import { IContainer, IHeader, IMenu } from "../types";
+import { IHeader, IMenu } from "../types";
 import React, { useEffect, useRef, useState } from "react";
+import { injected } from "./Wallet";
 
+
+import { useWeb3React } from "@web3-react/core";
 import DiscordLogo from "../svgs/DiscordLogo";
 import OpenSeaLogo from "../svgs/OpenSeaLogo";
 import TwitterLogo from "../svgs/TwitterLogo";
@@ -481,17 +484,9 @@ export const scrollToSection = (className: string) => {
   });
 };
 
-interface IMeta {
-  connector: any;
-  disconnector: any;
-  active: any;
-  account: any;
-  library: any;
-}
 interface IHeaderExtension extends IHeader {
   showThirdContainer: Boolean;
   scrollPosition: Number;
-  metaMask: IMeta;
 }
 
 const openInNewTab = (url: string) => {
@@ -501,9 +496,32 @@ const openInNewTab = (url: string) => {
 
 const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
+  const [tryWallet, setTryWallet] = useState<Boolean>(false);
+
+  const { active, account, library, connector, activate, deactivate } =
+  useWeb3React();
+
+  useEffect(() => {
+    if (!tryWallet && active) {
+      setTryWallet(true);
+    }
+  }, [tryWallet, active]);
+
+  const connect = async () => {
+    try {
+      await activate(injected);
+    } catch (ex) { }
+  };
+
+  const disconnect = async () => {
+    try {
+      await deactivate();
+    } catch (ex) { }
+  };
+
   const fetchBalance = async () => {
-    if (props.metaMask.library !== undefined) {
-      props.metaMask.library.eth
+    if (library !== undefined) {
+      library.eth
         .getBalance(account)
         .then((response: string) => {
           setBalanceAccount(`${Number(response) / 1000000000000000000}`);
@@ -513,12 +531,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   useEffect(() => {}, [props.showThirdContainer]);
   useEffect(() => {
     fetchBalance();
-  }, [props.metaMask.account]);
-
-  const metaActive = props.metaMask.active;
-  const connector = props.metaMask.connector;
-  const disconnector = props.metaMask.disconnector;
-  const account = props.metaMask.account;
+  }, [account]);
 
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>
@@ -552,7 +565,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                   <span key={"div" + value.id}>
                     {value.title === "connect wallet" ? (
                       [
-                        metaActive ? (
+                        active ? (
                           <div
                             className={"dropDownWallet"}
                             key={"div" + value.id + "a"}
@@ -588,13 +601,13 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                                     )}`
                                   : ""}
                               </h1>
-                              <h1 onClick={disconnector} key={"h1" + value.id  + "f"}>
+                              <h1 onClick={disconnect} key={"h1" + value.id  + "f"}>
                                 disconnect
                               </h1>
                             </div>
                           </div>
                         ) : (
-                          <h1 onClick={connector} key={"h1" + value.id}>
+                          <h1 onClick={connect} key={"h1" + value.id}>
                             {value.title}
                           </h1>
                         ),

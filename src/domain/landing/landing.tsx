@@ -16,8 +16,7 @@ import SecondContainer from "./SecondContainer";
 import SeventhContainer from "./SeventhContainer";
 import ThirdContainer from "./ThirdContainer";
 import gsap from "gsap";
-import { injected } from "../../components/Wallet";
-import { useWeb3React } from "@web3-react/core";
+
 
 const getDocHeight = () => {
   return Math.max(
@@ -35,11 +34,9 @@ const Landing: React.FC = () => {
   const rarity: IRarity = require("../../data/json/rarity.json");
 
   const header_data: IHeader = data["landing"]["header"];
-  const [tryWallet, setTryWallet] = useState<Boolean>(false);
   const scrollPosition = useRef<Number>(0);
   const [showThirdContainer, setShowThirdContainer] = useState<Boolean>(true);
-  const { active, account, library, connector, activate, deactivate } =
-    useWeb3React();
+
   let refSecCozyLand = useRef<HTMLDivElement>(null);
   let refAttributes = useRef<HTMLDivElement>(null);
   let refTeam = useRef<HTMLDivElement>(null);
@@ -71,35 +68,6 @@ const Landing: React.FC = () => {
       renderEffects.current += 1;
     }
   });
-
-  const connect = async () => {
-    try {
-      await activate(injected);
-    } catch (ex) { }
-  };
-
-  const disconnect = async () => {
-    try {
-      await deactivate();
-    } catch (ex) { }
-  };
-
-  // useEffect(() => {
-  //   injected.isAuthorized().then((isAuthorized: boolean) => {
-  //     if (isAuthorized) {
-  //       connect();
-  //       setTryWallet(true);
-  //     } else {
-  //       setTryWallet(false);
-  //     }
-  //   });
-  // }, []);
-
-  useEffect(() => {
-    if (!tryWallet && active) {
-      setTryWallet(true);
-    }
-  }, [tryWallet, active]);
 
   const calculateScrollPercentage = () => {
     const scrollTop = window.pageYOffset;
@@ -134,13 +102,6 @@ const Landing: React.FC = () => {
               {...header_data}
               showThirdContainer={showThirdContainer}
               scrollPosition={scrollPosition.current}
-              metaMask={{
-                active: active,
-                account: account,
-                connector: connect,
-                disconnector: disconnect,
-                library: library,
-              }}
             />
           </FirstContainer>
         </div>
