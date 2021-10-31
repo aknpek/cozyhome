@@ -624,7 +624,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
           <div className={"twitterLogo"} onClick={() => openInNewTab('https://twitter.com/CozyHomeNFT')}>
             <TwitterLogo />
           </div>
-          <div className={"discordLogo"} onClick={() => openInNewTab('https://discord.gg/4kcCQp9d')}>
+          <div className={"discordLogo"} onClick={() => openInNewTab('https://discord.gg/yk2MZ8Y4pn')}>
             <DiscordLogo />
           </div>
 
