@@ -30,7 +30,7 @@ const HeaderCo = styled.div<IHead>`
   main {
     display: flex;
     z-index: 15;
-    position: fixed;
+    /* position: fixed; */
     background-color: #121420;
     width: 100%;
     justify-content: center;
