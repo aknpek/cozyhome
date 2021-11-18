@@ -18,7 +18,7 @@ const HeaderCo = styled.div<IHead>`
   margin-top: -1rem;
   z-index: 20;
 
-  background-color: #121420;
+  /* background-color: #121420; */
   display: flex;
   justify-content: center;
 
@@ -487,6 +487,10 @@ export const scrollToSection = (className: string) => {
 interface IHeaderExtension extends IHeader {
   showThirdContainer: Boolean;
   scrollPosition: Number;
+  chosenTokenURI?: any;
+  setHowManyAvailable?: any;
+  mintNow?: any;
+  mintable?: any;
 }
 
 const openInNewTab = (url: string) => {
@@ -494,9 +498,15 @@ const openInNewTab = (url: string) => {
   if (newWindow) newWindow.opener = null
 }
 
+
+
 const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
   const [tryWallet, setTryWallet] = useState<Boolean>(false);
+  const [contract, setContract] = useState<any>();
+  const cozyHome = require("../data/contracts/CozyHome.json");
+  const abi = cozyHome['abi']
+  const address = cozyHome["networks"][4]["address"]; 
 
   const { active, account, library, connector, activate, deactivate } =
   useWeb3React();
@@ -526,12 +536,45 @@ const Header: React.FC<IHeaderExtension> = (props) => {
         .then((response: string) => {
           setBalanceAccount(`${Number(response) / 1000000000000000000}`);
         });
+
+      setContract(new library.eth.Contract(abi, address));
+
     }
   };
-  useEffect(() => {}, [props.showThirdContainer]);
+  
   useEffect(() => {
     fetchBalance();
   }, [account]);
+
+  useEffect(() => {
+    props.mintable()
+  })
+
+  useEffect(() => {
+    if (contract !== undefined) {
+      const contract_owner = contract.methods.maxAllowableMintPresale().call();
+      Promise.resolve(contract_owner).then((value) => console.log())
+    }
+  }, [contract])
+
+  const mintNow = async() => {
+    const sendAmount = 300000000000000000;
+    const number_of_mints = 1
+    const minted_list =  await contract.methods.preSaleMint(account, props.chosenTokenURI[0].token_uri, number_of_mints).send(
+      {from: account, value: sendAmount}
+    )
+
+    Promise.resolve(minted_list).then((value) => console.log(value));
+    alert(`Minted ${minted_list}`)
+    // alert(`${props.chosenTokenURI[0].token_uri}`)
+  }
+
+  useEffect(() => {
+    if ((contract !== undefined) && (account !== undefined)){
+      mintNow()
+    }
+
+  }, [props.mintNow])
 
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>

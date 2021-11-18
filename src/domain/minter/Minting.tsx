@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Pictures from "../../components/Locals";
 import BackGroundContainer from "../../components/BackgroundFirst";
 import BackGroundContainerSecond from "../../components/BackgroundSecond";
+import get_mintables from "./handleApi";
 
 const MinterContainer = styled.div`
   position: fixed;
@@ -88,11 +89,11 @@ const MinterContainer = styled.div`
     grid-column-end: 3;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: start;
 
     .quantityDiv {
-      width: 18rem;
+      width: 12rem;
       height: 3rem;
     }
     .myControlClassName {
@@ -123,7 +124,6 @@ const MinterContainer = styled.div`
     }
     .myPlaceholderClassName {
     }
-
     .myMenuClassName {
       width: 100%;
       background-color: white;
@@ -160,6 +160,25 @@ const MinterContainer = styled.div`
       }
       div.close {
         animation: fadeOut 0.2s ease-in-out;
+      }
+    }
+
+    .priceComponent {
+      background-color: rgb(161, 19, 19);     
+       width: 12rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1.1rem;
+
+      h1{
+        color: white;
+        font-size: 1.2rem;
+        font-family: "Fredoka One", normal;
+
+
+
       }
     }
   }
@@ -201,6 +220,8 @@ const MinterContainer = styled.div`
 
   .firstBackGround {
     position: absolute;
+    margin-top: 10%;
+    z-index: -1;
   }
   .secondBackGround {
     margin-top: 10%;
@@ -217,18 +238,36 @@ const options = [
   "5 CozyHomes",
 ];
 const defaultOption = options[0];
+const flor_price = 0.02
+
+interface IChosens {
+  token_id: number;
+  token_uri: string;
+}
+
+interface IMint {
+  count: number
+}
 
 export const Minting: React.FC = () => {
   const [chosenValue, setChosenValue] = useState<number>(0);
+  const [chosenTokenURIs, setChosenTokenURI] = useState<IChosens[]>();
+  const [mintNow, setMintNow] = useState<IMint>({count: 0});
   const scrollPosition = useRef<number>(0);
   const showThirdContainer = false;
 
   const data: IContent = require("../../data/json/text.json");
+  const minatables: any = require("../../data/json/metadataDB.json");
+
+
   const header_data: IHeader = data["landing"]["header"];
 
   useEffect(() => {
-    console.log(chosenValue);
-  }, []);
+    const chosen = minatables.table[1];
+    setChosenTokenURI([chosen]);
+  }, [chosenValue]);
+
+
 
   return (
     <MinterContainer>
@@ -236,6 +275,9 @@ export const Minting: React.FC = () => {
         <Header
           showThirdContainer={showThirdContainer}
           scrollPosition={scrollPosition.current}
+          chosenTokenURI={chosenTokenURIs}
+          mintNow={mintNow}
+          mintable={get_mintables}
           {...header_data}
         />
       </div>
@@ -263,10 +305,14 @@ export const Minting: React.FC = () => {
           value={defaultOption}
           placeholder="Select an option"
         />
+
+        <div className={"priceComponent"}>
+          <h1>{flor_price * chosenValue} ETH</h1>
+        </div>
       </div>
       <div className={"mintingContainer"}>
         <div className={"mintingButtonDiv"}>
-          <h1>Mint Now</h1>
+          <h1 onClick={() => setMintNow(prevState => {return {count: prevState.count + 1}} )}>Mint Now</h1>
         </div>
       </div>
 

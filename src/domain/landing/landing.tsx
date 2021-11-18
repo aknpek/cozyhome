@@ -45,7 +45,6 @@ const Landing: React.FC = () => {
 
   useEffect(() => {
     if (renderEffects.current === 0) {
-      console.log(renderEffects)
       gsap.registerPlugin(ScrollTrigger);
       gsap.from(refHeader.current!, {
         y: -50,
