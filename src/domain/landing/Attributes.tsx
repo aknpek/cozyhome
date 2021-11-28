@@ -179,7 +179,7 @@ interface IAttribute extends IRarity {
 
 export const AttributesContainer: React.FC<IAttribute> = (props) => {
   const [referenceItem, setReferenceItem] = useState<number>(0);
- 
+
   const getElement = (event: any) => {
     const id = event.target.id;
     if (id !== undefined) {
@@ -196,13 +196,16 @@ export const AttributesContainer: React.FC<IAttribute> = (props) => {
     };
   });
 
+
   return (
     <AttributeComponent>
-      <div  className={"attributesText"}>
-        ,<h1 >{props.data.title}</h1>
-        <h2 >{props.data.subtitle}</h2>
+      <div className={"attributesText"}>
+        <h1>{props.data.title}</h1>
+        <h2>{props.data.subtitle}</h2>
       </div>
+
       <ChosenPhoto referenceItem={referenceItem} />
+
       <Barchart elements={props.elements} />
     </AttributeComponent>
   );

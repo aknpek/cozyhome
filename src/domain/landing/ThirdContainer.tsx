@@ -280,12 +280,15 @@ const EachImage: React.FC<IEachContainer> = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refEachImage.current!, {
-      y: 100 * props.value.id,
+      y: 20 * props.value.id,
       opacity: 0.1,
       scale: 0.5,
-      delay: 0.1,
+      delay: 0,
       duration: 0.2,
-      scrollTrigger: refEachImage.current!,
+      scrollTrigger: {
+        trigger: refEachImage.current!,
+        toggleActions: "play none none reverse",
+      },
     });
   });
 
@@ -315,9 +318,26 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
   }, [controls, inView]);
   useEffect(() => {}, [props.showThirdContainer]);
 
+  let refTitle = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(refTitle.current!, {
+      y: 50,
+      opacity: 0,
+      scale: 0.7,
+      duration: 0.2,
+      delay: 0,
+      scrollTrigger: {
+        trigger: refTitle.current!,
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+
   return (
     <ThirdComponent className="Landing-Home">
-      <header className={"cell cell-1 header"}>
+      <header ref={refTitle} className={"cell cell-1 header"}>
         <h1>Collection</h1>
       </header>
 

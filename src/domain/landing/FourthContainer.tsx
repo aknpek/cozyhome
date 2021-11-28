@@ -100,7 +100,7 @@ const FourthComponent = styled.div<IFourthContainer>`
       -moz-transition: 0.2s;
       -ms-transition: 0.2s;
       -o-transition: 0.2s;
-      transition: 0.2s;
+      transition: linear  0.2s;
 
       .roadPercent {
         height: 8rem;
@@ -176,28 +176,28 @@ const FourthComponent = styled.div<IFourthContainer>`
       transition: transform 250ms background-color 0.4s ease color 0.5s ease;
       transform: scale(1.05);
       background-color: #121420f4;
-      backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+      /* backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%); */
       border-radius: 1.5rem;
+      backdrop-filter: blur(10px) saturate(100%)  ;
+
       .roadPercentBlock {
         h1 {
-          font-size: 1.2rem;
-          font-weight: 600;
+          /* font-size: 1.2rem; */
+          /* font-weight: 600; */
         }
       }
       .roadText {
         h1 {
-          font-size: 1.1rem;
-          font-weight: 600;
-          color: white;
+          /* font-size: 1.1rem; */
+          /* font-weight: 600; */
+          color: #ebebeb;
           text-decoration: underline;
-          width: 95%;
         }
 
         h2 {
-          font-size: 1rem;
-          font-weight: 400;
-          color: white;
-          width: 95%;
+          /* font-size: 1rem; */
+          /* font-weight: 400; */
+          /* color: white; */
         }
       }
     }
@@ -658,12 +658,15 @@ const EachPercentage: React.FC<IPictures> = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refEachPercentage.current!, {
-      y: 100 * props.id/2,
+      y: 20 * props.id/2,
       opacity: 0.1,
       scale: 0.5,
-      delay: 0.1 * props.id,
+      delay: 0 * props.id,
       duration: 0.5,
-      scrollTrigger: refEachPercentage.current!,
+      scrollTrigger: {
+        trigger: refEachPercentage.current!,
+        toggleActions: "play none none reverse",
+      },
     });
   });
 
@@ -702,27 +705,37 @@ const FourthContainer: React.FC<PropsFourth> = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refTitle.current!, {
-      y: -100,
+      y: 50,
       opacity: 0,
-      duration: 0.3,
+      duration: 0.2,
       delay: 0.2,
-      scrollTrigger: refTitle.current!,
+      scrollTrigger: {
+        trigger: refTitle.current!,
+        toggleActions: "play none none reverse",
+      },
     });
     gsap.from(refFirstBlock.current!, {
-      y: 100,
+      y: 50,
       opacity: 0.5,
       scale: 0.8,
-      duration: 0.8,
-      delay: 0.1,
-      scrollTrigger: refFirstBlock.current!,
+      duration: 0.2,
+      delay: 0,
+      scrollTrigger: {
+        trigger: refFirstBlock.current!,
+        toggleActions: "play none none reverse",
+      },
+      
     });
     gsap.from(refPercentages.current!, {
-      y: 100,
+      y: 50,
       opacity: 0.5,
       scale: 0.8,
       duration: 0.8,
-      delay: 0.1,
-      scrollTrigger: refPercentages.current!,
+      delay: 0,
+      scrollTrigger: {
+        trigger: refPercentages.current!,
+        toggleActions: "play none none reverse",
+      },
     });
   });
 

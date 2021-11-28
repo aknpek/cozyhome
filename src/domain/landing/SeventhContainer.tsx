@@ -374,17 +374,24 @@ const TeamsImages: React.FC<IPictures> = (value) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refEachImage.current!, {
-      y: 100 * value.id,
+      y: 20 * value.id,
       opacity: 0.1,
       scale: 0.5,
-      delay: 0.1,
-      duration: 0.5,
-      scrollTrigger: refEachImage.current!,
+      delay: 0,
+      duration: 0.3,
+      scrollTrigger: {
+        trigger: refEachImage.current!,
+        toggleActions: "play none none reverse",
+      },
     });
   });
 
   return (
-    <div ref={refEachImage} key={value.id + "photos"} className={`teamMember${value.id}`}>
+    <div
+      ref={refEachImage}
+      key={value.id + "photos"}
+      className={`teamMember${value.id}`}
+    >
       <div key={value.id + "photosinner"}>
         <a href={value.hyperlink} key={value.id + "a"}>
           <img
@@ -419,7 +426,7 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
       </div>
       <div className={"photosTeam"}>
         {props.data["pictures"].map((value: IPictures) => (
-          <TeamsImages {...value}  key={`${value.id}`}/>
+          <TeamsImages {...value} key={`${value.id}`} />
         ))}
       </div>
       <div key={"smartContract"} className={"smartContract"}>

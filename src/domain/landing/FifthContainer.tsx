@@ -261,18 +261,24 @@ const RarirtyImages: React.FC<IPictures> = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refEachImage.current!, {
-      y: 100 * props.id,
+      y: 20 * props.id,
       opacity: 0.1,
       scale: 0.5,
-      delay: 0.1,
+      delay: 0,
       duration: 0.3,
-      scrollTrigger: refEachImage.current!,
+      scrollTrigger: {
+        trigger: refEachImage.current!,
+        toggleActions: "play none none reverse",
+      },
     });
   });
 
-
   return (
-    <div ref={refEachImage} key={props.id + "div"} className={`pictureDiv${props.id}`}>
+    <div
+      ref={refEachImage}
+      key={props.id + "div"}
+      className={`pictureDiv${props.id}`}
+    >
       <img
         src={Pictures[props.picture_url].default}
         key={props.id + "img"}
@@ -295,18 +301,24 @@ const FifthContainer: React.FC<PropsFifth> = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refTitle.current!, {
-      y: -100,
+      y: -50,
       opacity: 0,
       duration: 0.3,
-      delay: 0.2,
-      scrollTrigger: refTitle.current!,
+      delay: 0,
+      scrollTrigger: {
+        trigger: refTitle.current!,
+        toggleActions: "play none none reverse",
+      },
     });
     gsap.from(refMiddleText.current!, {
-      y: -100,
+      y: -50,
       opacity: 0,
       duration: 0.3,
-      delay: 0.2,
-      scrollTrigger: refMiddleText.current!,
+      delay: 0,
+      scrollTrigger: {
+        trigger: refMiddleText.current!,
+        toggleActions: "play none none reverse",
+      },
     });
   });
 
@@ -327,7 +339,6 @@ const FifthContainer: React.FC<PropsFifth> = (props) => {
       <div className={"backGroundFirst"}>
         <BackGroundFirst props={{}} />
       </div>
-
     </FifthComponent>
   );
 };

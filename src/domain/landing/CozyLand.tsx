@@ -262,7 +262,7 @@ interface ICozyLand {
 
 const CozyLand: React.FC<ICozyLand> = (props) => {
   let refTitle = useRef<HTMLDivElement>(null);
-  let refSubTitle = useRef<HTMLDivElement>(null);
+ let refSubTitle = useRef<HTMLDivElement>(null);
   let refCozyLandPic = useRef<HTMLDivElement>(null);
   let refCozyLandButton = useRef<HTMLDivElement>(null);
   
@@ -271,32 +271,44 @@ const CozyLand: React.FC<ICozyLand> = (props) => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refTitle.current!, {
       y: -50,
-      duration: 0.6,
-      delay: 0.2,
-      scrollTrigger: refTitle.current!,
+      duration: 0.3,
+      delay: 0,
+      scrollTrigger: {
+        trigger: refTitle.current!,
+        toggleActions: "play none none reverse",
+      },
     });
     gsap.from(refSubTitle.current!, {
-      y: 10,
-      duration: 0.8,
-      scrollTrigger: refSubTitle.current!,
+      y: 50,
+      duration: 0.3,
+      scrollTrigger: {
+        trigger: refSubTitle.current!,
+        toggleActions: "play none none reverse",
+      },
     });
     gsap.from(refCozyLandPic.current!, {
-      y: -100,
+      y: 100,
       opacity: 0.2,
-      scale: 0.5,
-      duration: 2,
-      scrollTrigger: refCozyLandPic.current!,
+      scale: 0.8,
+      duration: .2,
+      scrollTrigger: {
+        trigger: refCozyLandPic.current!,
+        toggleActions: "play none none reverse",
+      },
     });
     gsap.from(refCozyLandButton.current!, {
-      y: 100,
+      y: 50,
       opacity: 0.7,
-      scale: 0.5,
-      delay: 0.2,
-      duration: 1,
-      scrollTrigger: refCozyLandButton.current!,
+      scale: 0.8,
+      delay: 0,
+      duration: .2,
+      scrollTrigger: {
+        trigger: refCozyLandButton.current!,
+        toggleActions: "play none none reverse",
+      },
     });
   });
-
+ 
   return (
     <CozyLandComponent>
       <div className={"attributesText"}>

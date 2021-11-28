@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 
 import { IPictures } from "../types";
 import Pictures from "../components/Locals";
@@ -129,11 +129,15 @@ const Picture: React.FC<Props> = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(refPictures.current!, {
-      y: 100,
-      opacity: 0.4,
-      scale: 0.3,
-      duration: 0.8,
+      y: 200,
+      opacity: 0,
+      scale: 0.7,
+      duration: 0.4,
       delay: 0,
+      scrollTrigger: {
+        trigger: refPictures.current!,
+        toggleActions: "play none none reverse",
+      },
     });
   });
 

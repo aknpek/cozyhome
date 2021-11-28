@@ -17,7 +17,6 @@ import SeventhContainer from "./SeventhContainer";
 import ThirdContainer from "./ThirdContainer";
 import gsap from "gsap";
 
-
 const getDocHeight = () => {
   return Math.max(
     document.body.scrollHeight,
@@ -45,25 +44,35 @@ const Landing: React.FC = () => {
 
   useEffect(() => {
     if (renderEffects.current === 0) {
-      console.log(renderEffects)
+      console.log(renderEffects);
       gsap.registerPlugin(ScrollTrigger);
       gsap.from(refHeader.current!, {
         y: -50,
         duration: 0.6,
+        scrollTrigger: {
+          trigger: refHeader.current!,
+          toggleActions: "play none none reverse",
+        },
       });
       gsap.from(refAttributes.current!, {
         opacity: 0.5,
-        y: 100,
+        y: -100,
         scale: 0.7,
-        duration: 1,
-        scrollTrigger: refAttributes.current!,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: refAttributes.current!,
+          toggleActions: "play none none reverse",
+        },
       });
       gsap.from(refTeam.current!, {
         opacity: 0.5,
         y: -200,
         scale: 0.7,
-        duration: 1,
-        scrollTrigger: refTeam.current!,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: refTeam.current!,
+          toggleActions: "play none none reverse",
+        },
       });
       renderEffects.current += 1;
     }
@@ -96,15 +105,13 @@ const Landing: React.FC = () => {
         <Progress scroll={scrollPosition + "%"} />
       </div>
       <FirstWrapper>
-        {/* <div ref={refHeader}> */}
-          <FirstContainer >
-            <Header
-              {...header_data}
-              showThirdContainer={showThirdContainer}
-              scrollPosition={scrollPosition.current}
-            />
-          </FirstContainer>
-        {/* </div> */}
+        <FirstContainer>
+          <Header
+            {...header_data}
+            showThirdContainer={showThirdContainer}
+            scrollPosition={scrollPosition.current}
+          />
+        </FirstContainer>
 
         <HardCodeBulut />
 
@@ -125,7 +132,7 @@ const Landing: React.FC = () => {
         </div>
 
         <div className={"Home-Container"}>
-          <div >
+          <div>
             <SecondContainer
               data={data["landing"]["containers"][0]}
               textDirection={true}
@@ -133,7 +140,7 @@ const Landing: React.FC = () => {
               metaHomes={false}
             />
           </div>
-          <div >
+          <div>
             <SecondContainer
               data={data["landing"]["containers"][1]}
               textDirection={false}
