@@ -2,13 +2,16 @@ import { IHeader, IMenu } from "../types";
 import React, { useEffect, useRef, useState } from "react";
 import { injected } from "./Wallet";
 
-
 import { useWeb3React } from "@web3-react/core";
 import DiscordLogo from "../svgs/DiscordLogo";
 import OpenSeaLogo from "../svgs/OpenSeaLogo";
 import TwitterLogo from "../svgs/TwitterLogo";
 import { scroller } from "react-scroll";
 import styled from "styled-components";
+import { useCollection } from "react-firebase-hooks/firestore";
+import Firebase, { db } from "../firebase/client";
+import { getFirestore, collection } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 
 interface IHead {
   showThirdContainer: Boolean;
@@ -109,12 +112,10 @@ const HeaderCo = styled.div<IHead>`
         height: 2.5rem;
         width: 2.5rem;
       }
-
     }
 
-
     .twitterLogo:hover {
-        color: #ffffff;
+      color: #ffffff;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       cursor: pointer;
       z-index: 9;
@@ -122,8 +123,6 @@ const HeaderCo = styled.div<IHead>`
       background: #ff961b;
       border-radius: 5rem;
     }
-
-
 
     .discordLogo {
       display: flex;
@@ -135,8 +134,8 @@ const HeaderCo = styled.div<IHead>`
         width: 2.5rem;
       }
     }
-    
-  .discordLogo:hover {
+
+    .discordLogo:hover {
       color: #ffffff;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       cursor: pointer;
@@ -145,7 +144,6 @@ const HeaderCo = styled.div<IHead>`
       background: #ff961b;
       border-radius: 5rem;
     }
-
 
     .openSeaLogo {
       display: flex;
@@ -158,7 +156,7 @@ const HeaderCo = styled.div<IHead>`
       }
     }
 
-  .openSeaLogo:hover {
+    .openSeaLogo:hover {
       color: #ffffff;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       cursor: pointer;
@@ -415,7 +413,6 @@ const HeaderCo = styled.div<IHead>`
 
     .dropDownWallet:hover .dropDownContent {
       display: block;
-
     }
   }
 
@@ -454,7 +451,6 @@ const HeaderCo = styled.div<IHead>`
     transition: transform 0.3s ease;
   }
 
-
   img {
     width: 3rem;
     height: 3rem;
@@ -464,7 +460,7 @@ const HeaderCo = styled.div<IHead>`
     margin-right: calc(10rem + 20px);
   }
 
-  @supports not(position: "sticky") {
+  @supports not (position: "sticky") {
     main {
       margin-top: -6rem;
     }
@@ -493,23 +489,74 @@ interface IHeaderExtension extends IHeader {
   mintable?: any;
 }
 
+const firebase = getFirestore(Firebase);
+
 const openInNewTab = (url: string) => {
-  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-  if (newWindow) newWindow.opener = null
+  const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+  if (newWindow) newWindow.opener = null;
+};
+
+interface IMintable {
+  token_uri: string;
+  uid: string;
 }
-
-
 
 const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
   const [tryWallet, setTryWallet] = useState<Boolean>(false);
   const [contract, setContract] = useState<any>();
   const cozyHome = require("../data/contracts/CozyHome.json");
-  const abi = cozyHome['abi']
-  const address = cozyHome["networks"][4]["address"]; 
+  const abi = cozyHome["abi"];
+  const address = cozyHome["networks"][4]["address"];
+  const [value, loadingError] = useCollection(
+    collection(getFirestore(Firebase), "cozyhome_presale")
+  );
+  const [availableMinted, setAvailableMinted] = useState<IMintable[]>([]);
+  const [maxMintable, setMaxMintable] = useState<number>(5);
+  const [minted, setMinted] = useState<string[]>([]);
+
+  const closeMintable = async () => {
+    await setDoc(doc(firebase, "cozyhome_presale", "J3Y18fnlF8f4zZXErJIA"), {
+      available: false,
+      active: false,
+      token_id: 1,
+      token_uri: "www.pinata.com",
+    });
+  };
+
+  const closeAvailable = async () => {
+    await setDoc(doc(firebase, "cozyhome_presale", "J3Y18fnlF8f4zZXErJIA"), {
+      available: false,
+      active: true,
+      token_id: 1,
+      token_uri: "www.pinata.com",
+    });
+  };
+
+  console.log(availableMinted);
+  const getMintables = async () => {
+    const settable: IMintable[] = [];
+    value?.docs.map(async (doc) => {
+      try {
+        const _data = await doc.data();
+        if (_data["active"]) {
+          settable.push({ token_uri: _data["token_uri"], uid: doc.id });
+        }
+      } catch {}
+    });
+    setAvailableMinted(settable);
+    closeAvailable();
+    // closeMintable();
+  };
+
+  useEffect(() => {
+    if (maxMintable > 0) {
+      getMintables();
+    }
+  }, []);
 
   const { active, account, library, connector, activate, deactivate } =
-  useWeb3React();
+    useWeb3React();
 
   useEffect(() => {
     if (!tryWallet && active) {
@@ -520,61 +567,57 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   const connect = async () => {
     try {
       await activate(injected);
-    } catch (ex) { }
+    } catch (ex) {}
   };
 
   const disconnect = async () => {
     try {
       await deactivate();
-    } catch (ex) { }
+    } catch (ex) {}
   };
 
   const fetchBalance = async () => {
     if (library !== undefined) {
-      library.eth
-        .getBalance(account)
-        .then((response: string) => {
-          setBalanceAccount(`${Number(response) / 1000000000000000000}`);
-        });
+      library.eth.getBalance(account).then((response: string) => {
+        setBalanceAccount(`${Number(response) / 1000000000000000000}`);
+      });
 
       setContract(new library.eth.Contract(abi, address));
-
     }
   };
-  
+
   useEffect(() => {
     fetchBalance();
   }, [account]);
 
   useEffect(() => {
-    props.mintable()
-  })
+    props.mintable();
+  });
 
   useEffect(() => {
     if (contract !== undefined) {
       const contract_owner = contract.methods.maxAllowableMintPresale().call();
-      Promise.resolve(contract_owner).then((value) => console.log())
+      Promise.resolve(contract_owner).then((value) => console.log());
     }
-  }, [contract])
+  }, [contract]);
 
-  const mintNow = async() => {
+  const mintNow = async () => {
     const sendAmount = 300000000000000000;
-    const number_of_mints = 1
-    const minted_list =  await contract.methods.preSaleMint(account, props.chosenTokenURI[0].token_uri, number_of_mints).send(
-      {from: account, value: sendAmount}
-    )
+    const number_of_mints = 1;
+    const minted_list = await contract.methods
+      .preSaleMint(account, props.chosenTokenURI[0].token_uri, number_of_mints)
+      .send({ from: account, value: sendAmount });
 
     Promise.resolve(minted_list).then((value) => console.log(value));
-    alert(`Minted ${minted_list}`)
+    alert(`Minted ${minted_list}`);
     // alert(`${props.chosenTokenURI[0].token_uri}`)
-  }
+  };
 
   useEffect(() => {
-    if ((contract !== undefined) && (account !== undefined)){
-      mintNow()
+    if (contract !== undefined && account !== undefined) {
+      mintNow();
     }
-
-  }, [props.mintNow])
+  }, [props.mintNow]);
 
   return (
     <HeaderCo showThirdContainer={props.showThirdContainer}>
@@ -616,9 +659,9 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                             <h1 key={"div" + value.id + "b"}>Wallet</h1>
                             <div
                               className={"dropDownContent"}
-                              key={"wlc" + value.id  + "c"}
+                              key={"wlc" + value.id + "c"}
                             >
-                              <h1 key={"wls" + value.id  + "d"}>
+                              <h1 key={"wls" + value.id + "d"}>
                                 wallet id:{" "}
                                 {account === null
                                   ? "-"
@@ -631,7 +674,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                                     )}`
                                   : ""}
                               </h1>
-                              <h1 key={"div" + value.id  + "e"}>
+                              <h1 key={"div" + value.id + "e"}>
                                 balance:{" "}
                                 {balanceAccount === null
                                   ? "-"
@@ -644,7 +687,10 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                                     )}`
                                   : ""}
                               </h1>
-                              <h1 onClick={disconnect} key={"h1" + value.id  + "f"}>
+                              <h1
+                                onClick={disconnect}
+                                key={"h1" + value.id + "f"}
+                              >
                                 disconnect
                               </h1>
                             </div>
@@ -664,14 +710,23 @@ const Header: React.FC<IHeaderExtension> = (props) => {
             })}
           </div>
 
-          <div className={"twitterLogo"} onClick={() => openInNewTab('https://twitter.com/CozyHomeNFT')}>
+          <div
+            className={"twitterLogo"}
+            onClick={() => openInNewTab("https://twitter.com/CozyHomeNFT")}
+          >
             <TwitterLogo />
           </div>
-          <div className={"discordLogo"} onClick={() => openInNewTab('https://discord.gg/yk2MZ8Y4pn')}>
+          <div
+            className={"discordLogo"}
+            onClick={() => openInNewTab("https://discord.gg/yk2MZ8Y4pn")}
+          >
             <DiscordLogo />
           </div>
 
-          <div className={"openSeaLogo"} onClick={() => openInNewTab('https://opensea.io/CozyHomeNFT')}>
+          <div
+            className={"openSeaLogo"}
+            onClick={() => openInNewTab("https://opensea.io/CozyHomeNFT")}
+          >
             <OpenSeaLogo props={{}} />
           </div>
         </div>
