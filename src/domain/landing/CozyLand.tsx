@@ -87,7 +87,7 @@ const CozyLandComponent = styled.div`
 
     font-family: "Fredoka One", normal;
     letter-spacing: 0.3rem;
-    border-radius: 1.2rem;
+    border-radius: 1rem;
     background-color: #ff961b;
     display: flex;
     justify-content: center;
@@ -110,11 +110,7 @@ const CozyLandComponent = styled.div`
   @media screen and (max-width: 1500px) {
     height: 900px;
     .photosComponent {
-      /* img {
-        min-height: 70%;
-        width: 100%;
-        max-width: 75%
-      } */
+      
     }
   }
 
@@ -170,11 +166,7 @@ const CozyLandComponent = styled.div`
     }
 
     .photosComponent {
-      /* img {
-        min-height: 80%;
-        width: 100%;
-        max-width: 85%
-      } */
+   
     }
   }
 
@@ -204,10 +196,6 @@ const CozyLandComponent = styled.div`
     }
 
     .photosComponent {
-      /* img {
-        height: 100%;
-        width: 60%;
-      } */
     }
   }
 

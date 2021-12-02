@@ -784,8 +784,8 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
       },
     });
   });
-  const eth = useRef<String>("*");
-  const leftMint = useRef<String>("*");
+  const eth = useRef<String>("0.05");
+  const leftMint = useRef<String>("7999");
   const options = [1, 2, 3, 5, 10, 20, 100];
   const defaultOption = options[0];
   const defaultBuy = useRef<String>("*");

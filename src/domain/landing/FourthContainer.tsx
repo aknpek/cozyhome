@@ -134,15 +134,15 @@ const FourthComponent = styled.div<IFourthContainer>`
           background-color: #ffffff;
         }
 
-        .percent25 {
+        .percent47 {
           background-color: #afe1f0;
         }
 
-        .percent50 {
+        .percent62 {
           background-color: #ff961b;
         }
 
-        .percent75 {
+        .percent80 {
           background-color: #8bc343;
         }
 
@@ -377,7 +377,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   @media screen and (max-width: 950px) {
-    height: 1200px;
+    height: 1400px;
     grid-template-columns: 0.2fr 1fr 0.2fr;
     grid-template-rows: 0.1fr 0.8fr 2fr 2fr 0.1fr;
 
@@ -536,7 +536,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   @media screen and (max-width: 700px) {
-    height: 1500px;
+    height: 1600px;
     grid-template-rows: 0.1fr 0fr 1fr 1fr 0.1fr;
 
     .blockFirst {
@@ -553,7 +553,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   @media screen and (max-width: 600px) {
-    height: 1550px;
+    height: 1800px;
     grid-template-rows: 0.1fr 0fr 1fr 1fr 0.1fr;
 
     .blockFirst {
@@ -571,7 +571,7 @@ const FourthComponent = styled.div<IFourthContainer>`
   }
   @media screen and (max-width: 500px) {
     pointer-events: none;
-    height: 1250px;
+    height: 1550px;
     grid-template-columns: 0.2fr 2fr 0.2fr;
 
     .titleDiv {
@@ -640,6 +640,12 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
 
+  @media screen and (max-width: 450px){
+    height: 1650px;
+  }
+  @media screen and (max-width: 400px){
+    height: 1750px;
+  }
   .ayContainer {
     position: absolute;
     width: 170%;
