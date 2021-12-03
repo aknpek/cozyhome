@@ -77,7 +77,7 @@ const FourthComponent = styled.div<IFourthContainer>`
       }
       h4 {
         line-height: 2;
-        font-size: 4rem;
+        font-size: 2rem;
         font-weight: 200;
         color: #ffffffbe;
         text-align: left;
@@ -203,7 +203,13 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
 
+  @media screen and (max-width: 1400px) {
+    height: 1100px;
+  }
+
   @media screen and (max-width: 1300px) {
+    height: 600px;
+
     grid-template-columns: 0.2fr 2fr 2fr 0.2fr;
     .blockFirst {
       .blockFirstDiv {
@@ -219,7 +225,7 @@ const FourthComponent = styled.div<IFourthContainer>`
         }
         h4 {
           line-height: 2;
-          font-size: 3rem;
+          font-size: 2rem;
           font-weight: 200;
           color: #ffffffbe;
           text-align: left;
@@ -260,6 +266,8 @@ const FourthComponent = styled.div<IFourthContainer>`
     }
   }
   @media screen and (max-width: 1100px) {
+    height: 800px;
+
     grid-template-columns: 0.2fr 2fr 2fr 0.2fr;
 
     .blockFirst {
@@ -276,7 +284,7 @@ const FourthComponent = styled.div<IFourthContainer>`
         }
         h4 {
           line-height: 2;
-          font-size: 3rem;
+          font-size: 2rem;
           font-weight: 200;
           color: #ffffffbe;
           text-align: left;
@@ -335,7 +343,7 @@ const FourthComponent = styled.div<IFourthContainer>`
         }
         h4 {
           line-height: 2;
-          font-size: 3rem;
+          font-size: 2rem;
           font-weight: 200;
           color: #ffffffbe;
           text-align: left;
@@ -482,7 +490,7 @@ const FourthComponent = styled.div<IFourthContainer>`
           font-family: "Fredoka One", classic;
           font-weight: 200;
           color: #ffffffbe;
-          text-align: left;
+          text-align: center;
         }
       }
     }
