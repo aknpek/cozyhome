@@ -20,6 +20,7 @@ const AttributeComponent = styled.div`
     "barChart";
   grid-template-columns: 0.2fr 1.2fr 0.2fr;
   grid-template-rows: 0.2fr 1.2fr 0.4fr 1.2fr 0.4fr 1.2fr 0.2fr;
+  cursor: default;
 
   .attributesText {
     grid-area: attributesText;

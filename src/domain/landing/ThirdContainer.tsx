@@ -22,6 +22,7 @@ const ThirdComponent = styled.div<IThirdContainer>`
     text-align: center;
 
     h1 {
+      cursor: default;
       position: absolute;
       margin-top: 8%;
       font-size: 4.5rem;

@@ -33,6 +33,7 @@ const CozyLandComponent = styled.div`
   }
 
   .attributesText {
+    cursor: default;
     z-index: 10;
     grid-area: attributesText;
     grid-row-start: 2;
@@ -110,7 +111,6 @@ const CozyLandComponent = styled.div`
   @media screen and (max-width: 1500px) {
     height: 900px;
     .photosComponent {
-      
     }
   }
 
@@ -166,7 +166,6 @@ const CozyLandComponent = styled.div`
     }
 
     .photosComponent {
-   
     }
   }
 
@@ -250,10 +249,9 @@ interface ICozyLand {
 
 const CozyLand: React.FC<ICozyLand> = (props) => {
   let refTitle = useRef<HTMLDivElement>(null);
- let refSubTitle = useRef<HTMLDivElement>(null);
+  let refSubTitle = useRef<HTMLDivElement>(null);
   let refCozyLandPic = useRef<HTMLDivElement>(null);
   let refCozyLandButton = useRef<HTMLDivElement>(null);
-  
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -278,7 +276,7 @@ const CozyLand: React.FC<ICozyLand> = (props) => {
       y: 100,
       opacity: 0.2,
       scale: 0.8,
-      duration: .2,
+      duration: 0.2,
       scrollTrigger: {
         trigger: refCozyLandPic.current!,
         toggleActions: "play none none reverse",
@@ -289,14 +287,14 @@ const CozyLand: React.FC<ICozyLand> = (props) => {
       opacity: 0.7,
       scale: 0.8,
       delay: 0,
-      duration: .2,
+      duration: 0.2,
       scrollTrigger: {
         trigger: refCozyLandButton.current!,
         toggleActions: "play none none reverse",
       },
     });
   });
- 
+
   return (
     <CozyLandComponent>
       <div className={"attributesText"}>

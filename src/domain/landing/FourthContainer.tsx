@@ -14,6 +14,8 @@ const FourthComponent = styled.div<IFourthContainer>`
   grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
   grid-template-rows: 0.1fr 0.8fr 2fr 0.5fr 0.5fr;
   z-index: 6;
+  cursor: default;
+
 
   grid-template-areas:
     "titleDiv"

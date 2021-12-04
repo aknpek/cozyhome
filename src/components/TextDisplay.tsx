@@ -18,7 +18,8 @@ const TextBlock = styled.div<ITextDisplay>`
   flex-direction: column;
   justify-content: center;
   z-index: 3;
-
+  cursor: default;
+  
   .sloganDiv {
     will-change: transform;
     transition: transform 450ms;
@@ -201,7 +202,7 @@ const TextBlock = styled.div<ITextDisplay>`
         color: #f1f1f1;
         font-size: 1.2rem;
         font-weight: 200;
-        line-height: 1;
+        line-height: 1.5;
       }
     }
   }
@@ -253,7 +254,6 @@ const TextBlock = styled.div<ITextDisplay>`
     .messageDiv {
       .message {
         font-size: 1.1rem;
-        line-height: 1;
       }
     }
   }
@@ -784,8 +784,8 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
       },
     });
   });
-  const eth = useRef<String>("0.05");
-  const leftMint = useRef<String>("7999");
+  const eth = useRef<String>("0.03");
+  const leftMint = useRef<String>("1000");
   const options = [1, 2, 3, 5, 10, 20, 100];
   const defaultOption = options[0];
   const defaultBuy = useRef<String>("*");

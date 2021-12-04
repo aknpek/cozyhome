@@ -12,6 +12,7 @@ const FifthComponent = styled.div<IFifthContainer>`
   display: grid;
   height: 800px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
+  cursor: default;
 
   grid-template-columns: 0.2fr 1fr 0.2fr;
   grid-template-rows: 0fr 1fr 2fr 1fr 1fr;

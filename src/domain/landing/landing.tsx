@@ -16,6 +16,7 @@ import SecondContainer from "./SecondContainer";
 import SeventhContainer from "./SeventhContainer";
 import ThirdContainer from "./ThirdContainer";
 import gsap from "gsap";
+import Popup from "../../components/Popup";
 
 const getDocHeight = () => {
   return Math.max(
@@ -114,6 +115,8 @@ const Landing: React.FC = () => {
         </FirstContainer>
 
         <HardCodeBulut />
+
+        <Popup /> 
 
         <div className={"firstBackGround"}>
           <BackGroundContainer />

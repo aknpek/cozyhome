@@ -16,7 +16,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
   margin-top: 15%;
   height: 1050px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
-
+  cursor: default;
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
   grid-template-rows: 0.2fr 1fr 0.5fr 1fr 0.5fr;
