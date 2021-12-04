@@ -298,7 +298,7 @@ const TextBlock = styled.div<ITextDisplay>`
 
       .message {
         font-size: 1.1rem;
-        line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+        line-height: ${(props) => (props.metaHomes ? 1.5 : 2)};
         text-align: ${(props) => (props.metaHomes ? "left" : "center")};
       }
       div {
@@ -363,7 +363,7 @@ const TextBlock = styled.div<ITextDisplay>`
         .message {
           display: flex;
           font-size: 1.1rem;
-          line-height: ${(props) => (props.metaHomes ? 1.2 : 2)};
+          line-height: ${(props) => (props.metaHomes ? 1.5 : 2)};
           justify-content: center;
           text-align: center;
           width: ${(props) => (props.preSale ? "100%" : "90%")};
@@ -498,7 +498,7 @@ const TextBlock = styled.div<ITextDisplay>`
           display: flex;
           justify-content: left;
           font-size: 1rem;
-          line-height: ${(props) => (props.metaHomes ? 1.1 : 1.5)};
+          line-height: ${(props) => (props.metaHomes ? 1.3 : 1.5)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }
@@ -635,7 +635,7 @@ const TextBlock = styled.div<ITextDisplay>`
           display: flex;
           justify-content: left;
           font-size: 0.9rem;
-          line-height: ${(props) => (props.metaHomes ? 1.1 : 1)};
+          line-height: ${(props) => (props.metaHomes ? 1.3 : 1.3)};
           text-align: ${(props) => (props.metaHomes ? "left" : "center")};
         }
       }

@@ -153,6 +153,11 @@ const PopUpContainer = styled.div<IPopUp>`
     .card {
       margin-top: 6rem;
     }
+    .card:hover {
+      span {
+        font-size: 0.8rem;
+      }
+    }
   }
   @media screen and (max-width: 400px) {
     .card {
