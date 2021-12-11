@@ -3,7 +3,7 @@ const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey); 
 
-const contractABI = require('../data/contracts/CozyHome.json')
+const contractABI = require('../data/contracts/CozyHomeNFT.json')
 const contractAddress = "0x2e2b6FC7742dC071007b48Ea77337e9431a030f7";
 
 const key = process.env.REACT_APP_PINATA_KEY;

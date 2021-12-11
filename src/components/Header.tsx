@@ -505,9 +505,9 @@ const openInNewTab = (url: string) => {
   if (newWindow) newWindow.opener = null;
 };
 
-const babyLion = require("../data/contracts/CozyHome.json");
+const babyLion = require("../data/contracts/CozyHomeNFT.json");
 const abi = babyLion["abi"];
-const address = babyLion["address"];
+const address = babyLion["networks"][4]["address"];
 
 const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
@@ -549,7 +549,6 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   const getSupply = async () => {
     // const supply_left = await contract.methods.totalSupply.call();
     const supply_left = await contract.methods.mintableLeft();
-    console.log(' are weeeeee here to calll', supply_left);
     Promise.resolve(supply_left)
       .then((value) => value.call())
       .then((value) => {
@@ -579,6 +578,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
     const sendAmount = 30000000000000000 * selectMintableAmount;
     const number_of_mints = selectMintableAmount;
 
+    console.log(number_of_mints)
     try {
       const minted_list = await contract.methods
         .mintSale(account, number_of_mints)
@@ -601,6 +601,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   useEffect(() => {
     if (contract !== undefined && account !== undefined) {
       mintNow(props.mintNow.count);
+
     }
   }, [props.mintNow]);
 

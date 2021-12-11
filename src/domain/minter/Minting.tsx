@@ -85,6 +85,7 @@ const MintContainer = styled.section`
         -o-transition: 0.15s;
         transition: 0.15s;
       }
+      
       .priceComponent {
         display: flex;
         margin: 2rem;
@@ -98,12 +99,20 @@ const MintContainer = styled.section`
 
         justify-content: center;
         align-items: center;
+        flex-direction: row;
         h1 {
           font-family: "Fredoka One", normal;
           text-align: center;
           color: black;
           font-size: 1.2rem;
         }
+
+        .whiteListCode{
+        background-color: red;
+        height: 200px;
+        width: 200px;
+
+      }
       }
     }
     .buttonContainer {
@@ -290,9 +299,10 @@ export const Minting: React.FC = () => {
       </div>
       <div className="grandContainer">
         <div className="gifContainer">
+         
           <div className={"statContainerDiv"}>
             {mintLeft.minted ? (
-              <h1>Supply 5555 / {mintLeft.minted}</h1>
+              <h1>Supply 7999 / {mintLeft.minted}</h1>
             ) : (
               <h1>Connect Wallet to See Supply</h1>
             )}
@@ -304,6 +314,12 @@ export const Minting: React.FC = () => {
           />
           <div className="priceComponent">
             <h1>{chosenValue * 0.03} ETH</h1>
+            <div className="whiteListCode">
+            <label>
+              White List Code:
+              <input type="text" name="CODE" />
+            </label>
+          </div>
           </div>
         </div>
 
