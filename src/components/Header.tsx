@@ -498,6 +498,7 @@ interface IHeaderExtension extends IHeader {
   //handleWallet?: Dispatch<SetStateAction<boolean>>
   handleWallet?: any;
   setMintLeft?: any;
+  wlCode?: number;
 }
 
 const openInNewTab = (url: string) => {
@@ -574,14 +575,14 @@ const Header: React.FC<IHeaderExtension> = (props) => {
     fetchBalance();
   }, [account]);
 
-  const mintNow = async (selectMintableAmount: number) => {
+  const mintNow = async (selectMintableAmount: number, wlCode: number) => {
     const sendAmount = 30000000000000000 * selectMintableAmount;
     const number_of_mints = selectMintableAmount;
 
     console.log(number_of_mints)
     try {
       const minted_list = await contract.methods
-        .mintSale(account, number_of_mints)
+        .mintSale(account, number_of_mints, wlCode)
         .send({ from: account, value: sendAmount });
 
       Promise.resolve(minted_list)
@@ -599,8 +600,8 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   };
 
   useEffect(() => {
-    if (contract !== undefined && account !== undefined) {
-      mintNow(props.mintNow.count);
+    if (contract !== undefined && account !== undefined && props.wlCode) {
+      mintNow(props.mintNow.count, props.wlCode);
 
     }
   }, [props.mintNow]);

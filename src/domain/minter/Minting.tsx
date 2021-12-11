@@ -89,18 +89,23 @@ const MintContainer = styled.section`
       .priceComponent {
         display: flex;
         margin: 2rem;
-        height: 3rem;
-        width: 13rem;
-        display: flex;
-        border-radius: 0.9rem;
-        backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-        background-color: white;
-
+        
         justify-content: center;
         align-items: center;
-        flex-direction: row;
+        flex-direction: column;
         h1 {
+          margin-bottom: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          height: 3rem;
+          width: 8rem;
+          border-radius: 0.9rem;
+          backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+          box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+          background-color: white;
+
           font-family: "Fredoka One", normal;
           text-align: center;
           color: black;
@@ -108,10 +113,28 @@ const MintContainer = styled.section`
         }
 
         .whiteListCode{
-        background-color: red;
-        height: 200px;
+        border-radius: 0.5rem;
         width: 200px;
+        height: 40px;
+        background-color: white;
 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        label {
+          letter-spacing: 0.1rem;
+        
+        }
+
+        input{
+          width: 75px;
+          height: 25px;
+          font-family: "Fredoka One", normal;
+          letter-spacing: 0.5rem;
+          text-align: center;
+        }
       }
       }
     }
@@ -234,6 +257,7 @@ export const Minting: React.FC = () => {
   const data: IContent = require("../../data/json/text.json");
   const header_data: IHeader = data["landing"]["header"];
   const [mintLeft, setMintLeft] = useState<IMinted>({ minted: false });
+  const [wlCode, setWlCode] = useState<number>(0);
 
   useEffect(() => {
     toast(`${chosenValue} item ready for mint!`);
@@ -285,6 +309,12 @@ export const Minting: React.FC = () => {
       setChosenValue(option.value);
     }
   };
+
+  const onInputChange = (event: any) => {
+    if (event) {
+      setWlCode(event.target.value);
+    }
+  };
   return (
     <MintContainer>
       <div className={"headerClass"}>
@@ -295,11 +325,11 @@ export const Minting: React.FC = () => {
           {...header_data}
           mintingPage={true}
           setMintLeft={setMintLeft}
+          wlCode={wlCode}
         />
       </div>
       <div className="grandContainer">
         <div className="gifContainer">
-         
           <div className={"statContainerDiv"}>
             {mintLeft.minted ? (
               <h1>Supply 7999 / {mintLeft.minted}</h1>
@@ -315,11 +345,9 @@ export const Minting: React.FC = () => {
           <div className="priceComponent">
             <h1>{chosenValue * 0.03} ETH</h1>
             <div className="whiteListCode">
-            <label>
-              White List Code:
-              <input type="text" name="CODE" />
-            </label>
-          </div>
+              <label>WL Code:</label>
+              <input type="text" name="CODE" onChange={onInputChange} defaultValue={0} />
+            </div>
           </div>
         </div>
 
