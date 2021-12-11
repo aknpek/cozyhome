@@ -1,5 +1,5 @@
 import { IContainer, IFourthContainer, IPictures } from "../../types";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import { AyContainer } from "../../components/Ay";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -28,6 +28,7 @@ const FourthComponent = styled.div<IFourthContainer>`
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 4;
+    margin-bottom: 2rem;
 
     display: flex;
     justify-content: center;

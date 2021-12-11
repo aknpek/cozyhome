@@ -310,7 +310,7 @@ const CozyLand: React.FC<ICozyLand> = (props) => {
             key={"photoseId"}
           >
             <img
-              src={Pictures[value.picture_url].default}
+              src={Pictures[value.picture_url]}
               alt={"sky"}
               key={"image"}
             />

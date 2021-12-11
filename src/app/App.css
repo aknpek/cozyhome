@@ -1,6 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 @import url("https://fonts.googleapis.com/css?family=Fredoka+One");
 
+.Toastify__toast {
+  background-color: #000000 !important;
+  width: 500px !important;
+  color: rgb(212, 211, 211) !important;
+  font-family: "Anton" !important;
+  letter-spacing: 0.1rem !important;
+  font-size: 1.2rem !important;
+  border-radius: 0.5rem !important;
+  top: 1.5rem !important;
+  right: 10rem !important;
+  font-family: "Fredoka One", normal !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .MainApp {
   position: absolute;
   display: flex;

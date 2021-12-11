@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
-import { useEffect, useRef } from "react";
-
+import React, { useEffect, useRef } from "react";
 import { IContainer } from "../../types";
 import Picture from "../../components/Picture";
 import TextDisplay from "../../components/TextDisplay";

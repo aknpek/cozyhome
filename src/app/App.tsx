@@ -1,10 +1,13 @@
 import "./App.css";
 
+import React from "react";
 import Landing from "../domain/landing/landing";
 import Web3 from "web3";
 import { Web3ReactProvider } from "@web3-react/core";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Minting } from "../domain/minter/Minting";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function getLibrary(provider: any) {
   return new Web3(provider);
@@ -24,8 +27,13 @@ function App() {
         draggable
         pauseOnHover
       />
-      <div className="MainApp">
-        <Landing />
+      <div>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" component={Landing} exact />
+            <Route path="/mint" component={Minting} exact />
+          </Switch>
+        </BrowserRouter>
       </div>
     </Web3ReactProvider>
   );

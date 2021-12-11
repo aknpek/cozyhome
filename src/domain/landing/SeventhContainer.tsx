@@ -1,5 +1,5 @@
 import { IContainer, IPictures } from "../../types";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Pictures from "../../components/Locals";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -96,7 +96,7 @@ const SeventhComponent = styled.div<ISixthContainer>`
         font-size: 1.2rem;
         font-weight: 100;
         font-family: "Josefin Sans", cursive;
-        margin-top: -1rem;
+        margin-top: 2rem;
       }
     }
   }
@@ -147,7 +147,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
       h4 {
         font-size: 1rem;
         font-weight: 100;
-        margin-top: -1rem;
       }
     }
   }
@@ -173,7 +172,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
       h4 {
         font-size: 1rem;
         font-weight: 100;
-        margin-top: -1rem;
       }
     }
   }
@@ -197,7 +195,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
         h4 {
           font-size: 1rem;
           font-weight: 100;
-          margin-top: -1rem;
         }
       }
     }
@@ -237,7 +234,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
       h4 {
         font-size: 1rem;
         font-weight: 100;
-        margin-top: -1rem;
       }
     }
     .smartContract {
@@ -276,7 +272,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
       h4 {
         font-size: 1rem;
         font-weight: 100;
-        margin-top: -1rem;
       }
     }
   }
@@ -311,7 +306,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
       h4 {
         font-size: 0.8rem;
         font-weight: 100;
-        margin-top: -1rem;
       }
     }
   }
@@ -345,7 +339,6 @@ const SeventhComponent = styled.div<ISixthContainer>`
       h4 {
         font-size: 0.8rem;
         font-weight: 100;
-        margin-top: -1rem;
       }
     }
   }
@@ -395,7 +388,7 @@ const TeamsImages: React.FC<IPictures> = (value) => {
       <div key={value.id + "photosinner"}>
         <a href={value.hyperlink} key={value.id + "a"}>
           <img
-            src={Pictures[value.picture_url].default}
+            src={Pictures[value.picture_url]}
             alt={value.title}
             key={value.id + "image"}
           />

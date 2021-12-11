@@ -1,4 +1,4 @@
-import react, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { IYildiz } from "../types";
 import TekYildiz from "../svgs/TekYildiz";
@@ -26,7 +26,7 @@ const YildizContainer: React.FC<IYildizContainer> = () => {
 
   const yildizMaker = (
     yildizlar: IYildiz[],
-    setYildizlar: react.Dispatch<react.SetStateAction<IYildiz[]>>
+    setYildizlar: React.Dispatch<React.SetStateAction<IYildiz[]>>
   ) => {
     for (let i = 0; i < getRandomArbitrary(0, 40); i++) {
       yildizlar.push({

@@ -54,7 +54,7 @@ const ChosenPhoto: React.FC<IChosenPhoto> = (props) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <img src={chosenPhoto.default} alt={"sky"} key={"image"} />
+        <img src={chosenPhoto} alt={"sky"} key={"image"} />
       </motion.div>
     </PhotoComponent>
   );

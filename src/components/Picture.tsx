@@ -145,26 +145,29 @@ const Picture: React.FC<Props> = (props) => {
     <PicStyled className={"picture"}>
       <div ref={refPictures}>
         {props.picture.map((value: IPictures) => {
+          console.log(value['picture_url'])
           if (value["picture_url"] !== "gif") {
             return (
               <img
                 className={"gif"}
-                src={Pictures[value["picture_url"]].default}
+                src={Pictures[value["picture_url"]]}
                 alt="amk"
                 key={value.id}
               />
             );
           } else if (value["picture_url"] === "gif") {
+            
+
             return (
               <img
                 className={"gif"}
-                src={Pictures[value["picture_url"]].default}
+                src={Pictures[value["picture_url"]]}
                 alt="amk"
                 key={"_"}
               />
             );
           } else {
-            <div></div>;
+            return <></>;
           }
         })}
       </div>

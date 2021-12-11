@@ -1,5 +1,5 @@
 import { IContainer, IFifthContainer, IPictures } from "../../types";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import BackGroundFirst from "../../svgs/BackGroundFirst";
 import BackGroundSecond from "../../svgs/BackGroundSecond";
@@ -281,7 +281,7 @@ const RarirtyImages: React.FC<IPictures> = (props) => {
       className={`pictureDiv${props.id}`}
     >
       <img
-        src={Pictures[props.picture_url].default}
+        src={Pictures[props.picture_url]}
         key={props.id + "img"}
         alt={props.description}
       ></img>

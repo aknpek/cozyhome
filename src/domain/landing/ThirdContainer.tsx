@@ -1,5 +1,5 @@
 import { IContainer, IPictures, IThirdContainer } from "../../types";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import OpenSeaLogo from "../../svgs/OpenSeaLogo";
 import Pictures from "../../components/Locals";
@@ -300,7 +300,7 @@ const EachImage: React.FC<IEachContainer> = (props) => {
       key={props.value.id + "cell"}
     >
       <img
-        src={Pictures[props.value.picture_url].default}
+        src={Pictures[props.value.picture_url]}
         key={props.value.id + "picture"}
         alt={props.value.description}
       />

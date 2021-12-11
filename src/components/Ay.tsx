@@ -1,12 +1,12 @@
 import Ay from '../svgs/Ay';
 import { motion } from "framer-motion";
-import react from 'react'
+import React from 'react'
 import styled from "styled-components";
 
 const AyComponent = styled.div`
 `;
 
-export const AyContainer: react.FC = () => {
+export const AyContainer: React.FC = () => {
     return (
         <AyComponent>
                <motion.div

@@ -1,12 +1,12 @@
 import BackGroundSecond from "../svgs/BackGroundSecond";
-import react from "react";
+import React from "react";
 import styled from "styled-components";
 
 const BackGroundComponentSecond = styled.div`
 
 `;
 
-export const BackGroundContainerSecond: react.FC = () => {
+export const BackGroundContainerSecond: React.FC = () => {
   return (
     <BackGroundComponentSecond>
       <BackGroundSecond props={{}} />

@@ -101,100 +101,102 @@ const Landing: React.FC = () => {
   });
 
   return (
-    <GeneralWrapper>
-      <div className={"progressDiv"}>
-        <Progress scroll={scrollPosition + "%"} />
-      </div>
-      <FirstWrapper>
-        <FirstContainer>
-          <Header
-            mintingPage={false}
-            {...header_data}
+    <div className="MainApp">
+      <GeneralWrapper>
+        <div className={"progressDiv"}>
+          <Progress scroll={scrollPosition + "%"} />
+        </div>
+        <FirstWrapper>
+          <FirstContainer>
+            <Header
+              mintingPage={false}
+              {...header_data}
+              showThirdContainer={showThirdContainer}
+              scrollPosition={scrollPosition.current}
+            />
+          </FirstContainer>
+
+          <HardCodeBulut />
+
+          <Popup />
+
+          <div className={"firstBackGround"}>
+            <BackGroundContainer />
+          </div>
+
+          <div className={"secondBackGround"}>
+            <BackGroundContainerSecond />
+          </div>
+
+          <div className={"firstBackGround2"}>
+            <BackGroundContainer />
+          </div>
+
+          <div className={"secondBackGround2"}>
+            <BackGroundContainerSecond />
+          </div>
+
+          <div className={"Home-Container"}>
+            <div>
+              <SecondContainer
+                data={data["landing"]["containers"][0]}
+                textDirection={true}
+                preSale={false}
+                metaHomes={false}
+              />
+            </div>
+            <div>
+              <SecondContainer
+                data={data["landing"]["containers"][1]}
+                textDirection={false}
+                preSale={false}
+                metaHomes={true}
+              />
+            </div>
+          </div>
+
+          <div ref={refSecCozyLand} className={"CozyLand-Container"}>
+            <CozyLand data={data["landing"]["containers"][8]} />
+          </div>
+
+          <ThirdContainer
             showThirdContainer={showThirdContainer}
-            scrollPosition={scrollPosition.current}
-          />
-        </FirstContainer>
+            data={data["landing"]["containers"][2]}
+          ></ThirdContainer>
 
-        <HardCodeBulut />
+          <FifthContainer
+            showFifthContainer={showThirdContainer}
+            data={data["landing"]["containers"][4]}
+          ></FifthContainer>
 
-        <Popup />
+          <FourthContainer
+            data={data["landing"]["containers"][3]}
+          ></FourthContainer>
 
-        <div className={"firstBackGround"}>
-          <BackGroundContainer />
-        </div>
-
-        <div className={"secondBackGround"}>
-          <BackGroundContainerSecond />
-        </div>
-
-        <div className={"firstBackGround2"}>
-          <BackGroundContainer />
-        </div>
-
-        <div className={"secondBackGround2"}>
-          <BackGroundContainerSecond />
-        </div>
-
-        <div className={"Home-Container"}>
-          <div>
+          <div className={"Presale-Container"}>
             <SecondContainer
-              data={data["landing"]["containers"][0]}
+              data={data["landing"]["containers"][5]}
               textDirection={true}
-              preSale={false}
+              preSale={true}
               metaHomes={false}
             />
           </div>
-          <div>
-            <SecondContainer
-              data={data["landing"]["containers"][1]}
-              textDirection={false}
-              preSale={false}
-              metaHomes={true}
-            />
+
+          <div ref={refAttributes}>
+            <AttributesContainer
+              elements={rarity["elements"]}
+              data={data["landing"]["containers"][7]}
+            ></AttributesContainer>
           </div>
-        </div>
 
-        <div ref={refSecCozyLand} className={"CozyLand-Container"}>
-          <CozyLand data={data["landing"]["containers"][8]} />
-        </div>
-
-        <ThirdContainer
-          showThirdContainer={showThirdContainer}
-          data={data["landing"]["containers"][2]}
-        ></ThirdContainer>
-
-        <FifthContainer
-          showFifthContainer={showThirdContainer}
-          data={data["landing"]["containers"][4]}
-        ></FifthContainer>
-
-        <FourthContainer
-          data={data["landing"]["containers"][3]}
-        ></FourthContainer>
-
-        <div className={"Presale-Container"}>
-          <SecondContainer
-            data={data["landing"]["containers"][5]}
-            textDirection={true}
-            preSale={true}
-            metaHomes={false}
-          />
-        </div>
-
-        <div ref={refAttributes}>
-          <AttributesContainer
-            elements={rarity["elements"]}
-            data={data["landing"]["containers"][7]}
-          ></AttributesContainer>
-        </div>
-
-        <div ref={refTeam} className={"Team-Container"}>
-          <SeventhContainer
-            data={data["landing"]["containers"][6]}
-          ></SeventhContainer>
-        </div>
-      </FirstWrapper>
-    </GeneralWrapper>
+          <div ref={refTeam} className={"Team-Container"}>
+            <SeventhContainer
+              data={data["landing"]["containers"][6]}
+            ></SeventhContainer>
+          </div>
+        </FirstWrapper>
+      </GeneralWrapper>
+    </div>
   );
 };
 
