@@ -51,7 +51,7 @@ const MintContainer = styled.section`
       background-color: #f1c40f;
       box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-
+      text-align: center;
       display: flex;
       border-radius: 0.8rem;
       justify-content: center;
