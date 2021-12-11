@@ -62,6 +62,7 @@ const MintContainer = styled.section`
       h1 {
         color: black;
         font-size: 1rem;
+        font-weight: 800;
         font-family: "Fredoka One", normal;
       }
     }
