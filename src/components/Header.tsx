@@ -9,9 +9,12 @@ import OpenSeaLogo from "../svgs/OpenSeaLogo";
 import TwitterLogo from "../svgs/TwitterLogo";
 import { scroller } from "react-scroll";
 import styled from "styled-components";
+import { toast } from "react-toastify";
+
 
 interface IHead {
   showThirdContainer: Boolean;
+  mintingPage: Boolean;
 }
 
 const HeaderCo = styled.div<IHead>`
@@ -39,6 +42,7 @@ const HeaderCo = styled.div<IHead>`
 
   .headerContainer {
     margin-right: 10rem;
+    display: ${(props) => (props.mintingPage ? "none" : "")};
 
     span {
       display: flex;
@@ -486,20 +490,32 @@ export const scrollToSection = (className: string) => {
 
 interface IHeaderExtension extends IHeader {
   showThirdContainer: Boolean;
-  scrollPosition: Number;
+  scrollPosition?: Number;
+  setHowManyAvailable?: any;
+  mintNow?: any;
+  mintable?: any;
+  mintingPage: boolean;
+  //handleWallet?: Dispatch<SetStateAction<boolean>>
+  handleWallet?: any;
+  setMintLeft?: any;
 }
 
 const openInNewTab = (url: string) => {
-  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-  if (newWindow) newWindow.opener = null
-}
+  const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+  if (newWindow) newWindow.opener = null;
+};
+
+const babyLion = require("../data/contracts/CozyHome.json");
+const abi = babyLion["abi"];
+const address = babyLion["address"];
 
 const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
   const [tryWallet, setTryWallet] = useState<Boolean>(false);
+  const [contract, setContract] = useState<any>();
 
   const { active, account, library, connector, activate, deactivate } =
-  useWeb3React();
+    useWeb3React();
 
   useEffect(() => {
     if (!tryWallet && active) {
@@ -509,32 +525,90 @@ const Header: React.FC<IHeaderExtension> = (props) => {
 
   const connect = async () => {
     try {
-      await activate(injected);
-    } catch (ex) { }
-  };
+      const connected = await activate(injected)
+      Promise.resolve(connected).then((value) => { }).then(() => {
+      })
+    } catch {
+      toast("Make sure you have Metamask Wallet")
+    }
+  }
 
-  const disconnect = async () => {
-    try {
-      await deactivate();
-    } catch (ex) { }
+  const disconnect = () => {
+    deactivate();
+    toast("You disconnected your wallet!");
   };
 
   const fetchBalance = async () => {
     if (library !== undefined) {
-      library.eth
-        .getBalance(account)
-        .then((response: string) => {
-          setBalanceAccount(`${Number(response) / 1000000000000000000}`);
-        });
+      library.eth.getBalance(account).then((response: string) => {
+        setBalanceAccount(`${Number(response) / 1000000000000000000}`);
+      });
     }
   };
-  useEffect(() => {}, [props.showThirdContainer]);
+
+  const getSupply = async () => {
+    // const supply_left = await contract.methods.totalSupply.call();
+    const supply_left = await contract.methods.mintableLeft();
+    console.log(' are weeeeee here to calll', supply_left);
+    Promise.resolve(supply_left)
+      .then((value) => value.call())
+      .then((value) => {
+        if (props.setMintLeft) {
+          props.setMintLeft({ minted: value });
+        }
+      });
+  };
+
+  useEffect(() => {
+    if (library !== undefined) {
+      setContract(new library.eth.Contract(abi, address));
+    }
+  }, [library]);
+
+  useEffect(() => {
+    if (contract) {
+      getSupply();
+    }
+  }, [contract]);
+
   useEffect(() => {
     fetchBalance();
   }, [account]);
 
+  const mintNow = async (selectMintableAmount: number) => {
+    const sendAmount = 30000000000000000 * selectMintableAmount;
+    const number_of_mints = selectMintableAmount;
+
+    try {
+      const minted_list = await contract.methods
+        .mintSale(account, number_of_mints)
+        .send({ from: account, value: sendAmount });
+
+      Promise.resolve(minted_list)
+        .then((value) => {
+          toast(`Minted Items in Hash ${value.blockHash}`, {
+            autoClose: false,
+            icon: "🤭",
+            closeOnClick: true,
+          });
+        })
+        .catch((e) => console.log(e));
+    } catch (e) {
+      toast("Your transaction has been cancelled!");
+    }
+  };
+
+  useEffect(() => {
+    if (contract !== undefined && account !== undefined) {
+      mintNow(props.mintNow.count);
+    }
+  }, [props.mintNow]);
+
   return (
-    <HeaderCo showThirdContainer={props.showThirdContainer}>
+    <HeaderCo
+      mintingPage={props.mintingPage}
+      showThirdContainer={props.showThirdContainer}
+    >
       <main>
         <div className={"headerContainer"}>
           <span>
@@ -573,35 +647,38 @@ const Header: React.FC<IHeaderExtension> = (props) => {
                             <h1 key={"div" + value.id + "b"}>Wallet</h1>
                             <div
                               className={"dropDownContent"}
-                              key={"wlc" + value.id  + "c"}
+                              key={"wlc" + value.id + "c"}
                             >
-                              <h1 key={"wls" + value.id  + "d"}>
+                              <h1 key={"wls" + value.id + "d"}>
                                 wallet id:{" "}
                                 {account === null
                                   ? "-"
                                   : account
-                                  ? `${account.substring(
+                                    ? `${account.substring(
                                       0,
                                       6
                                     )}...${account.substring(
                                       account.length - 4
                                     )}`
-                                  : ""}
+                                    : ""}
                               </h1>
-                              <h1 key={"div" + value.id  + "e"}>
+                              <h1 key={"div" + value.id + "e"}>
                                 balance:{" "}
                                 {balanceAccount === null
                                   ? "-"
                                   : balanceAccount
-                                  ? `${balanceAccount.substring(
+                                    ? `${balanceAccount.substring(
                                       0,
                                       6
                                     )}...${balanceAccount.substring(
                                       balanceAccount.length - 4
                                     )}`
-                                  : ""}
+                                    : ""}
                               </h1>
-                              <h1 onClick={disconnect} key={"h1" + value.id  + "f"}>
+                              <h1
+                                onClick={disconnect}
+                                key={"h1" + value.id + "f"}
+                              >
                                 disconnect
                               </h1>
                             </div>
@@ -620,15 +697,27 @@ const Header: React.FC<IHeaderExtension> = (props) => {
               );
             })}
           </div>
-
-          <div className={"twitterLogo"} onClick={() => openInNewTab('https://twitter.com/CozyHomeNFT')}>
+          <div
+            className={"twitterLogo"}
+            onClick={() =>
+              openInNewTab("https://twitter.com/BabyLionsClub")
+            }
+          >
             <TwitterLogo />
           </div>
-          <div className={"discordLogo"} onClick={() => openInNewTab('https://discord.gg/yk2MZ8Y4pn')}>
+          <div
+            className={"discordLogo"}
+            onClick={() => openInNewTab("https://discord.com/invite/ae8j9dQ3Sx")}
+          >
             <DiscordLogo />
           </div>
 
-          <div className={"openSeaLogo"} onClick={() => openInNewTab('https://opensea.io/CozyHomeNFT')}>
+          <div
+            className={"openSeaLogo"}
+            onClick={() =>
+              openInNewTab("https://opensea.io/collection/lil-baby-lazy-lions-club")
+            }
+          >
             <OpenSeaLogo props={{}} />
           </div>
         </div>

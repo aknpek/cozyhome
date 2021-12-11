@@ -108,6 +108,7 @@ const Landing: React.FC = () => {
       <FirstWrapper>
         <FirstContainer>
           <Header
+            mintingPage={false}
             {...header_data}
             showThirdContainer={showThirdContainer}
             scrollPosition={scrollPosition.current}
@@ -116,7 +117,7 @@ const Landing: React.FC = () => {
 
         <HardCodeBulut />
 
-        <Popup /> 
+        <Popup />
 
         <div className={"firstBackGround"}>
           <BackGroundContainer />
