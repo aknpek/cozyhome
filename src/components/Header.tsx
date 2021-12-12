@@ -1,3 +1,4 @@
+
 import { IHeader, IMenu } from "../types";
 import React, { useEffect, useRef, useState } from "react";
 import { injected } from "./Wallet";
@@ -499,6 +500,10 @@ interface IHeaderExtension extends IHeader {
   handleWallet?: any;
   setMintLeft?: any;
   wlCode?: number;
+  setWlCode?: any;
+  floorPrice?: number;
+  setWallet?: any;
+
 }
 
 const openInNewTab = (url: string) => {
@@ -528,15 +533,27 @@ const Header: React.FC<IHeaderExtension> = (props) => {
     try {
       const connected = await activate(injected)
       Promise.resolve(connected).then((value) => { }).then(() => {
+        if(props.setWallet){
+            props.setWallet(true);
+        }
       })
     } catch {
       toast("Make sure you have Metamask Wallet")
     }
   }
 
+  useEffect(() => {
+    if (props.setWallet){
+      props.setWallet(active)
+    }
+  }, [active])
+
   const disconnect = () => {
     deactivate();
     toast("You disconnected your wallet!");
+    if(props.setWallet){
+      props.setWallet(false);
+    }
   };
 
   const fetchBalance = async () => {
@@ -575,11 +592,12 @@ const Header: React.FC<IHeaderExtension> = (props) => {
     fetchBalance();
   }, [account]);
 
-  const mintNow = async (selectMintableAmount: number, wlCode: number) => {
-    const sendAmount = 30000000000000000 * selectMintableAmount;
-    const number_of_mints = selectMintableAmount;
+  const mintNow = async (selectMintableAmount: number, wlCode: number, floorPrice: number) => {
+    
 
-    console.log(number_of_mints)
+    const sendAmount = 1000000000000000000 * selectMintableAmount * floorPrice;
+    const number_of_mints = selectMintableAmount;
+    
     try {
       const minted_list = await contract.methods
         .mintSale(account, number_of_mints, wlCode)
@@ -592,7 +610,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
             icon: "🤭",
             closeOnClick: true,
           });
-        })
+        }).then(() => props.setWlCode(0))
         .catch((e) => console.log(e));
     } catch (e) {
       toast("Your transaction has been cancelled!");
@@ -600,8 +618,8 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   };
 
   useEffect(() => {
-    if (contract !== undefined && account !== undefined && props.wlCode) {
-      mintNow(props.mintNow.count, props.wlCode);
+    if (contract !== undefined && account !== undefined && props.wlCode && props.floorPrice) {
+      mintNow(props.mintNow.count, props.wlCode, props.floorPrice);
 
     }
   }, [props.mintNow]);

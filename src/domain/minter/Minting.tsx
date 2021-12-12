@@ -4,6 +4,7 @@ import { IContent, IHeader } from "../../types";
 import Select from "react-select";
 import Header from "../../components/Header";
 import { toast } from "react-toastify";
+// require("dotenv").config();
 
 interface IChosens {
   token_id: number;
@@ -257,10 +258,15 @@ export const Minting: React.FC = () => {
   const data: IContent = require("../../data/json/text.json");
   const header_data: IHeader = data["landing"]["header"];
   const [mintLeft, setMintLeft] = useState<IMinted>({ minted: false });
-  const [wlCode, setWlCode] = useState<number>(0);
-
+  const [wlCode, setWlCode] = useState<number>(1111);
+  const [floorPrice, setFloorPrice] = useState<number>(0.03);
+  const [walletSet, setWallet] = useState<boolean>(false);
   useEffect(() => {
-    toast(`${chosenValue} item ready for mint!`);
+    if (walletSet) {
+      toast(`${chosenValue} item ready for mint!`);
+    } else {
+      toast(`Connect Wallet`);
+    }
   }, [chosenValue]);
 
   const customStyles = {
@@ -311,10 +317,21 @@ export const Minting: React.FC = () => {
   };
 
   const onInputChange = (event: any) => {
+    console.log("areaew");
     if (event) {
       setWlCode(event.target.value);
     }
   };
+
+  useEffect(() => {
+    console.log(wlCode == Number(process.env.REACT_APP_WORM));
+    if (wlCode == Number(process.env.REACT_APP_WORM)) {
+      setFloorPrice(0.025);
+    } else {
+      setFloorPrice(0.030);
+    }
+  }, [wlCode]);
+
   return (
     <MintContainer>
       <div className={"headerClass"}>
@@ -325,7 +342,10 @@ export const Minting: React.FC = () => {
           {...header_data}
           mintingPage={true}
           setMintLeft={setMintLeft}
+          floorPrice={floorPrice}
           wlCode={wlCode}
+          setWallet={setWallet}
+          setWlCode={setWlCode}
         />
       </div>
       <div className="grandContainer">
@@ -343,10 +363,15 @@ export const Minting: React.FC = () => {
             alt="gif"
           />
           <div className="priceComponent">
-            <h1>{chosenValue * 0.03} ETH</h1>
+            <h1>{(chosenValue * floorPrice).toFixed(3)} ETH</h1>
             <div className="whiteListCode">
               <label>WL Code:</label>
-              <input type="text" name="CODE" onChange={onInputChange} defaultValue={0} />
+              <input
+                type="text"
+                name="CODE"
+                onChange={onInputChange}
+                defaultValue={0}
+              />
             </div>
           </div>
         </div>
@@ -366,10 +391,14 @@ export const Minting: React.FC = () => {
         <button
           className="buttonSection"
           onClick={() => {
-            toast("You are minting now!");
-            setMintNow((prevState) => {
-              return { count: chosenValue };
-            });
+            if (walletSet) {
+              toast("You are minting now!");
+              setMintNow((prevState) => {
+                return { count: chosenValue };
+              });
+            } else {
+              toast("Connect your wallet again!")
+            }
           }}
         >
           <span>Mint Now</span>
