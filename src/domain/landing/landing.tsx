@@ -117,13 +117,9 @@ const Landing: React.FC = () => {
           </FirstContainer>
 
           <HardCodeBulut />
-
-          <Popup />
-
           <div className={"firstBackGround"}>
             <BackGroundContainer />
           </div>
-
           <div className={"secondBackGround"}>
             <BackGroundContainerSecond />
           </div>

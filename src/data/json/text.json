@@ -36,7 +36,7 @@
         "component-place": "container-second",
         "component-type": "promotion",
         "title": "",
-        "subtitle": "SOON!",
+        "subtitle": "Mint Now!",
         "slogan": [
           {
             "id": 0,
@@ -240,7 +240,7 @@
         "component-place": "container-second",
         "component-type": "banner",
         "title": "Presale",
-        "subtitle": "Soon!",
+        "subtitle": "Mint now!",
         "slogan": [
           { "id": 0, "slogan": "0.05 ETH" },
           { "id": 1, "slogan": "7999 Left" }

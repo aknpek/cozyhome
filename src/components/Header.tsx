@@ -253,7 +253,7 @@ const HeaderCo = styled.div<IHead>`
           font-weight: 800;
           margin: 1rem;
           color: ${(props) =>
-            props.showThirdContainer ? "#0f0f0f" : "#0f0f0f"};
+    props.showThirdContainer ? "#0f0f0f" : "#0f0f0f"};
           transition: color 0.2s ease-in-out;
           text-align: center;
           justify-content: center;
@@ -352,7 +352,7 @@ const HeaderCo = styled.div<IHead>`
           font-weight: 800;
           margin: 1rem;
           color: ${(props) =>
-            props.showThirdContainer ? "#0f0f0f" : "#0f0f0f"};
+    props.showThirdContainer ? "#0f0f0f" : "#0f0f0f"};
           transition: color 0.2s ease-in-out;
           text-align: center;
           justify-content: center;
@@ -533,8 +533,8 @@ const Header: React.FC<IHeaderExtension> = (props) => {
     try {
       const connected = await activate(injected)
       Promise.resolve(connected).then((value) => { }).then(() => {
-        if(props.setWallet){
-            props.setWallet(true);
+        if (props.setWallet) {
+          props.setWallet(true);
         }
       })
     } catch {
@@ -543,7 +543,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   }
 
   useEffect(() => {
-    if (props.setWallet){
+    if (props.setWallet) {
       props.setWallet(active)
     }
   }, [active])
@@ -551,7 +551,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   const disconnect = () => {
     deactivate();
     toast("You disconnected your wallet!");
-    if(props.setWallet){
+    if (props.setWallet) {
       props.setWallet(false);
     }
   };
@@ -596,7 +596,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
 
     const sendAmount = 1000000000000000000 * selectMintableAmount * floorPrice;
     const number_of_mints = selectMintableAmount;
-    
+
     try {
       const minted_list = await contract.methods
         .mintSale(account, number_of_mints, wlCode)
@@ -719,14 +719,14 @@ const Header: React.FC<IHeaderExtension> = (props) => {
           <div
             className={"twitterLogo"}
             onClick={() =>
-              openInNewTab("https://twitter.com/BabyLionsClub")
+              openInNewTab("https://twitter.com/CozyHomeNFT")
             }
           >
             <TwitterLogo />
           </div>
           <div
             className={"discordLogo"}
-            onClick={() => openInNewTab("https://discord.com/invite/ae8j9dQ3Sx")}
+            onClick={() => openInNewTab("https://discord.com/invite/yk2MZ8Y4pn")}
           >
             <DiscordLogo />
           </div>
@@ -734,7 +734,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
           <div
             className={"openSeaLogo"}
             onClick={() =>
-              openInNewTab("https://opensea.io/collection/lil-baby-lazy-lions-club")
+              openInNewTab("https://opensea.io/collection/cozy-home-nft-v2")
             }
           >
             <OpenSeaLogo props={{}} />
