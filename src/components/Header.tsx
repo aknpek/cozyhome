@@ -734,7 +734,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
           <div
             className={"openSeaLogo"}
             onClick={() =>
-              openInNewTab("https://opensea.io/collection/cozy-home-nft-v2")
+              openInNewTab("https://opensea.io/collection/cozy-home-nft-official")
             }
           >
             <OpenSeaLogo props={{}} />
