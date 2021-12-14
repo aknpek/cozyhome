@@ -6,6 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { scrollToSection } from "../components/Header";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 interface ITextDisplay {
   textDirection: Boolean;
@@ -45,7 +46,7 @@ const TextBlock = styled.div<ITextDisplay>`
       display: flex;
       height: 8rem;
       justify-content: ${(props) =>
-        props.preSale || props.metaHomes ? "center" : "left"};
+    props.preSale || props.metaHomes ? "center" : "left"};
       align-items: center;
       .cozyHomeLogoDiv2 {
         /* position: absolute; */
@@ -303,7 +304,7 @@ const TextBlock = styled.div<ITextDisplay>`
       }
       div {
         width: ${(props) =>
-          props.metaHomes || props.preSale ? "100%" : "80%"};
+    props.metaHomes || props.preSale ? "100%" : "80%"};
         h1 {
         }
       }
@@ -493,7 +494,7 @@ const TextBlock = styled.div<ITextDisplay>`
 
       .messageMiddleDiv {
         width: ${(props) =>
-          props.metaHomes || props.preSale ? "100%" : "80%"};
+    props.metaHomes || props.preSale ? "100%" : "80%"};
         .message {
           display: flex;
           justify-content: left;
@@ -826,14 +827,16 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
       </div>
 
       {props.subtitle !== "" && props.title !== "Presale" ? (
-        <div
-          ref={refText}
-          className={"subTitleDiv"}
-          onClick={() => scrollToSection("Presale-Container")}
-          key={"subtitlediv"}
-        >
-          <h1 className={"subTitle"} key={"subtitle"}>{props.subtitle}</h1>
-        </div>
+        <Link to="/mint">
+          <div
+            ref={refText}
+            className={"subTitleDiv"}
+            //onClick={() => scrollToSection("Presale-Container")}
+            key={"subtitlediv"}
+          >
+            <h1 className={"subTitle"} key={"subtitle"}>{props.subtitle}</h1>
+          </div>
+        </Link>
       ) : (
         [
           props.title === "Presale" ? (
