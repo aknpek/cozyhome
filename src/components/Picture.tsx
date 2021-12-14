@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import styled from "styled-components";
 
-interface IPicture {}
+interface IPicture { }
 
 const PicStyled = styled.div<IPicture>`
   margin: auto;
@@ -150,18 +150,18 @@ const Picture: React.FC<Props> = (props) => {
             return (
               <img
                 className={"gif"}
-                src={Pictures[value["picture_url"]]}
+                src={Pictures[value["picture_url"]].default}
                 alt="amk"
                 key={value.id}
               />
             );
           } else if (value["picture_url"] === "gif") {
-            
+
 
             return (
               <img
                 className={"gif"}
-                src={Pictures[value["picture_url"]]}
+                src={Pictures[value["picture_url"]].default}
                 alt="amk"
                 key={"_"}
               />

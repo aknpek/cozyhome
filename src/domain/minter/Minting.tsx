@@ -359,7 +359,7 @@ export const Minting: React.FC = () => {
           </div>
           <img
             className="gif"
-            src={require("./../../data/png/logo.gif")}
+            src={require("./../../data/png/logo.gif").default}
             alt="gif"
           />
           <div className="priceComponent">

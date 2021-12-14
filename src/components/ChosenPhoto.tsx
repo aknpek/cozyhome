@@ -32,7 +32,7 @@ interface IChosenPhoto {
 }
 
 const ChosenPhoto: React.FC<IChosenPhoto> = (props) => {
-  const [chosenPhoto, setChosenPhoto] = useState<any>(Pictures["sky"]);
+  const [chosenPhoto, setChosenPhoto] = useState<any>(Pictures["sky"].default);
   const photos = [
     Pictures["wall"],
     Pictures["roof"],
@@ -44,7 +44,7 @@ const ChosenPhoto: React.FC<IChosenPhoto> = (props) => {
   ];
 
   useEffect(() => {
-    setChosenPhoto(photos[props.referenceItem]);
+    setChosenPhoto(photos[props.referenceItem].default);
   }, [props.referenceItem]);
 
   return (

@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-interface ISixthContainer {}
+interface ISixthContainer { }
 
 const SeventhComponent = styled.div<ISixthContainer>`
   background-color: #121420;
@@ -388,7 +388,7 @@ const TeamsImages: React.FC<IPictures> = (value) => {
       <div key={value.id + "photosinner"}>
         <a href={value.hyperlink} key={value.id + "a"}>
           <img
-            src={Pictures[value.picture_url]}
+            src={Pictures[value.picture_url].default}
             alt={value.title}
             key={value.id + "image"}
           />

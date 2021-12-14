@@ -281,7 +281,7 @@ const RarirtyImages: React.FC<IPictures> = (props) => {
       className={`pictureDiv${props.id}`}
     >
       <img
-        src={Pictures[props.picture_url]}
+        src={Pictures[props.picture_url].default}
         key={props.id + "img"}
         alt={props.description}
       ></img>

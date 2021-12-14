@@ -300,7 +300,7 @@ const EachImage: React.FC<IEachContainer> = (props) => {
       key={props.value.id + "cell"}
     >
       <img
-        src={Pictures[props.value.picture_url]}
+        src={Pictures[props.value.picture_url].default}
         key={props.value.id + "picture"}
         alt={props.value.description}
       />
@@ -317,7 +317,7 @@ const ThirdContainer: React.FC<PropsThird> = (props) => {
       controls.start("visible");
     }
   }, [controls, inView]);
-  useEffect(() => {}, [props.showThirdContainer]);
+  useEffect(() => { }, [props.showThirdContainer]);
 
   let refTitle = useRef<HTMLDivElement>(null);
 
