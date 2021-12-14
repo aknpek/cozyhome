@@ -423,7 +423,7 @@ const SeventhContainer: React.FC<PropsSeven> = (props) => {
         ))}
       </div>
       <div key={"smartContract"} className={"smartContract"}>
-        <a key={"smartContracta"}>
+        <a href="https://etherscan.io/address/0xed68af0266713db72807747c44280aa434319b44" key={"smartContracta"}>
           <h1 key={"smartContracth1"}>Smart Contract Soon!</h1>
         </a>
       </div>
