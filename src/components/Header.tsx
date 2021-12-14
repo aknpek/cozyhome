@@ -593,7 +593,6 @@ const Header: React.FC<IHeaderExtension> = (props) => {
   }, [account]);
 
   const mintNow = async (selectMintableAmount: number, wlCode: number, floorPrice: number) => {
-    
 
     const sendAmount = 1000000000000000000 * selectMintableAmount * floorPrice;
     const number_of_mints = selectMintableAmount;
