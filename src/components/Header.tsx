@@ -511,9 +511,9 @@ const openInNewTab = (url: string) => {
   if (newWindow) newWindow.opener = null;
 };
 
-const babyLion = require("../data/contracts/CozyHomeNFT.json");
+const babyLion = require("../data/contracts/CozyHomeNFTRemix.json");
 const abi = babyLion["abi"];
-const address = babyLion["networks"][4]["address"];
+const address = babyLion["address"];
 
 const Header: React.FC<IHeaderExtension> = (props) => {
   const [balanceAccount, setBalanceAccount] = useState<string>("");
