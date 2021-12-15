@@ -827,16 +827,16 @@ const TextDisplay: React.FC<PTextDisplay> = (props) => {
       </div>
 
       {props.subtitle !== "" && props.title !== "Presale" ? (
-        <Link to="/mint">
-          <div
-            ref={refText}
-            className={"subTitleDiv"}
-            //onClick={() => scrollToSection("Presale-Container")}
-            key={"subtitlediv"}
-          >
+        <div
+          ref={refText}
+          className={"subTitleDiv"}
+          //onClick={() => scrollToSection("Presale-Container")}
+          key={"subtitlediv"}
+        >
+          <Link to="/mint">
             <h1 className={"subTitle"} key={"subtitle"}>{props.subtitle}</h1>
-          </div>
-        </Link>
+          </Link>
+        </div>
       ) : (
         [
           props.title === "Presale" ? (

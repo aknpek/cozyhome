@@ -350,11 +350,11 @@ export const Minting: React.FC = () => {
       </div>
       <div className="grandContainer">
         <div className="gifContainer">
-          <div className={"statContainerDiv"}>
+          <div style={{ cursor: "default", backgroundColor: "black" }} className={"statContainerDiv"}>
             {mintLeft.minted ? (
               <h1>Supply 7999 / {mintLeft.minted}</h1>
             ) : (
-              <h1>Connect Wallet to See Supply</h1>
+              <h1 style={{ color: "white" }}>Connect Wallet to See Supply</h1>
             )}
           </div>
           <img
