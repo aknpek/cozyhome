@@ -259,7 +259,7 @@ export const Minting: React.FC = () => {
   const header_data: IHeader = data["landing"]["header"];
   const [mintLeft, setMintLeft] = useState<IMinted>({ minted: false });
   const [wlCode, setWlCode] = useState<number>(1111);
-  const [floorPrice, setFloorPrice] = useState<number>(0.03);
+  const [floorPrice, setFloorPrice] = useState<number>(0.05);
   const [walletSet, setWallet] = useState<boolean>(false);
   useEffect(() => {
     if (walletSet) {
@@ -270,16 +270,16 @@ export const Minting: React.FC = () => {
   }, [chosenValue]);
 
   const customStyles = {
-    control: (styles: CSSObject) => {
-      return {
-        ...styles,
-        display: "flex",
-        height: "5rem",
-        borderRadius: "15px",
-        background: "rgb(221,227,59)",
-        fontFamily: "Anton",
-      };
-    },
+    // control: (styles: CSSObject) => {
+    //   return {
+    //     ...styles,
+    //     display: "flex",
+    //     height: "5rem",
+    //     borderRadius: "15px",
+    //     background: "rgb(221,227,59)",
+    //     fontFamily: "Anton",
+    //   };
+    // },
     option: (
       styles: CSSObject,
       { data, isDisabled, isFocused, isSelected, isActive }: any
@@ -300,14 +300,14 @@ export const Minting: React.FC = () => {
       color: "#0F0F0F",
       fontSize: "1.25rem",
     }),
-    input: (styles: CSSObject) => ({
-      ...styles,
-      fontFamily: `Anton`,
-      "& input": {
-        font: "inherit",
-        alignSelf: "center",
-      },
-    }),
+    // input: (styles: CSSObject) => ({
+    //   ...styles,
+    //   fontFamily: `Anton`,
+    //   "& input": {
+    //     font: "inherit",
+    //     alignSelf: "center",
+    //   },
+    // }),
   };
 
   const handleSelect = (option: any) => {
@@ -323,14 +323,14 @@ export const Minting: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(wlCode == Number(process.env.REACT_APP_WORM));
-    if (wlCode == Number(process.env.REACT_APP_WORM)) {
-      setFloorPrice(0.025);
-    } else {
-      setFloorPrice(0.030);
-    }
-  }, [wlCode]);
+  // useEffect(() => {
+  //   console.log(wlCode == Number(process.env.REACT_APP_WORM));
+  //   if (wlCode == Number(process.env.REACT_APP_WORM)) {
+  //     setFloorPrice(0.025);
+  //   } else {
+  //     setFloorPrice(0.030);
+  //   }
+  // }, [wlCode]);
 
   return (
     <MintContainer>
@@ -363,8 +363,8 @@ export const Minting: React.FC = () => {
             alt="gif"
           />
           <div className="priceComponent">
-            <h1>{(chosenValue * floorPrice).toFixed(3)} ETH</h1>
-            <div className="whiteListCode">
+            <h1>{(chosenValue * floorPrice).toFixed(2)} ETH</h1>
+            {/* <div className="whiteListCode">
               <label>WL Code:</label>
               <input
                 type="text"
@@ -372,7 +372,7 @@ export const Minting: React.FC = () => {
                 onChange={onInputChange}
                 defaultValue={0}
               />
-            </div>
+            </div> */}
           </div>
         </div>
 

@@ -618,6 +618,7 @@ const Header: React.FC<IHeaderExtension> = (props) => {
 
   useEffect(() => {
     if (contract !== undefined && account !== undefined && props.wlCode && props.floorPrice) {
+      console.log(props.wlCode);
       mintNow(props.mintNow.count, props.wlCode, props.floorPrice);
 
     }
