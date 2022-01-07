@@ -31,7 +31,7 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route path="/" component={Landing} exact />
-            <Route path="/mint" component={Minting} exact />
+            {/* <Route path="/mint" component={Minting} exact /> */}
           </Switch>
         </BrowserRouter>
       </div>

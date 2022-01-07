@@ -36,7 +36,7 @@
         "component-place": "container-second",
         "component-type": "promotion",
         "title": "",
-        "subtitle": "Mint Now!",
+        "subtitle": "Mint Closed!",
         "slogan": [
           {
             "id": 0,
@@ -282,9 +282,9 @@
           {
             "id": 2,
             "picture_url": "akin",
-            "title": "Akın",
+            "title": "NFT",
             "subtitle": "Developer",
-            "hyperlink": "https://twitter.com/nftsell",
+            "hyperlink": "https://twitter.com/",
             "description": ""
           },
           {
